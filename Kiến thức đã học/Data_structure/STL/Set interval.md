@@ -1,15 +1,14 @@
 
-### ✅ 1. Có thể áp đặt **một thứ tự tuyến tính**
-- Thứ tự **không cần là tự nhiên**
-- Chỉ cần:
+### 1. Có thể áp đặt **một thứ tự tuyến tính**
+- Thứ tự **không cần là tự nhiên**, chỉ cần :
     - so sánh được
     - duyệt được bằng `lower_bound`
-### ✅ 2. Trạng thái **đồng nhất trên đoạn**
-Tức là:
+###  2. Trạng thái **đồng nhất trên đoạn**
+
 - nhiều phần tử liên tiếp **có cùng trạng thái logic**
 - bạn có thể gộp chúng thành `[l, r]`
 
-### ✅ 3. Cần **split + merge động**
+###  3. Cần **split + merge động**
 
 - truy vấn có thể:
     - cắt đoạn
