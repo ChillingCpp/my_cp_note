@@ -2,10 +2,11 @@
 - 1 số mảng có trong bài viết này :
 	- $d[u]$ : độ sâu của cây
 	- $in[u]$ : thời gian đầu tiên đến node u khi chạy euler tour
-	- $out[u]$ : thời gian cuối cùng quay lại node u khi chạy euler tour
-	- $flat[timer]$ : giá trị của node u khi timer  = $in[u]$ || $out[u]$
+	- $out[u]$ : 
+		- Euler tour loại 1 và 2 : thời điểm cuối cùng mà node u được process
+		- Euler tour loại 3 : thời điểm mà node cuối cùng của cây con gốc u được process 
+	- $f[timer]$ : flatten cây, giá trị của node u khi timer  = $in[u]$ || $out[u]$ 
 	- st : cây phân đoạn truy vấn giá trị
-	- $f[timer]$ : mảng flatten euler tour
 
 - Euler tour có 3 loại :
 	- Euler tour hoàn chỉnh kích thước  $2*n-1$ : dùng cho RMQ, 1 node chứa LCA và các giá trị đại diện, đồng thời các phép toán phải thỏa mãn tính chất của Segment tree
