@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "my token.md",
+                "file": "Kiến thức đã học/Data_structure/Non-STL/Tree/Euler tour flatten.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "my token"
+              "title": "Euler tour flatten"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "my token.md",
+                "file": "Kiến thức đã học/Data_structure/Non-STL/Tree/Euler tour flatten.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of my token"
+              "title": "Outline of Euler tour flatten"
             }
           }
         ],
@@ -173,16 +173,16 @@
   },
   "active": "fc21607dda1d8164",
   "lastOpenFiles": [
+    "Kiến thức đã học/Data_structure/Non-STL/Tree/Dynamic programming on tree.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting LCA and jump.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Tree/1 số mảng thường có trong các bài tree.md",
+    "Lịch học cho contest sắp tới.md",
+    "my token.md",
     "New Text Document.txt",
     "New folder",
     "my_cp_note",
     "Kiến thức đã học/Data_structure/Non-STL/Tree/Euler tour flatten.md",
-    "my token.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Tree/Dynamic programming on tree.md",
     "Kiến thức đã học/Data_structure/Non-STL/Tree/DP rerooting.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting LCA and jump.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Tree/1 số mảng thường có trong các bài tree.md",
-    "Lịch học cho contest sắp tới.md",
     "Kiến thức đã học/Data_structure/Non-STL",
     "Kiến thức đã học/Data_structure/Untitled.md",
     "Untitled",
@@ -208,7 +208,6 @@
     "Basics/Basic Data Structures.md",
     "Kiến thức đã học/Algorithms",
     "Kiến thức đã học",
-    "Competitive Programming 4.pdf",
     "Pattern recognize.png",
     "Pattern Recognize (Keyword‑driven, sau khi biến đổi bài toán) (1).png",
     "output.canvas",
