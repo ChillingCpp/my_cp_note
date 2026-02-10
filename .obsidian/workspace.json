@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kiến thức đã học/Data_structure/STL/Set interval.md",
+                "file": "Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting LCA and jump.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Set interval"
+              "title": "Binary lifting LCA and jump"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kiến thức đã học/Data_structure/STL/Set interval.md",
+                "file": "Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting LCA and jump.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Set interval"
+              "title": "Outline of Binary lifting LCA and jump"
             }
           }
         ],
@@ -174,7 +174,24 @@
   },
   "active": "76ac6b1ea3dbd05c",
   "lastOpenFiles": [
-    "Kiến thức đã học/Data_structure/STL/Set interval.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Tree/1 số mảng thường có trong các bài tree.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting LCA and jump.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Tree/DP rerooting.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Tree/Dynamic programming on tree.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Tree/Euler tour flatten.md",
+    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/MST Kruskal.md",
+    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Dynamic Connectivity.md",
+    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU bipartite.md",
+    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU jump pointer.md",
+    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Giá trị đại diện cho tập hợp.md",
+    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU problemset.md",
+    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU lý thuyết.md",
+    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Connected Component Graph.md",
+    "Kiến thức đã học/Data_structure/STL/Neighbor-linked array ~ DSU.md",
+    "Kiến thức đã học/Data_structure/STL/Priority Queue.md",
+    "Kiến thức đã học/Data_structure/STL/Queue.md",
+    "Kiến thức đã học/Data_structure/STL/Set Map Cơ Bản.md",
+    "Kiến thức đã học/Data_structure/STL/Set interval nâng cao.md",
     "Lịch học cho contest sắp tới.md",
     "conflict-files-obsidian-git.md",
     "Kiến thức đã học/Data_structure/STL/Set_interval.md",
@@ -182,34 +199,17 @@
     "CÁCH GIẢI MỘT BÀI TOÁN.md",
     "Competitive Programming 4.pdf",
     "Competitive programming roadmap.pdf",
-    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU jump pointer.md",
     "Set interval.md",
     "Kiến thức đã học/Data_structure/STL/New Text Document.txt",
-    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/MST Kruskal.md",
-    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Giá trị đại diện cho tập hợp.md",
-    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Dynamic Connectivity.md",
-    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU problemset.md",
-    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU lý thuyết.md",
-    "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Connected Component Graph.md",
     "Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng",
-    "Kiến thức đã học/Data_structure/Non-STL/Tree/Euler tour flatten.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Tree/Dynamic programming on tree.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting LCA and jump.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Tree/1 số mảng thường có trong các bài tree.md",
     "my token.md",
     "New Text Document.txt",
     "New folder",
     "my_cp_note",
-    "Kiến thức đã học/Data_structure/Non-STL/Tree/DP rerooting.md",
     "Kiến thức đã học/Data_structure/Non-STL",
     "Kiến thức đã học/Data_structure/Untitled.md",
     "Untitled",
-    "Kiến thức đã học/Greedy Technique/Greedy + Priority Queue.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Segment Tree.md",
-    "Kiến thức đã học/Data_structure/STL/Prefix or suffix Arrays.md",
-    "Kiến thức đã học/Data_structure/STL/Deque.md",
     "Kiến thức đã học/Data_structure/STL",
-    "Kiến thức đã học/Data_structure/Untitled 1.md",
     "Pattern recognize.png",
     "Pattern Recognize (Keyword‑driven, sau khi biến đổi bài toán) (1).png",
     "output.canvas",

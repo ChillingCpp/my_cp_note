@@ -1,4 +1,6 @@
 
+- 1 số bài toán liên quan tới interval có thể giải quyết bằng set
+	- ví dụ : tìm max số lượng interval giao nhau tại 1 điểm, các interval không có thay đổi 
 -  Có thể áp đặt **một thứ tự tuyến tính**
 	- Thứ tự **không cần là tự nhiên**, chỉ cần :
 	    - so sánh được

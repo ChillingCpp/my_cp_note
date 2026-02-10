@@ -36,20 +36,6 @@ Ví dụ:
 
 # Các dạng bài DSU:
 
-
-
----
-
----
-## 1️⃣6️⃣ DSU + Parity = kiểm tra bipartite
-
-- Lưu **parity đường đi tới root**
-- get trả về: `(root, parity)`
-- union tính parity giữa hai root
-- 
-📌 Đây là dạng DSU:
-- **toán tử KHÔNG giao hoán**
-- nhưng vẫn đúng vì ta lưu **thông tin theo hướng**
 ---
 ## 1️⃣6️⃣  DSU lưu danh sách phần tử trong component, có trỏ tới root 
 
@@ -95,7 +81,6 @@ void union_sets(int a, int b) {
 
 ## 1️⃣6️⃣ Tìm cầu online : lưu trữ cây nén/ không nén
 - DSU hoạt động với cả dynamic, changing graph : add/remove edge
-
 
 
 
