@@ -19,10 +19,10 @@
 	- Euler tour n : mỗi node xuất hiện đúng 1 lần:
 		- $in[u] = ++timer \; và \; out[u] = timer$ , lúc này $out[u]$ sẽ chỉ tới node cuối cùng trong cây con gốc u. 
 		- Dùng để query subtree : $[in[u], out[u]]$
-		- Dùng để query path từ root -> u :
+		- Dùng để query path từ root -> u, có/không có node update :
 			- $segin([1, in[u]]) - segout([2, in[u]-1])$  
 				- segin build từ mảng flatten : $f[in[u]] = a[i]$
-				- segout build từ mảng flatten  : $f[out[u]] -= a[i]$s
-				- Dấu "-" được hiểu là phép loại trừ
+				- segout build từ mảng flatten  : $f[out[u]] -= a[i]$
 			- ta nhận ra ta có thể gộp 2 cây phân đoạn vào làm 1 cây như sau :
-				- $st.update()
+				- $st[in[u] + n] += val[u]; \; st[out[u] + n + 1] -= val[u]$ : prefix difference
+			- Để làm được như này thì các phép toán phải nghịch đảo hay loại trừ được với nhau

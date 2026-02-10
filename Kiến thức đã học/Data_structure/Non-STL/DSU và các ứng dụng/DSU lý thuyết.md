@@ -37,30 +37,9 @@ Ví dụ:
 # Các dạng bài DSU:
 
 
-## 1️⃣1️⃣ procedure/reverse offline Dynamic connectivity
-## 1️⃣1️⃣ Connected Component graph
 
-## 1️⃣4️⃣Lưu giá trị đại diện tại root (max, min…)
-- Weighted DSU
-- Bài toán relative order ( khoảng cách, giá trị trước add component không liên quan giá trị sau add component,... )
-- max, min, giá trị đại diện
-- 
-## 1️⃣5️⃣ Kruskal DSU
-
-- DSU dùng để:
-    - kiểm tra chu trình
-    - quyết định thêm cạnh hay không
-📌 Bất cứ bài nào:
-> “thêm cạnh, không tạo chu trình, tối ưu tổng chi phí”  
-  → **nghĩ ngay đến DSU + Kruskal**
 ---
-## 1️⃣3️⃣ DSU jump pointer
 
-- "Node gần nhất bên trái/phải" hoặc "Node kế tiếp chưa được xử lí":
-    - DSU giúp bỏ qua các phần tử đã bị xử lí
-    - DSU + path compression + max
-    - reverse order
-📌 **DSU = công cụ để “nhảy qua những phần tử không còn giá trị”**
 ---
 ## 1️⃣6️⃣ DSU + Parity = kiểm tra bipartite
 
