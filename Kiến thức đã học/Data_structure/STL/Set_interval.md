@@ -1,10 +1,50 @@
-| Cấu trúc gốc                  | Cách áp dụng set interval         | Interval đại diện cho gì   | Dùng được khi                                  | Không dùng được khi              |
-| ----------------------------- | --------------------------------- | -------------------------- | ---------------------------------------------- | -------------------------------- |
-| **Mảng 1D**                   | Trực tiếp trên chỉ số `[l, r]`    | Đoạn con liên tiếp         | Dynamic state,  split/merge, update nhiều lần  | One-shot (DSU next tốt hơn)      |
-| **Tree**                      | Euler Tour / DFS order            | Subtree ↔ `[tin, tout]`    | Cập nhật / chuyển trạng thái subtree nhiều lần | Tree dynamic (link/cut liên tục) |
-| **Tree (path)**               | Heavy-Light Decomposition         | Path ↔ nhiều interval      | Update/query path động                         | Path rất ngắn, brute đủ          |
-| **DAG**                       | Topological order cố định         | Prefix / segment topo      | Trạng thái node đổi nhiều lần, topo không đổi  | Topo thay đổi, rollback          |
-| **Graph tổng quát**           | **Không trực tiếp**               | —                          | Chỉ khi ép được về linear order ổn định        | Graph động, cycle + rollback     |
-| **Mảng 2D (grid)**            | Linearize (row-major / col-major) | Dải ô liên tiếp            | Truy vấn theo 1 chiều ưu tiên                  | Update hình chữ nhật động        |
-| **Mảng 2D (theo hàng)**       | Mỗi hàng 1 set interval           | Đoạn liên tiếp trong hàng  | Update/query độc lập theo hàng                 | Truy vấn liên hàng               |
-| **Dynamic states (bài HSNV)** | Set interval trên ID nhân viên    | Nhóm người cùng trạng thái | Nhân viên đổi trạng thái nhiều lần             | Trạng thái one-shot              |
+### ✅ 1. Có thể áp đặt **một thứ tự tuyến tính**
+- Thứ tự **không cần là tự nhiên**
+- Chỉ cần:
+    - so sánh được
+    - duyệt được bằng `lower_bound`
+### ✅ 2. Trạng thái **đồng nhất trên đoạn**
+Tức là:
+- nhiều phần tử liên tiếp **có cùng trạng thái logic**
+- bạn có thể gộp chúng thành `[l, r]`
+
+### ✅ 3. Cần **split + merge động**
+
+- truy vấn có thể:
+    - cắt đoạn
+    - gộp lại
+    - thay đổi nhiều lần    
+
+📌 Nếu **chỉ xóa một lần** → DSU next đủ  
+📌 Nếu **xóa – tạo lại – đổi qua đổi lại** → set interval
+
+### ✅ 4. Phần tử **có thể bị xử lý lại**
+
+Đây là ranh giới lớn nhất với DSU next.
+
+📌 Nếu phần tử:
+- đổi trạng thái nhiều lần
+- quay lại trạng thái cũ
+
+→ **bắt buộc set interval**
+
+---
+
+### ✅ 5. Không yêu cầu truy vấn “bên trong đoạn” quá phức tạp
+
+Set interval mạnh về:
+
+- quản lý **cấu trúc đoạn**
+    
+- không mạnh về:
+    
+    - sum / max / min nội bộ (cái đó giao cho segtree)
+        
+
+👉 Thực tế hay dùng:
+
+> **set interval + segment tree lazy**
+
+---
+
+Nếu **5 điều trên đúng** → set interval dùng được, **bất kể cấu trúc gốc là gì**.
