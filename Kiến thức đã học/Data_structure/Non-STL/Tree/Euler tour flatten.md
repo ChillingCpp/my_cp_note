@@ -13,3 +13,4 @@
 		- node thấy lần thứ 2 : off ( node đó không ở trong path u -> v )
 		- biến đổi query như sau :
 			- nếu lca(u, v) = u || v thì sẽ biến đổi thành đoạn $[in[u], in[v]] \;  với \; h[u] < h[v]$  
+			- còn không thì là  $[out[u], in[v]] + lca(u, v)$  
