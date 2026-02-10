@@ -5,6 +5,7 @@
 	- $out[u]$ : thời gian cuối cùng quay lại node u khi chạy euler tour
 	- $flat[timer]$ : giá trị của node u khi timer  = $in[u]$ || $out[u]$
 	- st : cây phân đoạn truy vấn giá trị
+	- $f[timer]$ : mảng flatten euler tour
 
 - Euler tour có 3 loại :
 	- Euler tour hoàn chỉnh kích thước  $2*n-1$ : dùng cho RMQ, 1 node chứa LCA và các giá trị đại diện, đồng thời các phép toán phải thỏa mãn tính chất của Segment tree
@@ -14,3 +15,10 @@
 		- biến đổi query như sau :
 			- nếu lca(u, v) = u || v thì sẽ biến đổi thành đoạn $[in[u], in[v]] \;  với \; h[u] < h[v]$  
 			- còn không thì là  $[out[u], in[v]] + lca(u, v)$  
+	- Euler tour n : mỗi node xuất hiện đúng 1 lần:
+		- $in[u] = ++timer \; và \; out[u] = timer$ , lúc này $out[u]$ sẽ chỉ tới node cuối cùng trong cây con gốc u. 
+		- Dùng để query subtree : $[in[u], out[u]]$
+		- Dùng để query path từ root -> u : $segin([1, in[u]]) - segout([2, in[u]-1])$  
+			- segin build từ mảng flatten : $f[in[u]] = a[i]$
+			- segout build từ mảng flatten  : $f[out[u]] -= a[i]$s
+			- Dấu "-" được hiểu là phép loại trừ
