@@ -1,0 +1,23 @@
+
+- Dạng 1 : Bài toán có tính chất thỏa mãn đặc biệt
+	- nếu subarray $[L, R]$ thỏa mãn thì các subarray trong đoạn $[L, R]$ cũng thỏa mãn tính chất đó
+	- fixed R và với mỗi R thì tịnh tiến L sao cho subarray $[L, R]$ thỏa mãn
+- Dạng 2 : 2 con trỏ 2 đầu mảng 
+	- khá hiếm gặp, thường sẽ có ở các bài sorting
+- Dạng 3 : 2 con trỏ ở 2 mảng khác nhau
+	- merge sort list
+	- các bài toán tham lam sorting khác
+- slow fast pointer : 
+	- dạng bài tìm chu trình mà không phải trong đồ thị, tìm chu trình vì có những operation không kết thúc mà tạo thành chu trình
+		- slow = f(slow)
+		- fast = f(f(fast))
+
+- Kĩ thuật adjust pointer trong greedy
+	- bắt đầu với 1 feasible solution
+	- Fixed 1 con trỏ và điều chỉnh con trỏ thứ 2 sao cho thỏa mãn điều kiện, sau đó so sánh với feasible solution hiện tại
+	- Đa số các kĩ thuật 2 con trỏ ở các bài toán đều là adjust pointer, đây là lời giải tổng quát.
+	- luôn đảm bảo tính local optimal tại mỗi bước của greedy
+- Kĩ thuật 2 con trỏ greedy :
+	- sử dụng phép sort để chọn lựa greedy tốt nhất
+	- bắt đầu từ 0
+	- ở mỗi bước chọn local optimal solution ( không phải điều chỉnh ) để đạt global optimal

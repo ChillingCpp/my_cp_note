@@ -1,0 +1,21 @@
+
+- tìm kiếm nhị phân trên miền nghiệm $[l, r]$
+- Điều kiện : công thức lập hàm số phải có tính đơn điệu ( chỉ có đồng biến hoặc nghịch biến ), cực trị không có hoặc có ở vị trí bound L hoặc R
+- Các dạng : 
+	- Hàm số nguyên thủy ( ví dụ :  f(x) = 3x + 1 )
+	- công thức hàm có liên quan đến mảng
+		- Ví dụ: $cnt(x, k) = (a_{i} + a_{i+1} +...+ a_{n}) * x <= k$
+		- các dạng công thức có mảng thường sẽ liên quan tới 1 rằng buộc nào đó (ví dụ rằng buộc <= k như ví dụ trên )
+		- giả sử giá trị tối ưu là x và ta đã có lập hàm số cho bài toán thì ta cần xét nghiệm $x_{0}$ < x và   $x_{0}$ > x để xem nó có điều kiện gì đặc biệt tạo ra tính đơn điệu. 
+		- Nếu như hàm số có 1 cực trị thì dùng [[Ternary search]] còn có nhiều hơn 1 cực trị thì xét tới phương án khác.
+	- Dạng tìm max min :
+		- nếu là max : cho f(x) <= k. khi đó max(f(x)) = k
+		- nếu là min : cho f(x) >= k, khi đó min(f(x)) = k
+	- Dạng tìm max(min(....)) hoặc min(max(....))
+	- Dạng Kth element
+		- Dạng bài này khi mà k sorted set có size $n_{i}$ và $\sum_{i = 1}^{k} n_{i}$ quá lớn không thể chứa trong 1 mảng  
+		- Khi x là kth element, ta không cần biết k-1 element trước đó và n - k element còn lại sắp xếp như nào, ta chỉ cần biết có k-1 phần tử <= x ( dùng phương pháp đếm để tính toán )
+		- Các set thường tuân theo 1 dãy số có quy luật như cấp số cộng, cấp số nhân
+		- Ví dụ : [Multiplication table](https://cses.fi/problemset/task/2422), [CF 1996F](https://codeforces.com/contest/1996/problem/F)
+		- Hoặc tuân theo 1 phương pháp khác như [Kth sum](https://codeforces.com/edu/course/2/lesson/6/5/practice/contest/285084/problem/C) ( nguyên lí two sum )
+	- Sử dụng quy hoạch động cho hàm check
