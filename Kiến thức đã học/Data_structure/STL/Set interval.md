@@ -11,26 +11,15 @@
 ###  3. Cần **split + merge động**
 
 - truy vấn có thể:
-    - cắt đoạn
+    - cắt/chia đoạn
     - gộp lại
     - thay đổi nhiều lần    
 
-📌 Nếu **chỉ xóa một lần** → DSU next đủ  
+📌 Nếu **chỉ xóa một lần** → [[DSU jump pointer]]
 📌 Nếu **xóa – tạo lại – đổi qua đổi lại** → set interval
 
-### ✅ 4. Phần tử **có thể bị xử lý lại**
-
-Đây là ranh giới lớn nhất với DSU next.
-
-📌 Nếu phần tử:
-- đổi trạng thái nhiều lần
-- quay lại trạng thái cũ
-
-→ **bắt buộc set interval**
-
----
-
-### ✅ 5. Không yêu cầu truy vấn “bên trong đoạn” quá phức tạp
+###  4. Phần tử **có thể bị xử lý lại nhiều lần** 
+###  5. Không yêu cầu truy vấn “bên trong đoạn” quá phức tạp
 
 Set interval mạnh về:
 
