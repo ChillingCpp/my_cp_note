@@ -28,7 +28,7 @@
 | **Grid 2D**           | Quét hàng / cột              | Đơn điệu theo 1 chiều               | Không xử lý hình chữ nhật động |
 | **Nhiều tập độc lập** | Mỗi tập 1 set                | Trạng thái độc lập                  | Ví dụ: mỗi row 1 set           |
 
-# Những trường hợp KHÔNG nên dùng set interval
+# Những trường hợp KHÔNG nên dùng Set Dynamic interval
 | Trường hợp                 | Lý do                     |
 | -------------------------- | ------------------------- |
 | One-shot (xử lý xong bỏ)   | DSU next nhanh hơn        |

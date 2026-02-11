@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kiến thức đã học/Data_structure/STL/Set/Set interval nâng cao.md",
+                "file": "Kiến thức đã học/Data_structure/STL/Deque.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Set interval nâng cao"
+              "title": "Deque"
             }
           }
         ]
@@ -174,16 +174,16 @@
   },
   "active": "76ac6b1ea3dbd05c",
   "lastOpenFiles": [
-    "Kiến thức đã học/Data_structure/STL/Deque.md",
-    "Kiến thức đã học/Data_structure/STL/Prefix or suffix Arrays.md",
     "Kiến thức đã học/Data_structure/STL/Neighbor-linked array ~ DSU.md",
+    "Kiến thức đã học/Data_structure/STL/Prefix or suffix Arrays.md",
+    "Kiến thức đã học/Data_structure/STL/Set/Set interval nâng cao.md",
+    "Kiến thức đã học/Data_structure/STL/Deque.md",
     "Kiến thức đã học/Data_structure/STL/Queue.md",
     "Kiến thức đã học/Data_structure/STL/Stack.md",
     "Kiến thức đã học/Data_structure/STL/Set Map Cơ Bản.md",
     "Kiến thức đã học/Data_structure/STL/Map/Map cơ bản.md",
     "Kiến thức đã học/Data_structure/STL/Set/Set cơ bản.md",
     "Kiến thức đã học/Data_structure/STL/Map",
-    "Kiến thức đã học/Data_structure/STL/Set/Set interval nâng cao.md",
     "Kiến thức đã học/Data_structure/STL/Set",
     "Lịch học cho contest sắp tới.md",
     "Competitive Programming 4.pdf",
