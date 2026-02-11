@@ -1,23 +1,24 @@
 
 
 - 1 số bài toán liên quan tới interval có thể giải quyết bằng set
-	- ví dụ : tìm max số lượng interval giao nhau tại 1 điểm, các interval không có thay đổi 
--  Có thể áp đặt **một thứ tự tuyến tính**
-	- Thứ tự **không cần là tự nhiên**, chỉ cần :
-	    - so sánh được
-	    - duyệt được bằng `lower_bound`
-- Trạng thái **đồng nhất trên đoạn**
-	- nhiều phần tử liên tiếp **có cùng trạng thái logic**
-	- bạn có thể gộp chúng thành `[l, r]`
--  Cần **split + merge động nhiều lần**
-	- truy vấn có thể :
-	    - cắt/chia đoạn
-	    - gộp lại
-	    - thay đổi
--  Phần tử **có thể bị xử lý lại nhiều lần** 
--  Kết hợp với lazy segment tree nếu yêu cầu update giá trị trong interval $[l, r]$
+	- static interval : các interval không có sự thay đổi
+		- ví dụ : tìm max số lượng interval giao nhau tại 1 điểm
+	- Dynamic interval :
+		- Thứ tự **không cần là tự nhiên**, chỉ cần :
+		    - so sánh được
+		    - duyệt được bằng `lower_bound`
+		- Trạng thái **đồng nhất trên đoạn**
+			- nhiều phần tử liên tiếp **có cùng trạng thái logic**
+			- bạn có thể gộp chúng thành `[l, r]`
+		-  Cần **split + merge động nhiều lần**
+			- truy vấn có thể :
+			    - cắt/chia đoạn
+			    - gộp lại
+			    - thay đổi
+		-  Phần tử **có thể bị xử lý lại nhiều lần** 
+		-  Kết hợp với lazy segment tree nếu yêu cầu update giá trị trong interval $[l, r]$
 
-# Bảng tóm tắt: Set interval trên các cấu trúc khác nhau
+# Set interval trên các cấu trúc khác nhau
 | Cấu trúc gốc          | Linearization                | Set interval dùng khi               | Ghi chú                        |
 | --------------------- | ---------------------------- | ----------------------------------- | ------------------------------ |
 | **Mảng 1D**           | Index tự nhiên               | Luôn dùng được                      | Case chuẩn                     |
