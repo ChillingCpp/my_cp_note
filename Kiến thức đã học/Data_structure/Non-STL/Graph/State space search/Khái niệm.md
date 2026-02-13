@@ -1,5 +1,6 @@
 
 
+
 - State Space Search là thuật toán tham lam trên đồ thị sử dụng thuật toán Djikstra/BFS, lan truyền như DP nhưng chỉ lấy tốt nhất và không brute force
 - Cách hoạt động : 
 	- Định nghĩa trạng thái tương tự DP và trạng thái đó phải lan truyền được
