@@ -5,5 +5,18 @@
 - SPFA
 	- nếu relax $cnt[v] > n$ thì ta biết được có 1 hành trình dạng : 1 -> cycle -> v
 	- cách tìm negative cycle từ s ->t ( s và t cố định được đề bài cho trước )
-		- sau khi relax $cnt[v] > n$ thì sẽ chưa dừng, gán $cycle[v] = true$, cho relax tiếp cho tới khi $cnt[v]> n +5$ thì dừng
-		- lan truyền $cycle[v] \; |= cycle[u]$ khi $d[v] > d[u] + w$
+		- sau khi relax $cnt[v] > n$ thì sẽ chưa dừng, gán $cycle[v] = true$, cho relax tiếp cho tới khi $cnt[v]> n +5$
+		- Code mẫu :
+		 - ```
+		   for (auto [v, w] : a[u])
+		   {
+				cycle[v] |= cycle[u];
+				if (cycle[v])
+					push(v);
+				else if (dist[v] < dist[u] + w)
+					dist[v] = dist[u] + w, push(v);
+				if (pcycle)
+					break;
+	    	}
+		  ```
+		
