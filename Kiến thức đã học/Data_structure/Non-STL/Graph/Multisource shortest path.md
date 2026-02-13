@@ -11,11 +11,13 @@
 	- Khoảng cách đến nguồn bất kì gần nhất, không cần biết là nguồn nào
 		- $dist[u]$ = khoảng cách từ u đến source gần nhất
 	- flood fill từ nhiều điểm
+	- nearest special node :
+		- tìm 1 node gần nhất với 1 node trong tập node đặc biệt
 	-  Kiểm tra khả thi
 		- Có tồn tại đường đi từ **bất kỳ nguồn nào** đến đỉnh t  : `dist[t] != INF`
 		- Kiểm tra 
-	- (4) Reverse directed graph trick 
-		- Node nào có thể đi tới một node đặc biệt : đảo chiều cạnh rồi như **kiểm tra khả thi**
+	- Reverse directed graph trick 
+		- đảo chiều cạnh
 	- Multi-source + 0-1 BFS
 	-  Multi-source trên DAG
 		- topo sort và DP trên DAG
