@@ -11,6 +11,6 @@
 	- Chỉ lan truyền từ u -> v nếu $state[u].size() < k$ 
 	- Khi lan truyền thì ta cần 2 điều kiện :
 		- gọi $state(u)$ là trạng thái hiện tại của u khi pop ra từ heap
-		- gọi $origin(u)
+		- gọi $state(u, v)$ là trạng thái chuyển trực tiếp của u -> v ban đầu 
 		- nếu $state[v].size() < k$ thì push vào
-		- còn nếu $state[v].size() == k && state[v].top() not optimal than combine(state(u), original[$ 
+		- còn nếu $state[v].size() == k \; and \; state[v].top() \; not \; optimal\; than \; combine(state(u), original(u, v))$  thì ta thay thế $state[v].top()$ bằng ....
