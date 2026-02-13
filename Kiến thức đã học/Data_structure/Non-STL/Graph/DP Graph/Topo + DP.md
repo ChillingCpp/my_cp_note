@@ -2,5 +2,10 @@
 - Chỉ áp dụng cho đồ thị có hướng
 - DP + topo sort
 	- nếu graph là DAG thì có thể sử dụng topo sort
+		- 
 	- nếu graph không là DAG thì có thể sử dụng condensation graph nhưng cần phải thỏa mãn tính chất sau :
 		- bài toán cho phép lặp đỉnh, lặp đỉnh thì chỉ lấy giá trị của lần đầu tiên tới đỉnh đó
+	- xây dựng condensation graph :
+		- tìm SCC và đánh số cmp bằng tarjan
+		- nếu có cạnh (u, v) thì nối $(cmp[u], cmp[v])$ lại với nhau, đồng thời cạnh   $(cmp[u], cmp[v])$ phải độc nhất, sử dụng set để kiểm tra
+		- sau đó sử dụng topo sort và chạy DP
