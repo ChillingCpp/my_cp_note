@@ -6,7 +6,9 @@
 		- gọi $val[u]$ là giá trị cho đỉnh u
 		- gọi $val(u,v)$ là giá trị cho cạnh(u, v)
 		- gọi $dp[u]$ là dp tại node u
-		- công thức chung : $dp[v] = compare(dp[v], combine(dp[u], val[u] || val(u, v)))$
+		- công thức tìm đường di tối ưu : $dp[v] = compare(dp[v], combine(dp[u], val[u] \; || \; val(u, v)))$
+		- công thức đếm số đường đi  : 
+		-  $dp[v] = combine(dp[v], combine(dp[u], val[u] \; || \; val(u, v)))$
 	- nếu graph không là DAG thì có thể sử dụng condensation graph nhưng cần phải thỏa mãn tính chất sau :
 		- bài toán cho phép lặp đỉnh, lặp đỉnh thì chỉ lấy giá trị của lần đầu tiên tới đỉnh đó
 	- xây dựng condensation graph :
