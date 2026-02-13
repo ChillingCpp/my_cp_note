@@ -13,4 +13,5 @@
 		- gọi $state(u)$ là trạng thái hiện tại của u khi pop ra từ heap
 		- gọi $state(u, v)$ là trạng thái chuyển trực tiếp của u -> v ban đầu 
 		- nếu $state[v].size() < k$ thì push vào
-		- còn nếu $state[v].size() == k \; and \; state[v].top() \; not \; optimal\; than \; combine(state(u), original(u, v))$  thì ta thay thế $state[v].top()$ bằng ....
+		- còn nếu $state[v].size() == k \; and \; state[v].top()$ not optimal than $combine(state(u), original(u, v))$
+			- thay thế  $state[v].top()$ thành $combine(state(u), original(u, v))$
