@@ -2,7 +2,11 @@
 - Chỉ áp dụng cho đồ thị có hướng
 - DP + topo sort
 	- nếu graph là DAG thì có thể sử dụng topo sort
-		- 
+		- DFS xong lấy được thứ tự ngược, duyệt ngược 
+		- gọi $val[u]$ là giá trị cho đỉnh u
+		- gọi $val(u,v)$ là giá trị cho cạnh(u, v)
+		- gọi $dp[u]$ là dp tại node u
+		- công thức chung : $dp[v] = compare(dp[v], combine(dp[u], val[u] || val(u, v)))$
 	- nếu graph không là DAG thì có thể sử dụng condensation graph nhưng cần phải thỏa mãn tính chất sau :
 		- bài toán cho phép lặp đỉnh, lặp đỉnh thì chỉ lấy giá trị của lần đầu tiên tới đỉnh đó
 	- xây dựng condensation graph :
