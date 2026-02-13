@@ -4,6 +4,7 @@
 - Cách hoạt động : 
 	- Định nghĩa trạng thái tương tự DP và trạng thái đó phải lan truyền được
 	- Mỗi Node chứa trạng thái $(u, state1, state2,...)$ với các rằng buộc khác nhau
+	- Duy trì ```vector<Node> state(n)``` 
 	- Khi duyệt BFS/Dijstra thì state được pop ra từ heap/queue thì đó là state tốt nhất hiện tại và ta chỉ được phép dùng state đó để lan truyền
 	- Sau đó sử dụng thuật toán để lan truyền thông qua duyệt ```for auto v in a[u]``` 
 - Sử dụng khi :

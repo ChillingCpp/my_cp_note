@@ -1,4 +1,6 @@
 
+
+- Dựa trên [[Khái niệm]]
 - Multi-source không phải thuật toán mới.
 	- Khởi tạo nhiều node có `dist = 0`, push các node đó vào queue/heap, sau đó chạy BFS / Dijkstra như bình thường.
 - Tương đương về mặt lý thuyết với:
