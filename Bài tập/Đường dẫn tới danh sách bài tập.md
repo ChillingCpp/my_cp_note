@@ -7,14 +7,20 @@
 	- String processing
 	- greedy
 	- Graph
+		- Topo
 		-  SCC
 		- Bridge, articulation point
-		- block cut tree, bridge edge tree
+		- condensation graph, block cut tree, bridge edge tree
 		- MST kruskal : tương tự tree
+		- Dijkstra/BFS
+		- SPFA/ floyd
 	- Dp
 		- digit dp
 		- bitmask dp
 		- dp on tree
 		- .....
-
--  https://codeforces.com/blog/entry/55274
+	- Math, random
+- Nguồn:
+	-  https://codeforces.com/blog/entry/55274
+	- https://youkn0wwho.academy/topic-list
+		- 
