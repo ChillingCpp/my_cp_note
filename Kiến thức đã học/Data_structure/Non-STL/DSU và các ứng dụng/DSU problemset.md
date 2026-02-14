@@ -60,14 +60,18 @@
 - http://codeforces.com/contest/876/problem/D
 - http://codeforces.com/contest/875/problem/F
 
-## Entry level (gợi ý nhanh)
-- Kattis `unionfind`
-- UVa 01197 `The Suspects`
-- UVa 01329 `Corporative Network`
-- UVa 10685 `Nature`
-- Kattis `control`
-- Kattis `ladice`
-- Kattis `almostunionfind` (UVa 11987)
+
+## Entry Level: 
+- Kattis - unionfind * (basic UFDS; similar to UVa 00793) 2.
+- UVa 01197 - The Suspects * (LA 2817 - Kaohsiung03; CCs) 3.
+- UVa 01329 - Corporative Network * (LA 3027 - SouthEasternEurope04; interesting UFDS variant; modify the union and find routine) 4. 
+- UVa 10685 - Nature * (find the set with the largest item) 5. 
+- Kattis - control * (LA 7480 - Singapore15; simulation of UFDS; size of set; number of disjoint sets) 6. 
+- Kattis - ladice * (size of set; decrement one per usage) 7. 
+- Kattis - almostunionfind * (new operation: move; idea: do not destroy the parent array structure; also available at UVa 11987 - Almost Union-Find) 
+- Extra UVa: 00793, 10158, 10507, 10583, 10608, 11690. 
+- Extra Kattis: chatter, forests, more10, swaptosort, tildes, virtualfriends.
+
 
 ## Ghi chú
 - Truy vấn có thể là strictly online hoặc offline.
