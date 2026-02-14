@@ -1,15 +1,19 @@
+# DP Rerooting
 
+## Mục tiêu
+- Tính đáp án cho mọi node khi node đó được chọn làm root.
 
-- Dp rerooting là dạng dp dùng khi phải tính đáp án cho toàn bộ n node khi chúng làm root
-- Dp rerooting có 2 quá trình sau :
-	- dfs lần 1 để tính kết quả cho node 1
-	- dfs lần 2 là kỹ thuật chuyển gốc :
-		- thường thì trước vòng lặp dfs $ans[u] = dp[u]$
-		- trong vòng lặp dfs xảy ra các quá trình sau với 2 node u và v:
-			 - backup() : lưu lại trạng thái của node u và v
-			 - process() : thực hiện quá trình chuyển root :
-				- exclude(u, v) : loại bỏ cây con gốc v ra khỏi root u ( 1 số bài không có đoạn này )
-				- include(v, u) : tính toán lại giá trị khi v là root và cây con gốc u là cây con của v với u nối trực tiếp với v
-			- dfs2(v, u) : gọi đệ quy dfs của reroot
-			- restore() : phục hồi lại giá trị DP cho node u và node v, gán lại u là root và v là cây con gốc u.
-				
+## Quy trình 2 DFS
+1. `dfs1`: tính thông tin cục bộ/subtree khi root cố định (thường là 1).
+2. `dfs2`: chuyển gốc từ `u` sang từng con `v` để suy ra đáp án toàn cục.
+
+## Khung thao tác khi chuyển `u -> v`
+1. `backup(u, v)`.
+2. `exclude(u, v)` nếu cần loại ảnh hưởng cây con `v` khỏi `u`. ( có thể không cần )
+3. `include(v, u)` để thêm ảnh hưởng phần còn lại vào `v`.
+4. Gọi `dfs2(v, u)`.
+5. `restore(u, v)`.
+
+## Lưu ý
+- Tránh sửa trực tiếp rồi quên hoàn tác.
+- Tách rõ hàm merge/exclude để dễ debug.

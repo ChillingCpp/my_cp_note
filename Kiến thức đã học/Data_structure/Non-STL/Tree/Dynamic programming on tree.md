@@ -1,6 +1,18 @@
+# Dynamic Programming on Tree
 
-- Dynamic programming trên cây bao gồm 2 loại tính chất sau đây : 
-	- preorder : tính trước khi gọi đệ quy hoặc vòng lặp dfs
-		- sử dụng khi kết quả của node con có thể tính ngay lập tức hoặc phụ thuộc node cha
-	- postorder : tính sau khi gọi đệ quy dfs
-		- sử dụng khi node cha phụ thuộc vào cây con gốc cha
+## Hai kiểu chuyển trạng thái chính
+### 1. Preorder DP
+- Tính trước khi đi xuống con.
+- Dùng khi con phụ thuộc trực tiếp thông tin từ cha.
+
+### 2. Postorder DP
+- Tính sau khi xử lý xong các con.
+- Dùng khi cha cần tổng hợp từ toàn bộ subtree con.
+
+## Quy tắc chọn nhanh
+- Cần thông tin từ tổ tiên -> con: nghĩ preorder.
+- Cần thông tin từ con -> cha: nghĩ postorder.
+- Cần cả hai chiều cho mọi root: nghĩ thêm rerooting.
+
+## Liên kết
+- [[DP rerooting]]

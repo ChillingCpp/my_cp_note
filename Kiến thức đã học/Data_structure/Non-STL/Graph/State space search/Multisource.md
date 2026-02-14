@@ -1,33 +1,25 @@
+# Multi-source Search
 
+## Ý tưởng
+- Khởi tạo nhiều nguồn cùng lúc với khoảng cách 0, sau đó chạy BFS/Dijkstra như single-source.
 
-- Dựa trên [[Khái niệm]]
-- Multi-source không phải thuật toán mới.
-	- Khởi tạo nhiều node có `dist = 0`, push các node đó vào queue/heap, sau đó chạy BFS / Dijkstra như bình thường.
-- Tương đương về mặt lý thuyết với:
-	- Thêm một **super source S**
-	- Nối `S → s_i` với trọng số 0
-	- Chạy single-source từ S
+## Tương đương lý thuyết
+- Thêm super source `S`.
+- Nối `S -> s_i` trọng số 0 cho mọi nguồn `s_i`.
 
-- Độ phức tạp : O(n) ( BFS ) hoặc O(n log n) ( DIJKSTRA )
-- Sử dụng khi :
-	- Khoảng cách đến nguồn bất kì gần nhất, không cần biết là nguồn nào
-		- $dist[u]$ = khoảng cách từ u đến source gần nhất
-	- flood fill từ nhiều điểm
-	- nearest special node :
-		- tìm 1 node gần nhất với 1 node trong tập node đặc biệt
-	-  Kiểm tra khả thi
-		- Có tồn tại đường đi từ **bất kỳ nguồn nào** đến đỉnh t  : `dist[t] != INF`
-		- Kiểm tra 
-	- Reverse directed graph trick 
-		- đảo chiều cạnh
-	- Multi-source + 0-1 BFS
-	-  Multi-source trên DAG
-		- topo sort và DP trên DAG
-	-  Multi-layer graph (Graph trạng thái)
-		-  Node dạng `(u, state)`
-	-  Multi-source + Meet-in-the-middle trên graph
-		- Có 2 tập Node A và B
-		- chạy multisource từ tập A và tập B thu được dist1 và dist2
-		- đường đi tối ưu giữa 2 tập node là $optimize(current, combine(dist1[u],dist2[u]))$ với mọi u từ 1 -> n
-	-  Tách bài toán về nearest special node
-		- biến đổi bài toán thành nearest special node rồi sử dụng cho các kĩ thuật khác như : greedy, dp, binary search,....
+## Sử dụng khi
+- có nhiều nguồn, chỉ cần biết có tồn tại nguồn bất kì.
+- trạng thái tốt nhất từ 1 đỉnh tới 1 nguồn bất kì
+- Flood fill từ nhiều điểm.
+- Nearest special node.
+- Kiểm tra tồn tại đường đi từ tập nguồn.
+
+## Biến thể hay gặp
+- reverse directed graph
+- Multi-source + 0-1 BFS.
+- Multi-source trên DAG.
+- Chạy từ 2 tập nguồn để meet-in-the-middle trên graph.
+
+## Độ phức tạp
+- BFS: `O(n + m)`.
+- Dijkstra: `O((n + m) log n)`.

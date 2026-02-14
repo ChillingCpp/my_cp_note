@@ -1,17 +1,17 @@
+# Topo + DP trên đồ thị
 
-- Chỉ áp dụng cho đồ thị có hướng
-- DP + topo sort
-	- nếu graph là DAG thì có thể sử dụng topo sort
-		- DFS xong lấy được thứ tự ngược, duyệt ngược 
-		- gọi $val[u]$ là giá trị cho đỉnh u
-		- gọi $val(u,v)$ là giá trị cho cạnh(u, v)
-		- gọi $dp[u]$ là dp tại node u
-		- công thức tìm đường di tối ưu : $dp[v] = compare(dp[v], combine(dp[u], val[u] \; || \; val(u, v)))$
-		- công thức đếm số đường đi  : 
-		-  $dp[v] = combine(dp[v], combine(dp[u], val[u] \; || \; val(u, v)))$
-	- nếu graph không là DAG thì có thể sử dụng condensation graph nhưng cần phải thỏa mãn tính chất sau :
-		- bài toán cho phép lặp đỉnh, lặp đỉnh thì chỉ lấy giá trị của lần đầu tiên tới đỉnh đó
-	- xây dựng condensation graph :
-		- tìm SCC và đánh số cmp bằng tarjan
-		- nếu có cạnh (u, v) thì nối $(cmp[u], cmp[v])$ lại với nhau, đồng thời cạnh   $(cmp[u], cmp[v])$ phải độc nhất, sử dụng set để kiểm tra
-		- sau đó sử dụng topo sort và chạy DP
+## Khi dùng
+- Đồ thị có hướng không chu trình (DAG).
+- Cần tối ưu hoặc đếm số cách trên đường đi.
+
+## Ý tưởng
+1. Topological sort.
+2. Duyệt theo topo để chuyển trạng thái `u -> v`.
+3. Cập nhật `dp[v]` từ `dp[u]`.
+
+## Công thức khung
+- Tối ưu: `dp[v] = best(dp[v], combine(dp[u], edge(u, v)))`.
+- Đếm cách: `dp[v] += ways_from_u` (có mod nếu đề yêu cầu).
+
+## Nếu graph có chu trình
+- [[condensation graph]]

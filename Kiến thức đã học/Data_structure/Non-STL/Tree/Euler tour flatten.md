@@ -1,28 +1,29 @@
+# Euler Tour + Flatten Tree
 
-- 1 số mảng có trong bài viết này :
-	- $d[u]$ : độ sâu của cây
-	- $in[u]$ : thời gian đầu tiên đến node u khi chạy euler tour
-	- $out[u]$ : 
-		- Euler tour loại 1 và 2 : thời điểm cuối cùng mà node u được process
-		- Euler tour loại 3 : thời điểm mà node cuối cùng của cây con gốc u được process 
-	- $f[timer]$ : flatten cây, giá trị của node u khi timer  = $in[u]$ || $out[u]$ 
-	- st : cây phân đoạn truy vấn giá trị
+## Mảng thường dùng
+- `in[u]`: thời điểm vào node `u`.
+- $out[u]$ : 
+	- Euler tour loại 1 và 2 : thời điểm cuối cùng mà node u được process
+	- Euler tour loại 3 : thời điểm mà node cuối cùng của cây con gốc u 
+- `depth[u]`: độ sâu.
+- `flat[t]`: node/giá trị tại thời điểm `t`.
 
-- Euler tour có 3 loại :
-	- Euler tour hoàn chỉnh kích thước  $2*n-1$ : dùng cho RMQ, 1 node chứa LCA và các giá trị đại diện, đồng thời các phép toán phải thỏa mãn tính chất của Segment tree
-	- Euler tour $2*n$ : mỗi node xuất hiện đúng 2 lần, sử dụng cho thuật toán Mo trên cây
-		- node thấy lần đầu : on
-		- node thấy lần thứ 2 : off ( node đó không ở trong path u -> v )
-		- biến đổi query như sau :
-			- nếu lca(u, v) = u || v thì sẽ biến đổi thành đoạn $[in[u], in[v]] \;  với \; h[u] < h[v]$  
-			- còn không thì là  $[out[u], in[v]] + lca(u, v)$  
-	- Euler tour n : mỗi node xuất hiện đúng 1 lần:
-		- $in[u] = ++timer \; và \; out[u] = timer$ , lúc này $out[u]$ sẽ chỉ tới node cuối cùng trong cây con gốc u. 
-		- Dùng để query subtree : $[in[u], out[u]]$
-		- Dùng để query path từ root -> u, có/không có node update :
-			- $segin([1, in[u]]) - segout([2, in[u]-1])$  
-				- segin build từ mảng flatten : $f[in[u]] = a[i]$
-				- segout build từ mảng flatten  : $f[out[u]] -= a[i]$
-			- ta nhận ra ta có thể gộp 2 cây phân đoạn vào làm 1 cây như sau :
-				- $st[in[u] + n] += val[u]; \; st[out[u] + n + 1] -= val[u]$ : prefix difference
-			- Để làm được như này thì các phép toán phải nghịch đảo hay loại trừ được với nhau
+## 3 biến thể Euler tour
+### 1. Euler đầy đủ `2n-1`
+- Dùng cho RMQ/LCA theo chuỗi Euler depth.
+
+### 2. Euler `2n` (mỗi node xuất hiện 2 lần)
+- Thường dùng cho Mo trên cây.
+- Query path `u-v` được đổi về đoạn trên mảng Euler + xử lý riêng LCA.
+
+### 3. Euler `n` (mỗi node 1 lần)
+- Subtree `u` thành đoạn liên tiếp `[in[u], out[u]]`.
+- Rất hợp cho subtree query/update bằng Fenwick/Segment Tree.
+
+## Ứng dụng
+- Subtree sum/min/max.
+- Path root -> u bằng kỹ thuật prefix/difference trên mảng flatten.
+
+## Lưu ý
+- Chốt rõ loại Euler trước khi viết công thức `in/out`.
+- Với path query bất kỳ `u-v`, thường cần LCA + tách đoạn đúng cách.

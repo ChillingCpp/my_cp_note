@@ -1,12 +1,15 @@
+# Positive / Negative Cycle
 
+## Mục tiêu
+- Phát hiện chu trình âm (hoặc dương nếu đổi dấu).
 
-- bài viết này cho negative cycle, positive cycle tương tự chỉ đổi dấu > thành <
-- Sử dụng SPFA hoặc floyd warshall
-- SPFA
-	- nếu relax $cnt[v] > n$ thì ta biết được có 1 hành trình dạng : 1 -> cycle -> v
-	- cách tìm negative cycle từ s ->t ( s và t cố định được đề bài cho trước )
-		- sau khi relax $cnt[v] > n$ thì sẽ chưa dừng, gán $cycle[v] = true$, cho relax  tới $cnt[v]> n +5$ 
-		- việc lan truyền cycle thực hiện ưu tiên trước và không đồng thời với $d[v] > d[u] + w$ 
-		- nếu $cycle[t]$ = 1 thi từ s -> t có 1 negative cycle
-	- Cách tìm random negative cycle :
-		- sử dụng [[Kĩ thuật traceback]] để biết cách làm. thực hiện inline ở SPFA và cho relax tới $cnt[v]> n +5$ để kiếm được cycle
+## Cách 1: SPFA
+- Nếu một node bị relax quá `n` lần, có khả năng dính chu trình âm.
+- Để lan truyền ảnh hưởng cycle từ nguồn `s` đến đích `t`, tiếp tục đẩy relax thêm 5 vòng và đánh dấu node chịu ảnh hưởng, việc lan truyền ảnh hưởng cycle sẽ bỏ qua block if $d[u] > d[v] + w$, có cấu trúc là sử dụng block if $d[u] > d[v] + w$
+
+## Cách 2: Floyd-Warshall
+- Sau khi chạy Floyd, nếu `dist[i][i] < 0` thì có chu trình âm đi qua `i`.
+
+## Ghi chú
+- Positive cycle tương tự negative cycle nếu đổi quy ước dấu khi tối ưu.
+- Khi cần truy vết cycle cụ thể, dùng mảng parent (traceback).
