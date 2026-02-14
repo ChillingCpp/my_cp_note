@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bài tập/Đường dẫn tới danh sách bài tập.md",
+                "file": "Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Đường dẫn tới danh sách bài tập"
+              "title": "Topological sort"
             }
           }
         ]
@@ -174,12 +174,15 @@
   },
   "active": "76ac6b1ea3dbd05c",
   "lastOpenFiles": [
+    "Kiến thức đã học/Data_structure/Non-STL/Graph/Mô hình hóa bài toán thành graph.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Graph/DP Graph/Topo + DP.md",
+    "Bài tập/Đường dẫn tới danh sách bài tập.md",
     "Bài tập/MST Kruskal bài tập.md",
     "Lịch học cho contest sắp tới.md",
     "Danh sách các thuật toán đã học.md",
     "Competitive programming roadmap.pdf",
     "nhận diện bài toán.md",
-    "Bài tập/Đường dẫn tới danh sách bài tập.md",
     "Bài tập/DSU problemset.md",
     "Bài tập/Untitled.md",
     "Bài tập/Problemset.md",
@@ -190,10 +193,8 @@
     "Kiến thức đã học/Greedy Technique/Greedy + Priority Queue.md",
     "Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting và DP.md",
     "Kiến thức đã học/Data_structure/Non-STL/Tree/Euler tour flatten.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Graph/DP Graph/Topo + DP.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/Positive or Negative cycle.md",
     "Kiến thức đã học/Algorithm/Searching/Binary_search/Parallel Binary Search.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Graph/Untitled.md",
     "Pattern recognize.png",
     "my token.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/State space search/Single source one best state.md",
