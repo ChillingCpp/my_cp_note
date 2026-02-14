@@ -1,5 +1,5 @@
 
 ## Đường dẫn :
-- [[MST Kruskal]]
+- [[MST Kruskal bài tập]]
 
 

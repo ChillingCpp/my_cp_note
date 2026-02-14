@@ -1,4 +1,3 @@
-# DSU Problemset
 
 ## Gợi ý lộ trình
 1. DSU cơ bản (`merge/same`).
