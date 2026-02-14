@@ -1,0 +1,5 @@
+
+## Đường dẫn :
+- [[MST Kruskal]]
+
+
