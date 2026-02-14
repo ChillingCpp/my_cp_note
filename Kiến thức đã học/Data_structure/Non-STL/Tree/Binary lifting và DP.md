@@ -2,7 +2,7 @@
 
 
 - $up[u] = up[up[u][i-1]][i-1]$
-- jump :  $if ((1 << i) & k) u = up[u][i]$
+- jump :  $if  \;(checkbit(i, k)\; u = up[u][i]$
 - $dp[u] = combine(dp[u][i-1], dp[up[u][i-1]][i-1])$
 	- hàm combine phải có tính chất kết hợp
 	- tính chất giao hoán có thể không cần : lưu (prefix, suffix), hash của string processing
