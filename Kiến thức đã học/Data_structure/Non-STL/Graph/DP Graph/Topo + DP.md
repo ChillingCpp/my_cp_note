@@ -16,7 +16,7 @@
 - Đếm cách: `dp[v] += ways_from_u` (có mod nếu đề yêu cầu).
 - Đếm số lượng topo thỏa mãn mỗi child chỉ có duy nhất 1 parent : 
 	- gọi $dp[u]$ là số hoán vị hợp lệ trong subtree, khởi tạo $dp[u]= 1$
-	$$dp[u] = \frac{S!}{\prod s_i!}  \cdot  \prod dp[v_i]   \pmod{10^9+7}$$
+	$$dp[u] = \frac{S_u!}{\prod s_i!}  \cdot  \prod dp[v_i]   \pmod{10^9+7}$$ với $S_u$ là size của subtree gốc u nhưng không bao gồm u
 	 - nếu có nhiều root $r_1,r_2,...r_i$ : $DP = \frac{R!}{\prod r_i!}  \cdot  \prod dp[r_i]   \pmod{10^9+7}$
 	 - [[Combinatorics and Probability]]
 	
