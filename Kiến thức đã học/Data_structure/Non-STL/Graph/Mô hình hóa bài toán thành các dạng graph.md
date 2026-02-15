@@ -41,13 +41,13 @@
 - Không trọng số hoặc trọng số đều nhau: BFS.
 - Trọng số `0/1`: 0-1 BFS.
 - Trọng số dương: Dijkstra.
-- Có cạnh âm: Bellman-Ford / SPFA (kèm phát hiện negative cycle).
-- Mọi cặp: Floyd-Warshall (n nhỏ) hoặc chạy nhiều lần SSSP.
+- trọng số âm: Bellman-Ford / SPFA (kèm phát hiện negative cycle).
+- Mọi cặp: Floyd-Warshall (n nhỏ) hoặc dùng johnson algorithm ( SPFA + Dijkstra ).
 - Đồ thị có hướng + phụ thuộc: Topological sort.
 - DAG + tối ưu/đếm: Topo + DP.
 - Cần thành phần liên thông mạnh: SCC + [[condensation graph]].
 - Cần cầu/cạnh khớp/điểm khớp: DFS low-link, có thể dựng [[Bridge_edge_tree]] / [[block_cut_tree]].
-- Cần cây khung tối ưu: MST (Kruskal/Prim).
+- Cần cây khung, chu trình đơn tối ưu: MST (Kruskal/Prim).
 
 ## 5) Checklist chống model sai
 - Cạnh có thật sự đối xứng không? Nếu không, phải dùng directed.
