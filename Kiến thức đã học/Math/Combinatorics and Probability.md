@@ -1,8 +1,8 @@
 # Combinatorics and Probability
 
 - số cách chèn 1 chuỗi a vào dãy S
-    -$ \[ \binom{abs(S)}{abs(a)} \]$
-    
+    -$ \[ \binom{abs(S)+ abs(a)}{abs(a)} \]$
+
 ## DP đếm cấu hình
 
 `dp[i]` = số cấu hình hợp lệ bên trong block `i`  
