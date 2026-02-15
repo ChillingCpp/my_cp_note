@@ -1,68 +1,26 @@
 # Combinatorics and Probability
 
-## 1. Định nghĩa trạng thái `dp[i]`
+## DP này đếm gì?
 
-Trong mô hình tổng quát (không phụ thuộc cây/đồ thị), giả sử cấu trúc được chia thành nhiều **block độc lập**.
+`dp[i]` = số cấu hình hợp lệ bên trong block `i`  
+`s_i` = kích thước block `i`
 
-Với mỗi block `i`:
+## Công thức gộp block (shuffle)
 
-- `s_i`: kích thước block `i`
-- `dp[i]`: số cấu hình hợp lệ **bên trong** block `i`
+Với các block độc lập `B_1..B_k`, đặt:
 
-Ta định nghĩa:
+`S = Σ s_i`
 
-```text
-dp[i] = số cấu hình hợp lệ bên trong block i
-```
+Số cách gộp:
 
-## 2. Khi gộp nhiều block lại
+`DP = (S! / Π s_i!) * Π dp[i]`
 
-Giả sử cần ghép `k` block: `B_1, B_2, ..., B_k`.
+Trong đó:
+- `Π dp[i]`: chọn cấu hình nội bộ từng block
+- `S! / Π s_i!`: trộn thứ tự phần tử giữa các block
 
-- Tổng kích thước:
+## Dạng đệ quy tổng quát
 
-```text
-S = Σ s_i
-```
+`dp[structure] = multinomial * Π dp[substructure]`
 
-Quá trình đếm gồm 2 phần độc lập:
-
-### 2.1. Chọn cấu hình nội bộ từng block
-
-```text
-Π dp[i]
-```
-
-### 2.2. Trộn thứ tự các block với nhau (shuffle)
-
-```text
-S! / (Π s_i!)
-```
-
-## 3. Transition tổng quát
-
-Kết hợp hai phần trên:
-
-```text
-DP = (S! / Π s_i!) * Π dp[i]
-```
-
-Ý nghĩa:
-
-- Đây là transition của phép **shuffle product** giữa các cấu trúc có thứ tự.
-- Không phải transition riêng cho cây; áp dụng được cho nhiều mô hình có thành phần độc lập.
-
-## 4. Dạng đệ quy tổng quát
-
-Nếu một cấu trúc được tạo bằng cách:
-
-- tách thành các thành phần con độc lập,
-- rồi gộp lại,
-
-thì có thể viết:
-
-```text
-dp[structure] = multinomial * Π dp[substructure]
-```
-
-Trong đó `multinomial` là hệ số tổ hợp khi trộn các thành phần con.
+`multinomial` là hệ số tổ hợp khi trộn các thành phần con độc lập.
