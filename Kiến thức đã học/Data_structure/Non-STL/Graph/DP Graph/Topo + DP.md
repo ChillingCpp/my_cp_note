@@ -14,6 +14,8 @@
 ## Công thức khung
 - Tối ưu: `dp[v] = best(dp[v], combine(dp[u], edge(u, v)))`.
 - Đếm cách: `dp[v] += ways_from_u` (có mod nếu đề yêu cầu).
-
+- Đếm số lượng topo thỏa mãn mỗi child chỉ có duy nhất 1 parent : 
+	- gọi $dp[u]$ là số hoán vị hợp lệ trong subtree, khởi tạo $dp[u]= 1$
+$$dp[u] = \frac{S!}{\prod s_i!}  \cdot  \prod dp[v_i]   \pmod{10^9+7}$$
 ## Nếu graph có chu trình
 - [[condensation graph]]
