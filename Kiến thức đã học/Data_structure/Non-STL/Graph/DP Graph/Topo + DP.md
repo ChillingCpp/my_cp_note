@@ -17,5 +17,6 @@
 - Đếm số lượng topo thỏa mãn mỗi child chỉ có duy nhất 1 parent : 
 	- gọi $dp[u]$ là số hoán vị hợp lệ trong subtree, khởi tạo $dp[u]= 1$
 $$dp[u] = \frac{S!}{\prod s_i!}  \cdot  \prod dp[v_i]   \pmod{10^9+7}$$
+	
 ## Nếu graph có chu trình
 - [[condensation graph]]
