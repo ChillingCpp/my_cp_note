@@ -79,6 +79,7 @@ Trong DP, điều này tương đương:
 	- Xác định được những dữ liệu cần thiết cho chuyển trạng thái thì định nghĩa đầy đủ trạng thái và xác định rõ công thức chuyển trạng thái.
 - Kiểm tra lại công thức
 	- Chứng minh mỗi bước không trùng/thiếu state
+	- Nếu định nghĩa trạng thái mà bị cycle dependency thì phải định nghĩa lại
 ### Nếu 1 trong 5 bước bị fail, quay về bước đầu tiên
 
 ## 4. Look back - nhìn lại bài toán
