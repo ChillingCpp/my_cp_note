@@ -4,9 +4,9 @@
 - Bản chất của Topological sort :
 	- Mọi thứ tự topo hợp lệ nếu và chỉ nếu với mọi cạnh u -> v thì u đứng trước v
 		- Nếu không tồn tại cạnh u -> v thì v có thể đứng trước u trong thứ tự topo
-		- chỉ tồn tại 1 thứ tự topo là độc nhất khi và chỉ khi có 1 đồ thị có n đỉnh và toàn bộ n đỉnh đó tạo thành 1 đường thẳng
 - 2 thuật toán cơ bản :
 	- DFS
 	- thuật toán Kahn
+		- Một DAG có topo duy nhất khi và chỉ khi: ở mọi bước của Kahn, luôn chỉ có **duy nhất 1 node có indegree = 0**
 - nếu như yêu cầu lexicographically order : 
-	- sử dụng thuật toán Kahn nhưng thay vì dùng queue thì dùng min-heap
+	- sử dụng thuật toán Kahn nhưng thay vì dùng queue thì dùng min-heap0000
