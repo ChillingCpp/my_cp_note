@@ -1,8 +1,10 @@
 
-
+- Chỉ áp dụng cho đồ thị có hướng
+- Dùng để kiểm tra cycle trong đồ thị có hướng
 - Bản chất của Topological sort :
 	- Mọi thứ tự topo hợp lệ nếu và chỉ nếu với mọi cạnh u -> v thì u đứng trước v
 		- Nếu không tồn tại cạnh u -> v thì v có thể đứng trước u trong thứ tự topo
+		- chỉ tồn tại 1 thứ tự topo là độc nhất khi và chỉ khi có 1 đồ thị có n đỉnh và toàn bộ n đỉnh đó tạo thành 1 đường thẳng
 - 2 thuật toán cơ bản :
 	- DFS
 	- thuật toán Kahn
