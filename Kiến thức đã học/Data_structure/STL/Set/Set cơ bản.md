@@ -1,5 +1,10 @@
+# Set cơ bản
 
-- Set
-	- được sử dụng để truy vấn/thêm/sửa  optimal solution ở mỗi bước vòng lặp, đồng thời bao gồm xóa đi 1 solution nào đó, các operation này chạy trong O(log n)
-	- hỗ trợ upper/lower bound tìm kiếm nhị phân trong mảng
-	- Dùng trong thuật toán tham lam
+## Mục tiêu
+- Lưu phần tử phân biệt có thứ tự.
+
+## Độ phức tạp
+- Insert/erase/find/lower_bound: `O(log n)`.
+
+## Lưu ý
+- Nếu cần lưu trùng dùng `multiset`.

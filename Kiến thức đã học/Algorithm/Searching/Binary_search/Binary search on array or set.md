@@ -1,6 +1,8 @@
+# Binary Search on Array or Set
 
-- Requirement : sorted array ( sorted by index or by element )
-- Lower bound
-	- leftmost element that >= x
-- Upper bound
-	- leftmost element that > x
+## Điều kiện
+- Dữ liệu có thứ tự.
+
+## Khái niệm
+- `lower_bound(x)`: phần tử đầu tiên `>= x`.
+- `upper_bound(x)`: phần tử đầu tiên `> x`.

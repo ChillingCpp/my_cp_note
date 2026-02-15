@@ -1,4 +1,9 @@
+# Queue
 
-- Tìm kiếm BFS, SPFA
-- sliding window, lưu trữ các đáp án với khoảng K ở đằng trước
-- Multiple pointers
+## Khi dùng
+- BFS.
+- Mô phỏng FIFO.
+- Sliding window cơ bản.
+
+## Độ phức tạp
+- `push/pop/front`: `O(1)`.

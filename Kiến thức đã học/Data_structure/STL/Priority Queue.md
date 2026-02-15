@@ -1,3 +1,11 @@
+# Priority Queue
 
-- Được sử dụng khi mà ở mỗi bước của vòng lặp muốn truy vấn/thêm/sửa ngay lập tức optimal solution trong O(log n), 
-- Được sử dụng nhiều nhất trong các thuật toán tham lam, giảm độ phức tạp của quy hoạch động
+## Mục tiêu
+- Lấy phần tử tốt nhất hiện tại nhanh.
+
+## Độ phức tạp
+- `push/pop`: `O(log n)`.
+- `top`: `O(1)`.
+
+## Khi dùng
+- Greedy, Dijkstra, top-k.

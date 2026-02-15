@@ -1,4 +1,8 @@
+# Kĩ thuật Traceback
 
-- Sử dụng khi yêu cầu construct optimal/non-optimal solution khi giải graph/dp/greedy
-- sử dụng  $parent[state(u)]$ để truy vết ngược lại
-- chỉ update   $parent[state(v)] = state(u)$ khi từ state(u) -> state(v) tối ưu hơn state(v) trước đó 
+## Mục tiêu
+- Truy vết lại lời giải từ trạng thái đích.
+
+## Nguyên tắc
+- Lưu `parent[next_state] = current_state` khi cập nhật tối ưu.
+- Đi ngược parent để dựng đáp án.

@@ -1,3 +1,10 @@
+# Ternary Search
 
+## Mục tiêu
+- Tìm cực trị của hàm unimodal.
 
-[[Ternary search on answer]]
+## Điều kiện
+- Hàm chỉ có một vùng cực trị.
+
+## Liên kết
+- [[Ternary search on answer]]

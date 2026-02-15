@@ -1,10 +1,9 @@
+# Spanning Tree và Spanning Forest
 
-## Span tree
-    - là 1 cây hoàn chỉnh trên đồ thị vô hướng hoàn toàn kết nối
-## Span forest
-    - là tập hợp các cây trong các component của đồ thị bị tách
-## Đường dẫn :
+## Định nghĩa
+- Spanning tree: cây bao trùm 1 component liên thông.
+- Spanning forest: tập các spanning tree của mọi component.
+
+## Liên kết
 - [[MST Kruskal bài tập]]
 - [[advance_span_tree_forest]]
-
-
