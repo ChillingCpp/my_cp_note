@@ -37,25 +37,6 @@
 - Cạnh: một phép chuyển hợp lệ giữa 2 trạng thái.
 - Dùng khi có ràng buộc như số lần dùng phép, parity, mask, số bước còn lại...
 
-## 4) Bản đồ chọn thuật toán nhanh
-- Không trọng số hoặc trọng số đều nhau: BFS.
-- Trọng số `0/1`: 0-1 BFS.
-- Trọng số dương: Dijkstra.
-- trọng số âm: Bellman-Ford / SPFA (kèm phát hiện negative cycle).
-- Mọi cặp: Floyd-Warshall (n nhỏ) hoặc dùng johnson algorithm ( SPFA + Dijkstra ).
-- Đồ thị có hướng + phụ thuộc: Topological sort.
-- DAG + tối ưu/đếm: Topo + DP.
-- Cần thành phần liên thông mạnh: SCC + [[condensation graph]].
-- Cần cầu/cạnh khớp/điểm khớp: DFS low-link, có thể dựng [[Bridge_edge_tree]] / [[block_cut_tree]].
-- Cần cây khung, chu trình đơn tối ưu: MST (Kruskal/Prim).
-
-## 5) Checklist chống model sai
-- Cạnh có thật sự đối xứng không? Nếu không, phải dùng directed.
-- Cost của node có cần chuyển thành cost cạnh không?
-- Một node gốc có đủ biểu diễn chưa, hay phải thêm state?
-- Có chu trình không? Nếu có, DP trực tiếp trên đồ thị thường sai.
-- Kích thước state có vượt bộ nhớ/thời gian không?
-
 ## 6) Liên kết note liên quan
 - [[Topological sort]]
 - [[Topo + DP]]
