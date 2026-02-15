@@ -7,7 +7,9 @@
 ## Ý tưởng
 1. Topological sort.
 2. Duyệt theo topo để chuyển trạng thái `u -> v`.
-3. Cập nhật `dp[v]` từ `dp[u]`.
+3. Có 2 hướng đi chuẩn : 
+	1. Cập nhật `dp[v]` từ `dp[u]`. ( từ cha xuống con )
+	2. Cập nhật `dp[u]` từ `dp[v]`. ( từ con lên cha )
 
 ## Công thức khung
 - Tối ưu: `dp[v] = best(dp[v], combine(dp[u], edge(u, v)))`.
