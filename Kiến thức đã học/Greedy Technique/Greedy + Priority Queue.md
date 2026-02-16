@@ -1,10 +1,10 @@
 # Greedy + Priority Queue
 
 ## Các kỹ thuật chính
+- **Dominant-choice / Irrevocable Greedy**: Nếu lựa chọn tốt nhất hiện tại luôn an toàn toàn cục thì chốt ngay, không cần rollback.
 - **Greedy with rollback**: Chọn phương án tốt nhất hiện tại rồi loại bỏ phần tử tệ nhất đã chọn khi vi phạm ràng buộc.
 - **Greedy with eligibility window**: Chỉ đưa vào heap những lựa chọn đã "mở khóa" tại thời điểm hiện tại.
 - **Lazy greedy**: Tạm chưa chốt quyết định, chỉ pop/chỉnh heap khi phát hiện vi phạm điều kiện.
-- **Dominant-choice / Irrevocable Greedy**: Nếu lựa chọn tốt nhất hiện tại luôn an toàn toàn cục thì chốt ngay, không cần rollback.
 - **Two-Heap Greedy**: Dùng hai heap để quản lý hai miền giá trị và cân bằng trạng thái theo bất biến.
 - **Two-Heap Greedy with rollback**: Cho phép vừa rollback vừa exchange giữa hai heap để giữ nghiệm tối ưu hợp lệ.
 
