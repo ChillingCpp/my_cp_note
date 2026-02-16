@@ -15,7 +15,7 @@
         - query(u, v) == w(u, v)
 
 ## Forest
-
+- lưu 1 mảng các span tree của mỗi component, với cạnh (u, v)
 
 ## Đường dẫn :
 - [[Binary lifting và DP]]
