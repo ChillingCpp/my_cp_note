@@ -19,6 +19,10 @@ Checklist:
 
 ## 2) Devise A Plan
 ### Phân rã thành bài toán con
+- Biến đổi bài toán thành dạng subproblem
+  - Thử các test nhỏ
+  - Cố gắng tìm ra substructure
+  - Dựa theo các dạng DP đã từng học
 - Hỏi: “Nếu cố định một phần quyết định thì phần còn lại là gì?”
 - Hỏi: “Để quyết định bước tiếp theo, cần nhớ tối thiểu thông tin nào?”
 

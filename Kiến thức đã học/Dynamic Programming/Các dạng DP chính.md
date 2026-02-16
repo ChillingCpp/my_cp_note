@@ -1,230 +1,138 @@
+# I. DP CÓ LỰA CHỌN
 
-# I. DP **CÓ LỰA CHỌN**
+Khái niệm:
+- Ở một state, có từ 2 hướng chuyển tiếp hợp lệ trở lên.
+- Ta phải gộp kết quả bằng `min / max / sum / or`.
 
-_(Explicit choice hoặc implicit / hidden choice đều tính)_
+Mẫu tổng quát:
+- `dp[state] = aggregate( value(transition) + dp[next_state] )`
+- Từ khóa nhận diện: `chọn`, `hoặc`, `tối ưu`, `đếm số cách`.
 
-👉 **Định nghĩa**
-
-> Tồn tại ≥ 2 cách hợp lệ để chuyển từ một trạng thái hiện tại.
-
-Hay nói ngắn gọn:
-
-`dp[state] = aggregate over multiple next states`
-
----
 ## 1. Lựa chọn hiện trong đề
+Đề nói thẳng quyết định.
 
-Quyết định được mô tả rõ.
+Dấu hiệu:
+- Chọn hoặc không chọn.
+- Chọn một trong nhiều thao tác.
+- Chọn điểm tách/chia.
 
-**Ví dụ**
-
-- Chọn / không chọn
-    
-- Chọn 1 trong nhiều thao tác
-    
-- Chọn điểm chia đoạn
-    
-
-**Dạng bài**
-
+Ví dụ:
 - Knapsack
-    
 - Coin Change
-    
 - Interval DP
-    
 - Edit Distance
-    
 - Game DP
-    
-
----
 
 ## 2. Lựa chọn ẩn trong đề
+Đề không nói từ "chọn", nhưng bản chất vẫn có nhánh.
 
-Không nói “chọn”, nhưng **bản chất là chọn**.
-
-### a. Chọn cấu hình
-
+### a) Chọn cấu hình
 - Bitmask DP
-    
-- Assignment
-    
-- TSP
-    
+- Assignment DP
+- TSP DP
 
-### b. Chọn trạng thái
-
-- Tree DP (chọn trạng thái node)
-    
+### b) Chọn trạng thái phụ
+- Tree DP (màu/trạng thái node)
 - Coloring DP
-    
-- DP với constraint
-    
+- DP có ràng buộc trạng thái trước/sau
 
-### c. Chọn chuyển tiếp
-
-- Automaton DP
-    
-- String DP
-    
-- Digit DP (chọn chữ số)
-    
-
----
+### c) Chọn chuyển tiếp
+- Automaton DP có nhiều cạnh chuyển
+- String DP có nhiều thao tác
+- Digit DP (chọn chữ số tiếp theo)
 
 ## 3. Lựa chọn đối kháng
+Đối thủ cũng "ra quyết định", nên state có cạnh tranh.
 
-- Game / Minimax
-    
+Ví dụ:
+- Minimax / game DP
 - Grundy DP
-    
-
----
 
 ## 4. Lựa chọn để tối ưu
+Có lựa chọn + cần kỹ thuật tăng tốc.
 
+Ví dụ:
 - Scheduling DP
-    
 - DP + Greedy
-    
 - DP + Binary Search
-    
-- Advanced DP Optimization  
-    (Knuth, D&C, CHT)
-    
+- Knuth optimization, Divide and Conquer optimization, CHT
 
----
+### Nhận diện DP có lựa chọn
+- Có vòng lặp qua các transition.
+- Có nhiều phương án cạnh tranh tại cùng một state.
+- Có biểu thức kiểu `best among ...`.
+- Câu hỏi cốt lõi: "Ở đây nên đi hướng nào?"
 
-### ✔ Nhận diện DP có lựa chọn
+# II. DP KHÔNG DỰA VÀO LỰA CHỌN
 
-- Có `min / max / sum over transitions`
-    
-- Có nhánh
-    
-- Có cạnh tranh giữa các phương án
-    
-- Có câu hỏi ngầm: _“nên đi hướng nào?”_
-    
+Khái niệm:
+- Mỗi state sinh ra state kế tiếp theo một quy tắc duy nhất.
+- Không có bước "chọn phương án tốt nhất".
 
----
-
-# II. DP **KHÔNG DỰA VÀO LỰA CHỌN**
-
-_(State-evolution DP – không nhánh)_
-
-👉 **Định nghĩa**
-
-> Với mỗi trạng thái, trạng thái kế tiếp được xác định duy nhất.
-
-Hay:
-
-`dp[next_state] = f(dp[state])`
-
-không có “hoặc”.
-
----
+Mẫu tổng quát:
+- `dp[next_state] = f(dp[state], data)`
+- Không có `min/max over transitions`.
 
 ## 1. DP lan truyền tuyến tính
-
-- Prefix / Suffix DP
-    
-- Rolling DP
-    
-- Fibonacci dạng chuẩn
-    
-
----
+- Prefix/Suffix recurrence
+- Rolling update tuyến tính
+- Fibonacci và truy hồi 1 chiều chuẩn
 
 ## 2. DP đếm không nhánh
+- Công thức đếm có quy tắc cố định.
+- Không cần duyệt nhiều lựa chọn tại mỗi state.
 
-- Đếm cấu hình có công thức cố định
-    
-- DP tổ hợp (Catalan, Bell, Stirling…)
-    
-
----
+Ví dụ:
+- Một số truy hồi tổ hợp: Catalan/Bell/Stirling (khi dùng công thức cố định)
 
 ## 3. DP mô phỏng hệ xác định
+- Hệ thống tiến hóa theo luật cố định.
+- Từ state hiện tại suy ra duy nhất state kế.
 
-- DP mô phỏng quá trình xác định
-    
-- Không có quyết định
-    
+Ví dụ:
+- Automaton có đúng một cạnh chuyển cho mỗi input
+- Mô phỏng máy trạng thái deterministic
 
-**Ví dụ**
+## 4. DP theo thời gian deterministic
+- Mỗi bước thời gian cập nhật theo công thức cố định.
+- Không có cạnh tranh giữa các hành động.
 
-- Automaton _không nhánh_
-    
-- DP trạng thái máy với chuyển duy nhất
-    
+## 5. DP theo công thức truy hồi thuần
+- Truy hồi một đường, không tối ưu lựa chọn.
+- Mục tiêu chính là tính giá trị, không phải chọn nhánh.
 
----
+### Nhận diện DP không lựa chọn
+- Không có loop qua danh sách transition cạnh tranh.
+- Không có `best among choices`.
+- State sau là tất yếu.
+- Chỉ "tính tiếp", không "quyết định".
 
-## 4. DP theo thời gian (deterministic)
+# III. Bảng ranh giới chuẩn
 
-- Hệ tiến hóa theo bước
-    
-- Không lựa chọn
-    
-
----
-
-## 5. DP toán học / công thức truy hồi
-
-- Công thức truy hồi duy nhất
-    
-- Không tối ưu
-    
-
----
-
-### ✔ Nhận diện DP không lựa chọn
-
-- Không có vòng `for transition`
-    
-- Không có cạnh tranh
-    
-- Trạng thái sau là tất yếu
-    
-- Chỉ “tính tiếp”, không “chọn”
-    
-
----
-
-# III. Bảng ranh giới chuẩn (quan trọng)
-
-|Bài|Có lựa chọn?|Vì sao|
+| Bài toán | Có lựa chọn? | Lý do |
 |---|---|---|
-|Fibonacci|❌|Trạng thái duy nhất|
-|Prefix sum|❌|Chuyển tiếp xác định|
-|Digit DP|✅|Chọn chữ số|
-|Tree DP|✅|Chọn trạng thái|
-|Interval DP|✅|Chọn điểm chia|
-|TSP|✅|Chọn tập tiếp theo|
-|DP đếm đường đi DAG|❌|Không nhánh|
-|Game DP|✅|Đối kháng|
+| Fibonacci | Không | Truy hồi cố định |
+| Prefix sum | Không | Cập nhật duy nhất |
+| Digit DP | Có | Chọn chữ số tiếp theo |
+| Tree DP | Có | Chọn trạng thái/chuyển của node |
+| Interval DP | Có | Chọn điểm chia |
+| TSP bitmask | Có | Chọn đỉnh đi tiếp |
+| Đếm đường đi DAG (cộng từ predecessor cố định) | Thường không | Không tối ưu lựa chọn tại một state |
+| Game DP | Có | Đối kháng, tối ưu theo lượt |
 
----
+Ghi chú:
+- Một số bài "đếm" vẫn có lựa chọn nếu phải cộng qua nhiều nhánh hợp lệ.
+- Ranh giới thực tế nằm ở cấu trúc chuyển state, không nằm ở từ ngữ đề bài.
 
-# IV. Kết luận cốt lõi (rất mạnh)
+# IV. Kết luận cốt lõi
 
-✔ **DP có thể chia gọn thành đúng 2 loại**  
-✔ Ranh giới nằm ở **số lượng chuyển tiếp hợp lệ từ 1 trạng thái**  
-✔ “Lựa chọn” không phụ thuộc vào câu chữ đề bài  
-✔ Đây là cách nhìn **đúng bản chất**, dùng được cho mọi DP
+- Có thể nhìn DP theo 2 nhóm lớn: `có lựa chọn` và `không lựa chọn`.
+- Tiêu chí phân loại mạnh nhất: số lượng chuyển tiếp hợp lệ từ mỗi state.
+- "Lựa chọn" có thể ẩn trong cấu hình, ràng buộc, hoặc hành vi đối kháng.
+- Phân loại đúng từ đầu giúp chọn công thức và tối ưu đúng hướng.
 
----
-
-Nếu bạn muốn đi tiếp:
-
-- 🔥 Chuẩn hóa định nghĩa này thành **1 định lý tư duy DP**
-    
-- 🔥 Áp dụng phân loại này để **phân tích nhanh đề CF**
-    
-- 🔥 Phản ví dụ: _khi nào DP tưởng không có lựa chọn nhưng thực ra có_
-    
-- 🔥 So sánh DP không lựa chọn vs Prefix/Recurrence thuần
-    
-
-Bạn muốn tôi đào sâu nhánh nào tiếp?
+Checklist phân loại nhanh:
+1. Một state có bao nhiêu next-state hợp lệ?
+2. Có cần chọn tốt nhất/tổng các nhánh không?
+3. Nếu bỏ dữ liệu đầu vào, quy luật còn deterministic không?
+4. Mục tiêu là tối ưu theo quyết định hay chỉ mô phỏng truy hồi?
