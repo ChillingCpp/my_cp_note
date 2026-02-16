@@ -28,5 +28,4 @@
 - Build `Block-Cut Tree` (nén theo biconnected components theo đỉnh).
 
 ## Đường dẫn
-- [[block_cut_tree]]
 - [[Bridge_edge_tree]]

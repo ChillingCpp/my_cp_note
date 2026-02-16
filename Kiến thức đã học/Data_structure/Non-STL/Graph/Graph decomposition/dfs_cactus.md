@@ -49,5 +49,4 @@
   - query trên cycle dùng `min(clockwise, counter_clockwise)`
 
 ## Đường dẫn
-- [[block_cut_tree]]
 - [[Bridge_edge_tree]]
