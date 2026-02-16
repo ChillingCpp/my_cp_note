@@ -6,7 +6,7 @@
 - Áp dụng cho đồ thị vô hướng.
 
 ## 2) Ý tưởng cốt lõi: DFS time + low-link ~ thuật toán tarjan
-- `tin[u]`: thời điểm DFS thăm `u`.
+- `tin[u]` = `disc[u]`: thời điểm DFS thăm `u`.
 - `low[u]`: thời điểm nhỏ nhất có thể quay về từ `u` (đi xuống cây DFS rồi dùng tối đa 1 back-edge).
 - Công thức cập nhật:
   - Nếu `v` chưa thăm: DFS `v`, rồi `low[u] = min(low[u], low[v])`
