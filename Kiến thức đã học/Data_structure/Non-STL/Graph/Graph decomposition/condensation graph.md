@@ -11,7 +11,7 @@
 - Xử lý phụ thuộc mạnh/yếu giữa các cụm đỉnh.
 
 ## 3) Cách build
-1. Tìm SCC bằng `Kosaraju` hoặc `Tarjan` (`O(n + m)`).
+1. Tìm SCC bằng  `Tarjan` (`O(n + m)`).
 2. Mỗi đỉnh `u` có `comp[u]`.
 3. Với cạnh gốc `u -> v`, nếu `comp[u] != comp[v]` thì thêm cạnh `comp[u] -> comp[v]`.
 4. Có thể dùng `set`/sort-unique để loại cạnh trùng.

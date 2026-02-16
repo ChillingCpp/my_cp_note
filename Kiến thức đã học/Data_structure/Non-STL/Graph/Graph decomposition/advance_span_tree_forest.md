@@ -36,10 +36,10 @@
 - Cạnh `(u, v, w)` có thể thuộc ít nhất một MST nếu:
   - `w == maxEdge(path(u, v))` trong một MST đang xét.
 
-## 5) Forest
 - Nếu đồ thị không liên thông, ta có `spanning forest`.
 - Lưu mỗi component 1 span tree trong đó
 - Query phải kiểm tra `component_id[u] == component_id[v]` để xác cạnh tồn tại trước khi xử lý LCA.
+- nếu nối 2 span tree ở 2 component khác nhau bằng cạnh (u, v, w) và có trọng số W thì span tree mới có trọng số là w1 + w2 + w
 
 ## 6) Lỗi hay gặp
 - Quên xử lý nhiều component nên query sai hoặc crash.
