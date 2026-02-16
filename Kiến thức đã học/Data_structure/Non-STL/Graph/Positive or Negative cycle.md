@@ -34,5 +34,4 @@
 ## Ghi chú
 - Positive cycle tương tự negative cycle nếu đổi quy ước dấu khi tối ưu.
 - Khi cần truy vết cycle cụ thể, dùng mảng parent (traceback).
-
 - [[Kĩ thuật traceback]]

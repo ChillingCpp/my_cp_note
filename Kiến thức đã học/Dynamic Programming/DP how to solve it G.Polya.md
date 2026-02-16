@@ -1,98 +1,83 @@
+# DP How To Solve It (G. Polya cho Dynamic Programming)
 
-## 1. Understand the problem - hiểu vấn đề
+## 1) Understand The Problem
+### What is unknown? What are data? What are conditions?
+- `Unknown`: cần tính gì?
+  - min / max / count / exist / số cách / giá trị tốt nhất
+- `Data`: input + constraints
+  - `n`, `m`, giá trị phần tử, giới hạn bộ nhớ/thời gian
+  - đoán sớm mức độ phức tạp chấp nhận được
+- `Conditions`: ràng buộc tác động đến quyết định
+  - ràng buộc local hay global
+  - có thứ tự thời gian/index không
+  - có điều kiện “không được chọn kề nhau”, “đúng k phần tử”, “chẵn/lẻ”, “mask” không
 
+Checklist:
+1. Viết lại đề bằng 2-3 dòng ngôn ngữ của mình.
+2. Gạch đầu dòng toàn bộ ràng buộc.
+3. Nêu rõ output cần tối ưu hay đếm.
 
-### _What is the unknown? What are the data? What are the conditions?_
+## 2) Devise A Plan
+### Phân rã thành bài toán con
+- Hỏi: “Nếu cố định một phần quyết định thì phần còn lại là gì?”
+- Hỏi: “Để quyết định bước tiếp theo, cần nhớ tối thiểu thông tin nào?”
 
-Trong DP, điều này tương đương:
+`Thông tin phải nhớ tối thiểu` chính là state.
 
-- **Unknown** → giá trị cần tối ưu (max / min / count / exist)
-- **Data** → input + constraints + đề bài
-	- Có thể phát biểu lại đề bài để dễ hiểu hơn không
-	- Có thể dự đoán độ phức tạp từ dữ liệu không 
-- **Conditions** → ràng buộc ảnh hưởng đến quyết định
-	- Hãy viết lại các điều kiện thành 1 danh sách
-	- Phát biểu lại các điều kiện theo toán học
-## 2. Devising a plan - lập kế hoạch
+Các trục state thường gặp:
+- `i`: xử lý đến vị trí i
+- `sum / cost / value`: tổng hoặc chi phí hiện tại
+- `k`: đã chọn bao nhiêu phần tử
+- `mask`: tập đã dùng/chưa dùng
+- `last`: phần tử cuối hoặc trạng thái trước đó
 
-### _Liên hệ giữa dữ liệu và ấn số_ 
+Nếu bí:
+1. Viết brute force tree của các lựa chọn.
+2. Tìm các node con trùng nhau để gộp thành state.
+3. Liên hệ các dạng chuẩn: knapsack, LIS, LCS, interval DP, tree DP, bitmask DP.
 
-- Biến đổi dữ liệu đã có thành 1 hướng xác định để dễ tiếp cận
-	- sort, map, compress, prefix, suffix, block, subsequence, tree....
-- Tìm các tính chất đặc biệt của bài toán sau khi đã phát biểu lại đề bài
-	- brute force
-	- Dựa vào các định lý, dạng bài đã gặp
-- Có thể chia nhỏ bài toán thành bài toán con không
-	- Nếu ta giải được các bài toán con a, b, c,... Liệu các bài toán đó có đóng góp vào bài toán lớn hơn là A chứa các bài toán con a, b, c...
-	- Nếu ta cố định 1 phần rằng buộc/dữ liệu/yêu cầu thì có thể tách bài toán thành các bài toán con không.
-	- Tạo mối liên kết giữa rằng buộc, yêu cầu, dữ liệu, tính chất với các bài toán con
-	
-- Phân tích quá trình ra quyết định (RẤT QUAN TRỌNG)
-    - Quyết định diễn ra ở đâu ?
-	    - theo index?
-	    - theo thời gian?
-	    - theo số lượng đã chọn?
+## 3) Carry Out The Plan
+### Dàn khung chuẩn cho một lời giải DP
+1. Định nghĩa state chính xác.
+2. Xác định base case.
+3. Viết transition từ state cũ -> state mới.
+4. Chọn thứ tự duyệt để mọi phụ thuộc đã có trước khi dùng.
+5. Tính đáp án từ tập state cuối.
 
-	- Mỗi quyết định ảnh hưởng **tương lai** như thế nào?
-	- Để quyết định tiếp, **cần nhớ tối thiểu thông tin gì?**
-    
-👉 **Thông tin cần nhớ = mầm mống của state**
+Template tự kiểm:
+- State:
+  - `dp[ ... ]` biểu diễn gì (một câu duy nhất, không mơ hồ)
+- Base:
+  - giá trị khởi tạo cho trạng thái rỗng/đầu tiên
+- Transition:
+  - mỗi quyết định hợp lệ cập nhật ra sao
+- Correctness:
+  - không thiếu trường hợp
+  - không đếm trùng
+  - không bị cycle dependency
+- Complexity:
+  - số state * số chuyển mỗi state
 
-### _Nếu chưa có tiến triển_
+Ghi chú:
+- Có thể làm top-down (memo) hoặc bottom-up.
+- Nếu phụ thuộc ít lớp trước, cân nhắc rolling array để giảm bộ nhớ.
 
--  Tìm một hướng khác dễ tiếp cận hơn
-	- Suy nghĩ ngược lại
-	- Tư duy theo 1 hướng khác
-	- Nếu biết đáp án, thì có thể làm gì để suy ra điều đó không
--  Tim được các bài toán có liên quan, tương đồng, tổng quát, đặc biệt ? 
-	 - Knapsack, LCS, LIS, LCIS, edit distance, matrix multiplication, palindrome subsequence/array
-	 - 
-	 -  Có thể lấy 1 phần trong đó để giải không, cần thêm ẩn phụ không
-- Giải 1 phần bài toán 
-	- Giải bài toán nếu không có rằng buộc A hoặc B hoặc C...
-		- Quan sát sự thay đổi của bài toán
-	
-## 3. Carry out the plan
+## 4) Look Back (Tối ưu và khái quát)
+- State có dư chiều không?
+- Có thể bỏ chiều bằng invariant hoặc prefix/suffix không?
+- Có thể tối ưu transition không?
+  - prefix minima/maxima
+  - monotonic queue
+  - divide and conquer optimization
+  - convex hull trick / slope trick
+- Có thể đổi mô hình sang graph shortest path / DAG DP / bitset không?
 
-### Chú ý : đây có thể là vòng lặp
+Mục tiêu sau cùng:
+- từ mô hình đúng -> mô hình gọn
+- từ `O(n^2)` -> `O(n log n)` hoặc tốt hơn khi cần
 
-- Xác định hướng đi của bài toán :
-	- Chiều thuận
-	- Chiều ngược
-	- Ưu tiên chiều thuận nếu cả 2 hướng có thể giải
-
-- Cách 1 :
-	- Định nghĩa state của DP dựa trên những điều trên
-		- độ dài, tổng, số lượng, prefix, mex,....
-	- Dựa trên các rằng buộc, yêu cầu để chuyển state A sang state B
-		- rằng buộc, yêu cầu cho ta biết ở state A có thể thực hiện các bước nào để sang state B
-		- Nếu ta cố định 1 phần rằng buộc/dữ liệu/yêu cầu, có thể chuyển state không
-		- khi sang state B cần những dữ kiện gì ở state A	
-			- phát biểu lại state
-			- thêm/bớt dữ kiện
-	- Lập công thức truy hồi khi đã xác định rõ ràng 3 điều trên
-- Cách 2 :
-	- Vẽ sơ đồ cây quyết định lựa chọn
-		- đối với bài min/max/optimal : đáp án sẽ là nhánh tốt nhất trong sơ đồ cây đó
-		- đối với bài valid/count... : đáp án sẽ bao gồm toàn bộ node con
-	- Mỗi 1 node đại diện cho 1 tình huống cụ thể chứa thông tin gì đó,  thử xem node đó chuyển trạng thái cần những dữ liệu gì, rằng buộc gì, thử xem có tính chất đặc biệt gì của chuyển trạng thái. 
-	- Xác định được những dữ liệu cần thiết cho chuyển trạng thái thì định nghĩa đầy đủ trạng thái và xác định rõ công thức chuyển trạng thái.
-- Kiểm tra lại công thức
-	- Chứng minh mỗi bước không trùng/thiếu state
-	- Nếu định nghĩa trạng thái mà bị cycle dependency thì phải định nghĩa lại
-### Nếu 1 trong 5 bước bị fail, quay về bước đầu tiên
-
-## 4. Look back - nhìn lại bài toán
-
-### _Can you derive the result differently? Can you improve it?_
-
-Trong DP:
-
-- State có dư không?
-- Có thể giảm chiều?
-- Có thể rolling array?
-	- rolling array là kĩ thuật chỉ lưu trữ những state cần thiết cho bước tiếp theo, để tối ưu bộ nhớ
-- Có thể đổi hướng duyệt?
-- Có thể áp dụng phương pháp cho các dạng bài toán khác không?
-
-➡️ Đây là lúc từ **DP 3D → 2D → 1D**, hoặc từ O(N²) → O(N log N)
+## Mini checklist trước khi submit
+1. Đã test case nhỏ tự tạo chưa?
+2. Đã test case biên (`n=1`, toàn âm, toàn dương, impossible) chưa?
+3. Khởi tạo `INF/-INF` có đúng kiểu dữ liệu (`long long`) chưa?
+4. Có reset mảng giữa nhiều test không?
