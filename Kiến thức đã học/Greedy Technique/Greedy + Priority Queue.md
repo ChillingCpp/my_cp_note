@@ -1,18 +1,21 @@
+# Greedy + Priority Queue
 
-## Các biến thể Greedy + Priority Queue
+## Các kỹ thuật chính
+- **Greedy with rollback**: Chọn phương án tốt nhất hiện tại rồi loại bỏ phần tử tệ nhất đã chọn khi vi phạm ràng buộc.
+- **Greedy with eligibility window**: Chỉ đưa vào heap những lựa chọn đã "mở khóa" tại thời điểm hiện tại.
+- **Lazy greedy**: Tạm chưa chốt quyết định, chỉ pop/chỉnh heap khi phát hiện vi phạm điều kiện.
+- **Dominant-choice / Irrevocable Greedy**: Nếu lựa chọn tốt nhất hiện tại luôn an toàn toàn cục thì chốt ngay, không cần rollback.
+- **Two-Heap Greedy**: Dùng hai heap để quản lý hai miền giá trị và cân bằng trạng thái theo bất biến.
+- **Two-Heap Greedy with rollback**: Cho phép vừa rollback vừa exchange giữa hai heap để giữ nghiệm tối ưu hợp lệ.
 
-- **Greedy with rollback** :
-	- chọn phương án hiện tại và loại bỏ các lựa chọn xấu trong quá khứ để thỏa mãn rằng buộc
-- **Greedy with eligibility window** :
-	- Chỉ các lựa chọn **đã đủ điều kiện** tại thời điểm hiện tại mới được đưa vào heap
-	- Greedy **chỉ được phép chọn trong cửa sổ hợp lệ này**.
-	- **Lazy greedy ( biến thể sử dụng eligibility window )** : 
-		- Sử dụng eligibility window
-		- Chỉ ra quyết định khi vi phạm rằng buộc; rằng buộc hợp lệ thì chưa lựa chọn vội
--  **Dominant-choice / Irrevocable Greedy** :
-	- Có quan hệ **dominance tuyệt đối**: lựa chọn tốt nhất hiện tại **không bao giờ bị hối tiếc**, nên có thể chọn ngay và không rollback.
-- **Two-Heap Greedy**
-	- Dùng **hai heap** để duy trì cân bằng trạng thái; quyết định greedy dựa trên **so sánh giữa hai miền giá trị**.
-	- **Two-Heap Greedy with rollback**
-		- Một kỹ thuật greedy duy trì **hai tập động** (`include`, `exclude`) bằng heap
-		- Mọi quyết định rollback không chỉ loại bỏ phần tử khỏi nghiệm, mà còn **cho phép exchange (hoán đổi) giữa hai tập** để duy trì một bất biến thứ tự toàn cục.
+## Dấu hiệu nhận biết nên dùng heap trong greedy
+- Cần truy cập nhanh phần tử nhỏ nhất/lớn nhất trong tập phương án động.
+- Bài toán có luồng sự kiện theo thời gian/index và tập ứng viên thay đổi liên tục.
+- Mỗi bước chỉ cần quyết định cục bộ nhưng phải duy trì một bất biến toàn cục.
+
+## Mẫu khung tư duy
+1. Sắp thứ tự xử lý (theo thời gian, deadline, vị trí, trọng số...).
+2. Đưa các ứng viên hợp lệ vào `priority_queue`.
+3. Chọn/loại bằng `top()` để giữ bất biến bài toán.
+4. Trích đáp án từ tập còn lại trong heap.
+

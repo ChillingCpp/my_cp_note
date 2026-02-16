@@ -51,13 +51,3 @@ for (long long l = 1, r; l <= n; l = r + 1) {
 - DP có chuyển trạng thái theo dạng `i -> k*i` hoặc `i -> i/d`.
 - Các bài có tổng dạng `sum f(i) * floor(n / i)`.
 
-## 5) Lỗi hay gặp
-- Nhầm `H_n` với `n * H_n`.
-- Quên dùng `long long` khi tổng lớn.
-- Duyệt từng `i` thay vì block khiến từ `O(sqrt n)` thành `O(n)`.
-- Overcount khi duyệt cả ước và bội mà không cố định hướng đếm.
-
-## 6) Ghi nhớ nhanh
-- `H_n ~ log n`
-- `sum_{i=1..n} floor(n / i) = O(n log n)`
-- Nhóm theo giá trị `floor(n / i)` cho thuật toán `O(sqrt n)`.
