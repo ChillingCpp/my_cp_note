@@ -15,7 +15,8 @@
 ## 3) Cách build
 1. DFS Tarjan để tìm `tin[u]`, `low[u]`, đánh dấu bridge (`O(n + m)`).
 2. Bỏ các bridge, DFS/BFS để tô màu component `comp[u]`.
-3. Với mỗi bridge `(u, v)` thêm cạnh `comp[u] - comp[v]` vào tree.
+3. Với mỗi bridge `(u, v)` thêm cạnh `comp[u] - comp[v]` chỉ khi `u < v && comp[u] != comp[v]` vào tree.
+4. [Source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph_decompose/bridge_edge_tree.cpp)
 
 ## 4) Tính chất quan trọng
 - Mỗi cạnh trong bridge-tree tương ứng đúng 1 bridge của đồ thị gốc.
