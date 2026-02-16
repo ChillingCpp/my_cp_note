@@ -1,167 +1,71 @@
+# CÁCH GIẢI MỘT BÀI TOÁN (Polya cho CP)
 
-# HỆ THỐNG CÂU HỎI GIẢI BÀI CP
+## 0) Mục tiêu
+- Đây là khung thực chiến: **ngắn, đủ ý quan trọng**, dùng để ép tư duy Polya vào competitive programming.
 
----
-## I. BÀI TOÁN THỰC SỰ LÀ GÌ? (Problem Clarification)
+## I. Understand Problem (Hiểu đúng đề)
+1. Đề hỏi chính xác gì?
+    - output là giá trị, cấu hình, hay chuỗi thao tác?
+    - một đáp án hay nhiều đáp án hợp lệ?
+2. Input/ràng buộc là gì?
+    - kích thước, kiểu dữ liệu, giới hạn thời gian/bộ nhớ.
+3. Có thể vô nghiệm không?
+    - đề có yêu cầu xử lý trường hợp đó không?
+4. Phân tích độ phức tạp để chọn thuật toán
 
-### 1. Câu hỏi cốt lõi
+Rule:
+- Nếu chưa phát biểu lại đề trong 1-2 câu, coi như chưa hiểu đề.
 
-- Chính xác **đề đang hỏi điều gì**?
-- Output cuối cùng là:
-    - một giá trị?
-    - một cấu hình?
-    - một chuỗi thao tác?
-- Có bao nhiêu output hợp lệ? hay chỉ một?
-⚠️ Nếu **không thể phát biểu lại bài toán trong 1–2 câu**, bạn **chưa hiểu đề**.
----
-### 2. Những gì được cho là gì?
+## II. Discover Structure (Tìm cấu trúc, Biến đổi bài toán)
+4. Đáp án phụ thuộc dữ kiện theo cách nào?
+    - cục bộ hay toàn cục, trực tiếp hay qua biến trung gian.
+5. Cái gì thật sự quyết định đáp án?
+    - dữ kiện nào thay đổi mà kết quả không đổi?
+6. Tìm invariant/monotonic/bound:
+    - thứ gì không đổi?
+    - thứ gì chỉ tăng/giảm?
+    - có chặn trên/dưới rõ ràng không?
 
-- Dữ kiện:
-    - Số lượng?
-    - Kiểu dữ liệu? 
-- Điều kiện:
-    - Bắt buộc?
-    - Có thể vi phạm không?
-- Có dữ kiện nào **không ảnh hưởng tới output** không?
----
+## III. Reformulate & Decompose (Biến đổi và phân rã)
+7. Đổi cách phát biểu:
+    - tối ưu -> kiểm tra tồn tại
+    - đếm trực tiếp -> đếm bù
+    - điều kiện khó -> điều kiện tương đương
+8. Xét bài toán con và biên:
+    - bỏ bớt điều kiện thì gì xảy ra?
+    - thêm điều kiện mạnh thì bài có trở nên tầm thường không?
+    - test nhỏ nhất/lớn nhất/trường hợp biên có hành vi khác thường không?
+9. Tách bài toán:
+    - theo đoạn, theo phần tử, theo bước, theo component.
+    - các phần độc lập hay phụ thuộc?
 
-### 3. Điều kiện có nhất quán không?
+## IV. Assumption Control (Kiểm soát giả định - bắt buộc trong CP)
+10. Liệt kê giả định ngầm:
+    - input luôn hợp lệ?
+    - có trùng lặp?
+    - thứ tự có quan trọng?
+11. Tự tạo phản ví dụ cho ý tưởng hiện tại.
+    - nếu ý tưởng không qua được test phá thì bỏ sớm.
 
-- Có tồn tại nghiệm không?
-- Có trường hợp **vô nghiệm** không?
-- Đề có yêu cầu xử lý trường hợp đó không?
+## V. Commit Solution (Chốt thuật toán)
+12. Chọn hướng giải theo cấu trúc đã tìm được: [[Nhận diện thuật toán]]
+13. Nêu lý do đúng:
+    - dựa trên invariant, tính đơn điệu, cấu trúc dữ liệu, hoặc quy nạp.
+14. Kiểm tra độ phủ:
+    - case thường, case biên, case xấu nhất.
+15. Kiểm tra độ phức tạp:
+    - có qua giới hạn đề không?
 
-👉 Nhiều bài ad-hoc/constructive **chết** ở đây.
+## VI. Implement & Validate (Code và xác thực)
+16. Viết code theo block:
+    - preprocess -> core logic -> output.
+17. Test tối thiểu:
+    - random nhỏ + brute force (nếu làm được)
+    - edge cases tự thiết kế
+18. Nếu WA/TLE:
+    - quay lại bước II-IV trước khi sửa vặt code.
 
----
-## II. MỐI QUAN HỆ GIỮA DỮ KIỆN & ẨN SỐ (Structure Discovery)
-
-### 4. Ẩn số phụ thuộc vào dữ kiện theo cách nào?
-
-- Trực tiếp?
-- Gián tiếp qua trung gian?
-- Phụ thuộc cục bộ hay toàn cục?
----
-
-### 5. Điều gì _thực sự_ quyết định đáp án?
-
-- Có dữ kiện nào **thay đổi nhưng output không đổi**?
-- Có dữ kiện nào **chỉ dùng để đánh lạc hướng**?
-
-> Câu hỏi này rất quan trọng với bài CF rating cao.
----
-
-### 6. Có bất biến (invariant) không?
-
-- Thứ gì **không đổi** sau các thao tác?
-- Thứ gì chỉ tăng / giảm?
-- Thứ gì bị chặn trên / dưới? Nghiệm, giá trị, điều kiện....?
-
-⚠️ Tôi **không chắc chắn 100%**, nhưng theo kinh nghiệm CP,  
-#### **70–80% bài khó có ít nhất 1 invariant**.
-
----
-## III. BIẾN ĐỔI BÀI TOÁN (Reformulation)
-
-### 7. Có thể phát biểu lại bài toán không?
-
-- Bằng:
-    - cách khác?
-    - ngôn ngữ khác?
-    - đại lượng khác?
-    - đi ngược lại thứ tự của bài toán?
-    - Biết trước kết quả thì có tìm được cấu hình/quá trình thỏa mãn?
-Ví dụ:
-- Tối ưu → kiểm tra tồn tại
-- Đếm trực tiếp → đếm bù
-- Điều kiện phức tạp → điều kiện tương đương
----
-
-### 8. Nếu bỏ bớt điều kiện thì sao?
-
-- Bỏ 1 điều kiện:
-    - nghiệm có nhiều không?
-    - cấu trúc có lộ ra không?
-- Thêm điều kiện mạnh:
-    - bài có trở nên tầm thường không?
----
-
-### 9. Bài toán đặc biệt
-
-- Trường hợp:
-    - nhỏ nhất?
-    - lớn nhất?
-    - biên?
-- Có hành vi khác thường ở biên không?
----
-## IV. PHÂN RÃ & TÁI KẾT HỢP (Decomposition)
-
-### 10. Có thể tách bài toán không?
-
-- Theo:
-    - phần tử?
-    - đoạn?
-    - bước?
-- Các phần độc lập hay phụ thuộc?
----
-### 11. Có thể giải từng phần không?
-
-- Nếu biết kết quả của một phần:
-    - phần còn lại có dễ không?
-- Có thứ tự tự nhiên để xử lý không?
----
-## V. KIỂM SOÁT GIẢ ĐỊNH (Assumption Control)
-
-> Phần này **Polya không viết rõ**, nhưng CP thì **bắt buộc**.
-
-### 12. Tôi đang ngầm giả định điều gì?
-
-- Input có luôn hợp lệ không?
-- Thứ tự có quan trọng không?
-- Có trùng lặp không?
-
-⚠️ Rất nhiều WA đến từ **giả định vô thức**.
-
----
-### 13. Có phản ví dụ không?
-
-- Với mỗi “ý tưởng”, tự hỏi:
-    - có test phá không?
-- Nếu không tìm được phản ví dụ:
-    - lý do là gì?
----
-
-## VI. CHỌN CÁCH GIẢI (Solution Commitment)
-
-### 13.5. Chọn cách giải dựa trên phân tích đề bài [[Nhận diện thuật toán]]
-
-### 14. Cách giải này dựa trên điều gì?
-
-- Invariant?
-- Quy luật?
-- Lập luận logic?
-- Tính đơn điệu?
----
-### 15. Cách giải có bao phủ mọi trường hợp không?
-
-- Trường hợp thường
-- Trường hợp biên
-- Trường hợp xấu nhất
----
-
-## VII. NHÌN LẠI (Reflection)
-
-### 16. Kết quả có hợp lý không?
-
-- Có vượt giới hạn không?
-- Có trường hợp cực đoan không tự nhiên không?
----
-### 17. Bài này thuộc “họ” nào?
-
-- Có thể gắn nhãn:
-    - invariant-based
-    - constructive
-    - monotonicity
-    - symmetry
-- Có dùng lại tư duy này được không?
----
+## VII. Look Back (Nhìn lại để tích lũy)
+19. Gắn nhãn bài:
+    - invariant-based, constructive, monotonicity, greedy, DP, graph,...
+20. Ghi 1-2 câu "dấu hiệu nhận biết" để tái sử dụng cho bài sau.

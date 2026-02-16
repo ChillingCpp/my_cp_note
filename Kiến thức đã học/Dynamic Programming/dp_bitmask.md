@@ -1,5 +1,9 @@
 # DP Bitmask
 
+
+## Đường dẫn
+[[Bit manipulation and bitmask]]
+
 ## Mục tiêu
 - Dùng DP trên tập con khi `n` nhỏ.
 
