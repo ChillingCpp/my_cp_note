@@ -16,8 +16,8 @@
 - Bridge `(u, v)` với `u` là cha của `v` trong DFS:
   - `low[v] > tin[u]`
 - AP:
-  - Nếu `u` không phải root DFS: tồn tại con `v` sao cho `low[v] >= tin[u]`
-  - Nếu `u` là root DFS: có từ 2 con DFS trở lên
+  - Nếu `u` không phải root DFS : `p != -1`: tồn tại con `v` sao cho `low[v] >= tin[u]`
+  - Nếu `u` là root DFS : `p == -1` : có từ 2 con DFS trở lên
 
 ## 4) Độ phức tạp
 - `O(n + m)` cho một lần DFS toàn đồ thị.
