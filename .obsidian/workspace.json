@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kiến thức đã học/Data_structure/Non-STL/Graph/DP Graph/Topo + DP.md",
+                "file": "Kiến thức đã học/Data_structure/Non-STL/Graph/bridge and ap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Topo + DP"
+              "title": "bridge and ap"
             }
           }
         ]
@@ -174,11 +174,12 @@
   },
   "active": "76ac6b1ea3dbd05c",
   "lastOpenFiles": [
+    "Kiến thức đã học/Data_structure/Non-STL/Graph/basic_spanning_tree_forest.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Graph/DP Graph/Topo + DP.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/bridge_edge_tree.md",
     "Kiến thức đã học/Math/Combinatorics and Probability.md",
     "Kiến thức đã học/Math/Harmonic Number.md",
     "Kiến thức đã học/Math/Basic Number Theory.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Graph/DP Graph/Topo + DP.md",
     "Kiến thức đã học/Dynamic Programming/DP how to solve it G.Polya.md",
     "Kiến thức đã học/Dynamic Programming/Các dạng DP chính.md",
     "CÁCH GIẢI MỘT BÀI TOÁN.md",
@@ -203,7 +204,6 @@
     "Kiến thức đã học/Data_structure/Non-STL/Graph/Positive or Negative cycle.md",
     "Kiến thức đã học/Algorithm/Searching/Binary_search/Parallel Binary Search.md",
     "Pattern recognize.png",
-    "my token.md",
     "Competitive Programming 4.pdf",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/DP Graph",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/State space search",
