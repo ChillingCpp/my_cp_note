@@ -7,11 +7,12 @@
 - Extended Euclid.
 - Inverse modulo.
 
-## Tính chất
+## Một số tính chất quan trọng
 - phép `a mod b` chia làm 2 trường hợp :
 	- `a < b` : = a
 	- `a >= b` : < a / 2
 		- phép `a mod b` hoạt động tối đa `log a` lần nên gcd(a, b) có độ phức tạp log 
+		- 
  ## Công thức đếm ước
 - Nếu `n = p1^f1 * p2^f2 * ... * pk^fk` thì:
 `num_divisors(n) = (f1 + 1)(f2 + 1)...(fk + 1)`.

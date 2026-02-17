@@ -3,12 +3,14 @@
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/seg_tree/lazy_segtree_nobinsearch.cpp)
 
 ## Ý tưởng chung
+- Thường sử dụng cho range update không thể prunning sớm, nếu có prunning sớm thì sử dụng [[Segment Tree]] + update đệ quy
+	- Điều kiện prunning  sớm là nếu 1 operation chỉ được thực hiện tối đa log a hoặc k constant bất kì.
 - Segment tree lưu thông tin đoạn trong `Node`.
 - Lazy propagation lưu cập nhật treo trong `Lazy`.
 - Mọi bài toán đều quy về 5 hàm đại số: `idn`, `idl`, `op`, `tf`, `opl`.
 - Khi đổi bài, gần như chỉ sửa `Node/Lazy` và 5 hàm trên. Khung `lazyseg` giữ nguyên.
 
-## Hợp đồng của từng hàm lõi
+## ý nghĩa của từng hàm lõi
 - `Node idn()`
   - Trả phần tử trung tính của `Node`.
   - Điều kiện: `op(idn(), x) = x` và `op(x, idn()) = x`.
@@ -53,23 +55,10 @@
 
 ### Hàm phụ trợ
 - `void apply_l(int p, Lazy l)`
-  - Áp trực tiếp lazy `l` lên node `p` bằng `tf`.
-  - Nếu `p` là node trong (chưa phải lá), cộng dồn lazy vào `lz[p]` bằng `opl`.
-
 - `void update(int p)`
-  - Tính lại node `p` từ 2 con bằng `op`.
-
 - `void update(int l, int r)`
-  - Sau update đoạn, chỉ rebuild các tổ tiên thực sự bị ảnh hưởng.
-  - Tối ưu hơn việc build lại toàn cây.
-
 - `void push(int p)`
-  - Đẩy lazy từ node `p` xuống 2 con.
-  - Sau khi đẩy xong, reset `lz[p] = idl()`.
-
 - `void push(int l, int r)`
-  - Đẩy lazy từ trên xuống dọc theo 2 đường đi tới `l` và `r-1`.
-  - Đảm bảo trước khi query/apply ở tầng dưới, mọi thông tin đều đồng bộ.
 
 ## Invariant cần nhớ
 - `st[p]` luôn là giá trị đúng của đoạn tại `p`, có tính cả lazy ở chính `p`.
