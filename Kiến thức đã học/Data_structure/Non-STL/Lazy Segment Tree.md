@@ -4,7 +4,7 @@
 
 ## Ý tưởng chung
 - Thường sử dụng cho range update không thể prunning sớm, nếu có prunning sớm thì sử dụng [[Segment Tree]] + update đệ quy
-	- Điều kiện prunning  sớm là nếu 1 operation chỉ được thực hiện tối đa log a hoặc k constant bất kì.
+    - Điều kiện prunning  sớm là nếu 1 operation chỉ được thực hiện tối đa log a hoặc k constant bất kì.
 - Segment tree lưu thông tin đoạn trong `Node`.
 - Lazy propagation lưu cập nhật treo trong `Lazy`.
 - Mọi bài toán đều quy về 5 hàm đại số: `idn`, `idl`, `op`, `tf`, `opl`.
@@ -12,45 +12,45 @@
 
 ## ý nghĩa của từng hàm lõi
 - `Node idn()`
-  - Trả phần tử trung tính của `Node`.
-  - Điều kiện: `op(idn(), x) = x` và `op(x, idn()) = x`.
+    - Trả phần tử trung tính của `Node`.
+    - Điều kiện: `op(idn(), x) = x` và `op(x, idn()) = x`.
 
 - `Lazy idl()`
-  - Trả lazy "không làm gì".
-  - Điều kiện: `tf(x, idl()) = x`.
+    - Trả lazy "không làm gì".
+    - Điều kiện: `tf(x, idl()) = x`.
 
 - `Node op(Node a, Node b)`
-  - Gộp 2 node con thành node cha.
-  - Điều kiện: tính chất kết hợp để query đúng khi tách đoạn.
+    - Gộp 2 node con thành node cha.
+    - Điều kiện: tính chất kết hợp để query đúng khi tách đoạn.
 
 - `Node tf(Node a, Lazy b)`
-  - Áp một cập nhật lazy `b` lên node `a`.
-  - Đây là hàm biến đổi dữ liệu node khi đoạn nhận update.
+    - Áp một cập nhật lazy `b` lên node `a`.
+    - Đây là hàm biến đổi dữ liệu node khi đoạn nhận update.
 
 - `Lazy opl(Lazy a, Lazy b)`
-  - Gộp hai lazy theo thứ tự "đang có `a`, cập nhật mới `b`".
-  - Điều kiện tương thích với `tf`:
-    - `tf(tf(x, a), b) = tf(x, opl(a, b))`.
+    - Gộp hai lazy theo thứ tự "đang có `a`, cập nhật mới `b`".
+    - Điều kiện tương thích với `tf`:
+        - `tf(tf(x, a), b) = tf(x, opl(a, b))`.
 
 ## Chú thích các hàm trong Lazy Segment Tree
 ### Hàm sử dụng chính
 - `lazyseg(vector<Node>& a)`
-  - Build cây từ mảng gốc.
-  - `n` là power of two nhỏ nhất >= `a.size()`.
-  - `h` là chiều cao cây, dùng để push theo đường đi.
+    - Build cây từ mảng gốc.
+    - `n` là power of two nhỏ nhất >= `a.size()`.
+    - `h` là chiều cao cây, dùng để push theo đường đi.
 
 - `Node query(int l, int r)`
-  - Truy vấn đoạn đóng `[l, r]`.
-  - Bước 1: thực hiện `l += n, r += n + 1`
-  - Bước 2: `push(l, r)` để đảm bảo các node trên đường đi là mới nhất.
-  - Bước 3: duyệt 2 con trỏ kiểu iterative segment tree và gộp bằng `op`.
+    - Truy vấn đoạn đóng `[l, r]`.
+    - Bước 1: thực hiện `l += n, r += n + 1`
+    - Bước 2: `push(l, r)` để đảm bảo các node trên đường đi là mới nhất.
+    - Bước 3: duyệt 2 con trỏ kiểu iterative segment tree và gộp bằng `op`.
 
 - `void apply(int l, int r, Lazy la)`
-  - Cập nhật đoạn đóng `[l, r]` bằng lazy `la`.
-  - Bước 1: thực hiện `l += n, r += n + 1` và `l1 = l, r1 = r`.
-  - Bước 2: `push(l, r)` để tránh chồng sai lazy cũ.
-  - Bước 3: duyệt 2 con trỏ kiểu iterative segment tree, gọi `apply_l`.
-  - Bước 4: `update(l1, r1)` để kéo thông tin tổ tiên lên lại.
+    - Cập nhật đoạn đóng `[l, r]` bằng lazy `la`.
+    - Bước 1: thực hiện `l += n, r += n + 1` và `l1 = l, r1 = r`.
+    - Bước 2: `push(l, r)` để tránh chồng sai lazy cũ.
+    - Bước 3: duyệt 2 con trỏ kiểu iterative segment tree, gọi `apply_l`.
+    - Bước 4: `update(l1, r1)` để kéo thông tin tổ tiên lên lại.
 
 
 ### Hàm phụ trợ
