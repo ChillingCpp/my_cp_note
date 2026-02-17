@@ -1,167 +1,87 @@
-# Lazy Segment Tree
+# Lazy Segment Tree (Tổng quát)
 
-## Bài toán mẫu trong template này
-- Cập nhật cộng đoạn: cộng `x` cho mọi phần tử trong đoạn `[l, r]`.
-- Truy vấn min đoạn: lấy `min` trên đoạn `[l, r]`.
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/seg_tree/lazy_segtree_nobinsearch.cpp)
 
-## Ý tưởng
-- `Segment Tree` lưu thông tin theo đoạn.
-- `Lazy` lưu cập nhật chưa đẩy xuống con để không phải update từng phần tử.
-- Khi truy vấn/cập nhật đi qua một node, nếu cần thì `push` lazy từ node đó xuống 2 con.
+## Ý tưởng chung
+- Segment tree lưu thông tin đoạn trong `Node`.
+- Lazy propagation lưu cập nhật treo trong `Lazy`.
+- Mọi bài toán đều quy về 5 hàm đại số: `idn`, `idl`, `op`, `tf`, `opl`.
+- Khi đổi bài, gần như chỉ sửa `Node/Lazy` và 5 hàm trên. Khung `lazyseg` giữ nguyên.
 
-## Mapping theo code
-- `Node`: dữ liệu node của segment tree.
-  - `sum`: ở template này thực chất đang giữ **giá trị min** của đoạn.
-  - `sz`: chưa dùng (có thể bỏ hoặc dùng cho các bài range sum).
-- `Lazy`: dữ liệu lazy.
-  - `val`: giá trị cần cộng dồn cho cả đoạn.
-- `idn()`: phần tử trung tính của `Node`.
-- `idl()`: phần tử trung tính của `Lazy`.
-- `op(a, b)`: gộp 2 node con.
-  - Đang là `min(a.sum, b.sum)`.
-- `tf(a, b)`: áp lazy `b` vào node `a`.
-  - Vì là cộng đoạn nên min đoạn tăng thêm `b.val`.
-- `opl(a, b)`: gộp 2 lazy.
-  - Cả hai đều là phép cộng nên cộng dồn `a.val + b.val`.
+## Hợp đồng của từng hàm lõi
+- `Node idn()`
+  - Trả phần tử trung tính của `Node`.
+  - Điều kiện: `op(idn(), x) = x` và `op(x, idn()) = x`.
 
-## Khung code (range add + range min)
-```cpp
-struct Node
-{
-    ll sum = 0, sz = 0;
-};
-struct Lazy
-{
-    ll val = 0;
-};
-Node idn()
-{
-    return Node();
-}
-Lazy idl()
-{
-    return Lazy();
-}
-Node op(Node a, Node b)
-{
-    return { min(a.sum, b.sum) };
-}
-Node tf(Node a, Lazy b)
-{
-    return { a.sum + b.val };
-}
-Lazy opl(Lazy a, Lazy b)
-{
-    return { a.val + b.val };
-}
-struct lazyseg
-{
-    int          n = 1, h = 0;
-    vector<Node> st;
-    vector<Lazy> lz;
-    lazyseg(vector<Node>& a)
-    {
-        int n1 = a.size();
-        while (n < n1)
-            n <<= 1, h++;
-        st.resize(2 * n);
-        lz.resize(n);
-        copy(a.begin(), a.end(), st.begin() + n);
-        for (int i = n - 1; i > 0; --i)
-            update(i);
-    }
-    Node query(int l, int r)
-    {
-        l += n, r += n + 1;
-        push(l, r);
-        Node n1;
-        n1.sum = 1e18;
-        for (; l < r; l >>= 1, r >>= 1)
-        {
-            if (l & 1)
-                n1 = op(n1, st[l++]);
-            if (r & 1)
-                n1 = op(n1, st[--r]);
-        }
-        return n1;
-    }
-    void apply(int l, int r, Lazy la)
-    {
-        l += n, r += n + 1;
-        push(l, r);
-        int l1 = l, r1 = r;
-        for (; l < r; l >>= 1, r >>= 1)
-        {
-            if (l & 1)
-                apply_l(l++, la);
-            if (r & 1)
-                apply_l(--r, la);
-        }
-        update(l1, r1);
-    }
-    void apply_l(int p, Lazy l)
-    {
-        st[p] = tf(st[p], l);
-        if (p < n)
-            lz[p] = opl(lz[p], l);
-    }
-    void update(int p)
-    {
-        st[p] = op(st[p << 1], st[p << 1 | 1]);
-    }
-    void update(int l, int r)
-    {
-        for (int i = 1; i <= h; ++i)
-        {
-            if (((l >> i) << i) != l)
-                update(l >> i);
-            if (((r >> i) << i) != r)
-                update((r - 1) >> i);
-        }
-    }
-    void push(int p)
-    {
-        apply_l(p << 1, lz[p]);
-        apply_l(p << 1 | 1, lz[p]);
-        lz[p] = idl();
-    }
-    void push(int l, int r)
-    {
-        for (int i = h; i >= 1; --i)
-        {
-            if (((l >> i) << i) != l)
-                push(l >> i);
-            if (((r >> i) << i) != r)
-                push((r - 1) >> i);
-        }
-    }
-};
-```
+- `Lazy idl()`
+  - Trả lazy "không làm gì".
+  - Điều kiện: `tf(x, idl()) = x`.
 
-## Cách dùng nhanh
-```cpp
-int n; cin >> n;
-vector<Node> a(n);
-for (int i = 0; i < n; ++i) {
-    ll x; cin >> x;
-    a[i].sum = x;
-}
-lazyseg st(a);
+- `Node op(Node a, Node b)`
+  - Gộp 2 node con thành node cha.
+  - Điều kiện: tính chất kết hợp để query đúng khi tách đoạn.
 
-// cong +v cho [l, r]
-st.apply(l, r, Lazy{v});
+- `Node tf(Node a, Lazy b)`
+  - Áp một cập nhật lazy `b` lên node `a`.
+  - Đây là hàm biến đổi dữ liệu node khi đoạn nhận update.
 
-// min tren [l, r]
-ll ans = st.query(l, r).sum;
-```
+- `Lazy opl(Lazy a, Lazy b)`
+  - Gộp hai lazy theo thứ tự "đang có `a`, cập nhật mới `b`".
+  - Điều kiện tương thích với `tf`:
+    - `tf(tf(x, a), b) = tf(x, opl(a, b))`.
+
+## Chú thích các hàm trong struct `lazyseg`
+- `lazyseg(vector<Node>& a)`
+  - Build cây từ mảng gốc.
+  - `n` là power of two nhỏ nhất >= `a.size()`.
+  - `h` là chiều cao cây, dùng để push theo đường đi.
+
+- `Node query(int l, int r)`
+  - Truy vấn đoạn đóng `[l, r]`.
+  - Bước 1: dời chỉ số lên tầng lá (`+n`).
+  - Bước 2: `push(l, r)` để đảm bảo các node trên đường đi là mới nhất.
+  - Bước 3: duyệt 2 con trỏ kiểu iterative segment tree và gộp bằng `op`.
+
+- `void apply(int l, int r, Lazy la)`
+  - Cập nhật đoạn đóng `[l, r]` bằng lazy `la`.
+  - Bước 1: dời chỉ số lên tầng lá (`+n`).
+  - Bước 2: `push(l, r)` để tránh chồng sai lazy cũ.
+  - Bước 3: duyệt 2 con trỏ kiểu iterative segment tree, gọi `apply_l`.
+  - Bước 4: `update(l1, r1)` để kéo thông tin tổ tiên lên lại.
+
+
+- `void apply_l(int p, Lazy l)`
+  - Áp trực tiếp lazy `l` lên node `p` bằng `tf`.
+  - Nếu `p` là node trong (chưa phải lá), cộng dồn lazy vào `lz[p]` bằng `opl`.
+
+- `void update(int p)`
+  - Tính lại node `p` từ 2 con bằng `op`.
+
+- `void update(int l, int r)`
+  - Sau update đoạn, chỉ rebuild các tổ tiên thực sự bị ảnh hưởng.
+  - Tối ưu hơn việc build lại toàn cây.
+
+- `void push(int p)`
+  - Đẩy lazy từ node `p` xuống 2 con.
+  - Sau khi đẩy xong, reset `lz[p] = idl()`.
+
+- `void push(int l, int r)`
+  - Đẩy lazy từ trên xuống dọc theo 2 đường đi tới `l` và `r-1`.
+  - Đảm bảo trước khi query/apply ở tầng dưới, mọi thông tin đều đồng bộ.
+
+## Invariant cần nhớ
+- `st[p]` luôn là giá trị đúng của đoạn tại `p`, có tính cả lazy ở chính `p`.
+- Lazy chưa đẩy chỉ nằm ở `lz[p]` với `p < n` (node trong).
+- Mọi truy vấn/cập nhật đoạn đều phải `push(l, r)` trước.
+
+## Checklist khi đổi sang bài khác
+- Xác định `Node` lưu gì.
+- Xác định `Lazy` biểu diễn update gì.
+- Viết đúng `idn`, `idl`.
+- Viết đúng `op`, `tf`, `opl` theo thứ tự compose.
+- Kiểm tra lại đoạn chỉ số: template này dùng `[l, r]`.
 
 ## Độ phức tạp
 - Build: `O(n)`
-- Mỗi lần update đoạn: `O(log n)`
-- Mỗi lần query đoạn: `O(log n)`
-
-## Lỗi hay gặp
-- Quên `push(l, r)` trước query/update nên kết quả sai.
-- Nhầm đoạn đóng/mở: code này dùng `[l, r]` (đóng cả hai đầu).
-- Giá trị vô cực cho min (`1e18`) phải phù hợp kiểu `ll`.
-- Dùng template này cho bài khác thì phải sửa đồng bộ `Node/Lazy/op/tf/opl`.
+- Mỗi `query`: `O(log n)`
+- Mỗi `apply`: `O(log n)`
