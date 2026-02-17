@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kiến thức đã học/Data_structure/Non-STL/Lazy Segment Tree.md",
+                "file": "Kiến thức đã học/Math/Basic Number Theory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lazy Segment Tree"
+              "title": "Basic Number Theory"
             }
           }
         ]
@@ -174,18 +174,19 @@
   },
   "active": "76ac6b1ea3dbd05c",
   "lastOpenFiles": [
+    "Kiến thức đã học/Math/Harmonic Number.md",
+    "Kiến thức đã học/Math/Basic Number Theory.md",
+    "Kiến thức đã học/Math/Combinatorics and Probability.md",
+    "CÁCH GIẢI MỘT BÀI TOÁN.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Lazy Segment Tree.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/block_cut_tree.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/bridge and ap.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/Bridge_edge_tree.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/basic_spanning_tree_forest.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/DP Graph/Topo + DP.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/bridge_edge_tree.md",
-    "Kiến thức đã học/Math/Combinatorics and Probability.md",
-    "Kiến thức đã học/Math/Harmonic Number.md",
-    "Kiến thức đã học/Math/Basic Number Theory.md",
     "Kiến thức đã học/Dynamic Programming/DP how to solve it G.Polya.md",
     "Kiến thức đã học/Dynamic Programming/Các dạng DP chính.md",
-    "CÁCH GIẢI MỘT BÀI TOÁN.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/Mô hình hóa bài toán thành các dạng graph.md",
     "Bài tập/Đường dẫn tới danh sách bài tập.md",
@@ -202,7 +203,6 @@
     "Bài tập",
     "Kiến thức đã học/Greedy Technique/Relative Topics.md",
     "Kiến thức đã học/Greedy Technique/Greedy + Priority Queue.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting và DP.md",
     "Pattern recognize.png",
     "Competitive Programming 4.pdf",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/DP Graph",
