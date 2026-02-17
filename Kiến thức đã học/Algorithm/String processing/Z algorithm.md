@@ -9,7 +9,7 @@
 - Với `i` trong đoạn này, tái sử dụng kết quả cũ để giảm so sánh ký tự.
 
 ## 3) Mẫu cài đặt
-[[https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/String/Z.cpp]](Source code)
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/String/Z.cpp)
 
 ## 4) Match pattern
 - Tạo `t = p + '#' + s`.

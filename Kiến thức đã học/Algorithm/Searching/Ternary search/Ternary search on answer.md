@@ -18,7 +18,7 @@
 - Nếu bài có tính "đúng/sai" đơn điệu, ưu tiên binary search on answer.
 
 ## Mẫu bài mẫu
-[[https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/Searching/Tenary_Search.cpp]](Source code)
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/Searching/Tenary_Search.cpp)
 
 ## 6) Độ phức tạp
 - Mỗi vòng gọi `f` 2 lần.

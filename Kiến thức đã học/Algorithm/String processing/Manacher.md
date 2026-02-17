@@ -5,7 +5,7 @@
 - Tìm longest palindromic substring trong `O(n)`.
 
 ## 2) Code mẫu (gộp cả odd/even)
-[[https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/String/manacher.cpp]](Source code)
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/String/manacher.cpp)
 
 ## 3) Ý nghĩa biến trong code
 - `z = 0`: palindrome chẵn.

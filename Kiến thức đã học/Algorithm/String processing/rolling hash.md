@@ -10,7 +10,7 @@
   - `hash(l,r) = H[r] - H[l-1] * powBase[r-l+1]`.
 
 ## 3) Mẫu cài đặt 2 mod
-[[https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/String/rolling_hash.cpp]](Source code)
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/String/rolling_hash.cpp)
 
 ## 4) Collision
 - Hash có xác suất trùng giả.

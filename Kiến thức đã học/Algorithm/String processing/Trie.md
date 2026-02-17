@@ -10,7 +10,7 @@
 - Node có cờ `end` nếu kết thúc một từ.
 
 ## 3) Mẫu cài đặt (alphabet a-z)
-[[https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/trie.cpp]](Source code)
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/trie.cpp)
 
 ## 4) Độ phức tạp
 - Insert/search/prefix: `O(|s|)`.
