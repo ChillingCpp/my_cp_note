@@ -8,16 +8,6 @@
   - Nén theo `biconnected component (theo đỉnh)` + `articulation point`.
   - Là cây hai phía: `BCC-node` và `AP-node`.
 
-## 2) Bài toán phù hợp
-- `BET`:
-  - điểm nghẽn theo **cạnh**
-  - đếm số bridge trên đường đi
-  - tăng độ bền kết nối theo cạnh
-- `BCT`:
-  - điểm nghẽn theo **đỉnh**
-  - đếm AP bắt buộc trên đường đi
-  - phân cụm ổn định theo đỉnh khớp
-
 ## 3) Cách build
 - Bước chung:
   1. Chạy Tarjan lấy `tin/low`.
@@ -53,16 +43,25 @@
   - lưu map từ đỉnh gốc sang node cây nén (`comps_of_vertex[u]`)
   - xử lý riêng trường hợp đồ thị không liên thông
 
-## 7) Chọn nhanh
-- Nút thắt theo **cạnh** -> `BET`
-- Nút thắt theo **đỉnh** -> `BCT`
+## 7) Ứng dụng điển hình
+- `BET` (Bridge-Edge Tree) - Nút thắt theo **cạnh**:
+  - Đếm số bridge trên đường đi giữa hai đỉnh.
+  - Kiểm tra hai đỉnh còn liên thông khi xóa một cạnh cầu cụ thể.
+  - Tìm số cạnh tối thiểu cần thêm để đồ thị không còn bridge (tăng edge-connectivity).
+  - Gom cụm 2-edge-connected để làm DP trên cây nén.
+  - Trả lời truy vấn kiểu "bao nhiêu cạnh critical nằm trên tuyến `u-v`?".
 
-## 8) Lỗi hay gặp
-- Nhầm điều kiện `>` và `>=` khi tách cấu trúc.
-- Quên xử lý đồ thị nhiều component.
-- Nhầm bản chất:
-  - `BET`: edge-connectivity
-  - `BCT`: vertex-connectivity
+- `BCT` (Block-Cut Tree) - Nút thắt theo **đỉnh**:
+  - Đếm số articulation point bắt buộc đi qua giữa hai đỉnh.
+  - Kiểm tra một đỉnh `x` có phải nút bắt buộc khi đi từ `u` đến `v` không.
+  - Tách đồ thị thành các khối BCC để xử lý đường đi/đếm cách theo cụm.
+  - Bài toán thêm cạnh để giảm số đỉnh khớp quan trọng.
+  - Query độ "mong manh theo đỉnh" của mạng (vertex-failure analysis).
+
+- Pattern chung khi đã nén:
+  - Chuyển truy vấn trên đồ thị gốc về truy vấn path trên cây/forest nén.
+  - Dùng `LCA/HLD` để trả lời nhiều truy vấn tĩnh/động.
+  - Dùng DP trên cây nén để tối ưu toàn cục theo component.
 
 ## Đường dẫn
 - [[bridge and ap]]
