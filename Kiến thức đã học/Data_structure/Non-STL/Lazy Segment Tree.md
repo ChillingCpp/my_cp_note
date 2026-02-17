@@ -30,7 +30,7 @@
   - Điều kiện tương thích với `tf`:
     - `tf(tf(x, a), b) = tf(x, opl(a, b))`.
 
-## Chú thích các hàm trong struct `lazyseg`
+## Chú thích các hàm trong Lazy Segment Tree
 ### Hàm sử dụng chính
 - `lazyseg(vector<Node>& a)`
   - Build cây từ mảng gốc.
@@ -39,13 +39,13 @@
 
 - `Node query(int l, int r)`
   - Truy vấn đoạn đóng `[l, r]`.
-  - Bước 1: dời chỉ số lên tầng lá (`+n`).
+  - Bước 1: thực hiện `l += n, r += n + 1`
   - Bước 2: `push(l, r)` để đảm bảo các node trên đường đi là mới nhất.
   - Bước 3: duyệt 2 con trỏ kiểu iterative segment tree và gộp bằng `op`.
 
 - `void apply(int l, int r, Lazy la)`
   - Cập nhật đoạn đóng `[l, r]` bằng lazy `la`.
-  - Bước 1: dời chỉ số lên tầng lá (`+n`).
+  - Bước 1: thực hiện `l += n, r += n + 1` và `l1 = l, r1 = r`.
   - Bước 2: `push(l, r)` để tránh chồng sai lazy cũ.
   - Bước 3: duyệt 2 con trỏ kiểu iterative segment tree, gọi `apply_l`.
   - Bước 4: `update(l1, r1)` để kéo thông tin tổ tiên lên lại.
@@ -74,7 +74,7 @@
 ## Invariant cần nhớ
 - `st[p]` luôn là giá trị đúng của đoạn tại `p`, có tính cả lazy ở chính `p`.
 - Lazy chưa đẩy chỉ nằm ở `lz[p]` với `p < n` (node trong).
-- Mọi truy vấn/cập nhật đoạn đều phải `push(l, r)` trước.
+- Mọi truy vấn/cập nhật đoạn đều phải `push(l, r)` trước, trước khi `push(l, r)` phải có dòng code `l += n, r += n + 1`.
 
 ## Checklist khi đổi sang bài khác
 - Xác định `Node` lưu gì.
