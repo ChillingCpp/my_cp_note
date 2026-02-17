@@ -4,7 +4,7 @@
 
 ## Ý tưởng chung
 - Thường sử dụng cho range update không thể prunning sớm, nếu có prunning sớm thì sử dụng [[Segment Tree]] + update đệ quy
-    - Điều kiện prunning  sớm là nếu 1 operation chỉ được thực hiện tối đa log a hoặc k constant bất kì.
+    - Điều kiện prunning sớm là nếu 1 operation chỉ được thực hiện tối đa log a hoặc k constant bất kì.
 - Segment tree lưu thông tin đoạn trong `Node`.
 - Lazy propagation lưu cập nhật treo trong `Lazy`.
 - Mọi bài toán đều quy về 5 hàm đại số: `idn`, `idl`, `op`, `tf`, `opl`.
