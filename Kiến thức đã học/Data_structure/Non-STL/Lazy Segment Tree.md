@@ -31,6 +31,7 @@
     - `tf(tf(x, a), b) = tf(x, opl(a, b))`.
 
 ## Chú thích các hàm trong struct `lazyseg`
+### Hàm sử dụng chính
 - `lazyseg(vector<Node>& a)`
   - Build cây từ mảng gốc.
   - `n` là power of two nhỏ nhất >= `a.size()`.
@@ -50,6 +51,7 @@
   - Bước 4: `update(l1, r1)` để kéo thông tin tổ tiên lên lại.
 
 
+### Hàm phụ trợ
 - `void apply_l(int p, Lazy l)`
   - Áp trực tiếp lazy `l` lên node `p` bằng `tf`.
   - Nếu `p` là node trong (chưa phải lá), cộng dồn lazy vào `lz[p]` bằng `opl`.
