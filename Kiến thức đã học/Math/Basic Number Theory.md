@@ -1,5 +1,7 @@
 # Basic Number Theory
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/math/basic.cpp)
+
 ## Chủ đề nền tảng
 - GCD/LCM.
 - Prime test, sieve.
@@ -27,3 +29,4 @@
 
 ## Liên kết
 - [[Advance Number Theory]]
+

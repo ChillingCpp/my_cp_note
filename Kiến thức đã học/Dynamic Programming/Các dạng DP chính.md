@@ -1,5 +1,7 @@
 # I. DP CÓ LỰA CHỌN
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/dp)
+
 Khái niệm:
 - Ở một state, có từ 2 hướng chuyển tiếp hợp lệ trở lên.
 - Ta phải gộp kết quả bằng `min / max / sum / or`.
@@ -136,3 +138,4 @@ Checklist phân loại nhanh:
 2. Có cần chọn tốt nhất/tổng các nhánh không?
 3. Nếu bỏ dữ liệu đầu vào, quy luật còn deterministic không?
 4. Mục tiêu là tối ưu theo quyết định hay chỉ mô phỏng truy hồi?
+

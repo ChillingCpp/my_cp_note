@@ -1,5 +1,7 @@
 # Backtracking
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms)
+
 ## 1) Khái niệm
 - Backtracking là duyệt không gian nghiệm bằng DFS, thử lựa chọn, kiểm tra điều kiện, rồi quay lui.
 - Mục tiêu: tìm một nghiệm, tất cả nghiệm, hoặc nghiệm tối ưu (kết hợp pruning).
@@ -50,3 +52,4 @@ void dfs(int pos) {
 - Backtracking: chủ yếu để tìm kiếm có điều kiện và liệt kê nghiệm.
 - DP: tận dụng chồng lặp trạng thái để tối ưu tính toán.
 - Branch and Bound: backtracking + cận trên/cận dưới chặt để tối ưu.
+

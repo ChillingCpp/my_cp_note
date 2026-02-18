@@ -1,5 +1,7 @@
 # Prefix Sum 2D
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms)
+
 ## Mục tiêu
 - Tính nhanh tổng trên hình chữ nhật con.
 

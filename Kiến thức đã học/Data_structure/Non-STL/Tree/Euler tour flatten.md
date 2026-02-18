@@ -1,5 +1,7 @@
 # Euler Tour + Flatten Tree
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/GraphTree/3typesEulerTour.cpp)
+
 ## Mảng thường dùng
 - `in[u]`: thời điểm vào node `u`.
 - $out[u]$ : 
@@ -30,3 +32,4 @@
 ## Lưu ý
 - Chốt rõ loại Euler trước khi viết công thức `in/out`.
 - Với path query bất kỳ `u-v`, thường cần LCA + tách đoạn đúng cách.
+

@@ -1,5 +1,7 @@
 # DP Bitmask
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/dp/dp_bitmask.cpp)
+
 
 ## Đường dẫn
 [[Bit manipulation and bitmask]]
@@ -28,3 +30,4 @@ for (int mask = 0; mask < (1 << n); ++mask) {
 
 ## Lưu ý
 - Cần ước lượng trước số trạng thái: `2^n * n`.
+

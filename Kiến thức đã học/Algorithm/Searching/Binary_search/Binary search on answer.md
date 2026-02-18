@@ -1,5 +1,7 @@
 # Binary Search on Answer
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/Searching/Binary_Search.cpp)
+
 ## 1) Bản chất
 - Tìm nhị phân trên miền nghiệm `[L, R]`, không nhất thiết trên mảng đã sort.
 - Cần một hàm `check(x)` để quyết định nghiệm nằm bên trái hay bên phải.
@@ -36,3 +38,4 @@
 - Chọn sai miền `[L, R]`.
 - Nhầm `first true` và `last true`.
 - Tràn số khi tính `mid` hoặc trong công thức check.
+

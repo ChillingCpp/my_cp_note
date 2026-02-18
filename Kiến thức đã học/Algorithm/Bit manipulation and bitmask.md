@@ -1,5 +1,7 @@
 # Bit Manipulation and Bitmask
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/bitmask.cpp)
+
 ## 1) Bit manipulation cơ bản
 - Toán tử chính: `&`, `|`, `^`, `~`, `<<`, `>>`.
 - Kỹ thuật thường dùng:
@@ -48,3 +50,4 @@ for (int b = mask; b; b &= (b - 1)) {
 - `popcount(mask)`: số bit bật.
 - `ctz(x)`: vị trí bit 1 thấp nhất.
 - `mask ^ (1 << i)`: toggle phần tử `i`.
+

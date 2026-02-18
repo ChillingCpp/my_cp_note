@@ -1,5 +1,7 @@
 # State Space Search - Khái niệm
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Data_Structures/Graph/Shortest_paths)
+
 ## Mục tiêu
 - Mở rộng node thành trạng thái `(u, extra_state...)` để biểu diễn ràng buộc của đề.
 
@@ -20,3 +22,4 @@
 ## Lưu ý
 - Đếm đúng số trạng thái trước khi code để tránh nổ bộ nhớ.
 - Chọn cấu trúc dữ liệu push/pop theo loại trọng số.
+

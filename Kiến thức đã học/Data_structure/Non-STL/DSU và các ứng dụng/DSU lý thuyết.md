@@ -1,5 +1,7 @@
 # DSU lý thuyết
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Dsu/Dsu.cpp)
+
 ## 1. Khi nào dùng DSU
 - Duy trì phân hoạch các phần tử thành component.
 - Thao tác chính: `merge(a, b)` và `same(a, b)`.
@@ -60,3 +62,4 @@
 - [[Giá trị đại diện cho tập hợp]]
 - [[MST Kruskal]]
 - [[DSU problemset]]
+

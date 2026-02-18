@@ -1,5 +1,7 @@
 # Pattern Recognize (Keyword‑driven, sau khi biến đổi bài toán)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
+
 > Mục tiêu: **không đoán thuật toán trực tiếp từ đề**, mà **biến đổi bài toán → trích xuất từ khóa đặc biệt → suy ra tập thuật toán khả thi**.
 > Không loại bỏ bất kỳ thuật toán nào bạn đã liệt kê; chỉ **tổ chức lại theo hệ từ khóa phân cấp**.
 
@@ -481,5 +483,6 @@ GRAPH → UNDIRECTED | DIRECTED
 5. Quan hệ chính là **subarray / path / component / feasibility**?
 
 Nếu không trả lời được **≥ 3 câu** → bạn **chưa biến đổi xong bài toán**.
+
 
 

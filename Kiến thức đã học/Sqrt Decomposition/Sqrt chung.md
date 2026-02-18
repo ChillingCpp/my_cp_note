@@ -1,5 +1,7 @@
 # Sqrt Decomposition
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/sqrt_decomposition/DS_decomposition/array_decomposition.cpp)
+
 ## Tư tưởng
 - Sqrt decomposition là tư tưởng "chia theo ngưỡng `sqrt(n)`" để đổi một thao tác đắt thành:
 	- phần nhỏ xử lý trực tiếp,
@@ -38,8 +40,10 @@
 
 ## Code mẫu
 [Sqrt + Sqrt lazy](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/sqrt_decomposition/DS_decomposition/array_decomposition.cpp)
+
 ## Đường dẫn
 - [[Segment Tree]]
 - [[Lazy Segment Tree]]
 - [[Harmonic Number]]
 - [[Prefix sum 1D]]
+

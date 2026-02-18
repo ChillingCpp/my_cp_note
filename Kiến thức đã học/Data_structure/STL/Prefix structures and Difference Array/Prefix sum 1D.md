@@ -1,5 +1,7 @@
 # Prefix Sum 1D
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms)
+
 ## Build
 ```cpp
 pref[0] = 0;
@@ -24,3 +26,4 @@ for (int i = 1; i <= n; ++i)
 
 ## Liên kết
 - [[Difference Array]]
+

@@ -1,5 +1,7 @@
 # Condensation Graph (SCC DAG)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph_decompose/Condensation_graph.cpp)
+
 ## 1) Định nghĩa
 - Với đồ thị có hướng `G`, gom mỗi `SCC` thành một siêu đỉnh.
 - Các cạnh giữa hai SCC khác nhau tạo thành cạnh của đồ thị mới.
@@ -36,3 +38,4 @@
 ## Đường dẫn
 - [[Topological sort]]
 - [[Positive or Negative cycle]]
+

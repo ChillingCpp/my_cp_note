@@ -1,5 +1,7 @@
 # Graph Decomposition: BET và BCT (Gộp Theo Đề Mục)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph_decompose/block_cut_tree.cpp)
+
 ## 1) Định nghĩa
 - `Bridge-Edge Tree (BET)`:
   - Nén theo `2-edge-connected component`.
@@ -67,3 +69,4 @@
 - [[bridge and ap]]
 - [[advance_span_tree_forest]]
 - [[dfs_cactus]]
+

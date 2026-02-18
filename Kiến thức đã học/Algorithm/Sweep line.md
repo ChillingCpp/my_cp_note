@@ -1,5 +1,7 @@
 # Sweep Line
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/Geometry)
+
 ## 1) Khái niệm
 - Sweep line là kỹ thuật quét các sự kiện theo một trục đã sắp thứ tự (thường là theo `x` hoặc theo thời gian).
 - Tại mỗi sự kiện, cập nhật một cấu trúc dữ liệu trạng thái đang "active" để trả lời câu hỏi hiện tại.
@@ -33,4 +35,5 @@
 
 ## 6) Độ phức tạp
 - Thường là `O((n + q) log n)` do sort + cập nhật DS.
+
 

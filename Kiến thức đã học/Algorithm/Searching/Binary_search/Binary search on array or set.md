@@ -1,5 +1,7 @@
 # Binary Search on Array or Set
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/Searching/Binary_Search.cpp)
+
 ## 1) Điều kiện áp dụng
 - Dữ liệu phải có thứ tự:
     - mảng đã sort theo giá trị, hoặc
@@ -53,3 +55,4 @@ auto it = s.lower_bound(x); // iterator đầu tiên >= x
 - Nhầm `lower_bound` và `upper_bound`.
 - Tràn số khi tính `mid` (`l + (r - l)/2` là an toàn hơn).
 - Không kiểm tra iterator `end()` trước khi dereference.
+

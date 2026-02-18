@@ -1,3 +1,5 @@
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/monotonic_stack.cpp)
+
 
 - Monotonic stack 
 	- Dùng khi có thể bắc cầu loại bỏ các phương án không tốt với hiện tại

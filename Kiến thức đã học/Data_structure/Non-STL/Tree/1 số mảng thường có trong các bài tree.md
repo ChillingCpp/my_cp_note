@@ -1,5 +1,7 @@
 # Một số mảng thường dùng trong bài Tree
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/dp/tree)
+
 ## Mảng cơ bản
 - `parent[u]`: cha trực tiếp của `u`.
 - `depth[u]` hoặc `h[u]`: độ sâu.
@@ -13,3 +15,4 @@
 ## Gợi ý
 - Nếu truy vấn subtree nhiều: ưu tiên [[Euler tour flatten]]
 - Nếu truy vấn tổ tiên/LCA: [[binary lifting]]
+

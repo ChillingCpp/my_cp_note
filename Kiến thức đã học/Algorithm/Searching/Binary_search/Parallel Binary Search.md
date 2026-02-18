@@ -1,5 +1,7 @@
 # Parallel Binary Search (Offline)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/Searching/Binary_Search.cpp)
+
 ## 1) Bản chất
 - Kỹ thuật offline để trả lời nhiều truy vấn dạng:
     - "thời điểm nhỏ nhất/lớn nhất mà query thỏa điều kiện".
@@ -52,3 +54,4 @@ while (true) {
 - Truy vấn "thời điểm đầu tiên đủ điều kiện".
 - Bài dynamic connectivity/offline updates.
 - Bài có update theo thời gian + điều kiện prefix.
+

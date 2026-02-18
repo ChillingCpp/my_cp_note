@@ -1,5 +1,7 @@
 # KMP (Knuth-Morris-Pratt)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/String/kmp.cpp)
+
 ## 1) Mục tiêu
 - Tìm pattern `p` trong text `s` trong `O(n + m)`.
 - Tránh lùi con trỏ text khi mismatch.

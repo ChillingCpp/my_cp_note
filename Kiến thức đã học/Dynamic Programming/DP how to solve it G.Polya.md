@@ -1,5 +1,7 @@
 # DP How To Solve It (G. Polya cho Dynamic Programming)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/dp)
+
 ## 1) Understand The Problem
 ### What is unknown? What are data? What are conditions?
 - `Unknown`: cần tính gì?
@@ -85,3 +87,4 @@ Mục tiêu sau cùng:
 2. Đã test case biên (`n=1`, toàn âm, toàn dương, impossible) chưa?
 3. Khởi tạo `INF/-INF` có đúng kiểu dữ liệu (`long long`) chưa?
 4. Có reset mảng giữa nhiều test không?
+

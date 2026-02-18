@@ -1,5 +1,7 @@
 # Giá trị đại diện cho tập hợp (DSU + Aggregate)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Dsu/Dsu.cpp)
+
 ## Mục tiêu
 - Duy trì thông tin tổng hợp cho mỗi component.
 
@@ -14,3 +16,4 @@
 ## Liên kết
 - [[DSU lý thuyết]]
 - [[DSU bipartite]]
+

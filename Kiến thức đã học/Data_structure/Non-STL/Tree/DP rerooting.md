@@ -1,5 +1,7 @@
 # DP Rerooting
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/dp/tree/dp_tree_rerooting.cpp)
+
 ## Mục tiêu
 - Tính đáp án cho mọi node khi node đó được chọn làm root.
 
@@ -17,3 +19,4 @@
 ## Lưu ý
 - Tránh sửa trực tiếp rồi quên hoàn tác.
 - Tách rõ hàm merge/exclude để dễ debug.
+

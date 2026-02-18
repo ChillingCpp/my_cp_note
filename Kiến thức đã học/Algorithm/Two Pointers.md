@@ -1,5 +1,7 @@
 # Two Pointers
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/merge2set.cpp)
+
 ## 1) Bản chất
 - Dùng 2 con trỏ để duy trì một trạng thái hợp lệ và cập nhật đáp án theo thời gian tuyến tính hoặc gần tuyến tính.
 - Ý tưởng chung: mỗi con trỏ chỉ đi tiến (hoặc đi theo quy tắc rất hạn chế), tránh duyệt `O(n^2)`.

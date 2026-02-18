@@ -1,5 +1,7 @@
 # Kĩ thuật Traceback
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms)
+
 ## 1) Mục tiêu
 - Dùng khi đề yêu cầu **construct nghiệm** (không chỉ in giá trị tối ưu).
 - Áp dụng nhiều trong: `graph`, `dynamic programming`, `greedy`.
@@ -58,3 +60,4 @@ if (cand > dp[nxt]) {
 2. Mỗi lần relax/update có lưu parent/choice không?
 3. Điều kiện tie-break đã cố định chưa?
 4. Có kiểm tra reachable trước khi in nghiệm không?
+

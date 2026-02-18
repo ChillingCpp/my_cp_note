@@ -1,3 +1,5 @@
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Dsu/Dsu.cpp)
+
 
 ## Gợi ý lộ trình
 1. DSU cơ bản (`merge/same`).
@@ -75,3 +77,4 @@
 ## Ghi chú
 - Truy vấn có thể là strictly online hoặc offline.
 - Nếu đề cho phép gom truy vấn xử lý sau, luôn nghĩ tới offline + DSU rollback.
+

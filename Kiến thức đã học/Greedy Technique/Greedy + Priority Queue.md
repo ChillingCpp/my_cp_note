@@ -1,5 +1,7 @@
 # Greedy + Priority Queue
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/Greedy)
+
 ## Các kỹ thuật chính
 - **Dominant-choice / Irrevocable Greedy**: Nếu lựa chọn tốt nhất hiện tại luôn an toàn toàn cục thì chốt ngay, không cần rollback.
 - **Greedy with rollback**: Chọn phương án tốt nhất hiện tại rồi loại bỏ phần tử tệ nhất đã chọn khi vi phạm ràng buộc.
@@ -18,4 +20,5 @@
 2. Đưa các ứng viên hợp lệ vào `priority_queue`.
 3. Chọn/loại bằng `top()` để giữ bất biến bài toán.
 4. Trích đáp án từ tập còn lại trong heap.
+
 

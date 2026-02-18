@@ -1,5 +1,7 @@
 # Combinatorics and Probability
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/math)
+
 - số cách chèn 1 chuỗi a vào dãy S
     -$ \[ \binom{abs(S)+ abs(a)}{abs(a)} \]$
 
@@ -22,3 +24,4 @@ Trong đó:
 
 `dp[structure] = multinomial * Π dp[substructure]`
 `multinomial` là hệ số tổ hợp khi trộn các thành phần con độc lập.
+

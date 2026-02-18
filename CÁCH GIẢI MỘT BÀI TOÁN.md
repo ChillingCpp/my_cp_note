@@ -1,5 +1,7 @@
 # CÁCH GIẢI MỘT BÀI TOÁN (Polya cho CP)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
+
 ## 0) Mục tiêu
 - Đây là khung thực chiến: **ngắn, đủ ý quan trọng**, dùng để ép tư duy Polya vào competitive programming.
 
@@ -69,3 +71,4 @@ Rule:
 19. Gắn nhãn bài:
     - invariant-based, constructive, monotonicity, greedy, DP, graph,...
 20. Ghi 1-2 câu "dấu hiệu nhận biết" để tái sử dụng cho bài sau.
+

@@ -1,5 +1,7 @@
 # LỊCH HỌC TỪNG NGÀY – GIỮ NGUYÊN THỨ TỰ CP (27/1 → 5/4)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
+
 > Vai trò thiết kế: huấn luyện viên đội tuyển + cố vấn ĐGNL.
 > Ràng buộc đã thỏa:
 > - **Giữ nguyên 100% thứ tự CP trong lịch cũ** (chỉ giãn & xen kẽ)

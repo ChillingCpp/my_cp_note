@@ -1,5 +1,7 @@
 # Single Source - One Best State
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph/Shortest_paths/dijkstra.cpp)
+
 ## Mục tiêu
 - Tìm trạng thái tốt nhất duy nhất cho mỗi node (hoặc mỗi state của node).
 
@@ -16,3 +18,4 @@
 
 ## Đường dẫn
 - [[Khái niệm]]
+

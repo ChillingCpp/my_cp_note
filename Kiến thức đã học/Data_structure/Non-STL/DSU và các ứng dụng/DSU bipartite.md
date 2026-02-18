@@ -1,5 +1,7 @@
 # DSU Bipartite (Parity DSU)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Dsu/Dsu.cpp)
+
 ## Mục tiêu
 - Duy trì quan hệ 2 phía (2-color) trong từng component.
 - Phát hiện mâu thuẫn khi thêm ràng buộc `u` và `v` khác màu.
@@ -22,3 +24,4 @@
 ## Liên kết
 - [[DSU lý thuyết]]
 - [[Giá trị đại diện cho tập hợp]]
+

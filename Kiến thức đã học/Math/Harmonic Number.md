@@ -1,5 +1,7 @@
 # Harmonic Number
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/math/basic.cpp)
+
 ## 1) Định nghĩa
 - Harmonic number bậc `n`:
   - `H_n = 1 + 1/2 + 1/3 + ... + 1/n`
@@ -50,4 +52,5 @@ for (long long l = 1, r; l <= n; l = r + 1) {
 - Sieve và một số bài number theory.
 - DP có chuyển trạng thái theo dạng `i -> k*i` hoặc `i -> i/d`.
 - Các bài có tổng dạng `sum f(i) * floor(n / i)`.
+
 

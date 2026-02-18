@@ -1,5 +1,7 @@
 # Divide and Conquer
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/divide_and_conquer.cpp)
+
 ## 1) Khái niệm
 - Chia bài toán lớn thành các bài toán con độc lập cùng dạng, giải đệ quy, rồi gộp kết quả.
 - Mẫu chuẩn: `solve(A) = combine(solve(B1), solve(B2), ..., solve(Bk))`.
@@ -46,3 +48,4 @@ Result solve(int l, int r) {
 - Thiếu/đặt sai base case.
 - Chia đoạn sai lệch biên (`mid`, `[l,m]`, `[m+1,r]`).
 - Gộp kết quả không bảo toàn thứ tự/tính chất cần thiết.
+

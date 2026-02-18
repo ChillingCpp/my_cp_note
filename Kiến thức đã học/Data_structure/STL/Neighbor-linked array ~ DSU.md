@@ -1,3 +1,5 @@
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Dsu/Dsu.cpp)
+
 
 
 # Kĩ thuật này có tư duy tương tự như DSU nhưng không phải là DSU

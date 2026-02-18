@@ -1,5 +1,7 @@
 # Bridge và Articulation Point (Cut Vertex)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph/Connectivity/ap_bridges.cpp)
+
 ## 1) Định nghĩa
 - `Bridge` (cầu): cạnh mà khi xóa đi làm tăng số thành phần liên thông.
 - `Articulation point` (AP, đỉnh khớp): đỉnh mà khi xóa đi (kèm cạnh kề) làm tăng số thành phần liên thông.
@@ -29,3 +31,4 @@
 
 ## Đường dẫn
 - [[Bridge_edge_tree]]
+

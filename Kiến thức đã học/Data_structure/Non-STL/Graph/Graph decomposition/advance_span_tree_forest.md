@@ -1,5 +1,7 @@
 # Advanced Spanning Tree / Forest
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Spanning_Tree/second_mst.cpp)
+
 ## 1) Ý tưởng
 - Build một `spanning tree` (thường là MST), rồi chuyển bài toán trên đồ thị về bài toán truy vấn đường đi trên cây.
 - Truy vấn phổ biến: `max edge`, `min edge`, `sum`, `xor` trên đường đi `u -> v`.
@@ -58,3 +60,4 @@
 - [[basic_spanning_tree_forest]]
 - [[Binary lifting và DP]]
 - [[Bridge_edge_tree]]
+

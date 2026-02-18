@@ -1,5 +1,7 @@
 # Binary Lifting + DP trên cây
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/GraphTree/binlift.cpp)
+
 ## 1. Ý tưởng chính
 - Binary lifting lưu tổ tiên theo lũy thừa của 2:
   - `up[u][i]` = tổ tiên thứ `2^i` của node `u`.
@@ -29,3 +31,4 @@
 - Khi thiết kế `dp`, kiểm tra trước:
   - identity element (phần tử đơn vị),
   - hướng gộp trái/phải có ảnh hưởng hay không.
+

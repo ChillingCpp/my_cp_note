@@ -1,5 +1,7 @@
 # Multi-source Search
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph/Shortest_paths/dijkstra_multisources.cpp)
+
 ## Ý tưởng
 - Khởi tạo nhiều nguồn cùng lúc với khoảng cách 0, sau đó chạy BFS/Dijkstra như single-source.
 
@@ -23,3 +25,4 @@
 ## Độ phức tạp
 - BFS: `O(n + m)`.
 - Dijkstra: `O((n + m) log n)`.
+

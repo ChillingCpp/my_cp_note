@@ -1,5 +1,7 @@
 # Topo + DP trên đồ thị
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph/DP_Topological_sort.cpp)
+
 ## Khi dùng
 - Đồ thị có hướng không chu trình (DAG).
 - Cần tối ưu hoặc đếm số cách trên đường đi.
@@ -22,3 +24,4 @@
 	
 ## Nếu graph có chu trình
 - [[condensation graph]]
+

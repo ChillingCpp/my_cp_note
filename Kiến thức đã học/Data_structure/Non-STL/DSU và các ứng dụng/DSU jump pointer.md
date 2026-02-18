@@ -1,5 +1,7 @@
 # DSU Jump Pointer (Next Pointer)
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Dsu/Dsu.cpp)
+
 ## Mục tiêu
 - Bỏ qua nhanh các phần tử đã xử lý theo thứ tự tuyến tính.
 
@@ -30,3 +32,4 @@
 
 ## Liên kết
 - [[Neighbor-linked array ~ DSU]]
+

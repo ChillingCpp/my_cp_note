@@ -1,5 +1,7 @@
 # DSU trong Kruskal
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Spanning_Tree/kruskal.cpp)
+
 ## Vai trò của DSU
 - Kiểm tra cạnh `(u, v)` có tạo chu trình hay không.
 - Nếu `find(u) != find(v)` thì chọn cạnh và merge 2 component.
@@ -16,3 +18,4 @@
 
 ## Liên kết
 - [[DSU lý thuyết]]
+

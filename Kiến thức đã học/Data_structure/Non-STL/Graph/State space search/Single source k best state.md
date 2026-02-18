@@ -1,5 +1,7 @@
 # Single Source - K Best States
 
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph/Shortest_paths/dijkstra.cpp)
+
 ## Mục tiêu
 - Với mỗi node, lưu tối đa `k` trạng thái tốt nhất.
 
@@ -15,3 +17,4 @@
 ## Lưu ý
 - Bài simple path thường khó/hiếm trong contest chuẩn.
 - Đảm bảo comparator của heap đúng chiều tối ưu.
+
