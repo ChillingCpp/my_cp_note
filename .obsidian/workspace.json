@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kiến thức đã học/Kĩ thuật traceback.md",
+                "file": "Kiến thức đã học/Query, Range Query/Relative topics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kĩ thuật traceback"
+              "title": "Relative topics"
             }
           }
         ]
@@ -172,9 +172,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a8ae18245552864b",
+  "active": "76ac6b1ea3dbd05c",
   "lastOpenFiles": [
+    "Kiến thức đã học/Query, Range Query/Relative topics.md",
     "Kiến thức đã học/Sqrt Decomposition/Mo.md",
+    "Kiến thức đã học/Data_structure/Non-STL/Segment Tree.md",
+    "Kiến thức đã học/Kĩ thuật traceback.md",
     "Kiến thức đã học/Math/Untitled.md",
     "Kiến thức đã học/Sqrt Decomposition/Tư tưởng.md",
     "Kiến thức đã học/Math/Basic Number Theory.md",
@@ -199,9 +202,6 @@
     "Lịch học cho contest sắp tới.md",
     "Danh sách các thuật toán đã học.md",
     "Competitive programming roadmap.pdf",
-    "nhận diện bài toán.md",
-    "Bài tập/DSU problemset.md",
-    "Bài tập/Untitled.md",
     "Bìa",
     "Bài tập",
     "Pattern recognize.png",
