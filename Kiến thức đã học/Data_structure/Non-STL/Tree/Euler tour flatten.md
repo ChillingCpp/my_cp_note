@@ -13,8 +13,11 @@
 - Dùng cho RMQ/LCA theo chuỗi Euler depth.
 
 ### 2. Euler `2n` (mỗi node xuất hiện 2 lần)
-- Thường dùng cho Mo trên cây.
+- [[Mo]]`
 - Query path `u-v` được đổi về đoạn trên mảng Euler + xử lý riêng LCA.
+- cách xử lí truy vấn : 
+	- gặp lần 1 : on
+	- gặp lần 2 : off
 
 ### 3. Euler `n` (mỗi node 1 lần)
 - Subtree `u` thành đoạn liên tiếp `[in[u], out[u]]`.

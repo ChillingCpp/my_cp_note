@@ -36,11 +36,8 @@
 	- brute force phần block bị intersect với biên l và r
 	- block đầy đủ: dữ liệu block
 
-## Độ phức tạp điển hình
-- Build: `O(n)`.
-- Point update + range query (hoặc ngược lại): `O(sqrt(n))`.
-- Lazy range update + range query : thường `O(sqrt(n))`.
-
+## Code mẫu
+[Sqrt + Sqrt lazy](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/sqrt_decomposition/DS_decomposition/array_decomposition.cpp)
 ## Đường dẫn
 - [[Segment Tree]]
 - [[Lazy Segment Tree]]
