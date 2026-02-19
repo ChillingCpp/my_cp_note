@@ -9,17 +9,12 @@
 		- Query/update đoạn bằng cách tách `[l, r]` thành đầu lẻ + block đầy đủ + cuối lẻ.
 			- "range query"
 			- "point update range query"
-	- `Dạng 2: Block + lazy theo block`
-		- Update đoạn và query đoạn với nhãn lazy cho từng block.
 			- "range update range query"
-	- `Dạng 3: Offline query (Mo's algorithm)`
+	- `Dạng 2: Offline query (Mo's algorithm)`
 		- Sắp xếp query theo block của `L` (và `R`) để giảm số lần add/remove.
-	- `Dạng 4: Chia theo case nặng/nhẹ`
-		- Tách phần tử thành "nhẹ/nặng", hoặc chia theo tần suất/độ lớn/độ dài để tối ưu.
-		- `Dạng 4.1: Harmonic grouping`
-			- Với độ phức tạp kiểu `O(floor(n / i))`:
-				- `i <= sqrt(n)`
-				- `i > sqrt(n)` 
+	- `Dạng 3: Chia theo case nặng/nhẹ`
+		- Tìm dạng dữ liệu có thể chia case thành "nhẹ/nặng", hoặc chia theo tần suất/độ lớn/độ dài để tối ưu thuật toán hiện có
+
 - Mẫu nhận diện:
 	- Có tradeoff tự nhiên giữa 2 phía (ví dụ: số block và kích thước block).
 	- Chọn ngưỡng `B ~ sqrt(n)` để cân bằng 2 phần chi phí.
@@ -29,20 +24,12 @@
 - Có thể chấp nhận mỗi thao tác khoảng `O(sqrt(n))`.
 - Bài có update/query online nhưng không quá nặng.
 
-## Công thức thường dùng
-- `block_id(i) = i / len` (0-index).
-- Số block: `num_block = (n + len - 1) / len`.
-- Mỗi query/update:
-	- brute force phần block bị intersect với biên l và r
-	- block đầy đủ: dữ liệu block
-
-## Code mẫu
-[Sqrt + Sqrt lazy](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/sqrt_decomposition/DS_decomposition/array_decomposition.cpp)
-
+## Chi tiết về các dạng sqrt
+- [[Range Query Sqrt decomposition]]
+- [[Mo]]
 ## Đường dẫn
 - [[Segment Tree]]
 - [[Lazy Segment Tree]]
 - [[Harmonic Number]]
 - [[Prefix sum 1D]]
-- [[Range Query Sqrt decomposition]]
 
