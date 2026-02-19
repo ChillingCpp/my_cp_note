@@ -6,18 +6,36 @@
 - Chia mảng thành các block có độ dài `B ~ sqrt(n)`.
 - Mỗi block lưu thông tin gộp (thường là `sum/min/max`).
     - phép gộp thông tin phải có tính chất kết hợp
-- Query đoạn `[l, r]` tách thành 3 phần:
-    - phần lẻ đầu (duyệt tay),
-    - các block đầy đủ (lấy nhanh từ mảng block),
-    - phần lẻ cuối (duyệt tay).
+- Query đoạn `[l, r]` tách thành 2 trường hợp:
+    - `bl == br`:
+        duyệt từ `l -> r` để lấy giá trị
+    - `bl != br` : duyệt theo 3 phần 
+        - phần lẻ đầu (duyệt tay),
+        - các block đầy đủ (lấy nhanh từ mảng block),
+        - phần lẻ cuối (duyệt tay).
 
 ## Công thức cốt lõi
 - `B = floor(sqrt(n)) + 1`
 - `block_id(i) = i / B`
 - `num_block = (n + B - 1) / B`
+- `bid(int i) = i / B`;
+- `iid(int b) = b * B`;
+- Với query `[l, r]`:
+    - `bl = bid(l)`, `br = bid(r)`
 - Block `b` có biên:
     - `L = b * B`
-    - `R = min(n - 1, (b + 1) * B - 1)`
+    - `R = min(n - 1, iid(b+1) - 1)`
+- Duyệt lẻ đầu:
+    - `[l, iid(bl + 1) - 1]`
+    - for (int i = l; i < iid(bl+ 1); ++i)
+- Duyệt lẻ cuối:
+    - `[iid(br), r]`
+    - for (int i = iid(br); i <= r; ++i)
+- Các block đầy đủ ở giữa:
+    - `[bl + 1, br - 1]`
+    - for (int i = bl + 1; i < br; ++i)
+
+
 
 ## Dạng kinh điển: Range Sum + Point Update
 - Dữ liệu:

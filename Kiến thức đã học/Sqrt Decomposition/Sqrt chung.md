@@ -14,12 +14,12 @@
 			- "range update range query"
 	- `Dạng 3: Offline query (Mo's algorithm)`
 		- Sắp xếp query theo block của `L` (và `R`) để giảm số lần add/remove.
-	- `Dạng 4: Chia theo giá trị/ngưỡng`
+	- `Dạng 4: Chia theo case nặng/nhẹ`
 		- Tách phần tử thành "nhẹ/nặng", hoặc chia theo tần suất/độ lớn/độ dài để tối ưu.
-	- `Dạng 5: Harmonic grouping`
-		- Với biểu thức kiểu `floor(n / i)`:
-			- `i <= sqrt(n)`
-			- `i > sqrt(n)` 
+		- `Dạng 4.1: Harmonic grouping`
+			- Với độ phức tạp kiểu `O(floor(n / i))`:
+				- `i <= sqrt(n)`
+				- `i > sqrt(n)` 
 - Mẫu nhận diện:
 	- Có tradeoff tự nhiên giữa 2 phía (ví dụ: số block và kích thước block).
 	- Chọn ngưỡng `B ~ sqrt(n)` để cân bằng 2 phần chi phí.
