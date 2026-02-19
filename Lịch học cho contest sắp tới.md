@@ -107,7 +107,7 @@
 
 **19/2**:  Sqrt decomposition
 
-**20/2**:  Parallel Binary Search
+**20/2**:  Mo hilbert order +  Block-Cut Tree / Bridge Tree  + monotonic stack/queue
 
 **21/2**: Parallel Binary Search
 
