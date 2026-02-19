@@ -107,7 +107,7 @@
 
 **19/2**:  Sqrt decomposition
 
-**20/2**:  Mo algorithm - hilbert order
+**20/2**:  Parallel Binary Search
 
 **21/2**: Parallel Binary Search
 
