@@ -4,6 +4,7 @@
 ## Đường dẫn :
 - [[Segment Tree]]
 - [[Lazy Segment Tree]]
+- [[Parallel Binary Search]]
 - [[Mo]]
 - [[Sqrt chung]]
 - [[Range Query Sqrt decomposition]]

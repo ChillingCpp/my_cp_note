@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lịch học cho contest sắp tới.md",
+                "file": "Kiến thức đã học/Query, Range Query/Relative topics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lịch học cho contest sắp tới"
+              "title": "Relative topics"
             }
           }
         ]
@@ -174,12 +174,14 @@
   },
   "active": "76ac6b1ea3dbd05c",
   "lastOpenFiles": [
-    "Danh sách các thuật toán đã học.md",
+    "Kiến thức đã học/Sqrt Decomposition/Mo.md",
     "Kiến thức đã học/Sqrt Decomposition/Range Query Sqrt decomposition.md",
+    "Kiến thức đã học/Sqrt Decomposition/Sqrt chia case.md",
+    "Kiến thức đã học/Query, Range Query/Relative topics.md",
+    "Lịch học cho contest sắp tới.md",
+    "Danh sách các thuật toán đã học.md",
     "Kiến thức đã học/Sqrt Decomposition/Sqrt chung.md",
     "Kiến thức đã học/Data_structure/Non-STL/Lazy Segment Tree.md",
-    "Kiến thức đã học/Query, Range Query/Relative topics.md",
-    "Kiến thức đã học/Sqrt Decomposition/Mo.md",
     "Kiến thức đã học/Data_structure/Non-STL/Segment Tree.md",
     "Kiến thức đã học/Kĩ thuật traceback.md",
     "Kiến thức đã học/Math/Untitled.md",
@@ -199,8 +201,6 @@
     "Kiến thức đã học/Dynamic Programming/DP how to solve it G.Polya.md",
     "Kiến thức đã học/Dynamic Programming/Các dạng DP chính.md",
     "Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md",
-    "Kiến thức đã học/Data_structure/Non-STL/Graph/Mô hình hóa bài toán thành các dạng graph.md",
-    "Bài tập/Đường dẫn tới danh sách bài tập.md",
     "Competitive programming roadmap.pdf",
     "Bìa",
     "Bài tập",

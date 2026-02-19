@@ -32,6 +32,6 @@
 - Mo on tree: kết hợp Euler Tour để đưa về đoạn mảng.
 
 ## Đường dẫn
-- [[Tư tưởng]]
+- [[Sqrt chung]]
 - [[Harmonic Number]]
 - [[Euler tour flatten]]
