@@ -30,6 +30,5 @@
 ## Đường dẫn
 - [[Segment Tree]]
 - [[Lazy Segment Tree]]
-- [[Harmonic Number]]
 - [[Prefix sum 1D]]
 
