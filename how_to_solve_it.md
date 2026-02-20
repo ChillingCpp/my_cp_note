@@ -3,6 +3,10 @@
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
 
 ## 0) Mục tiêu
+- Ưu tiên sử dụng trực giác để tìm được lời giải nhanh cho bài toán hơn
+- Trường hợp sử dụng khung này :
+    - nếu như 1 lời giải bằng trực giác bị WA, error trong 30p thì sử dụng khung này
+    - trực giác không thể cho được lời giải tối ưu.
 - Đây là khung thực chiến: **ngắn, đủ ý quan trọng**, dùng để ép tư duy Polya vào competitive programming.
 
 ## I. Understand Problem (Hiểu đúng đề)
