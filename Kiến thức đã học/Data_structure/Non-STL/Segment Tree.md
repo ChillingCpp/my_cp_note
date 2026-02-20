@@ -17,6 +17,7 @@
 - Cần query đoạn với phép gộp kết hợp (`sum/min/max/gcd/xor/...`).
 - Có update online, không xử lý offline được như prefix sum.
 - Cần custom node phức tạp hơn Fenwick Tree (vd: max subarray, first position thỏa điều kiện).
+- Tối ưu các công thức/phép tính yêu cầu range query xuống o(log n)
 
 ## Khung đại số cốt lõi
 - `Node id()`
@@ -46,7 +47,7 @@
 - Nhận diện: thông tin đáp án không phải 1 số đơn giản, phải gộp từ 2 nửa.
 
 ### 4) Segment Tree đệ quy có prune (không cần lazy)
-- Range update nhưng mỗi phần tử chỉ thay đổi hữu hạn lần:
+- Range update nhưng mỗi phần tử chỉ thay đổi hữu hạn lần ($O(\sqrt{n})$, $O(log n)$, $O(1) hoặc O(C)$):
     - Ví dụ `a[i] = floor(sqrt(a[i]))`, `a[i] = popcount(a[i])`.
 - Dùng cờ dừng/giá trị max để bỏ qua node đã ổn định.
 - Nhận diện: update đoạn nhưng có tính "co dần", một phần tử đổi rất ít lần.

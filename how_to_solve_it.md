@@ -50,7 +50,7 @@ Rule:
     - nếu ý tưởng không qua được test phá thì bỏ sớm.
 
 ## V. Commit Solution (Chốt thuật toán)
-12. Chọn hướng giải theo cấu trúc đã tìm được: [[Nhận diện thuật toán]]
+12. Chọn hướng giải theo cấu trúc đã tìm được: [[chọn_nhanh_thuật_toán]]
 13. Nêu lý do đúng:
     - dựa trên invariant, tính đơn điệu, cấu trúc dữ liệu, hoặc quy nạp.
 14. Kiểm tra độ phủ:
