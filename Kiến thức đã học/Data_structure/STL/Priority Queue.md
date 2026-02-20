@@ -1,5 +1,23 @@
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/monotonic_queue(deque).cpp)
 
+# Priority Queue (`std::priority_queue`)
 
-- Được sử dụng khi mà ở mỗi bước của vòng lặp muốn truy vấn/thêm/sửa ngay lập tức optimal solution trong O(log n), 
-- Được sử dụng nhiều nhất trong các thuật toán tham lam, giảm độ phức tạp của quy hoạch động
+## Khi nào dùng
+- Cần lấy phần tử tốt nhất hiện tại (max/min) nhiều lần.
+- Mỗi bước cần `push` và lấy cực trị nhanh.
+- Rất hay gặp trong greedy, Dijkstra, và tối ưu DP.
+
+## Độ phức tạp
+- `top`: `O(1)`.
+- `push/pop`: `O(log n)`.
+
+## Mẫu bài quan trọng
+- Dijkstra (chọn node có dist nhỏ nhất).
+- Merge `k` dãy đã sort.
+- Chọn top-k phần tử.
+- Sweep line với active events có ưu tiên.
+- Greedy + Priority Queue
+
+## Lưu ý
+- Không hỗ trợ xóa phần tử bất kỳ hiệu quả như `set`.
+- Nếu cần xóa "lười" (lazy deletion), dùng thêm map đếm số lần cần loại.
