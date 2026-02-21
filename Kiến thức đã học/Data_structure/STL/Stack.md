@@ -23,9 +23,7 @@
 	- Tổng max: `sumMax = Σ a[i] * (i - Lmax) * (Rmax - i)`.
 	- Tổng min: `sumMin = Σ a[i] * (i - Lmin) * (Rmin - i)`.
 	- Bài tổng `(max - min)` mọi subarray: `answer = sumMax - sumMin`.
-	
+
 ## Range query với monotonic stack
 - Gọi `L` là vị trí gần nhất bên trái còn hợp lệ, `R` là vị trí gần nhất bên phải còn hợp lệ.
 - Mỗi giá trị khi làm `max/min` sẽ xác định một đoạn ảnh hưởng `(L[i], R[i])`, nên có thể đổi góc nhìn thành bài toán [[range query]] trên các đoạn này.
-
-
