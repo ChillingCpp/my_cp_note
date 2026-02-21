@@ -14,3 +14,4 @@
 - [[Prefix max]]
 - [[Difference Array]]
 - [[Prefix or suffix Arrays]]
+- [[Stack]]
