@@ -4,7 +4,6 @@
 
 ## Liên kết
 - Đây là phần chi tiết cho bước 4 trong [[DP how to solve it G.Polya]].
-- Chủ đề liên quan: [[Divide and Conquer]], [[Deque]], [[Slope trick]].
 
 ## Tư tưởng cốt lõi
 - Chỉ tối ưu sau khi công thức DP gốc đã đúng.
@@ -19,6 +18,7 @@
 
 ## Quy trình chuẩn
 1. Viết công thức chưa tối ưu.
+    1.5. đọc output và cách phụ thuộc
 2. Tách phần phụ thuộc `i` và phần phụ thuộc `j`.
 3. Nhìn dạng truy vấn:
    - min/max trên đoạn
@@ -60,7 +60,8 @@
 - Có bài DP dùng stack để tìm nhanh:
   - previous/next smaller element
   - previous/next greater element
-  - đoạn gần nhất thỏa điều kiện để chuyển trạng thái.
+  - kết hợp Segment tree để truy vấn đoạn [i, nxt[i]], [prev[i], i],....
+  - đoạn/vị trí gần nhất thỏa điều kiện để chuyển trạng thái.
 - Mẫu tư duy:
   - nếu transition cần "điểm gần nhất bên trái/phải" thỏa một quan hệ đơn điệu, stack thường giảm vòng lặp lồng nhau.
 - Độ phức tạp thường gặp:
@@ -72,13 +73,7 @@
 
 #### c) Segment Tree
 - Dạng:
-  - cần query `min/max/sum` trên đoạn của các giá trị `dp` đã biết.
-- Độ phức tạp:
-  - thường `O(n^2)` -> `O(n log n)`.
-
-#### d) Fenwick Tree (BIT)
-- Dạng:
-  - query prefix + point update, thường sau coordinate compression.
+  - cần query `min/max/sum,...` trên đoạn của các giá trị `dp` đã biết.
 - Độ phức tạp:
   - thường `O(n^2)` -> `O(n log n)`.
 
@@ -111,6 +106,19 @@
   - dịch bit hàng loạt thay cho loop thủ công.
 - Lợi ích:
   - cải thiện đáng kể hằng số thời gian.
+
+#### i) Binary Search (lower_bound / upper_bound)
+- Dạng:
+  - cần tìm trạng thái trước đó đầu tiên/cuối cùng thỏa điều kiện.
+  - transition phụ thuộc vào một ngưỡng đơn điệu theo chỉ số hoặc giá trị.
+- Ý tưởng:
+  - tiền xử lý danh sách/tập giá trị theo thứ tự, rồi dùng `lower_bound`/`upper_bound` để nhảy thẳng tới `j` phù hợp thay vì quét tuyến tính.
+  - khi predicate đơn điệu theo `j`, có thể nhị phân trực tiếp trên miền chỉ số để tìm điểm tách transition.
+- Ví dụ mẫu:
+  - `dp[i] = best(dp[j])` với `pref[j] >= X` hoặc `a[j] <= a[i] - K`.
+  - chọn `j` gần nhất bên trái/phải thỏa ràng buộc theo giá trị đã sắp xếp.
+- Độ phức tạp:
+  - thường từ `O(n^2)` xuống `O(n log n)` hoặc `O(n log^2 n)` tùy phần update/query còn lại.
 
 ### 4) Binary Search + DP Check
 - Dạng:
@@ -159,6 +167,7 @@
 | Ứng viên động, cần top nhanh | Priority Queue / Multiset |
 | State thưa | Hash map |
 | Boolean knapsack/subset | Bitset |
+| Tìm `j` trước đó hoặc điểm tách transition theo điều kiện đơn điệu | Binary Search (`lower_bound` / `upper_bound`) |
 | Feasibility đơn điệu theo đáp án | Binary Search + DP |
 | `min_j(dp[j] + C(j,i))` + opt đơn điệu | D&C (chưa cần học đến) |
 | Interval DP tách tại `k` | Knuth (chưa cần học đến) |
