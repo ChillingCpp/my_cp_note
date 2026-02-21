@@ -34,8 +34,8 @@
 - `Medium`:
 - `Low`:
 
-> Mục tiêu: **không đoán thuật toán trực tiếp từ đề**, mà **biến đổi bài toán -> trích xuất từ khóa -> xếp hạng tiềm năng thuật toán (Thấp/Trung bình/Cao)**.
-> Đầu ra cuối cùng phải là **một shortlist có thứ tự ưu tiên**, không phải một thuật toán duy nhất.
+### Mục tiêu: **không đoán thuật toán trực tiếp từ đề**, mà **biến đổi bài toán -> trích xuất từ khóa -> xếp hạng tiềm năng thuật toán (Thấp/Trung bình/Cao)**.
+### Đầu ra cuối cùng phải là **một shortlist có thứ tự ưu tiên**, không phải một thuật toán duy nhất.
 
 ---
 
@@ -80,7 +80,7 @@ Sau khi nhận diện, luôn xuất theo mẫu:
 - Cần `O(n)`, `O(n log n)`, hay chấp nhận `O(n sqrt n)`.
 - Giá trị có âm/không âm, có thể có cycle âm không.
 
-> Nếu chưa chuẩn hóa xong 4 bước này thì chưa xếp hạng tiềm năng.
+### 5) Nếu chưa chuẩn hóa xong 4 bước này thì chưa xếp hạng tiềm năng.
 
 ---
 
@@ -119,7 +119,7 @@ Chấm mỗi thuật toán theo 4 tiêu chí:
 - `Medium`: 5-7.
 - `Low`: 0-4.
 
-> Quy tắc thực chiến: thuật toán có keyword khớp mạnh nhưng sai độ phức tạp vẫn phải hạ xuống `Medium/Low`.
+### Quy tắc thực chiến: thuật toán có keyword khớp mạnh nhưng sai độ phức tạp vẫn phải hạ xuống `Medium/Low`.
 
 ---
 
@@ -155,7 +155,7 @@ Keyword mạnh:
 
 - `graph`, `dependency`, `component`, `path`, `cycle`, `state (u, mask, k, parity...)`.
 
-> Quy ước: bài có quan hệ đỉnh-cạnh thì gom về `graph` trước, rồi tách `undirected` / `directed`.
+- Quy ước: bài có quan hệ đỉnh-cạnh thì gom về `graph` trước, rồi tách `undirected` / `directed`.
 
 ---
 
