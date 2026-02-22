@@ -109,9 +109,9 @@
 
 **20/2**:  Mo hilbert order +  Block-Cut Tree / Bridge Tree  + monotonic stack/queue
 
-**21/2**: Parallel Binary Search
+**21/2**: Ôn tập
 
-**22/2 (T7 – Pattern Day)**: Parallel Binary Search
+**22/2 (T7 – Pattern Day)**: ôn tập
 
 **23/2 (CN)**: Ôn segtree + PBS
 
@@ -119,9 +119,9 @@
 
 ## CỤM 5 – DP MỞ RỘNG NHẸ (24/2 → 1/3)
 
-**24/2**: Bitmask DP cơ bản
+**24/2**: Digit DP
 
-**25/2**: Bitmask DP chuẩn (TSP, matching nhỏ)
+**25/2**: Bitmask DP 
 
 **26/2**: Luyện bitmask DP
 
