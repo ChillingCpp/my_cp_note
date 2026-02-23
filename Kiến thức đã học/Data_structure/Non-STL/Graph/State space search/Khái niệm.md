@@ -9,6 +9,7 @@
 - Mỗi state là một node trong đồ thị trạng thái.
 - Chuyển trạng thái theo cạnh hợp lệ.
 - Dùng BFS/Dijkstra/0-1 BFS tùy trọng số.
+- Sử dụng kĩ thuật Meet-in-the-middle ( bidirection search ) nếu có thể
 
 ## Khung cập nhật
 - Gọi `best[s]` là giá trị tốt nhất tại state `s`.

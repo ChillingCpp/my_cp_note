@@ -41,100 +41,22 @@
 
 ---
 
-## CỤM 1 – GREEDY (27/1 → 2/2)
+## CỤM 5 – Tập trung chủ đề (23/2 → 4/3)
 
-**27/1 (T2)**: Greedy cơ bản (sorting, interval)
-
-**28/1 (T3)**: Scheduling, activity selection
-
-**29/1 (T4)**: Greedy + priority queue
-
-**30/1 (T5)**: Exchange argument / regret
-
-**31/1 (T6)**: Bài greedy (1400–1500)
-
-**1/2 (T7 – Pattern Day)**:
-- Pattern Greedy + dấu hiệu nhận dạng
-- Ôn template
-
-**2/2 (CN)**: Greedy + parity (nhẹ, đọc đề + 1 bài)
+**23/2**: Digit DP
+**24/2**: bitmask dp
+**25/2**: Đọc lại [[DP how to solve it G.Polya]] và giải DP
+26/2: Giải DP tổng hợp
+**27/2**: DFS/BFS từ cơ bản đến nâng cao
+28/2: Dijkstra state space search
+29/2: Đọc lại toàn bộ thuật toán
+1/3: Luyện đề dạng thu thập chủ đề
+2/3: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó 
+3/3: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó
 
 ---
 
-## CỤM 2 – TREE CƠ BẢN (3/2 → 9/2)
-
-**3/2**: DFS tree, depth, parent
-
-**4/2**: Subtree size, in/out time
-
-**5/2**: LCA – binary lifting
-
-**6/2**: Parity trên tree, distance chẵn/lẻ
-
-**7/2**: Bài tree cơ bản (1300–1500)
-
-**8/2 (T7 – Pattern Day)**:
-- Pattern Tree (DFS/LCA/parity)
-
-**9/2 (CN)**: Tree + query nhẹ (không HLD)
-
----
-
-## CỤM 3 – GRAPH (10/2 → 16/2)
-
-**10/2**: DFS/BFS nâng cao, cycle, bipartite
-
-**11/2**: MST – Kruskal + DSU
-
-**12/2**: Tarjan SCC
-
-**13/2**: Bài SCC
-
-**14/2**: Bridge & articulation point
-
-**15/2 (T7 – Pattern Day)**:
-- Pattern Graph (SCC / bridge / BCT)
-
-**16/2 (CN)**: Block-Cut Tree / Bridge Tree (nhận dạng)
-
----
-
-## CỤM 4 – Range query + PBS (17/2 → 23/2)
-
-**17/2**: Segment Tree lazy – range update array
-
-**18/2**: Segment Tree lazy – range update array
-
-**19/2**:  Sqrt decomposition
-
-**20/2**:  Mo hilbert order +  Block-Cut Tree / Bridge Tree  + monotonic stack/queue
-
-**21/2**: Ôn tập
-
-**22/2 (T7 – Pattern Day)**: ôn tập
-
-**23/2 (CN)**: Ôn segtree + PBS
-
----
-
-## CỤM 5 – DP MỞ RỘNG NHẸ (24/2 → 1/3)
-
-**24/2**: Digit DP
-
-**25/2**: Bitmask DP 
-
-**26/2**: Luyện bitmask DP
-
-**27/2**: DP nhiều chiều
-
-**28/2**: DP + tree / graph
-
-**1/3 (T7 – Pattern Day)**:
-- Pattern DP + tổng hợp toàn bộ CP
-
----
-
-# PHẦN B – DUY TRÌ CP + TĂNG V-ACT (2/3 → 5/4)
+# PHẦN B – DUY TRÌ CP + TĂNG V-ACT (5/3 → 5/4)
 
 > Không học topic CP mới. Chỉ củng cố + pattern.
 
