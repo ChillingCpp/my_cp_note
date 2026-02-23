@@ -34,10 +34,7 @@
 - Với path query bất kỳ `u-v`, thường cần LCA + tách đoạn đúng cách.
 
 ## Công thức check nhanh
-- Euler đầy đủ: tổng số mốc thăm phải là `2*n - 1`.
-- Euler `2n`: mỗi node xuất hiện đúng 2 lần, `first[u] < second[u]`, tổng mốc là `2*n`.
+- Với Euler 1 lần: `1 <= in[u] <= out[u] <= n`.
 - Euler `n`: tổng mốc là `n` và `out[u] - in[u] + 1 = sz[u]`.
-- Điều kiện tổ tiên (với bộ `in/out` chuẩn): `u` là tổ tiên `v` khi `in[u] <= in[v] && out[v] <= out[u]`.
-- Với cạnh cây `(u, v)` (`u` là cha): luôn có `in[u] < in[v]` và `out[v] <= out[u]`.
-- Nếu flatten theo id node: `flat[in[u]] = u`.
+- `is_ancestor(u, v) :  in[u] < in[v] && out[v] <= out[u]`
 
