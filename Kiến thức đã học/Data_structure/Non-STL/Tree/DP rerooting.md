@@ -20,3 +20,12 @@
 - Tránh sửa trực tiếp rồi quên hoàn tác.
 - Tách rõ hàm merge/exclude để dễ debug.
 
+## Công thức check nhanh
+- Sau `dfs1`: `sub[u] = 1 + \sum sub[v]` (với `v` là con), và `sub[root] = n`.
+- Mẫu kinh điển (tổng khoảng cách từ mỗi node):
+  - `down[u] = \sum (down[v] + sub[v])`.
+  - `ans[root] = down[root]`.
+  - Với con `v` của `u`: `ans[v] = ans[u] + n - 2*sub[v]`.
+- Nếu `ans[u]` là tổng khoảng cách từ `u` tới mọi node:
+  - `\sum ans[u] = 2 * \sum_{i<j} dist(i, j)` (để check toàn cục).
+- Khi chuyển gốc `u -> v`, trạng thái phải được khôi phục y hệt sau khi quay lui.

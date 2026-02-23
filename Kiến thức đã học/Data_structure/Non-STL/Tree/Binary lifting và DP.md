@@ -32,3 +32,17 @@
   - identity element (phần tử đơn vị),
   - hướng gộp trái/phải có ảnh hưởng hay không.
 
+## 6. Công thức check nhanh
+- `LOG = \lfloor \log_2(n) \rfloor + 1`.
+- Base root:
+  - `up[root][0] = root` (hoặc `0` theo convention),
+  - `up[root][i]` giữ nguyên sentinel cho mọi `i`.
+- Đệ quy bảng nhảy:
+  - nếu `p = up[u][i-1]` thì `up[u][i] = up[p][i-1]`.
+- Với DFS time:
+  - `is_ancestor(u, v) <=> in[u] <= in[v] && out[v] <= out[u]`.
+- Khoảng cách:
+  - `dist(u, v) = depth[u] + depth[v] - 2*depth[lca(u, v)]`.
+- Check nhảy tổ tiên:
+  - `kth_ancestor(u, depth[u])` phải về root (hoặc sentinel của root).
+

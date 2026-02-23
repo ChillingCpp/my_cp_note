@@ -16,3 +16,12 @@
 - Nếu truy vấn subtree nhiều: ưu tiên [[Euler tour flatten]]
 - Nếu truy vấn tổ tiên/LCA: [[binary lifting]]
 
+## Check nhanh trước submit
+- `parent[root] = root` (hoặc `0` theo convention), `depth[root] = 0`.
+- Với mọi `u != root`: `depth[u] = depth[parent[u]] + 1`.
+- `sz[u] = 1 + \sum sz[v]` với `v` là con trực tiếp của `u`.
+- `sz[root] = n`.
+- Với Euler 1 lần: `1 <= in[u] <= out[u] <= n`.
+- Điều kiện tổ tiên: `u` là tổ tiên `v` khi `in[u] <= in[v] && out[v] <= out[u]`.
+- Toàn cây hợp lệ khi số cạnh là `n - 1`.
+
