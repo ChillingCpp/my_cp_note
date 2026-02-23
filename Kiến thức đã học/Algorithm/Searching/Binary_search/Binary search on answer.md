@@ -31,7 +31,8 @@
         - [Multiplication Table - CSES](https://cses.fi/problemset/task/2422)
         - [CF 1996F](https://codeforces.com/contest/1996/problem/F)
         - [Kth Sum](https://codeforces.com/edu/course/2/lesson/6/5/practice/contest/285084/problem/C)
-- Có thể dùng **DP bên trong `check(x)`** nếu mỗi lần kiểm tra cần kiểm chứng điều kiện phức tạp.
+- Có thể dùng **DP bên trong `check(x)`** nếu greedy fail
+    - Digit DP
 
 ## 6) Lỗi hay gặp
 - `check` không đơn điệu nhưng vẫn dùng binary search.
