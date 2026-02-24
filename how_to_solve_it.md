@@ -45,14 +45,25 @@ Rule:
     - theo đoạn, theo phần tử, theo bước, theo component.
     - các phần độc lập hay phụ thuộc?
 
-## IV. Assumption Control (Kiểm soát giả định - bắt buộc trong CP)
-10. Liệt kê giả định ngầm:
-    - input luôn hợp lệ?
-    - có trùng lặp?
-    - thứ tự có quan trọng?
-11. Tự tạo phản ví dụ cho ý tưởng hiện tại.
-    - nếu ý tưởng không qua được test phá thì bỏ sớm.
-
+## IV. Dùng Assumption (Giả định có kiểm soát)
+10. Viết assumption ra rõ ràng:
+    - dạng `Giả sử ... thì ...`.
+    - ghi phạm vi áp dụng (mọi test, hay chỉ sau khi biến đổi bài toán).
+11. Kiểm chứng assumption:
+    - suy ra trực tiếp từ đề, hoặc chứng minh bằng invariant/exchange argument.
+    - thử phản ví dụ nhỏ: `n=1`, tất cả bằng nhau, đảo thứ tự, biên âm/0/cực đại.
+12. Loại bỏ assumption:
+    - Nếu có phản ví dụ, hoặc không chứng minh được.
+14. Ví dụ assumption thường dùng trong CP (tóm gọn):
+    - Các assumption quan trọng :
+        - `Fix để phá đối xứng (symmetry breaking)`: cố định một lựa chọn đại diện để loại các nghiệm tương đương.
+        - `Fix thứ tự xử lý` (sort/topo/trái -> phải): tạo đơn điệu để xử lý dần (sweep line, two pointers, DP theo thứ tự).
+        - `Fix một cấu hình chuẩn (canonical form)`: chuẩn hóa cách biểu diễn để so sánh/chứng minh dễ hơn.
+        - `Fix để giảm chiều trạng thái`: giữ một mốc cố định để rút gọn số biến trạng thái.
+        - `Giả sử chỉ cần trạng thái nén` (tập/đếm, không cần lịch sử chi tiết): mở ra DP/bitmask/frequency.
+        - `Giả sử có vị trí vi phạm đầu tiên`: suy ra ràng buộc cục bộ rồi nâng thành invariant toàn cục.
+        - `Giả sử tồn tại nghiệm tối ưu S`: dùng exchange argument để chuẩn hóa nghiệm (vd: interval scheduling chọn đoạn kết thúc sớm).
+        - `Giả sử cấu hình cực trị` (max/min): tìm cấu trúc tight hoặc điểm biên.
 ## V. Commit Solution (Chốt thuật toán)
 12. Chọn hướng giải theo cấu trúc đã tìm được: [[chọn_nhanh_thuật_toán]]
 13. Nêu lý do đúng:
@@ -75,4 +86,3 @@ Rule:
 19. Gắn nhãn bài:
     - invariant-based, constructive, monotonicity, greedy, DP, graph,...
 20. Ghi 1-2 câu "dấu hiệu nhận biết" để tái sử dụng cho bài sau.
-
