@@ -43,16 +43,16 @@
 
 ## CỤM 5 – Tập trung chủ đề (23/2 → 4/3)
 
-**23/2**: Digit DP
-**24/2**: bitmask dp
-**25/2**: Đọc lại [[DP how to solve it G.Polya]] và giải DP
-26/2: Giải DP tổng hợp
-**27/2**: DFS/BFS từ cơ bản đến nâng cao
-28/2: Dijkstra state space search
-29/2: Đọc lại toàn bộ thuật toán
-1/3: Luyện đề dạng thu thập chủ đề
-2/3: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó 
-3/3: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó
+- **23/2**: Digit DP
+- **24/2**: bitmask dp
+- **25/2**: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó 
+- **26/2**: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó
+- **27/2**: DFS/BFS từ cơ bản đến nâng cao
+- **28/2**: Dijkstra state space search
+- **29/2**: Đọc lại toàn bộ thuật toán
+- **1/3**:  Đọc lại toàn bộ thuật toán
+- **2/3**: Luyện đề dạng thu thập chủ đề
+- **3/3**: Luyện đề dạng thu thập chủ đề
 
 ---
 
