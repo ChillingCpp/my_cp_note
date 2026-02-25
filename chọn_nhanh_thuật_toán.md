@@ -6,7 +6,30 @@
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
 
-## 0) Flow mapping nhanh 30s (dùng trước mọi thứ)
+## 0) Phân loại theo time constraint (lọc nhanh theo độ lớn dữ liệu)
+
+| Quy mô dữ liệu điển hình | Mục tiêu độ phức tạp | Shortlist nhanh nên nghĩ trước |
+|---|---|---|
+| `n <= 20` | `O(2^n * n)` hoặc `O(n!)` có prune | Backtracking, DP bitmask, brute force thông minh |
+| `20 < n <= 45` | `O(2^(n/2))` | Meet-in-the-middle, chia đôi tập |
+| `n <= 200` | `O(n^3)` còn chấp nhận được | Floyd-Warshall, interval DP, cubic DP |
+| `n <= 2000` | `O(n^2)` hoặc `O(n^2 log n)` | DP 2 chiều, graph dày vừa, prefix 2D |
+| `n <= 5000` | ưu tiên `O(n^2)`; tránh `O(n^2 log n)` nếu không bắt buộc | DP tối ưu hằng số, prefix 2D, kỹ thuật giảm log factor |
+| `n, m <= 2e5`, `q <= 2e5` | `O((n+q) log n)` hoặc tốt hơn | Segment tree, Fenwick, DSU, HLD, Dijkstra |
+| `n ~ 1e6` (ít query, dữ liệu tĩnh) | `O(n)` hoặc `O(n log log n)` | Prefix/sieve/linear scan/two pointers |
+| Nhiều query tĩnh (`q` rất lớn, update ít/không) | Tiền xử lý `O(n log n)` + query `O(1)`/`O(log n)` | Sparse table, prefix, binary lifting |
+| Update + query cùng lớn | Mỗi thao tác `O(log n)` | Segment tree lazy, Fenwick, balanced BST |
+| Đồ thị dày (`m ~ n^2`, `n` nhỏ-vừa) | `O(n^3)` có thể hợp lý | Floyd-Warshall, bitset optimization |
+
+Quy tắc đọc nhanh:
+- Nếu `T` test lớn, nhân complexity theo `T` trước khi chốt thuật toán.
+- Với `n <= 5000`, coi `O(n^2 log n)` là vùng rủi ro TLE trên máy yếu; ưu tiên `O(n^2)` khi có thể.
+- Với `n` cỡ `2e5`, mặc định ưu tiên `O(n log n)` trở xuống.
+- Nếu thao tác online bắt buộc, ưu tiên DS online; nếu offline được, xét Mo/PBS/sort event để giảm chi phí.
+
+---
+
+## 1) Flow mapping nhanh 30s (dùng trước mọi thứ)
 
 1. Chuẩn hóa đề trong 1 câu: `object + thao tác + mục tiêu`.
 2. Xác định lớp bài: `number` hoặc `linear` hoặc `graph/tree/state`.
@@ -21,23 +44,6 @@
    - `< 5`: loại khỏi shortlist (không xếp hạng)
 9. Chốt thứ tự thử: `High dễ code trước`, rồi `High còn lại`, rồi `Medium`.
 10. Kiểm tra trước khi code: phản ví dụ nhỏ + complexity check.
-
-### Mẫu điền nhanh (copy/paste)
-
-- `Object`:
-- `Ops`:
-- `Goal`:
-- `Constraints`:
-- `Keywords`:
-- `Hard filters pass/fail`:
-- `High`:
-- `Medium`:
-- `Rejected (nếu có)`:
-
-### Mục tiêu: **không đoán thuật toán trực tiếp từ đề**, mà **biến đổi bài toán -> trích xuất từ khóa -> xếp hạng tiềm năng thuật toán (High/Medium)**.
-### Đầu ra cuối cùng phải là **một shortlist có thứ tự ưu tiên**, không phải một thuật toán duy nhất.
-
----
 
 ## I. Đầu ra chuẩn của framework
 
@@ -325,28 +331,7 @@ Keyword mạnh:
 
 ---
 
-## X. Phân loại theo time constraint (lọc nhanh theo độ lớn dữ liệu)
-
-| Quy mô dữ liệu điển hình | Mục tiêu độ phức tạp | Shortlist nhanh nên nghĩ trước |
-|---|---|---|
-| `n <= 20` | `O(2^n * n)` hoặc `O(n!)` có prune | Backtracking, DP bitmask, brute force thông minh |
-| `20 < n <= 45` | `O(2^(n/2))` | Meet-in-the-middle, chia đôi tập |
-| `n <= 200` | `O(n^3)` còn chấp nhận được | Floyd-Warshall, interval DP, cubic DP |
-| `n <= 2000` | `O(n^2)` hoặc `O(n^2 log n)` | DP 2 chiều, graph dày vừa, prefix 2D |
-| `n, m <= 2e5`, `q <= 2e5` | `O((n+q) log n)` hoặc tốt hơn | Segment tree, Fenwick, DSU, HLD, Dijkstra |
-| `n ~ 1e6` (ít query, dữ liệu tĩnh) | `O(n)` hoặc `O(n log log n)` | Prefix/sieve/linear scan/two pointers |
-| Nhiều query tĩnh (`q` rất lớn, update ít/không) | Tiền xử lý `O(n log n)` + query `O(1)`/`O(log n)` | Sparse table, prefix, binary lifting |
-| Update + query cùng lớn | Mỗi thao tác `O(log n)` | Segment tree lazy, Fenwick, balanced BST |
-| Đồ thị dày (`m ~ n^2`, `n` nhỏ-vừa) | `O(n^3)` có thể hợp lý | Floyd-Warshall, bitset optimization |
-
-Quy tắc đọc nhanh:
-- Nếu `T` test lớn, nhân complexity theo `T` trước khi chốt thuật toán.
-- Với `n` cỡ `2e5`, mặc định ưu tiên `O(n log n)` trở xuống.
-- Nếu thao tác online bắt buộc, ưu tiên DS online; nếu offline được, xét Mo/PBS/sort event để giảm chi phí.
-
----
-
-## XI. Checklist thực chiến 30s
+## X. Checklist thực chiến 30s
 
 1. Sau biến đổi, bài toán là `number`, `linear`, hay `graph/state`?
 2. Truy vấn là `single`, `many queries`, hay `dynamic updates`?
@@ -359,7 +344,7 @@ Nếu không trả lời được >= 4 câu thì quay lại bước biến đổ
 
 ---
 
-## XII. Liên kết trực tiếp theo nhóm note
+## XI. Liên kết trực tiếp theo nhóm note
 
 - Query/Range:
     [[Segment Tree]], [[Lazy Segment Tree]], [[Mo]], [[Range Query Sqrt decomposition]],
