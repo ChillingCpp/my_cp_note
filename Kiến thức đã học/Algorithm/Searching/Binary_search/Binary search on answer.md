@@ -16,7 +16,7 @@
     - nếu hai phía cho tính chất khác nhau rõ ràng => có thể tạo `check(x)` đơn điệu.
 - Với công thức có mảng, thường check gắn với ràng buộc kiểu `<= k`, `>= k`, số phần tử đạt điều kiện,...
 
-## 4) Các dạng bài phổ biến
+## 4) Tính chất cho các dạng bài cơ bản 
 - Hàm số trực tiếp: ví dụ `f(x) = 3x + 1`.
 - Công thức gắn dữ liệu mảng/ràng buộc.
 - Tối ưu `max/min`:

@@ -100,17 +100,26 @@ Nếu vi phạm điều kiện cứng thì thuật toán đó bị **loại kh�
 |---|---|---|
 | Prefix sum / Prefix min-max | Dữ liệu tĩnh hoặc truy vấn không update phá prefix | Loại khỏi shortlist |
 | Difference Array | Nhiều range update + tổng hợp cuối/offline | Loại khỏi shortlist |
+| Binary Search on Array/Set | Dữ liệu đã sort hoặc có cấu trúc có thứ tự (`set/map`) | Loại khỏi shortlist |
 | Segment Tree | Phép gộp có tính kết hợp, cần query/update online | Loại khỏi shortlist |
 | Lazy Segment Tree | Range update tổng quát, không prune one-shot | Loại khỏi shortlist |
+| Set interval | Trạng thái có thể gom thành các đoạn liên tiếp và thứ tự chỉ số ổn định | Loại khỏi shortlist |
 | Mo | Offline query + add/remove cục bộ hiệu quả | Loại khỏi shortlist |
 | Binary Search on Answer | Có `check(x)` đơn điệu | Loại khỏi shortlist |
+| Ternary Search on Answer | Hàm mục tiêu unimodal (một cực trị trong miền) | Loại khỏi shortlist |
 | Parallel Binary Search | Nhiều query cùng kiểu check đơn điệu theo mốc | Loại khỏi shortlist |
+| Divide and Conquer | Chia được thành bài toán con gần độc lập + có bước combine đúng bản chất | Loại khỏi shortlist |
 | DSU Jump Pointer | One-shot + thứ tự tuyến tính + không rollback | Loại khỏi shortlist |
+| DSU Bipartite | Ràng buộc parity/2-màu trên quan hệ vô hướng | Loại khỏi shortlist |
 | Topological Sort | Directed graph + lý do thứ tự phụ thuộc | Loại khỏi shortlist |
+| 0-1 BFS | Trọng số cạnh chỉ thuộc `{0,1}` | Loại khỏi shortlist |
 | Dijkstra | Trọng số không âm | Loại khỏi shortlist |
+| Johnson (all-pairs) | Không có negative cycle sau bước reweight | Loại khỏi shortlist |
 | Manacher | Bài lõi palindrome substring | Loại khỏi shortlist |
 | DSU theo component | Quan hệ nối-vô-hướng hoặc connectivity offline phù hợp | Loại khỏi shortlist cho reachability đồ thị có hướng |
 | Bridge / Articulation (Tarjan low-link cơ bản) | Đồ thị vô hướng | Loại khỏi shortlist cho đồ thị có hướng |
+| BET/BCT | Cần bridge/articulation query nhiều lần trên đường đi sau khi nén | Loại khỏi shortlist |
+| Cactus decomposition | Graph đúng dạng cactus (mỗi cạnh thuộc tối đa một chu trình đơn) | Loại khỏi shortlist |
 
 - Ghi chú quan trọng:
     - Ví dụ không phù hợp: dùng DSU để xử lý phụ thuộc reachability trong đồ thị có hướng.
@@ -143,9 +152,11 @@ Chấm mỗi thuật toán theo 4 tiêu chí:
 |---|---|---|
 | Chủ yếu là số học, modulo, gcd/lcm, prime | Number theory (`gcd/lcm`, mod, fast power, ext-euclid, sieve, SPF) | Binary search on answer (nếu có monotonic) |
 | Hệ đồng dư / phương trình Diophantine | CRT, ext-euclid, modular inverse | Brute force kiểm chứng mẫu nhỏ |
+| Ràng buộc theo chữ số (`0..9`), truy vấn theo đoạn giá trị `[L, R]` | Digit DP (`tight`, `started`, trạng thái phụ) | Binary search + Digit DP check |
 | N nhỏ (`<= 20..22`), xét tập con | Bitmask, DP bitmask, backtracking | Meet-in-the-middle, branch and bound |
 | N tầm `30..45`, tách đôi độc lập | Meet-in-the-middle | Backtracking có pruning mạnh |
 | Truy hồi tuyến tính dài, bước rất lớn | Matrix exponentiation | DP thường |
+| Duyệt ước/bội, tổng đóng góp kiểu `sum floor(n/i)` hoặc theo divisors/multiples | Harmonic grouping + sieve/divisor loops | Brute force + cache |
 | Đếm cấu hình có tách block độc lập | Combinatorics + multinomial + DP count | Backtracking (n nhỏ) |
 | Tối đa số ước trong miền `<= N` (siêu hợp số / highly composite) | Backtracking đệ quy theo prime + số mũ không tăng, prune theo `N` | Sinh ứng viên bằng DFS + log bound |
 
@@ -161,13 +172,15 @@ Chấm mỗi thuật toán theo 4 tiêu chí:
 
 Keyword mạnh:
 
-- `subarray`, `substring`, `prefix`, `suffix`, `left-right`, `window`, `nearest`, `flatten tree`.
+- `subarray`, `substring`, `prefix`, `suffix`, `left-right`, `window`, `nearest`, `flatten tree`, `range`.
+- `first >= x`, `last <= x`, `k-th`, `ordered`, `offline query`, `one-shot`.
 
 ### B) Non-linear
 
 Keyword mạnh:
 
 - `graph`, `dependency`, `component`, `path`, `cycle`, `state (u, mask, k, parity...)`.
+- `SCC`, `condensation`, `bridge`, `articulation`, `bipartite`, `negative edge/cycle`, `reroot`.
 
 - Quy ước: bài có quan hệ đỉnh-cạnh thì gom về `graph` trước, rồi tách `undirected` / `directed`.
 
@@ -181,9 +194,11 @@ Keyword mạnh:
 |---|---|---|
 | `sum/xor` trên đoạn tĩnh | Prefix sum/xor, prefix frequency, hashing | Sqrt decomposition |
 | `max/min` trên cửa sổ | Monotonic deque/stack, sliding window | Segment tree, divide and conquer |
+| Cần `best prefix/suffix`, hoặc lấy min/max ngoài đoạn `[l, r]` | Prefix max/min + suffix max/min | Segment tree |
 | Max subarray / best segment | Kadane, prefix-min trick | Segment tree cho nhiều truy vấn |
 | `exactly/at most/at least k` với cửa sổ hợp lệ đơn điệu | Two pointers, sliding window, prefix + binary search | Mo (offline) |
 | `next/previous/nearest` | Monotonic stack, neighbor-linked array/DSU next-pointer | Balanced BST / set |
+| Query biên `first >= x`, `last <= x` trên dữ liệu đã thứ tự | Binary search on array/set (`lower_bound`, `upper_bound`) | Segment tree/Fenwick (nếu dữ liệu thay đổi online) |
 | LIS/LNDS theo thứ tự tuyến tính | Patience sorting + binary search | Segment tree/BIT với nén tọa độ |
 
 ### 2) Range query/update trên mảng
@@ -194,7 +209,9 @@ Keyword mạnh:
 | Point update + range query online | Segment tree, Fenwick | Set/map tùy bài |
 | Range update tổng quát + range query | Lazy segment tree | Sqrt lazy |
 | Range update one-shot/co dần | Segment tree không lazy + prune | Difference array (offline) |
+| Nhiều range update trước, hỏi kết quả sau cùng (không xen kẽ online) | Difference array + prefix restore | Segment tree |
 | Offline query theo ngưỡng (`<= x`, `> x`) | Sort query + Fenwick offline | Parallel Binary Search |
+| Cần `first position`/`k-th` thỏa điều kiện trên đoạn online | Segment tree custom node | Fenwick + binary lifting bit (nếu chỉ sum/count) |
 | K-th/order statistics trên đoạn (nhiều query) | Persistent segment tree, wavelet tree | Merge-sort tree + BS |
 
 ### 3) Set interval (split-merge động)
@@ -204,6 +221,7 @@ Keyword mạnh:
 | Trạng thái đồng nhất trên các đoạn liên tiếp, cần split/merge nhiều lần | Set interval (`std::set` lưu đoạn) | Lazy segment tree |
 | Update/query interval động, thứ tự chỉ số ổn định | Set interval + lower_bound + merge lân cận | Segment tree + custom node |
 | Chỉ xử lý one-shot, xóa 1 lần và không kích hoạt lại | DSU next pointer / Neighbor-linked array | Set interval |
+| Cần lấy phần tử kề trái/phải sau nhiều lần xóa/chèn cục bộ | Neighbor-linked array (`L[]/R[]`) | Set |
 | Không gom được thành đoạn, hoặc thứ tự không ổn định | Segment tree/Fenwick/graph DS phù hợp bài | Sqrt decomposition |
 
 ### 4) Frequency / Distinct / Offline queries
@@ -211,6 +229,7 @@ Keyword mạnh:
 | Tính chất | High | Medium |
 |---|---|---|
 | Offline queries độc lập, add/remove O(1) | Mo / Hilbert order | Prefix offline trick, sqrt decomposition |
+| Offline query có thêm cập nhật điểm theo thời gian | Mo with modifications (thêm chiều time) | Segment tree offline |
 | Distinct in range (static) | Offline BIT theo last occurrence | Mo |
 | Query theo thời gian mốc đầu tiên thỏa | Parallel Binary Search + DS check | Binary search từng query |
 | K-th trong subarray (static nhiều query) | Persistent segment tree / wavelet tree | Mo + heuristic |
@@ -220,9 +239,11 @@ Keyword mạnh:
 | Tính chất | High | Medium |
 |---|---|---|
 | Exact pattern matching 1 pattern | KMP, Z algorithm | Rolling hash (chấp nhận collision) |
+| Prefix-suffix/border/periodic string | KMP (prefix-function), Z algorithm | Rolling hash |
 | Nhiều pattern cùng lúc | Aho-Corasick | Trie + hash filter |
 | So sánh nhiều substring | Rolling hash (2 mod), prefix hash | Suffix array + LCP |
 | Palindrome substring | Manacher | Hash thuận-ngược + binary search |
+| Query palindrome nhiều lần trên substring | Rolling hash thuận-ngược | Manacher (nếu chỉ cần longest/global) |
 | Prefix dictionary / autocomplete / XOR trie | Trie | Hash map prefix |
 | Bài substring nâng cao (đếm distinct, lexicographic) | Suffix array/Suffix automaton | Rolling hash + binary search |
 
@@ -234,6 +255,8 @@ Keyword mạnh:
 | Chia bài thành 2 nửa độc lập | Divide and conquer / Meet-in-the-middle | Backtracking có pruning |
 | Truy vết chu trình hàm lặp | Floyd cycle finding | Hash visited |
 | Truy vấn median/percentile chạy động | Two-heaps + lazy delete | Multiset đôi |
+| Object có mức ảnh hưởng lệch mạnh (freq/deg/size), tách heavy-light theo impact | Sqrt chia case (heavy-light by impact) | Segment tree/Fenwick |
+| Cần duy trì active set động và lấy phần tử gần nhất theo khóa | `set/map` + `lower_bound/upper_bound` | Fenwick/Segment tree (nếu ép chỉ số được) |
 
 ---
 
@@ -244,19 +267,27 @@ Keyword mạnh:
 | Tính chất | High | Medium |
 |---|---|---|
 | connected/component | DFS/BFS, DSU | Dynamic connectivity offline (rollback) |
+| Cần nén component rồi xử lý trên graph nhỏ hơn | Connected Component Graph (DSU/SCC compression) | Xử lý trực tiếp trên graph gốc |
+| Query trên component sau nhiều lần merge (size/sum/xor/min-max theo tập) | DSU + aggregate ở root | Rebuild component graph |
 | bridge / articulation | Tarjan low-link | BET/BCT (nhiều query path) |
+| Query đường đi cần đếm cạnh cầu hoặc đỉnh khớp bắt buộc | BET/BCT + LCA/HLD trên cây nén | Tarjan trả lời từng query |
 | bipartite / odd cycle | BFS/DFS coloring, DSU bipartite | BFS theo lớp + parity state |
 | MST | Kruskal + DSU, Prim | Boruvka (nếu có) |
+| Phân loại cạnh MST / second-best MST | Non-tree edge + `maxEdge(path(u,v))` trên cây khung | Re-run MST từng cạnh |
 | Nhiều query connectivity theo thời gian | DSU rollback + segment tree time | Rebuild theo block |
+| Graph cactus (mỗi cạnh thuộc tối đa 1 cycle) | Cactus decomposition + DFS low-link | Tarjan chung + xử lý thủ công |
 
 ### 2) Directed graph
 
 | Tính chất | High | Medium |
 |---|---|---|
 | dependency / prerequisite / ordering | Topological sort (Kahn/DFS) | SCC + condensation (nếu có cycle) |
+| Cần topo nhỏ nhất theo từ điển | Kahn + min-heap | DFS topo + sort hậu kỳ |
+| Cần kiểm tra topo có duy nhất hay không | Kahn (mỗi bước chỉ 1 đỉnh indegree 0) | DFS + kiểm tra cạnh thứ tự |
 | SCC / mutually reachable | Tarjan SCC / Kosaraju + condensation graph | DFS reachability trên DAG nén |
 | cycle directed | DFS cycle detection, topo fail-check | SCC |
 | DP trên phụ thuộc | Topo + DP DAG | Memo DFS |
+| Có chu trình nhưng cần DP theo cụm phụ thuộc mạnh | SCC + condensation DAG + DP | Memo + pruning |
 | Mệnh đề logic dạng `a OR b` | 2-SAT (implication graph + SCC) | Backtracking với cắt tỉa nhỏ |
 
 ### 3) Path optimization
@@ -267,7 +298,10 @@ Keyword mạnh:
 | Trọng số chỉ 0/1 | 0-1 BFS | Dijkstra |
 | Non-negative weighted | Dijkstra | Dial (trọng số nhỏ), A* (heuristic tốt) |
 | Có cạnh âm (không âm chu trình) | Bellman-Ford, Johnson (all-pairs) | SPFA (chỉ khi dữ liệu phù hợp) |
+| Cần phát hiện negative cycle / positive cycle theo mô hình trọng số | Bellman-Ford/SPFA detect cycle | Floyd-Warshall (n nhỏ) |
+| All-pairs shortest path | Floyd-Warshall (`n` nhỏ, graph dày) / Johnson (`n` lớn hơn, graph thưa) | Dijkstra/BFS từ từng đỉnh |
 | K-best state / ràng buộc trạng thái | State-space search + Dijkstra/BFS + heap | DP trạng thái |
+| Cần trạng thái tốt nhất từ nhiều nguồn đặc biệt | Multisource BFS/Dijkstra | Chạy lặp từng nguồn |
 
 ### 4) Tree problems
 
@@ -275,8 +309,20 @@ Keyword mạnh:
 |---|---|---|
 | subtree query/update | Euler flatten + BIT/Segment tree | DSU on tree (nếu có) |
 | path query/update online | HLD + segment tree, LCA | Euler + segment trick |
+| Query/tính toán dọc root -> u | Euler tour + prefix/difference trên mảng flatten | Binary lifting + cộng dồn |
 | answer cho mọi root | DP rerooting | 2 DFS custom |
+| DP phụ thuộc chiều cha->con hoặc con->cha rõ ràng | Tree DP preorder/postorder | Rerooting |
 | ancestor/k-th ancestor/query nhị phân | Binary lifting | Euler tour + RMQ LCA |
+
+### 5) Graph decomposition / compression (nhánh mới)
+
+| Tính chất | High | Medium |
+|---|---|---|
+| Cần co cụm theo SCC để chuyển graph có chu trình thành DAG | Condensation graph (SCC DAG) | Chạy trực tiếp trên graph gốc + memo |
+| Query đường đi nhiều lần nhưng bản chất phụ thuộc bridge | Bridge-Edge Tree (BET) | Bridge + trả lời từng truy vấn |
+| Query nhiều lần phụ thuộc articulation/biconnected component | Block-Cut Tree (BCT) | Tarjan + xử lý cục bộ |
+| Graph cactus, path đi qua cycle và tree xen kẽ | Cactus decomposition | LCA/shortest path trực tiếp trên graph gốc |
+| Bài MST nâng cao cần xét cạnh non-tree (critical/pseudo-critical/second-best) | Advanced spanning tree + `maxEdge(path)` | Thử lại MST theo từng cạnh |
 
 ---
 
@@ -291,6 +337,9 @@ Keyword mạnh:
 | Có cửa sổ đủ điều kiện theo thời gian | Greedy with eligibility window + heap | Sweep line + set |
 | Cân bằng 2 nhóm động | Two-heap greedy (+ rollback/exchange) | Multiset 2 phía |
 | Chọn interval không giao nhau / deadline scheduling | Sort + greedy by endpoint/deadline + heap | DP interval |
+| Bất biến toàn cục rõ ràng hoặc chứng minh hoán đổi được | Invariant/Exchange greedy | DP/Bruteforce kiểm chứng |
+| Chọn theo key sắp xếp rồi xử lý tuần tự | Key-ordering greedy + sort | Priority queue + local repair |
+| Cần lấy ứng viên tốt nhất online trong dòng sự kiện | Greedy + Priority Queue | Set/Multiset |
 
 ### 2) Dynamic Programming
 
@@ -298,8 +347,12 @@ Keyword mạnh:
 |---|---|---|
 | Mỗi state có nhiều transition cạnh tranh | DP có lựa chọn (`min/max/sum/or`) | Greedy (nếu chứng minh collapse được) |
 | State theo tập con nhỏ | DP bitmask | Backtracking + pruning |
+| State theo chữ số và ràng buộc số học (`[L,R]`, cấm chữ số, mod, tổng chữ số...) | Digit DP | Brute force theo đoạn nhỏ |
 | Truy hồi deterministic một hướng | Prefix/suffix recurrence, linear DP | Full DP state lớn |
 | Trên cây / DAG | Tree DP, Topo + DP, rerooting | DFS memo |
+| Transition có cửa sổ hoặc previous/next đơn điệu | DP optimization bằng deque/stack/binary search | O(n^2) DP |
+| Query/transition trên `dp` cần online | Segment tree/Fenwick/Priority queue/Multiset cho DP | Hash map sparse DP |
+| Hàm chi phí DP lồi từng đoạn (thêm `|x-a|`, `max(0, x-a)` nhiều lần) | Slope trick | CHT/Li Chao (nếu quy về đường thẳng được) |
 | Transition tuyến tính theo slope/intercept | Convex Hull Trick / Li Chao Tree | Divide and conquer DP optimization |
 | Quadrangle inequality / monotone opt | Knuth optimization, Divide & Conquer DP | O(n^2) DP baseline |
 
@@ -308,9 +361,20 @@ Keyword mạnh:
 | Tính chất | High | Medium |
 |---|---|---|
 | Có `check(x)` đơn điệu | Binary Search on Answer | Ternary (nếu gần unimodal) |
+| Tìm biên `first/last` trên miền đã thứ tự | Binary search on array/set | Two pointers / scan |
+| `k`-th element trên nhiều dãy đã sort, tổng size quá lớn để merge | Binary Search on Answer + đếm `count(<= x)` | K-way merge bằng heap (chỉ khi tổng phần tử đủ nhỏ) |
 | Nhiều query cùng check theo mốc | Parallel Binary Search | BS từng query |
 | Hàm unimodal | Ternary search on answer | BS theo đạo hàm rời rạc |
+| `check(x)` chỉ xây được bằng quy hoạch động | Binary Search + DP check | Tối ưu trực tiếp không BS |
 | Tradeoff block/impact | Sqrt decomposition, sqrt heavy-light by impact | Segment tree |
+
+### 4) Reconstruction / Traceback (nhánh mới)
+
+| Tính chất | High | Medium |
+|---|---|---|
+| Đề yêu cầu in đường đi ngắn nhất / chuỗi thao tác thực tế | Kĩ thuật Traceback | Chỉ in giá trị tối ưu |
+| Đề yêu cầu dựng lại phương án tối ưu của DP | Kĩ thuật Traceback | Chạy lại DP nhiều lần |
+| Có nhiều nghiệm tối ưu, cần cố định thứ tự | Kĩ thuật Traceback | Chọn ngẫu nhiên theo lần gặp |
 
 ---
 
@@ -335,31 +399,36 @@ Keyword mạnh:
 
 1. Sau biến đổi, bài toán là `number`, `linear`, hay `graph/state`?
 2. Truy vấn là `single`, `many queries`, hay `dynamic updates`?
-3. Có từ khóa cứng: `subarray/path/component/ordering/palindrome/k-th/check(x)`?
+3. Có từ khóa cứng: `subarray/path/component/ordering/palindrome/k-th/check(x)/SCC/bridge/bipartite`?
 4. Có điều kiện đơn điệu, kết hợp, one-shot, hoặc offline độc lập không?
 5. Theo `n, m, q`, complexity mục tiêu là gì và shortlist nào còn sống?
 6. Với ràng buộc hiện tại, thuật toán nào đạt `High` theo điểm 10?
+7. Đề có yêu cầu in phương án/đường đi cụ thể để bật traceback không?
 
-Nếu không trả lời được >= 4 câu thì quay lại bước biến đổi, chưa nên chốt thuật toán.
+Nếu không trả lời được >= 5 câu thì quay lại bước biến đổi, chưa nên chốt thuật toán.
 
 ---
 
 ## XI. Liên kết trực tiếp theo nhóm note
 
 - Query/Range:
-    [[Segment Tree]], [[Lazy Segment Tree]], [[Mo]], [[Range Query Sqrt decomposition]],
-    [[Prefix sum 1D]], [[Prefix sum 2D]], [[Difference Array]], [[Prefix or suffix Arrays]]
+    [[Query, Range Query/Relative topics]], [[Segment Tree]], [[Lazy Segment Tree]], [[Mo]], [[Range Query Sqrt decomposition]], [[Sqrt chung]],
+    [[Prefix sum 1D]], [[Prefix sum 2D]], [[Prefix min]], [[Prefix max]], [[Difference Array]], [[Prefix or suffix Arrays]]
 - STL DS:
     [[Stack]], [[Queue]], [[Deque]], [[Priority Queue]], [[Set cơ bản]],
     [[Set interval nâng cao]], [[Map cơ bản]], [[Neighbor-linked array ~ DSU]]
 - Graph/Tree:
-    [[Topological sort]], [[bridge and ap]], [[condensation graph]], [[Euler tour flatten]],
-    [[Binary lifting và DP]], [[Dynamic programming on tree]], [[DP rerooting]]
+    [[Topological sort]], [[bridge and ap]], [[condensation graph]], [[bet_bct]], [[dfs_cactus]],
+    [[Connected Component Graph]], [[Dynamic Connectivity]], [[DSU bipartite]], [[DSU jump pointer]],
+    [[Euler tour flatten]], [[Binary lifting và DP]], [[Dynamic programming on tree]], [[DP rerooting]],
+    [[Single source one best state]], [[Single source k best state]], [[Multisource]], [[All pair search]]
 - Searching:
-    [[Binary search on answer]], [[Parallel Binary Search]], [[Ternary search on answer]],
-    [[Binary search on array or set]]
+    [[Binary search]], [[Binary search on answer]], [[Parallel Binary Search]],
+    [[Binary search on array or set]], [[Ternary search]], [[Ternary search on answer]]
 - String:
-    [[KMP]], [[Z algorithm]], [[rolling hash]], [[Manacher]], [[Trie]]
+    [[String Processing]], [[KMP]], [[Z algorithm]], [[rolling hash]], [[Manacher]], [[Trie]]
 - Math/Bit/DP/Greedy:
-    [[Basic Number Theory]], [[Combinatorics and Probability]], [[Bit manipulation and bitmask]],
-    [[Các dạng DP chính]], [[Greedy + Priority Queue]], [[Sqrt chung]], [[Sqrt chia case]]
+    [[Basic Number Theory]], [[Combinatorics and Probability]], [[Harmonic Number]], [[Matrix multiplication]],
+    [[Bit manipulation and bitmask]], [[Các dạng DP chính]], [[dp_digit]], [[dp_bitmask]], [[DP_optimization]], [[Slope trick]],
+    [[Greedy + Priority Queue]], [[Relative Topics]], [[Kĩ thuật traceback]], [[Sqrt chia case]]
+
