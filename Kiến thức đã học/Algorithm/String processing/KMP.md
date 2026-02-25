@@ -12,6 +12,8 @@
 - tính chất : 
     - pi[i], pi[pi[i]], pi[pi[pi[i]]],... lần lượt là độ dài prefixnhất của `p[0..i]` cũng là suffix của đoạn đó.
 
+## 3) tính chất
+- P[0..pi[i]-1] == P[i - pi[i] + 1 .. i]
 ## 5) Độ phức tạp
 - Build `pi`: `O(m)`
 - Match: `O(n)`

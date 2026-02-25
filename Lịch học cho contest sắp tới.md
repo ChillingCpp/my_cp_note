@@ -45,8 +45,8 @@
 
 - **23/2**: Digit DP
 - **24/2**: bitmask dp
-- **25/2**: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó 
-- **26/2**: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó
+- **25/2**: Áp dụng [[how_to_solve_it]] vào giải bài,  string processing
+- **26/2**: Áp dụng [[how_to_solve_it]], string processing
 - **27/2**: DFS/BFS từ cơ bản đến nâng cao
 - **28/2**: Dijkstra state space search
 - **29/2**: Đọc lại toàn bộ thuật toán
