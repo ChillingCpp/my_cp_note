@@ -8,7 +8,7 @@
 2. Constraint chính là gì?
     - `n <= 20` / `n <= 2000` / `n <= 2e5` / nhiều query/test
 3. Output là giá trị hay cấu hình?
-- Chọn thuật toán nhanh dựa trên time complexity
+4. Chọn thuật toán nhanh dựa trên cấu trúc của bài toán và time complexity
     - [[chọn_nhanh_thuật_toán]]
     
 Rule:
