@@ -15,10 +15,6 @@
 ## 4) Collision
 - Hash có xác suất trùng giả.
 
-## 5) Độ phức tạp
-- Build: `O(n)`
-- Mỗi truy vấn hash đoạn: `O(log n)` do map
-
 ## 6) Khi nào dùng
 - So sánh substring nhiều lần.
 - Longest common substring/prefix với binary search + hash.

@@ -2,10 +2,10 @@
 
 
 
-[[Binary search]]
-[[Two Pointers]]
-[[Prefix or suffix Arrays]]
-[[Priority Queue]]
+[Binary search](<../Algorithm/Searching/Binary search.md>)
+[Two Pointers](<../Algorithm/Two Pointers.md>)
+[Prefix or suffix Arrays](<../Data_structure/STL/Prefix or suffix Arrays.md>)
+[Priority Queue](<../Data_structure/STL/Priority Queue.md>)
 
 
 # Các dạng Greedy **khó nhận diện** & **lối tư duy đặc biệt** (tóm tắt)

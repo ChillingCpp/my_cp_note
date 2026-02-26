@@ -40,12 +40,6 @@ for (int b = mask; b; b &= (b - 1)) {
 - Duyệt tất cả tập con: `O(2^n)`.
 - DP mask + chọn đỉnh kế: `O(n * 2^n)` hoặc `O(n^2 * 2^n)`.
 
-## 6) Lỗi hay gặp
-- Tràn số khi dùng `1 << n` với `n >= 31` (dùng `1LL << n`).
-- Nhầm thứ tự bit và index phần tử.
-- Quên reset state theo test case.
-- Duyệt submask thiếu trường hợp `0` nếu bài toán cần.
-
 ## 7) Ghi nhớ nhanh
 - `popcount(mask)`: số bit bật.
 - `ctz(x)`: vị trí bit 1 thấp nhất.

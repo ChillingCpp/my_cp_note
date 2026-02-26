@@ -3,7 +3,7 @@
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/dp)
 
 ## Liên kết
-- Đây là phần chi tiết cho bước 4 trong [[DP how to solve it G.Polya]].
+- Đây là phần chi tiết cho bước 4 trong [DP how to solve it G.Polya](<DP how to solve it G.Polya.md>).
 
 ## Tư tưởng cốt lõi
 - Chỉ tối ưu sau khi công thức DP gốc đã đúng.

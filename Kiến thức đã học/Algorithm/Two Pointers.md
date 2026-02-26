@@ -42,5 +42,3 @@
 - Khởi tạo từ đầu mảng (hoặc hai đầu tùy bài).
 - Mỗi bước là "chọn tốt nhất ngay" thay vì chỉ điều chỉnh để hợp lệ.
 
-## 8) Độ phức tạp thường gặp
-- Thường `O(n)` hoặc `O(n log n)` nếu có sort trước.

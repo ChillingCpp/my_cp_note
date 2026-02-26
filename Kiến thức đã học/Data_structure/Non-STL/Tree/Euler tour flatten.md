@@ -15,7 +15,7 @@
 - Dùng cho RMQ/LCA theo chuỗi Euler depth.
 
 ### 2. Euler `2n` (mỗi node xuất hiện 2 lần)
-- [[Mo]]`
+- [Mo](<../../../Sqrt Decomposition/Mo.md>)`
 - Query path `u-v` được đổi về đoạn trên mảng Euler + xử lý riêng LCA.
 - cách xử lí truy vấn : 
 	- gặp lần 1 : on

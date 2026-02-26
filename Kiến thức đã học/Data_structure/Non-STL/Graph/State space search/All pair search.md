@@ -21,6 +21,6 @@
 - Nếu có cạnh âm, cẩn thận điều kiện áp dụng của từng thuật toán.
 
 ## Liên kết
-- [[Khái niệm]]
-- [[Multisource]]
+- [Khái niệm](<Khái niệm.md>)
+- [Multisource](Multisource.md)
 

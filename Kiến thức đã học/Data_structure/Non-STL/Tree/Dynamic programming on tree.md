@@ -17,6 +17,6 @@
 - Cần cả hai chiều cho mọi root: nghĩ thêm rerooting.
 
 ## Liên kết
-- [[DP rerooting]]
+- [DP rerooting](<DP rerooting.md>)
 
 

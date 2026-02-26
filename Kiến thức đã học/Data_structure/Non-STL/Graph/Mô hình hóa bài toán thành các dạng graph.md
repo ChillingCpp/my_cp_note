@@ -40,10 +40,10 @@
 - Dùng khi có ràng buộc như số lần dùng phép, parity, mask, số bước còn lại...
 
 ## 6) Liên kết note liên quan
-- [[Topological sort]]
-- [[Topo + DP]]
-- [[condensation graph]]
-- [[Positive or Negative cycle]]
-- [[bridge and ap]]
-- [[Khái niệm]]
+- [Topological sort](<Topological sort.md>)
+- [Topo + DP](<DP Graph/Topo + DP.md>)
+- [condensation graph](<Graph decomposition/condensation graph.md>)
+- [Positive or Negative cycle](<Positive or Negative cycle.md>)
+- [bridge and ap](<bridge and ap.md>)
+- [Khái niệm](<State space search/Khái niệm.md>)
 

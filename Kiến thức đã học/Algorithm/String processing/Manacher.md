@@ -4,13 +4,15 @@
 - Tính bán kính palindrome tại mọi tâm trong `O(n)`.
 - Tìm longest palindromic substring trong `O(n)`.
 
-## 2) Code mẫu (gộp cả odd/even)
+## 2) Code và các ứng dụng (gộp cả odd/even)
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/String/manacher.cpp)
 
 ## 3) Ý nghĩa biến trong code
 - `z = 0`: palindrome chẵn.
 - `z = 1`: palindrome lẻ.
 - `p[z][i]`: bán kính theo định nghĩa của từng loại tâm.
+	- lẻ : bắt đầu từ $[i+1...i + p[1][i]]$ : không bao gồm tâm i
+	- chẵn : bắt đầu từ $[i...i + p[0][i] - 1]$ : bao gồm tâm i
 - `[l, r]`: đoạn palindrome xa nhất bên phải đã biết cho loại `z`.
 - `L, R`: biến tạm để mở rộng palindrome tại tâm `i`.
 
@@ -24,12 +26,8 @@
   - độ dài `len = 2 * p[0][i]`
   - đoạn `[L, R] = [i - p[0][i], i + p[0][i] - 1]`
 
-## 5) Lấy longest palindrome
-- Duyệt tất cả `i`:
-  - cập nhật max từ `2 * p[1][i] + 1` (lẻ)
-  - cập nhật max từ `2 * p[0][i]` (chẵn)
-- Lưu lại `bestL, bestR` theo công thức map ở trên.
-
-## 6) Độ phức tạp
-- Thời gian `O(n)`.
-- Bộ nhớ `O(n)`.
+## 5) Tính chất và ứng dụng
+- đếm số lượng palindrome : $\text{answer} = \sum d1[i] + \sum d2[i]$
+- tìm longest palindrome : $ans = max(2*p[1][i] + 1, 2 * p[0][i])$
+- Tạo mảng longest palindrome kết thúc tại `i`
+- Range query check substring $[l, r]$ là palindrome

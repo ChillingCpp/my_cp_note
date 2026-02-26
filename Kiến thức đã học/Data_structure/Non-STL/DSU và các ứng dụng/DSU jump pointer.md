@@ -31,5 +31,5 @@
 | Mảng 2D | Có điều kiện | Ép 2D -> 1D, đảm bảo đơn điệu |
 
 ## Liên kết
-- [[Neighbor-linked array ~ DSU]]
+- [Neighbor-linked array ~ DSU](<../../STL/Neighbor-linked array ~ DSU.md>)
 

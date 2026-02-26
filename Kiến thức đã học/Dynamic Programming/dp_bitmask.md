@@ -4,7 +4,7 @@
 
 
 ## Đường dẫn
-[[Bit manipulation and bitmask]]
+[Bit manipulation and bitmask](<../Algorithm/Bit manipulation and bitmask.md>)
 
 ## Mục tiêu
 - Dùng DP trên tập con khi `n` nhỏ.

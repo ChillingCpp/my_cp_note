@@ -1,7 +1,7 @@
 # DP Digit
 
 ## Đường dẫn
-[[Các dạng DP chính]]
+[Các dạng DP chính](<Các dạng DP chính.md>)
 
 ## Mục tiêu
 - Giải các bài toán trên đoạn số nguyên `[L, R]` với ràng buộc theo chữ số.
@@ -33,8 +33,7 @@ Với mỗi chữ số `d` trong `[0, lim]`:
 
 Chỉ xét nhánh hợp lệ theo ràng buộc tiền tố, khi đó:
 
-`DP(pos, tight, started, state)`
-`= ⨁_{d=0..lim} Lift( DP(pos+1, ntight, nstarted, nstate), d, pos )`
+$DP(pos, tight, started, state) = ⨁_{d=0..lim} Lift( DP(pos+1, ntight, nstarted, nstate), d, pos )$
 
 Trong đó:
 - `⨁`: phép gộp kết quả (thường là cộng, min, max, hoặc gộp struct).
@@ -93,15 +92,8 @@ Nguyên tắc: `state` phải "đủ và tối thiểu" để quyết định t�
 5. Tính đáp án cuối bằng `F(R) - F(L - 1)`.
 6. Brute force trên range nhỏ để kiểm chứng.
 
-## Tối ưu và độ phức tạp
-- Thường chỉ memo khi `tight = 0` để tái sử dụng mạnh.
-- Thời gian:
-  - `O(n * |State| * 10 * số_flag_phụ)`
-- Bộ nhớ:
-  - `O(n * |State| * số_flag_phụ)`
-
 ## Binary Search + Digit DP
-- Lưu ý: thường **không** nói `dfs(...)` monotone theo trạng thái; hàm hay dùng để binary search là hàm tiền tố `F(X) = solve(X)`.
+- hàm `dfs(...)` thường là hàm monotone
 - Khi truy vấn là dạng:
   - "tìm `X` nhỏ nhất sao cho `F(X) >= K`"
   - hoặc predicate `P(X)` monotone, ví dụ `P(X): F(X) >= K`
@@ -111,21 +103,6 @@ Nguyên tắc: `state` phải "đủ và tối thiểu" để quyết định t�
 - `F(X)` phải đơn điệu không giảm theo `X` (đúng với đa số bài toán đếm/tích lũy).
 - Biên tìm kiếm `[lo, hi]` xác định được (thường theo đề hoặc `0..10^18`).
 
-Khuôn:
-```cpp
-long long first_true(long long lo, long long hi) { // [lo, hi]
-    while (lo < hi) {
-        long long mid = lo + (hi - lo) / 2;
-        if (solve(mid) >= K) hi = mid;   // P(mid) = true
-        else lo = mid + 1;
-    }
-    return lo;
-}
-```
-
-Độ phức tạp:
-- `O(log(hi-lo+1) * cost_solve)`
-- với `cost_solve ~ O(n * |State| * 10 * số_flag_phụ)`.
 
 ## Checklist tránh lỗi
 - `X < 0` thì `F(X) = 0`.
@@ -135,42 +112,3 @@ long long first_true(long long lo, long long hi) { // [lo, hi]
 - Cẩn thận overflow (`int64`, mod, hoặc big integer).
 - Cận là inclusive: `[L, R]`.
 - Khi binary search, kiểm tra trước `solve(hi) >= K`; nếu không thì "không tồn tại đáp án".
-
-## Khung giả mã tổng quát
-```cpp
-T dfs(int pos, bool tight, bool started, State s) {
-    if (pos == n) return base(started, s);
-
-    if (!tight && vis[pos][started][s]) return memo[pos][started][s];
-
-    int lim = tight ? dig[pos] : 9;
-    T ans = identity();
-
-    for (int d = 0; d <= lim; ++d) {
-        bool nstarted = started || (d != 0);
-        State ns = next_state(s, d, nstarted);
-        if (!valid_prefix(ns, nstarted)) continue;
-
-        bool ntight = tight && (d == dig[pos]);
-        T child = dfs(pos + 1, ntight, nstarted, ns);
-        ans = combine(ans, lift(child, d, pos));
-    }
-
-    if (!tight) {
-        vis[pos][started][s] = true;
-        memo[pos][started][s] = ans;
-    }
-    return ans;
-}
-
-T solve(long long X) {
-    if (X < 0) return identity_zero_query();
-    dig = to_digits(X);
-    n = dig.size();
-    clear_memo();
-    return dfs(0, true, false, init_state());
-}
-
-// Answer on [L, R]
-// solve(R) - solve(L - 1)
-```

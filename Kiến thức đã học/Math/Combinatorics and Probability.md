@@ -3,7 +3,7 @@
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/math)
 
 - số cách chèn 1 chuỗi a vào dãy S
-    -$ \[ \binom{abs(S)+ abs(a)}{abs(a)} \]$
+    - $$\binom{|S| + |a|}{|a|}$$
 
 ## DP đếm cấu hình
 
@@ -12,16 +12,16 @@
 
 ## Công thức gộp block (shuffle)
 Với các block độc lập `B_1..B_k`, đặt:
-`S = Σ s_i`
+$S = \sum s_i$
 
 Số cách gộp:
-`dp[i] = (S! / Π s_i!) * Π dp[sub_i]`
+$dp[i] = (\frac{S!}{\prod s_i!}) * \prod dp[sub_i]$
 Trong đó:
-- `Π dp[i]`: chọn cấu hình nội bộ từng block
-- `S! / Π s_i!`: trộn thứ tự phần tử giữa các block
+- $\prod dp[i]$: chọn cấu hình nội bộ từng block
+- $(\frac{S!}{\prod s_i!})$: trộn thứ tự phần tử giữa các block
 
 ## Dạng đệ quy tổng quát
 
-`dp[structure] = multinomial * Π dp[substructure]`
+$dp[structure] = multinomial * \prod dp[substructure]$
 `multinomial` là hệ số tổ hợp khi trộn các thành phần con độc lập.
 

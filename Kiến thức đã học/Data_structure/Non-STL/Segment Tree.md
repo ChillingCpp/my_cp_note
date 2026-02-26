@@ -89,8 +89,8 @@
 ## Gợi ý chọn cấu trúc khác
 - Chỉ query tĩnh, không update: Prefix Sum / Sparse Table.
 - Chỉ `sum` + point update: Fenwick Tree thường gọn hơn.
-- Range update tổng quát: chuyển sang [[Lazy Segment Tree]].
+- Range update tổng quát: chuyển sang [Lazy Segment Tree](<Lazy Segment Tree.md>).
 
 ## Đường dẫn
-- [[Prefix sum]]
+- [Prefix sum](<Prefix sum.md>)
 

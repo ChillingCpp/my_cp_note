@@ -58,8 +58,8 @@
 - Không cần thứ tự xử lý phức tạp (hoặc đã offline hóa).
 
 ## Liên kết
-- [[DSU bipartite]]
-- [[Giá trị đại diện cho tập hợp]]
-- [[MST Kruskal]]
-- [[DSU problemset]]
+- [DSU bipartite](<DSU bipartite.md>)
+- [Giá trị đại diện cho tập hợp](<Giá trị đại diện cho tập hợp.md>)
+- [MST Kruskal](<MST Kruskal.md>)
+- [DSU problemset](<../../../../Bài tập/DSU problemset.md>)
 

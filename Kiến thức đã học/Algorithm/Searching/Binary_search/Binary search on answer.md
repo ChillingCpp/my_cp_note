@@ -9,7 +9,7 @@
 ## 2) Điều kiện bắt buộc
 - `check(x)` phải **đơn điệu** (chỉ đổi từ `false -> true` hoặc `true -> false` đúng 1 lần).
 - Hàm mục tiêu không có cực trị ở giữa; nếu có thì chỉ ở biên `L/R`.
-- Nếu hàm có 1 cực trị trong miền, ưu tiên `[[Ternary search on answer]]`; nhiều cực trị thì cần kỹ thuật khác.
+- Nếu hàm có 1 cực trị trong miền, ưu tiên `[Ternary search on answer](<../Ternary search/Ternary search on answer.md>)`; nhiều cực trị thì cần kỹ thuật khác.
 
 ## 3) Cách tư duy hàm check
 - Giả sử đáp án tối ưu là `x*`, xét `x0 < x*` và `x0 > x*`:

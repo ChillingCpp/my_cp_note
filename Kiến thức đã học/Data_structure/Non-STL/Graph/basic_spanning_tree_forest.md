@@ -6,8 +6,8 @@
 ## Span forest
     - là tập hợp các cây trong các component của đồ thị bị tách
 ## Đường dẫn :
-- [[MST Kruskal bài tập]]
-- [[advance_span_tree_forest]]
+- [MST Kruskal bài tập](<../../../../Bài tập/MST Kruskal bài tập.md>)
+- [advance_span_tree_forest](<Graph decomposition/advance_span_tree_forest.md>)
 
 
 

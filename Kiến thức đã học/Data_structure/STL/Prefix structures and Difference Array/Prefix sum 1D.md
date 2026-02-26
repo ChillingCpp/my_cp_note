@@ -29,4 +29,4 @@ for (int i = 1; i <= n; ++i) {
 - Nền tảng cho difference/prefix constraints.
 
 ## Liên kết
-- [[Difference Array]]
+- [Difference Array](<Difference Array.md>)

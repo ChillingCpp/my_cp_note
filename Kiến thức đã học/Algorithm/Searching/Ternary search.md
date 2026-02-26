@@ -2,5 +2,5 @@
 
 
 
-[[Ternary search on answer]]
+[Ternary search on answer](<Ternary search/Ternary search on answer.md>)
 

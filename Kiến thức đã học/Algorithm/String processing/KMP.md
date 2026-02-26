@@ -12,11 +12,6 @@
 - tính chất : 
     - pi[i], pi[pi[i]], pi[pi[pi[i]]],... lần lượt là độ dài prefixnhất của `p[0..i]` cũng là suffix của đoạn đó.
 
-## 5) Độ phức tạp
-- Build `pi`: `O(m)`
-- Match: `O(n)`
-- Tổng: `O(n + m)`
-
 ## 6) Khi nào dùng
 - Single pattern matching cần chắc chắn tuyến tính.
 - Bài toán prefix-suffix, border, periodic string.
