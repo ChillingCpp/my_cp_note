@@ -1,8 +1,6 @@
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
 
-
-## Đường dẫn :
-
+## Đường dẫn
 ### Query theo đoạn và cấu trúc dữ liệu nền
 - [Segment Tree](<../Data_structure/Non-STL/Segment Tree.md>)
 - [Lazy Segment Tree](<../Data_structure/Non-STL/Lazy Segment Tree.md>)
