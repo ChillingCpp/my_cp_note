@@ -12,7 +12,7 @@
 2. Xác định lớp bài: `number` hoặc `linear` hoặc `graph/tree/state`.
 3. Xác định kiểu thao tác: `single` / `many queries` / `dynamic updates`.
 4. Xác định kiểu mục tiêu: `optimize` / `count` / `exist` / `k-th`.
-5. Gắn keyword cứng: `subarray`, `nearest`, `component`, `dependency`, `cycle`, `palindrome`, `check(x)`, `one-shot`.
+5. Gắn keyword cứng: `subarray`, `nearest`, `component`, `dependency`, `cycle`, `palindrome`, `check(x)`, `first/last`, `first true/last true`, `tight-started-state`, `F(R)-F(L-1)`, `divisor/multiple`, `one-shot`, `non-tree edge`, `second-best MST`, `critical edge/node`, `BET/BCT`, `cactus`, `multisource`, `construct path`.
 6. Chạy hard filter.
 7. Chấm điểm tiềm năng (0-10): `fit cấu trúc` + `fit thao tác` + `fit complexity` + `fit tính chất đặc biệt`.
 8. Xếp hạng:
@@ -37,20 +37,8 @@
 ### Mục tiêu: **không đoán thuật toán trực tiếp từ đề**, mà **biến đổi bài toán -> trích xuất từ khóa -> xếp hạng tiềm năng thuật toán (High/Medium)**.
 ### Đầu ra cuối cùng phải là **một shortlist có thứ tự ưu tiên**, không phải một thuật toán duy nhất.
 
----
 
-## I. Đầu ra chuẩn của framework
-
-Sau khi nhận diện, luôn xuất theo mẫu:
-
-- `High`: 1-3 hướng mạnh nhất, đáng thử trước.
-- `Medium`: 2-4 hướng dự phòng, có thể đúng nếu biến đổi thêm.
-- `Rejected`: hướng không phù hợp bản chất bài hoặc fail hard filter (không coi là một mức xếp hạng).
-- `Lý do`: nêu ngắn gọn vì sao bị giữ ở `Medium` hoặc bị loại.
-
----
-
-## II. Quy tắc bắt buộc trước khi tra từ khóa
+## I. Quy tắc bắt buộc trước khi tra từ khóa
 
 ### 1) Chuẩn hóa đối tượng
 
@@ -66,6 +54,7 @@ Sau khi nhận diện, luôn xuất theo mẫu:
 - Đếm -> frequency/prefix/combinatorics/DP count.
 - Tồn tại -> boolean check.
 - `k-th` -> order statistic hoặc binary search on answer + counting.
+- Nếu đề yêu cầu **in nghiệm cụ thể**: thêm trục `traceback` (`parent/pre/take/choice`), không chỉ tối ưu giá trị.
 
 ### 3) Chuẩn hóa trục thời gian
 
@@ -84,7 +73,7 @@ Sau khi nhận diện, luôn xuất theo mẫu:
 
 ---
 
-## III. Cơ chế chấm tiềm năng (High / Medium + loại bỏ)
+## II. Cơ chế chấm tiềm năng (High / Medium + loại bỏ)
 
 ### 1) Hard filter (lọc cứng)
 
@@ -139,7 +128,9 @@ Chấm mỗi thuật toán theo 4 tiêu chí:
 | Hệ đồng dư / phương trình Diophantine | CRT, ext-euclid, modular inverse | Brute force kiểm chứng mẫu nhỏ |
 | N nhỏ (`<= 20..22`), xét tập con | Bitmask, DP bitmask, backtracking | Meet-in-the-middle, branch and bound |
 | N tầm `30..45`, tách đôi độc lập | Meet-in-the-middle | Backtracking có pruning mạnh |
-| Truy hồi tuyến tính dài, bước rất lớn | Matrix exponentiation | DP thường |
+| Truy hồi tuyến tính dài, bước rất lớn (`k-th step`, `linear recurrence`, `transition matrix`) | Matrix exponentiation | DP thường |
+| Đếm/tổng trên đoạn số `[L, R]` với ràng buộc chữ số (`tight`, `started`, `state`) | Digit DP (`F(R)-F(L-1)`, `DP(pos, tight, started, state)`) | Binary Search + Digit DP (`k-th` theo prefix count) |
+| Dạng divisor/multiple (`for (j=i; j<=n; j+=i)`), chuyển `i -> k*i` hoặc `i -> i/d` | Harmonic-number thinking + number theory/sieve | Brute force theo ước/bội (n nhỏ) |
 | Đếm cấu hình có tách block độc lập | Combinatorics + multinomial + DP count | Backtracking (n nhỏ) |
 | Tối đa số ước trong miền `<= N` (siêu hợp số / highly composite) | Backtracking đệ quy theo prime + số mũ không tăng, prune theo `N` | Sinh ứng viên bằng DFS + log bound |
 
@@ -188,6 +179,7 @@ Keyword mạnh:
 | Point update + range query online | Segment tree, Fenwick | Set/map tùy bài |
 | Range update tổng quát + range query | Lazy segment tree | Sqrt lazy |
 | Range update one-shot/co dần | Segment tree không lazy + prune | Difference array (offline) |
+| Tìm vị trí đầu/cuối thỏa điều kiện trên đoạn (`first true/last true`, `leftmost/rightmost`, `k-th`) | Segment tree (descent theo node) | Fenwick + binary lifting/lower_bound (khi điều kiện phù hợp) |
 | Offline query theo ngưỡng (`<= x`, `> x`) | Sort query + Fenwick offline | Parallel Binary Search |
 | K-th/order statistics trên đoạn (nhiều query) | Persistent segment tree, wavelet tree | Merge-sort tree + BS |
 
@@ -239,8 +231,12 @@ Keyword mạnh:
 |---|---|---|
 | connected/component | DFS/BFS, DSU | Dynamic connectivity offline (rollback) |
 | bridge / articulation | Tarjan low-link | BET/BCT (nhiều query path) |
+| Nhiều query path về cạnh/đỉnh critical (`critical edge/node`) | Bridge-Edge Tree / Block-Cut Tree + LCA/HLD | Bridge/AP + xử lý từng query |
 | bipartite / odd cycle | BFS/DFS coloring, DSU bipartite | BFS theo lớp + parity state |
+| Ràng buộc quan hệ tương đối (`same/different`, parity, xor-distance), cần detect contradiction | DSU parity / weighted DSU | State graph + BFS/DFS theo parity |
 | MST | Kruskal + DSU, Prim | Boruvka (nếu có) |
+| Có nhiều `non-tree edge`, cần kiểm tra thay cạnh trên path (`max edge`, `second-best MST`) | Spanning tree + Binary lifting/Sparse DP trên path | Recompute cục bộ (n nhỏ) |
+| Mỗi cạnh thuộc tối đa một chu trình (`cactus graph`) | DFS cactus decomposition / block tree | Bridge/BCC decomposition tổng quát |
 | Nhiều query connectivity theo thời gian | DSU rollback + segment tree time | Rebuild theo block |
 
 ### 2) Directed graph
@@ -283,7 +279,9 @@ Keyword mạnh:
 | Chọn cục bộ + luôn đúng toàn cục | Dominant-choice greedy | DP để kiểm chứng |
 | Có thể hối tiếc / thay cái tệ nhất | Greedy with rollback + priority queue/multiset | Set + local repair |
 | Có cửa sổ đủ điều kiện theo thời gian | Greedy with eligibility window + heap | Sweep line + set |
+| Ứng viên mới làm nhiều ứng viên cũ bị dominated | Greedy + monotonic stack/deque | Segment tree/BST |
 | Cân bằng 2 nhóm động | Two-heap greedy (+ rollback/exchange) | Multiset 2 phía |
+| Chọn theo trục sort đúng (`key ordering`) rồi mới tham lam | Sort + greedy + exchange/invariant proof | DP hoặc brute-force kiểm chứng |
 | Chọn interval không giao nhau / deadline scheduling | Sort + greedy by endpoint/deadline + heap | DP interval |
 
 ### 2) Dynamic Programming
@@ -292,6 +290,7 @@ Keyword mạnh:
 |---|---|---|
 | Mỗi state có nhiều transition cạnh tranh | DP có lựa chọn (`min/max/sum/or`) | Greedy (nếu chứng minh collapse được) |
 | State theo tập con nhỏ | DP bitmask | Backtracking + pruning |
+| Bài trên số với ràng buộc chữ số (`[L, R]`, tổng chữ số, mod, pattern) | Digit DP (`pos, tight, started, state`) | Memo DFS theo tiền tố không đầy đủ |
 | Truy hồi deterministic một hướng | Prefix/suffix recurrence, linear DP | Full DP state lớn |
 | Trên cây / DAG | Tree DP, Topo + DP, rerooting | DFS memo |
 | Transition tuyến tính theo slope/intercept | Convex Hull Trick / Li Chao Tree | Divide and conquer DP optimization |
@@ -301,9 +300,10 @@ Keyword mạnh:
 
 | Tính chất | High | Medium |
 |---|---|---|
-| Có `check(x)` đơn điệu | Binary Search on Answer | Ternary (nếu gần unimodal) |
-| Nhiều query cùng check theo mốc | Parallel Binary Search | BS từng query |
-| Hàm unimodal | Ternary search on answer | BS theo đạo hàm rời rạc |
+| Có `check(x)` đơn điệu (`first true/last true`) | Binary Search on Answer | Ternary (nếu gần unimodal) |
+| Nhiều query cùng check theo mốc (`first true/last true` theo từng query) | Parallel Binary Search | BS từng query |
+| Tìm `k-th element` trên miền giá trị lớn (không merge/sort full được) | Binary search trên value + counting `count(<= x)` | Heap merge / partial sort (k nhỏ) |
+| Hàm unimodal (không phải predicate đơn điệu) | Ternary search on answer | BS theo đạo hàm rời rạc |
 | Tradeoff block/impact | Sqrt decomposition, sqrt heavy-light by impact | Segment tree |
 
 ---
@@ -359,22 +359,33 @@ Nếu không trả lời được >= 4 câu thì quay lại bước biến đổ
 
 ---
 
-## XII. Liên kết trực tiếp theo nhóm note
+## XII. Liên kết trực tiếp theo nhóm note (đồng bộ full từ `Kiến thức đã học`)
 
-- Query/Range:
-    [Segment Tree](<Kiến thức đã học/Data_structure/Non-STL/Segment Tree.md>), [Lazy Segment Tree](<Kiến thức đã học/Data_structure/Non-STL/Lazy Segment Tree.md>), [Mo](<Kiến thức đã học/Sqrt Decomposition/Mo.md>), [Range Query Sqrt decomposition](<Kiến thức đã học/Sqrt Decomposition/Range Query Sqrt decomposition.md>),
-    [Prefix sum 1D](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Prefix sum 1D.md>), [Prefix sum 2D](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Prefix sum 2D.md>), [Difference Array](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Difference Array.md>), [Prefix or suffix Arrays](<Kiến thức đã học/Data_structure/STL/Prefix or suffix Arrays.md>)
-- STL DS:
-    [Stack](<Kiến thức đã học/Data_structure/STL/Stack.md>), [Queue](<Kiến thức đã học/Data_structure/STL/Queue.md>), [Deque](<Kiến thức đã học/Data_structure/STL/Deque.md>), [Priority Queue](<Kiến thức đã học/Data_structure/STL/Priority Queue.md>), [Set cơ bản](<Kiến thức đã học/Data_structure/STL/Set/Set cơ bản.md>),
-    [Set interval nâng cao](<Kiến thức đã học/Data_structure/STL/Set/Set interval nâng cao.md>), [Map cơ bản](<Kiến thức đã học/Data_structure/STL/Map/Map cơ bản.md>), [Neighbor-linked array ~ DSU](<Kiến thức đã học/Data_structure/STL/Neighbor-linked array ~ DSU.md>)
-- Graph/Tree:
-    [Topological sort](<Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md>), [bridge and ap](<Kiến thức đã học/Data_structure/Non-STL/Graph/bridge and ap.md>), [condensation graph](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/condensation graph.md>), [Euler tour flatten](<Kiến thức đã học/Data_structure/Non-STL/Tree/Euler tour flatten.md>),
-    [Binary lifting và DP](<Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting và DP.md>), [Dynamic programming on tree](<Kiến thức đã học/Data_structure/Non-STL/Tree/Dynamic programming on tree.md>), [DP rerooting](<Kiến thức đã học/Data_structure/Non-STL/Tree/DP rerooting.md>)
+- Algorithm core:
+    [Backtracking](<Kiến thức đã học/Algorithm/Backtracking.md>), [Bit manipulation and bitmask](<Kiến thức đã học/Algorithm/Bit manipulation and bitmask.md>), [Divide and Conquer](<Kiến thức đã học/Algorithm/Divide and Conquer.md>), [Sweep line](<Kiến thức đã học/Algorithm/Sweep line.md>), [Two Pointers](<Kiến thức đã học/Algorithm/Two Pointers.md>), [String Processing](<Kiến thức đã học/Algorithm/String Processing.md>), [Kĩ thuật traceback](<Kiến thức đã học/Kĩ thuật traceback.md>)
 - Searching:
-    [Binary search on answer](<Kiến thức đã học/Algorithm/Searching/Binary_search/Binary search on answer.md>), [Parallel Binary Search](<Kiến thức đã học/Algorithm/Searching/Binary_search/Parallel Binary Search.md>), [Ternary search on answer](<Kiến thức đã học/Algorithm/Searching/Ternary search/Ternary search on answer.md>),
-    [Binary search on array or set](<Kiến thức đã học/Algorithm/Searching/Binary_search/Binary search on array or set.md>)
-- String:
-    [KMP](<Kiến thức đã học/Algorithm/String processing/KMP.md>), [Z algorithm](<Kiến thức đã học/Algorithm/String processing/Z algorithm.md>), [rolling hash](<Kiến thức đã học/Algorithm/String processing/rolling hash.md>), [Manacher](<Kiến thức đã học/Algorithm/String processing/Manacher.md>), [Trie](<Kiến thức đã học/Algorithm/String processing/Trie.md>)
-- Math/Bit/DP/Greedy:
-    [Basic Number Theory](<Kiến thức đã học/Math/Basic Number Theory.md>), [Combinatorics and Probability](<Kiến thức đã học/Math/Combinatorics and Probability.md>), [Bit manipulation and bitmask](<Kiến thức đã học/Algorithm/Bit manipulation and bitmask.md>),
-    [Các dạng DP chính](<Kiến thức đã học/Dynamic Programming/Các dạng DP chính.md>), [Greedy + Priority Queue](<Kiến thức đã học/Greedy Technique/Greedy + Priority Queue.md>), [Sqrt chung](<Kiến thức đã học/Sqrt Decomposition/Sqrt chung.md>), [Sqrt chia case](<Kiến thức đã học/Sqrt Decomposition/Sqrt chia case.md>)
+    [Binary search](<Kiến thức đã học/Algorithm/Searching/Binary search.md>), [Binary search on answer](<Kiến thức đã học/Algorithm/Searching/Binary_search/Binary search on answer.md>), [Binary search on array or set](<Kiến thức đã học/Algorithm/Searching/Binary_search/Binary search on array or set.md>), [Parallel Binary Search](<Kiến thức đã học/Algorithm/Searching/Binary_search/Parallel Binary Search.md>), [Ternary search](<Kiến thức đã học/Algorithm/Searching/Ternary search.md>), [Ternary search on answer](<Kiến thức đã học/Algorithm/Searching/Ternary search/Ternary search on answer.md>)
+- String processing:
+    [KMP](<Kiến thức đã học/Algorithm/String processing/KMP.md>), [Manacher](<Kiến thức đã học/Algorithm/String processing/Manacher.md>), [rolling hash](<Kiến thức đã học/Algorithm/String processing/rolling hash.md>), [Trie](<Kiến thức đã học/Algorithm/String processing/Trie.md>), [Z algorithm](<Kiến thức đã học/Algorithm/String processing/Z algorithm.md>)
+- STL structures:
+    [Stack](<Kiến thức đã học/Data_structure/STL/Stack.md>), [Queue](<Kiến thức đã học/Data_structure/STL/Queue.md>), [Deque](<Kiến thức đã học/Data_structure/STL/Deque.md>), [Priority Queue](<Kiến thức đã học/Data_structure/STL/Priority Queue.md>), [Map cơ bản](<Kiến thức đã học/Data_structure/STL/Map/Map cơ bản.md>), [Set cơ bản](<Kiến thức đã học/Data_structure/STL/Set/Set cơ bản.md>), [Set interval nâng cao](<Kiến thức đã học/Data_structure/STL/Set/Set interval nâng cao.md>), [Neighbor-linked array ~ DSU](<Kiến thức đã học/Data_structure/STL/Neighbor-linked array ~ DSU.md>), [Prefix or suffix Arrays](<Kiến thức đã học/Data_structure/STL/Prefix or suffix Arrays.md>)
+- Prefix / Difference:
+    [Prefix sum 1D](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Prefix sum 1D.md>), [Prefix sum 2D](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Prefix sum 2D.md>), [Prefix min](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Prefix min.md>), [Prefix max](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Prefix max.md>), [Difference Array](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Difference Array.md>)
+- Range / query DS:
+    [Segment Tree](<Kiến thức đã học/Data_structure/Non-STL/Segment Tree.md>), [Lazy Segment Tree](<Kiến thức đã học/Data_structure/Non-STL/Lazy Segment Tree.md>), [Query Problem - Relative topics](<Kiến thức đã học/Query Problem/Relative topics.md>), [Mo](<Kiến thức đã học/Sqrt Decomposition/Mo.md>), [Range Query Sqrt decomposition](<Kiến thức đã học/Sqrt Decomposition/Range Query Sqrt decomposition.md>), [Sqrt chung](<Kiến thức đã học/Sqrt Decomposition/Sqrt chung.md>), [Sqrt chia case](<Kiến thức đã học/Sqrt Decomposition/Sqrt chia case.md>)
+- DSU và ứng dụng:
+    [DSU lý thuyết](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU lý thuyết.md>), [Giá trị đại diện cho tập hợp](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Giá trị đại diện cho tập hợp.md>), [DSU jump pointer](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU jump pointer.md>), [DSU bipartite](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU bipartite.md>), [Dynamic Connectivity](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Dynamic Connectivity.md>), [Connected Component Graph](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Connected Component Graph.md>), [MST Kruskal](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/MST Kruskal.md>)
+- Graph:
+    [Mô hình hóa bài toán thành các dạng graph](<Kiến thức đã học/Data_structure/Non-STL/Graph/Mô hình hóa bài toán thành các dạng graph.md>), [Topological sort](<Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md>), [bridge and ap](<Kiến thức đã học/Data_structure/Non-STL/Graph/bridge and ap.md>), [basic_spanning_tree_forest](<Kiến thức đã học/Data_structure/Non-STL/Graph/basic_spanning_tree_forest.md>), [Positive or Negative cycle](<Kiến thức đã học/Data_structure/Non-STL/Graph/Positive or Negative cycle.md>)
+- Graph decomposition:
+    [condensation graph](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/condensation graph.md>), [bet_bct](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/bet_bct.md>), [advance_span_tree_forest](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/advance_span_tree_forest.md>), [dfs_cactus](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/dfs_cactus.md>)
+- Graph state-space / DP on graph:
+    [State space search - Khái niệm](<Kiến thức đã học/Data_structure/Non-STL/Graph/State space search/Khái niệm.md>), [Single source one best state](<Kiến thức đã học/Data_structure/Non-STL/Graph/State space search/Single source one best state.md>), [Single source k best state](<Kiến thức đã học/Data_structure/Non-STL/Graph/State space search/Single source k best state.md>), [Multisource](<Kiến thức đã học/Data_structure/Non-STL/Graph/State space search/Multisource.md>), [All pair search](<Kiến thức đã học/Data_structure/Non-STL/Graph/State space search/All pair search.md>), [Topo + DP](<Kiến thức đã học/Data_structure/Non-STL/Graph/DP Graph/Topo + DP.md>)
+- Tree:
+    [1 số mảng thường có trong các bài tree](<Kiến thức đã học/Data_structure/Non-STL/Tree/1 số mảng thường có trong các bài tree.md>), [Euler tour flatten](<Kiến thức đã học/Data_structure/Non-STL/Tree/Euler tour flatten.md>), [Binary lifting và DP](<Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting và DP.md>), [Dynamic programming on tree](<Kiến thức đã học/Data_structure/Non-STL/Tree/Dynamic programming on tree.md>), [DP rerooting](<Kiến thức đã học/Data_structure/Non-STL/Tree/DP rerooting.md>)
+- Dynamic Programming:
+    [Các dạng DP chính](<Kiến thức đã học/Dynamic Programming/Các dạng DP chính.md>), [DP how to solve it G.Polya](<Kiến thức đã học/Dynamic Programming/DP how to solve it G.Polya.md>), [dp_bitmask](<Kiến thức đã học/Dynamic Programming/dp_bitmask.md>), [dp_digit](<Kiến thức đã học/Dynamic Programming/dp_digit.md>), [DP_optimization](<Kiến thức đã học/Dynamic Programming/DP_optimization.md>), [Slope trick](<Kiến thức đã học/Dynamic Programming/Slope trick.md>)
+- Greedy:
+    [Greedy + Priority Queue](<Kiến thức đã học/Greedy Technique/Greedy + Priority Queue.md>), [Greedy - Relative Topics](<Kiến thức đã học/Greedy Technique/Relative Topics.md>)
+- Math:
+    [Basic Number Theory](<Kiến thức đã học/Math/Basic Number Theory.md>), [Combinatorics and Probability](<Kiến thức đã học/Math/Combinatorics and Probability.md>), [Harmonic Number](<Kiến thức đã học/Math/Harmonic Number.md>), [Matrix multiplication](<Kiến thức đã học/Math/Matrix multiplication.md>)

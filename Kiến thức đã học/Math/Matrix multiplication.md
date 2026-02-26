@@ -2,55 +2,74 @@
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/math/matmul.cpp)
 
-## Ý tưởng cốt lõi
-- Ma trận biểu diễn phép biến đổi tuyến tính của trạng thái.
-- Nếu có chuyển trạng thái 1 bước: `state_{t+1} = M * state_t` thì sau `n` bước:
-`state_n = M^n * state_0`.
-- Khi `n` rất lớn, tính `M^n` bằng binary exponentiation (`log n` lần nhân ma trận).
+## 1) Khi nào DP đổi sang nhân ma trận?
 
-## Tính chất ứng dụng giải bài
-- Dùng để tối ưu DP khi chuyển trạng thái là tuyến tính.
-- Dùng cho truy hồi tuyến tính bậc `k` khi `n` rất lớn.
-- Dùng để đếm số đường đi đúng `k` bước (nâng lũy thừa ma trận kề).
-- Dùng để gộp nhiều phép biến đổi tuyến tính liên tiếp thành 1 phép nhân ma trận.
-- Keyword nhận diện: `k-th step`, `linear recurrence`, `transition matrix`, `count walks length k`.
-- Không phù hợp nếu chuyển trạng thái không tuyến tính hoặc số chiều trạng thái quá lớn.
+DP phải có dạng: $$dp_t[v] = \bigoplus_u \left(dp_{t-1}[u] \otimes W[u][v]\right).$$
 
-## Chuyển DP sang nhân ma trận (quan trọng)
-- Chỉ chuyển được dạng chuẩn ( rút gọn state step ):
-    - $dp[i] = c1*dp[i-1] + c2*dp[i-2] + ... + ck*dp[i-k] + d1 + ... + dm$.
-    - Bản ngắn gọn : $dp_i = \sum_{t=1}^{k} c_t\, *  dp_{i-t} + d1 + ... + dm$.
-    - $d1 + ... + dm$ là 1 biến phụ không thay đổi theo step
-- Đặt:
-    - `state_i = [dp[i], dp[i-1], ..., dp[i-k+1]]^T`.
-- Khi đó:
-    - `state_i = M * state_{i-1}`, với ma trận chuyển:
-    `M =`
-    ```
-    [c1 c2 c3 ... c(k-1) ck d1 ... dm]
-    [ 1  0  0 ...     0  0  0  ... 0]
-    [ 0  1  0 ...     0  0  0  ... 0]
-    [...............................]
-    [ 0  0  0 ...     1  0  0  ... 0]
-    [ 0  0  0 ...     0  0  1  ... 0]
-    [...............................]
-    [ 0  0  0 ...     0  0  0  ... 1]
-    ```
+Khi đó: $$dp_t = dp_{t-1} \star W.$$
 
-### Ví dụ đặt hệ số
-- `dp[i] = 2*dp[i-1] + 5*dp[i-3] - dp[i-4]` (bậc `k=4`).
-- State: `state_i = [dp[i], dp[i-1], dp[i-2], dp[i-3]]^T`.
-- Hàng đầu của `M` là `[2, 0, 5, -1]`.
-- Nếu modulo `mod`, thay `-1` bằng `mod-1`.
+Phép nhân ma trận tổng quát: $$(C = A \star B) \Rightarrow C[i][j] = \bigoplus_k \left(A[i][k] \otimes B[k][j]\right).$$
 
-## Ví dụ nhanh: Fibonacci
-- $F_n = F_{n-1} + F_{n-2}$.
-- Đặt $state_n = [F_n, F_{n-1}]^T$.
-- Khi đó:
-$state_n = \begin{bmatrix} 1 & 1 \\ 1 & 0\end{bmatrix} ^{(n-1)} * state_1$.
-- Tính được $F_n$ trong `O(log n)`.
+Trong đó:
+- `⊕`: phép gộp (sum/min/max/or/...).
+- `⊗`: phép nối khi chuyển trạng thái.
+- `W`: ma trận chuyển.
 
-## Lưu ý khi code
-- Thường tính theo modulo (`1e9+7`, `998244353`, ...), nhớ `% mod` sau mỗi phép cộng/nhân.
-- Cẩn thận thứ tự nhân: ma trận không giao hoán (`A*B != B*A`).
-- Kiểm tra đúng chỉ số base case (`n=0`, `n=1`) trước khi nâng lũy thừa.
+## 2) Điều kiện bắt buộc (Semiring)
+
+`⊕` và `⊗` phải tạo thành semiring:
+
+| Điều kiện | Công thức |
+| --- | --- |
+| `⊕` kết hợp | \((a \oplus b) \oplus c = a \oplus (b \oplus c)\) |
+| `⊗` kết hợp | \((a \otimes b) \otimes c = a \otimes (b \otimes c)\) |
+| `⊗` phân phối qua `⊕` | \(a \otimes (b \oplus c) = (a \otimes b) \oplus (a \otimes c)\) |
+| Phần tử trung lập | Tồn tại `zero` cho `⊕`, `one` cho `⊗` |
+
+Nếu thỏa, phép nhân ma trận kết hợp nên có thể dùng lũy thừa nhanh.
+
+## 3) Ý nghĩa của \(W^k\)
+
+$((W^k)[i][j])$ là giá trị tốt nhất từ `i -> j` sau đúng `k` bước, vì: $$dp_k = dp_0 \star W^k.$$
+
+## 4) Các semiring thường gặp
+
+| Bài toán | \(\oplus\) | \(\otimes\) | `zero` | `one` |
+| --- | --- | --- | --- | --- |
+| Đếm số cách | \(+\) | \(\times\) | \(0\) | \(1\) |
+| Shortest path đúng \(k\) cạnh | \(\min\) | \(+\) | \(+\infty\) | \(0\) |
+| Longest path đúng \(k\) cạnh | \(\max\) | \(+\) | \(-\infty\) | \(0\) |
+| Tồn tại đường đi | \(\lor\) | \(\land\) | `false` | `true` |
+
+
+## 7) Quy trình áp dụng
+
+1. Viết rõ công thức DP.
+2. Tách rõ `⊕` và `⊗`.
+3. Kiểm tra semiring.
+4. Xây ma trận chuyển `W`.
+5. Tính `W^k` bằng binary exponentiation.
+6. Nhân với vector trạng thái ban đầu.
+
+## 8) Khi nào nên dùng
+
+- Tối ưu DP có chuyển trạng thái tuyến tính.
+- Tính truy hồi tuyến tính bậc `k` khi `n` rất lớn.
+- Đếm/đánh giá đường đi đúng `k` bước trên đồ thị.
+- Gộp nhiều phép biến đổi tuyến tính thành một phép nhân.
+- Keyword hay gặp: `k-th step`, `linear recurrence`, `transition matrix`, `count walks length k`.
+- Không phù hợp nếu chuyển trạng thái phi tuyến hoặc không gian trạng thái quá lớn.
+
+## 9) Ví dụ nhanh: Fibonacci
+
+$$F_n = F_{n-1} + F_{n-2}, \quad state_n = [F_n, F_{n-1}]^T.$$
+
+$$state_n = \begin{bmatrix}1 & 1 \\ 1 & 0\end{bmatrix}^{n-1} \cdot state_1.$$
+
+=> tính `F_n` trong `O(log n)`.
+
+## 10) Lưu ý khi code
+
+- Thường làm việc theo modulo (`1e9+7`, `998244353`, ...), nhớ `% mod` sau cộng/nhân.
+- Ma trận không giao hoán: `A * B != B * A`.
+- Xử lý đúng base case (`n=0`, `n=1`) trước khi lũy thừa.
