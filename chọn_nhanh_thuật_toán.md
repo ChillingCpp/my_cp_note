@@ -1,7 +1,7 @@
 # Pattern Recognize + Potential Ranking
 
 ## Yêu cầu về file chọn thuật toán tối nhanh
-- Cách giải 1 bài toán dựa vào [[how_to_solve_it]]
+- Cách giải 1 bài toán dựa vào [how_to_solve_it](how_to_solve_it.md)
 - Chọn thuật toán là 1 bước trong file đó, đọc file đó và sau đó đọc file này
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
@@ -362,19 +362,19 @@ Nếu không trả lời được >= 4 câu thì quay lại bước biến đổ
 ## XII. Liên kết trực tiếp theo nhóm note
 
 - Query/Range:
-    [[Segment Tree]], [[Lazy Segment Tree]], [[Mo]], [[Range Query Sqrt decomposition]],
-    [[Prefix sum 1D]], [[Prefix sum 2D]], [[Difference Array]], [[Prefix or suffix Arrays]]
+    [Segment Tree](<Kiến thức đã học/Data_structure/Non-STL/Segment Tree.md>), [Lazy Segment Tree](<Kiến thức đã học/Data_structure/Non-STL/Lazy Segment Tree.md>), [Mo](<Kiến thức đã học/Sqrt Decomposition/Mo.md>), [Range Query Sqrt decomposition](<Kiến thức đã học/Sqrt Decomposition/Range Query Sqrt decomposition.md>),
+    [Prefix sum 1D](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Prefix sum 1D.md>), [Prefix sum 2D](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Prefix sum 2D.md>), [Difference Array](<Kiến thức đã học/Data_structure/STL/Prefix structures and Difference Array/Difference Array.md>), [Prefix or suffix Arrays](<Kiến thức đã học/Data_structure/STL/Prefix or suffix Arrays.md>)
 - STL DS:
-    [[Stack]], [[Queue]], [[Deque]], [[Priority Queue]], [[Set cơ bản]],
-    [[Set interval nâng cao]], [[Map cơ bản]], [[Neighbor-linked array ~ DSU]]
+    [Stack](<Kiến thức đã học/Data_structure/STL/Stack.md>), [Queue](<Kiến thức đã học/Data_structure/STL/Queue.md>), [Deque](<Kiến thức đã học/Data_structure/STL/Deque.md>), [Priority Queue](<Kiến thức đã học/Data_structure/STL/Priority Queue.md>), [Set cơ bản](<Kiến thức đã học/Data_structure/STL/Set/Set cơ bản.md>),
+    [Set interval nâng cao](<Kiến thức đã học/Data_structure/STL/Set/Set interval nâng cao.md>), [Map cơ bản](<Kiến thức đã học/Data_structure/STL/Map/Map cơ bản.md>), [Neighbor-linked array ~ DSU](<Kiến thức đã học/Data_structure/STL/Neighbor-linked array ~ DSU.md>)
 - Graph/Tree:
-    [[Topological sort]], [[bridge and ap]], [[condensation graph]], [[Euler tour flatten]],
-    [[Binary lifting và DP]], [[Dynamic programming on tree]], [[DP rerooting]]
+    [Topological sort](<Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md>), [bridge and ap](<Kiến thức đã học/Data_structure/Non-STL/Graph/bridge and ap.md>), [condensation graph](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/condensation graph.md>), [Euler tour flatten](<Kiến thức đã học/Data_structure/Non-STL/Tree/Euler tour flatten.md>),
+    [Binary lifting và DP](<Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting và DP.md>), [Dynamic programming on tree](<Kiến thức đã học/Data_structure/Non-STL/Tree/Dynamic programming on tree.md>), [DP rerooting](<Kiến thức đã học/Data_structure/Non-STL/Tree/DP rerooting.md>)
 - Searching:
-    [[Binary search on answer]], [[Parallel Binary Search]], [[Ternary search on answer]],
-    [[Binary search on array or set]]
+    [Binary search on answer](<Kiến thức đã học/Algorithm/Searching/Binary_search/Binary search on answer.md>), [Parallel Binary Search](<Kiến thức đã học/Algorithm/Searching/Binary_search/Parallel Binary Search.md>), [Ternary search on answer](<Kiến thức đã học/Algorithm/Searching/Ternary search/Ternary search on answer.md>),
+    [Binary search on array or set](<Kiến thức đã học/Algorithm/Searching/Binary_search/Binary search on array or set.md>)
 - String:
-    [[KMP]], [[Z algorithm]], [[rolling hash]], [[Manacher]], [[Trie]]
+    [KMP](<Kiến thức đã học/Algorithm/String processing/KMP.md>), [Z algorithm](<Kiến thức đã học/Algorithm/String processing/Z algorithm.md>), [rolling hash](<Kiến thức đã học/Algorithm/String processing/rolling hash.md>), [Manacher](<Kiến thức đã học/Algorithm/String processing/Manacher.md>), [Trie](<Kiến thức đã học/Algorithm/String processing/Trie.md>)
 - Math/Bit/DP/Greedy:
-    [[Basic Number Theory]], [[Combinatorics and Probability]], [[Bit manipulation and bitmask]],
-    [[Các dạng DP chính]], [[Greedy + Priority Queue]], [[Sqrt chung]], [[Sqrt chia case]]
+    [Basic Number Theory](<Kiến thức đã học/Math/Basic Number Theory.md>), [Combinatorics and Probability](<Kiến thức đã học/Math/Combinatorics and Probability.md>), [Bit manipulation and bitmask](<Kiến thức đã học/Algorithm/Bit manipulation and bitmask.md>),
+    [Các dạng DP chính](<Kiến thức đã học/Dynamic Programming/Các dạng DP chính.md>), [Greedy + Priority Queue](<Kiến thức đã học/Greedy Technique/Greedy + Priority Queue.md>), [Sqrt chung](<Kiến thức đã học/Sqrt Decomposition/Sqrt chung.md>), [Sqrt chia case](<Kiến thức đã học/Sqrt Decomposition/Sqrt chia case.md>)
