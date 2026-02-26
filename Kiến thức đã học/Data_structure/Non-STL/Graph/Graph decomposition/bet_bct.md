@@ -66,7 +66,7 @@
   - Dùng DP trên cây nén để tối ưu toàn cục theo component.
 
 ## Đường dẫn
-- [[bridge and ap]]
-- [[advance_span_tree_forest]]
-- [[dfs_cactus]]
+- [bridge and ap](<../bridge and ap.md>)
+- [advance_span_tree_forest](advance_span_tree_forest.md)
+- [dfs_cactus](dfs_cactus.md)
 

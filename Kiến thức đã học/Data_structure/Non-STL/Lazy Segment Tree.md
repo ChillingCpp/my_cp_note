@@ -3,7 +3,7 @@
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/seg_tree/lazy_segtree_nobinsearch.cpp)
 
 ## Ý tưởng chung
-- Thường sử dụng cho range update không thể prunning sớm, nếu có prunning sớm thì sử dụng [[Segment Tree]] + update đệ quy
+- Thường sử dụng cho range update không thể prunning sớm, nếu có prunning sớm thì sử dụng [Segment Tree](<Segment Tree.md>) + update đệ quy
     - Điều kiện prunning sớm là nếu 1 operation chỉ được thực hiện tối đa log a hoặc k constant bất kì.
 - Segment tree lưu thông tin đoạn trong `Node`.
 - Lazy propagation lưu cập nhật treo trong `Lazy`.

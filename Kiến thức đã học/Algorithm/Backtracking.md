@@ -42,12 +42,6 @@ void dfs(int pos) {
 ## 5) Độ phức tạp
 - Tệ nhất thường là exponential (`O(b^d)`), phụ thuộc mạnh vào pruning.
 
-## 6) Lỗi hay gặp
-- Quên rollback làm nhiễm trạng thái giữa các nhánh.
-- Base case sai khiến thiếu hoặc thừa nghiệm.
-- Pruning sai làm mất nghiệm đúng.
-- Dùng global state nhưng không reset giữa test.
-
 ## 7) So sánh nhanh
 - Backtracking: chủ yếu để tìm kiếm có điều kiện và liệt kê nghiệm.
 - DP: tận dụng chồng lặp trạng thái để tối ưu tính toán.

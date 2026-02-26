@@ -44,8 +44,3 @@ Result solve(int l, int r) {
 - Cẩn thận stack recursion khi `n` lớn.
 - `combine` phải đúng bất biến, vì sai combine thường sai toàn bộ.
 
-## 7) Lỗi hay gặp
-- Thiếu/đặt sai base case.
-- Chia đoạn sai lệch biên (`mid`, `[l,m]`, `[m+1,r]`).
-- Gộp kết quả không bảo toàn thứ tự/tính chất cần thiết.
-

@@ -51,5 +51,5 @@
   - query trên cycle dùng `min(clockwise, counter_clockwise)`
 
 ## Đường dẫn
-- [[Bridge_edge_tree]]
+- [Bridge_edge_tree](Bridge_edge_tree.md)
 

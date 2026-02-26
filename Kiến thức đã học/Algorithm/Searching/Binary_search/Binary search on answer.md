@@ -9,14 +9,14 @@
 ## 2) Điều kiện bắt buộc
 - `check(x)` phải **đơn điệu** (chỉ đổi từ `false -> true` hoặc `true -> false` đúng 1 lần).
 - Hàm mục tiêu không có cực trị ở giữa; nếu có thì chỉ ở biên `L/R`.
-- Nếu hàm có 1 cực trị trong miền, ưu tiên `[[Ternary search on answer]]`; nhiều cực trị thì cần kỹ thuật khác.
+- Nếu hàm có 1 cực trị trong miền, ưu tiên `[Ternary search on answer](<../Ternary search/Ternary search on answer.md>)`; nhiều cực trị thì cần kỹ thuật khác.
 
 ## 3) Cách tư duy hàm check
 - Giả sử đáp án tối ưu là `x*`, xét `x0 < x*` và `x0 > x*`:
     - nếu hai phía cho tính chất khác nhau rõ ràng => có thể tạo `check(x)` đơn điệu.
 - Với công thức có mảng, thường check gắn với ràng buộc kiểu `<= k`, `>= k`, số phần tử đạt điều kiện,...
 
-## 4) Tính chất cho các dạng bài cơ bản 
+## 4) Các dạng bài phổ biến
 - Hàm số trực tiếp: ví dụ `f(x) = 3x + 1`.
 - Công thức gắn dữ liệu mảng/ràng buộc.
 - Tối ưu `max/min`:

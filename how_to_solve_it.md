@@ -2,117 +2,93 @@
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
 
-## 0) Khung trực giác (30-60 giây)
-1. Bài thuộc loại gì?
-    - đếm / tối ưu / xây dựng / kiểm tra tồn tại
-2. Constraint chính là gì?
-    - `n <= 20` / `n <= 2000` / `n <= 2e5` / nhiều query/test
-3. Output là giá trị hay cấu hình?
-- Chọn thuật toán nhanh dựa trên time complexity
-    - [[chọn_nhanh_thuật_toán]]
-    
-Rule:
-- Nếu sau 60 giây chưa định hình được nhóm thuật toán, chuyển sang khung chi tiết.
-
-## 1) Khi nào dùng khung chi tiết (20 phút đầu)
-- Lời giải trực giác bị WA/TLE/Error trong khoảng 20 phút.
-- Trực giác chưa cho hướng tối ưu.
-- Cần một quy trình ổn định để tránh sửa vặt theo cảm tính.
+## 0) Mục tiêu
+- Ưu tiên sử dụng trực giác để tìm được lời giải nhanh cho bài toán hơn
+- Trường hợp sử dụng khung này :
+    - nếu như 1 lời giải bằng trực giác bị WA, error trong 30p thì sử dụng khung này
+    - trực giác không thể cho được lời giải tối ưu.
+- Đây là khung thực chiến: **ngắn, đủ ý quan trọng**, dùng để ép tư duy Polya vào competitive programming.
 
 ## I. Understand Problem (Hiểu đúng đề)
 1. Đề hỏi chính xác gì?
-    - output là gì, một đáp án hay nhiều đáp án hợp lệ?
+    - output là giá trị, cấu hình, hay chuỗi thao tác?
+    - một đáp án hay nhiều đáp án hợp lệ?
 2. Input/ràng buộc là gì?
-    - kích thước dữ liệu, kiểu dữ liệu, thời gian/bộ nhớ
+    - kích thước, kiểu dữ liệu, giới hạn thời gian/bộ nhớ.
 3. Có thể vô nghiệm không?
-    - đề có yêu cầu xử lý trường hợp này không?
-4. Mức độ phức tạp mục tiêu là bao nhiêu?
+    - đề có yêu cầu xử lý trường hợp đó không?
+4. Phân tích độ phức tạp để chọn thuật toán
 
 Rule:
-- Nếu chưa phát biểu lại đề trong 1-2 câu của riêng mình, coi như chưa hiểu đề.
+- Nếu chưa phát biểu lại đề trong 1-2 câu, coi như chưa hiểu đề.
 
 ## II. Discover Structure (Tìm cấu trúc)
-1. Đáp án phụ thuộc dữ kiện theo cách nào?
-    - cục bộ hay toàn cục, trực tiếp hay qua biến trung gian
-2. Cái gì thật sự quyết định đáp án?
+4. Đáp án phụ thuộc dữ kiện theo cách nào?
+    - cục bộ hay toàn cục, trực tiếp hay qua biến trung gian.
+5. Cái gì thật sự quyết định đáp án?
     - dữ kiện nào thay đổi mà kết quả không đổi?
-3. Tìm các tính chất:
-    - invariant (không đổi)
-    - monotonic (chỉ tăng/giảm)
-    - bound (chặn trên/dưới)
+6. Tìm invariant/monotonic/bound:
+    - thứ gì không đổi?
+    - thứ gì chỉ tăng/giảm?
+    - có chặn trên/dưới rõ ràng không?
 
-Output của phần II:
-- Danh sách tính chất đã xác định được để dùng làm nền cho bước biến đổi.
+## Lặp đi lặp lại các bước sau 
+### III. Dùng Assumption (Giả định có kiểm soát)
+10. Viết assumption ra rõ ràng:
+    - dạng `Giả sử ... thì ...`.
+    - ghi phạm vi áp dụng (mọi test, hay chỉ sau khi biến đổi bài toán).
+14. Ví dụ assumption thường dùng trong CP (tóm gọn):
+    - Các assumption quan trọng :
+        - `Fix để phá đối xứng (symmetry breaking)`: cố định một lựa chọn đại diện để loại các nghiệm tương đương.
+        - `Fix thứ tự xử lý` (sort/topo/trái -> phải): tạo đơn điệu để xử lý dần (sweep line, two pointers, DP theo thứ tự).
+        - `Fix một cấu hình chuẩn (canonical form)`: chuẩn hóa cách biểu diễn để so sánh/chứng minh dễ hơn.
+        - `Fix để giảm chiều trạng thái`: giữ một mốc cố định để rút gọn số biến trạng thái.
+        - `Giả sử chỉ cần trạng thái nén` (tập/đếm, không cần lịch sử chi tiết): mở ra DP/bitmask/frequency.
+        - `Giả sử có vị trí vi phạm đầu tiên`: suy ra ràng buộc cục bộ rồi nâng thành invariant toàn cục.
+        - `Giả sử tồn tại nghiệm tối ưu S`: dùng exchange argument để chuẩn hóa nghiệm (vd: interval scheduling chọn đoạn kết thúc sớm).
+        - `Giả sử cấu hình cực trị` (max/min): tìm cấu trúc tight hoặc điểm biên.
 
-## III. Vòng lặp khám phá lời giải
-Chu trình cố định: `biến đổi sơ cấp -> viết assumption -> chứng minh/biến đổi sâu hơn`.
+### IV. Reformulate & Decompose (Biến đổi và phân rã)
+6. Biến đổi bài toán dựa trên assumption
+11. Kiểm chứng assumption:
+    - suy ra trực tiếp từ đề, hoặc chứng minh bằng invariant/exchange argument.
+    - thử phản ví dụ nhỏ: `n=1`, tất cả bằng nhau, đảo thứ tự, biên âm/0/cực đại.
+12. Loại bỏ assumption:
+    - Nếu có phản ví dụ, hoặc không chứng minh được.
+7. Đổi cách phát biểu:
+    - tối ưu -> kiểm tra tồn tại
+    - đếm trực tiếp -> đếm bù
+    - điều kiện khó -> điều kiện tương đương
+8. Xét bài toán con và biên:
+    - bỏ bớt điều kiện thì gì xảy ra?
+    - thêm điều kiện mạnh thì bài có trở nên tầm thường không?
+    - test nhỏ nhất/lớn nhất/trường hợp biên có hành vi khác thường không?
+9. Tách bài toán:
+    - theo đoạn, theo phần tử, theo bước, theo component.
+    - các phần độc lập hay phụ thuộc?
+10. Nếu không thể biến đổi:
+    - loại bỏ assumption, và bắt đầu lại
 
-### III-A. Biến đổi sơ cấp (dựa trên tính chất đã có)
-1. Chọn 1-2 tính chất mạnh nhất từ phần II.
-2. Biến đổi bài toán dựa trên các tính chất đó:
-    - đổi cách phát biểu để bám vào tính chất mạnh nhất
-    - tách bài toán theo cấu trúc đã lộ ra
-    - loại bỏ thành phần không ảnh hưởng đáp án
-3. Mục tiêu:
-    - đưa bài toán về dạng dễ thao tác hơn mà chưa thêm giả định mới
-4. Nếu chưa mở được hướng tiến triển:
-    - giữ dạng biến đổi tốt nhất hiện có rồi sang bước viết assumption
 
-### III-B. Viết assumption (để mở thêm tính chất)
-1. Viết rõ assumption theo mẫu: `Giả sử ... thì ...`.
-2. Ghi phạm vi áp dụng:
-    - đúng cho mọi test, hay chỉ đúng sau biến đổi sơ cấp ở III-A
-3. Tiêu chí assumption tốt:
-    - giúp lộ thêm cấu trúc
-    - có khả năng chứng minh hoặc phản chứng bằng test nhỏ
-4. Các assumption thường dùng trong CP:
-    - fix để phá đối xứng (symmetry breaking)
-    - fix thứ tự xử lý (sort/topo/trái -> phải)
-    - fix cấu hình chuẩn (canonical form)
-    - fix mốc để giảm chiều trạng thái
-    - giả sử chỉ cần trạng thái nén (không cần toàn bộ lịch sử)
-    - giả sử có vị trí vi phạm đầu tiên
-    - giả sử tồn tại nghiệm tối ưu chuẩn hóa được (exchange argument)
-    - giả sử cấu hình cực trị (max/min)
-
-### III-C. Chứng minh assumption và biến đổi sâu hơn
-1. Thử chứng minh assumption:
-    - suy ra trực tiếp từ đề, hoặc dùng invariant/exchange/đối ngẫu
-2. Thử phản ví dụ nhanh:
-    - `n = 1`, tất cả bằng nhau, thứ tự đảo ngược, biên âm/0/cực đại
-3. Nếu assumption đúng:
-    - biến đổi sâu hơn để tạo quy tắc toàn cục hoặc thuật toán cụ thể
-4. Nếu biến đổi fail thì coi như assumption fail:
-    - có phản ví dụ
-    - không chứng minh được
-    - hoặc không tạo ra tiến triển sau biến đổi
-5. Khi assumption fail:
-    - loại assumption hiện tại, quay lại III-B để chọn assumption khác
-    - nếu cần, quay lại III-A hoặc II để đổi nền tảng biến đổi
-
-Điều kiện thoát vòng lặp III:
-- Đã có mô hình lời giải rõ ràng + lý do đúng sơ bộ + complexity dự kiến hợp lệ.
-
-## IV. Commit Solution (Chốt thuật toán)
-1. Chọn thuật toán cụ thể theo cấu trúc đã tìm được: [[chọn_nhanh_thuật_toán]]
-2. Nêu lý do đúng:
-    - dựa trên invariant, đơn điệu, cấu trúc dữ liệu, hoặc quy nạp
-3. Kiểm tra độ phủ:
-    - case thường, case biên, case xấu nhất
-4. Kiểm tra độ phức tạp:
+## V. Commit Solution (Chốt thuật toán)
+12. Chọn hướng giải theo cấu trúc đã tìm được: [[chọn_nhanh_thuật_toán]]
+13. Nêu lý do đúng:
+    - dựa trên invariant, tính đơn điệu, cấu trúc dữ liệu, hoặc quy nạp.
+14. Kiểm tra độ phủ:
+    - case thường, case biên, case xấu nhất.
+15. Kiểm tra độ phức tạp:
     - có qua giới hạn đề không?
 
-## V. Implement & Validate (Code và xác thực)
-1. Viết code theo block:
-    - preprocess -> core logic -> output
-2. Test tối thiểu:
+## VI. Implement & Validate (Code và xác thực)
+16. Viết code theo block:
+    - preprocess -> core logic -> output.
+17. Test tối thiểu:
     - random nhỏ + brute force (nếu làm được)
     - edge cases tự thiết kế
-3. Nếu WA/TLE:
-    - quay lại II-III trước khi sửa vặt code
+18. Nếu WA/TLE:
+    - quay lại bước II-IV trước khi sửa vặt code.
 
-## VI. Look Back (Nhìn lại để tích lũy)
-1. Gắn nhãn bài:
-    - invariant-based, constructive, monotonicity, greedy, DP, graph...
-2. Ghi 1-2 câu "dấu hiệu nhận biết" để tái sử dụng cho bài sau.
-3. Ghi lại assumption đã fail để tránh lặp lại sai lầm tương tự.
+## VII. Look Back (Nhìn lại để tích lũy)
+19. Gắn nhãn bài:
+    - invariant-based, constructive, monotonicity, greedy, DP, graph,...
+20. Ghi 1-2 câu "dấu hiệu nhận biết" để tái sử dụng cho bài sau.

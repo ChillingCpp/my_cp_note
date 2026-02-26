@@ -57,7 +57,7 @@
 - Nếu cần cả `max` và `second max` trên path (để xử lý cạnh bằng nhau), lưu thêm 2 giá trị tốt nhất trong DP.
 
 ## Đường dẫn
-- [[basic_spanning_tree_forest]]
-- [[Binary lifting và DP]]
-- [[Bridge_edge_tree]]
+- [basic_spanning_tree_forest](../basic_spanning_tree_forest.md)
+- [Binary lifting và DP](<../../Tree/Binary lifting và DP.md>)
+- [Bridge_edge_tree](Bridge_edge_tree.md)
 

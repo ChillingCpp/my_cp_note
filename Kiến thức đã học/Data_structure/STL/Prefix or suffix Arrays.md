@@ -29,8 +29,8 @@ for (int i = n; i >= 1; --i) {
 - Tối ưu từ `O(n*q)` về `O(n + q)`.
 
 ## Liên kết
-- [[Prefix sum 1D]]
-- [[Prefix sum 2D]]
-- [[Prefix min]]
-- [[Prefix max]]
-- [[Difference Array]]
+- [Prefix sum 1D](<Prefix structures and Difference Array/Prefix sum 1D.md>)
+- [Prefix sum 2D](<Prefix structures and Difference Array/Prefix sum 2D.md>)
+- [Prefix min](<Prefix structures and Difference Array/Prefix min.md>)
+- [Prefix max](<Prefix structures and Difference Array/Prefix max.md>)
+- [Difference Array](<Prefix structures and Difference Array/Difference Array.md>)

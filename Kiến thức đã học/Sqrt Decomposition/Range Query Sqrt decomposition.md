@@ -62,8 +62,8 @@
 - Phép gộp đơn giản (`sum/min/max`) và không cần nhiều custom phức tạp.
 
 ## Đường dẫn
-- [[Sqrt chung]]
-- [[Mo]]
-- [[Segment Tree]]
-- [[Lazy Segment Tree]]
-- [[Prefix sum 1D]]
+- [Sqrt chung](<Sqrt chung.md>)
+- [Mo](Mo.md)
+- [Segment Tree](<../Data_structure/Non-STL/Segment Tree.md>)
+- [Lazy Segment Tree](<../Data_structure/Non-STL/Lazy Segment Tree.md>)
+- [Prefix sum 1D](<../Data_structure/STL/Prefix structures and Difference Array/Prefix sum 1D.md>)

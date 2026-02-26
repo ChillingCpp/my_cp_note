@@ -22,6 +22,6 @@
 - Nên dùng union by size/rank + path compression.
 
 ## Liên kết
-- [[DSU lý thuyết]]
-- [[Giá trị đại diện cho tập hợp]]
+- [DSU lý thuyết](<DSU lý thuyết.md>)
+- [Giá trị đại diện cho tập hợp](<Giá trị đại diện cho tập hợp.md>)
 

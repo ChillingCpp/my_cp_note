@@ -36,6 +36,6 @@
 - Sau khi nén xong, các thuật toán DAG chuẩn chạy trực tiếp.
 
 ## Đường dẫn
-- [[Topological sort]]
-- [[Positive or Negative cycle]]
+- [Topological sort](<../Topological sort.md>)
+- [Positive or Negative cycle](<../Positive or Negative cycle.md>)
 

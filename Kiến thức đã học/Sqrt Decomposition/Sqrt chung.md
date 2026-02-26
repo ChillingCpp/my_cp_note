@@ -25,10 +25,10 @@
 - Bài có update/query online nhưng không quá nặng.
 
 ## Chi tiết về các dạng sqrt
-- [[Range Query Sqrt decomposition]]
-- [[Mo]]
+- [Range Query Sqrt decomposition](<Range Query Sqrt decomposition.md>)
+- [Mo](Mo.md)
 ## Đường dẫn
-- [[Segment Tree]]
-- [[Lazy Segment Tree]]
-- [[Prefix sum 1D]]
+- [Segment Tree](<../Data_structure/Non-STL/Segment Tree.md>)
+- [Lazy Segment Tree](<../Data_structure/Non-STL/Lazy Segment Tree.md>)
+- [Prefix sum 1D](<../Data_structure/STL/Prefix structures and Difference Array/Prefix sum 1D.md>)
 

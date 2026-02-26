@@ -22,11 +22,8 @@
 	- sinh siêu hợp số từ 1 -> 1e18 bằng backtracking
 - Các só chính phương có số lượng ước số là lẻ
 ## Kỹ thuật liên quan
-- [[Harmonic Number]]
+- [Harmonic Number](<Harmonic Number.md>)
 - Euler phi.
 - Smallest prime factor (SPF).
 - divisor count/sum/list
-
-## Liên kết
-- [[Advance Number Theory]]
 

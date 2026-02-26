@@ -26,4 +26,4 @@
 
 ## Range query với monotonic stack
 - Gọi `L` là vị trí gần nhất bên trái còn hợp lệ, `R` là vị trí gần nhất bên phải còn hợp lệ.
-- Mỗi giá trị khi làm `max/min` sẽ xác định một đoạn ảnh hưởng `(L[i], R[i])`, nên có thể đổi góc nhìn thành bài toán [[range query]] trên các đoạn này.
+- Mỗi giá trị khi làm `max/min` sẽ xác định một đoạn ảnh hưởng `(L[i], R[i])`, nên có thể đổi góc nhìn thành bài toán [range query](<range query.md>) trên các đoạn này.

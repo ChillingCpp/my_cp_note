@@ -14,6 +14,6 @@
 - Nếu cần truy vấn theo quan hệ giữa 2 node, dùng DSU có trọng số/parity.
 
 ## Liên kết
-- [[DSU lý thuyết]]
-- [[DSU bipartite]]
+- [DSU lý thuyết](<DSU lý thuyết.md>)
+- [DSU bipartite](<DSU bipartite.md>)
 

@@ -2,7 +2,6 @@
 
 ## Tính chất ứng dụng giải bài
 
-- Thường sử dụng cho tối ưu hóa quy hoạch động
 - Dùng khi trạng thái chuyển tuyến tính: `state_{t+1} = M * state_t`.
 - Dùng cho truy hồi tuyến tính bậc `k` với số bước rất lớn (`n` lớn): nâng lũy thừa ma trận.
 - Dùng để đếm số đường đi đúng `k` bước (adjacency matrix exponentiation).

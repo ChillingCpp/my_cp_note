@@ -17,5 +17,5 @@
 - Phần DSU gần tuyến tính theo `m`.
 
 ## Liên kết
-- [[DSU lý thuyết]]
+- [DSU lý thuyết](<DSU lý thuyết.md>)
 

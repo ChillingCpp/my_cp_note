@@ -25,8 +25,3 @@
 - Nhiều truy vấn theo prefix.
 - Dictionary word, autocomplete, filter từ cấm.
 - Bài XOR max/min theo bit.
-
-## 7) Lỗi hay gặp
-- Không chuẩn hóa alphabet (hoa/thường/ký tự ngoài a-z).
-- Lãng phí bộ nhớ khi alphabet lớn mà vẫn dùng mảng cố định.
-- Quên phân biệt `findWord` và `startsWith`.

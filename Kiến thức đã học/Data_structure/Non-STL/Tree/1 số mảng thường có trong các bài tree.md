@@ -13,7 +13,7 @@
 - Số node trong subtree `u`: `sz[u] = out[u] - in[u] + 1` (với Euler loại 1 lần).
 
 ## Gợi ý
-- Nếu truy vấn subtree nhiều: ưu tiên [[Euler tour flatten]]
-- Nếu truy vấn tổ tiên/LCA: [[binary lifting]]
+- Nếu truy vấn subtree nhiều: ưu tiên [Euler tour flatten](<Euler tour flatten.md>)
+- Nếu truy vấn tổ tiên/LCA: [binary lifting](<binary lifting.md>)
 
 

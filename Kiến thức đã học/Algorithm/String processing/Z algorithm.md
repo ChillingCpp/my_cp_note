@@ -21,7 +21,3 @@
 ## 6) Khi nào dùng
 - Pattern matching tuyến tính như KMP.
 - Bài toán cần so sánh prefix với mọi suffix nhanh.
-
-## 7) Lỗi hay gặp
-- Chọn ký tự phân tách (`#`) trùng với alphabet input.
-- Quên map chỉ số từ `t` về vị trí trong `s`.

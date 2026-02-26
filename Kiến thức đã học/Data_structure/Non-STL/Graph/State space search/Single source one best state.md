@@ -17,5 +17,5 @@
 - Dijkstra: trọng số không âm.
 
 ## Đường dẫn
-- [[Khái niệm]]
+- [Khái niệm](<Khái niệm.md>)
 

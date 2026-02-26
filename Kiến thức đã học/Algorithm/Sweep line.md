@@ -33,7 +33,5 @@
   - tùy đề có thể ưu tiên `remove trước add` hoặc ngược lại.
 - Sai tie-break là nguồn WA phổ biến nhất của sweep line.
 
-## 6) Độ phức tạp
-- Thường là `O((n + q) log n)` do sort + cập nhật DS.
 
 
