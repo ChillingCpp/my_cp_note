@@ -77,6 +77,9 @@
 - Độ phức tạp:
   - thường `O(n^2)` -> `O(n log n)`.
 
+#### d) Matrix Multiplication (Matrix Exponentiation)
+[Matrix multiplication](<../Math/Matrix multiplication.md>)
+
 #### e) Priority Queue (heap)
 - Dạng:
   - luôn lấy ứng viên tốt nhất trong tập động theo thời gian/cửa sổ.
@@ -164,6 +167,7 @@
 | Min/Max trên cửa sổ trượt | Deque |
 | Cần previous/next thỏa điều kiện đơn điệu | Monotonic Stack |
 | Query đoạn trên `dp` | Segment Tree / Fenwick |
+| Transition tuyến tính theo nhiều bước lớn (`n`, `k-th step`) | Matrix Multiplication (Matrix Exponentiation) |
 | Ứng viên động, cần top nhanh | Priority Queue / Multiset |
 | State thưa | Hash map |
 | Boolean knapsack/subset | Bitset |

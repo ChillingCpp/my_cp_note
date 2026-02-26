@@ -1,6 +1,6 @@
 # Basic Number Theory
 
-[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/math/basic.cpp)
+[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/math)
 
 ## Chủ đề nền tảng
 - GCD/LCM.
@@ -23,7 +23,7 @@
 - Các só chính phương có số lượng ước số là lẻ
 ## Kỹ thuật liên quan
 - [Harmonic Number](<Harmonic Number.md>)
-- Euler phi.
+- Euler phi : phi[j] -= phi[j] / i.
 - Smallest prime factor (SPF).
 - divisor count/sum/list
 
