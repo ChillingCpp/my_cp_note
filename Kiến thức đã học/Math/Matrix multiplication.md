@@ -4,11 +4,9 @@
 
 ## 1) Khi nào DP đổi sang nhân ma trận?
 
-DP phải có dạng: $$dp_t[v] = \bigoplus_u \left(dp_{t-1}[u] \otimes W[u][v]\right).$$
-
-Khi đó: $$dp_t = dp_{t-1} \star W.$$
-
-Phép nhân ma trận tổng quát: $$(C = A \star B) \Rightarrow C[i][j] = \bigoplus_k \left(A[i][k] \otimes B[k][j]\right).$$
+- DP phải có dạng: $$dp_t[v] = \bigoplus_u \left(dp_{t-1}[u] \otimes W[u][v]\right).$$
+- Khi đó: $$dp_t = dp_{t-1} \star W.$$
+- Phép nhân ma trận tổng quát: $$(C = A \star B) \Rightarrow C[i][j] = \bigoplus_k \left(A[i][k] \otimes B[k][j]\right).$$
 
 Trong đó:
 - `⊕`: phép gộp (sum/min/max/or/...).
@@ -21,9 +19,9 @@ Trong đó:
 
 | Điều kiện | Công thức |
 | --- | --- |
-| `⊕` kết hợp | \((a \oplus b) \oplus c = a \oplus (b \oplus c)\) |
-| `⊗` kết hợp | \((a \otimes b) \otimes c = a \otimes (b \otimes c)\) |
-| `⊗` phân phối qua `⊕` | \(a \otimes (b \oplus c) = (a \otimes b) \oplus (a \otimes c)\) |
+| `⊕` kết hợp | $((a \oplus b) \oplus c = a \oplus (b \oplus c))$ |
+| `⊗` kết hợp | $(a \otimes b) \otimes c = a \otimes (b \otimes c)$ |
+| `⊗` phân phối qua `⊕` | $a \otimes (b \oplus c) = (a \otimes b) \oplus (a \otimes c)$ |
 | Phần tử trung lập | Tồn tại `zero` cho `⊕`, `one` cho `⊗` |
 
 Nếu thỏa, phép nhân ma trận kết hợp nên có thể dùng lũy thừa nhanh.
@@ -34,12 +32,12 @@ $((W^k)[i][j])$ là giá trị tốt nhất từ `i -> j` sau đúng `k` bước
 
 ## 4) Các semiring thường gặp
 
-| Bài toán | \(\oplus\) | \(\otimes\) | `zero` | `one` |
+| Bài toán | $\oplus$| $\otimes$ | `zero` | `one` |
 | --- | --- | --- | --- | --- |
-| Đếm số cách | \(+\) | \(\times\) | \(0\) | \(1\) |
-| Shortest path đúng \(k\) cạnh | \(\min\) | \(+\) | \(+\infty\) | \(0\) |
-| Longest path đúng \(k\) cạnh | \(\max\) | \(+\) | \(-\infty\) | \(0\) |
-| Tồn tại đường đi | \(\lor\) | \(\land\) | `false` | `true` |
+| Đếm số cách | $+$ | $\times$ | $0$ | $1$ |
+| Shortest path đúng $k$ cạnh | $\min$ | $+$ | $+\infty$ | $0$ |
+| Longest path đúng $k$ cạnh | $\max$ | $+$ | $-\infty$ | $0$ |
+| Tồn tại đường đi | $\lor$ | $\land$ | `false` | `true` |
 
 
 ## 7) Quy trình áp dụng
