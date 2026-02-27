@@ -66,22 +66,7 @@
 - 0-1 BFS đúng vì deque giữ invariant dist tăng dần (đẩy trước với cạnh `0`, đẩy sau với cạnh `1`).
 - Dijkstra đúng khi tất cả cạnh không âm: đỉnh pop đầu tiên khỏi heap có dist đã cố định.
 - Bellman-Ford đúng vì sau `i` vòng relax có đáp án tốt nhất với tối đa `i` cạnh.
-- Floyd-Warshall đúng theo quy hoạch động trên tập đỉnh trung gian.
-
-## Checklist chọn nhanh
-1. Có cạnh âm không?
-2. Nếu không âm: có phải `0/1` hay unweighted không?
-3. Cần từ 1 nguồn, nhiều nguồn, hay mọi cặp?
-4. Graph có phải DAG hoặc tree để dùng lời giải tuyến tính không?
-5. Có ràng buộc phụ -> cần mở rộng state?
-6. Có cần phát hiện negative cycle / truy vết đường đi không?
-
-## Lỗi hay gặp
-- Dùng Dijkstra khi có cạnh âm.
-- Quên bỏ state lỗi thời trong priority queue.
-- Tràn số khi dùng `INF` + `w` (`long long` + kiểm tra trước khi cộng).
-- Nhầm directed với undirected khi add cạnh.
-- K-best nhưng lan truyền cả state không hợp lệ, làm nổ thời gian.
+- Floyd-Warshall DP trên tập đỉnh trung gian.
 
 ## Liên kết
 - [Khái niệm](<Khái niệm.md>)
