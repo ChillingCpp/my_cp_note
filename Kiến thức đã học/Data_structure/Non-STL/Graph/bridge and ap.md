@@ -26,6 +26,7 @@
 
 ## 7) Ứng dụng
 - Tìm các cạnh/yếu tố "điểm nghẽn" của mạng.
+- Tìm các cạnh/điểm "trọng yếu" phải đi qua của đường đi.
 - Build `Bridge-Edge Tree` (nén theo 2-edge-connected components).
 - Build `Block-Cut Tree` (nén theo biconnected components theo đỉnh).
 
