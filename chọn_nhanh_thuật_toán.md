@@ -12,7 +12,7 @@
 2. Xác định lớp bài: `number` hoặc `linear` hoặc `graph/tree/state`.
 3. Xác định kiểu thao tác: `single` / `many queries` / `dynamic updates`.
 4. Xác định kiểu mục tiêu: `optimize` / `count` / `exist` / `k-th`.
-5. Gắn keyword cứng: `subarray`, `nearest`, `component`, `dependency`, `cycle`, `palindrome`, `check(x)`, `first/last`, `first true/last true`, `tight-started-state`, `F(R)-F(L-1)`, `divisor/multiple`, `one-shot`, `non-tree edge`, `second-best MST`, `critical edge/node`, `BET/BCT`, `cactus`, `multisource`, `construct path`.
+5. Gắn keyword cứng: `subarray`, `submatrix`, `nearest`, `component`, `dependency`, `cycle`, `palindrome`, `check(x)`, `first/last`, `first true/last true`, `tight-started-state`, `F(R)-F(L-1)`, `divisor/multiple`, `one-shot`, `non-tree edge`, `second-best MST`, `critical edge/node`, `BET/BCT`, `cactus`, `multisource`, `construct path`, `linearizing 2D -> 1D`, `fixed top/bottom`, `fixed left/right`, `compressed[]`, `Kadane 2D`, `submatrix sum = k`, `O(K^2 * F(L))`.
 6. Chạy hard filter.
 7. Chấm điểm tiềm năng (0-10): `fit cấu trúc` + `fit thao tác` + `fit complexity` + `fit tính chất đặc biệt`.
 8. Xếp hạng:
@@ -45,7 +45,7 @@
 - Tree -> Euler tour/flatten -> array/range.
 - Subtree -> đoạn `[tin, tout]`.
 - Path query on tree -> LCA + tách đoạn hoặc HLD.
-- Grid 2D -> graph/component hoặc prefix 2D.
+- Grid 2D -> graph/component hoặc prefix 2D hoặc `linearizing 2D -> 1D` (cố định 2 biên + mảng nén `compressed[]`).
 - Quan hệ phụ thuộc/trạng thái -> directed graph hoặc state-space graph.
 
 ### 2) Chuẩn hóa yêu cầu
@@ -147,6 +147,7 @@ Chấm mỗi thuật toán theo 4 tiêu chí:
 Keyword mạnh:
 
 - `subarray`, `substring`, `prefix`, `suffix`, `left-right`, `window`, `nearest`, `flatten tree`.
+- `submatrix`, `fixed top/bottom`, `fixed left/right`, `compressed[]`, `linearizing 2D -> 1D`.
 
 ### B) Non-linear
 
@@ -220,6 +221,15 @@ Keyword mạnh:
 | Chia bài thành 2 nửa độc lập | Divide and conquer / Meet-in-the-middle | Backtracking có pruning |
 | Truy vết chu trình hàm lặp | Floyd cycle finding | Hash visited |
 | Truy vấn median/percentile chạy động | Two-heaps + lazy delete | Multiset đôi |
+
+### 7) Grid 2D nhưng linearizable về 1D
+
+| Tính chất | High | Medium |
+|---|---|---|
+| Submatrix tối ưu/đếm, phép gộp theo lát cắt cộng dồn được | `linearizing 2D -> 1D`: cố định `top/bottom` hoặc `left/right`, cập nhật `compressed[]`, rồi chạy thuật toán 1D phù hợp | Prefix sum 2D + duyệt nhiều biên khi `n, m` nhỏ |
+| Nhận diện độ phức tạp qua `K = min(n,m)`, `L = max(n,m)` | Mục tiêu `O(K^2 * F(L))`, bộ nhớ `O(L)` | `O(n^2 m^2)` brute force khi dữ liệu nhỏ |
+| Maximum sum submatrix | Kadane 1D trên `compressed[]` (Kadane 2D) | Prefix sum 2D kiểm mọi hình chữ nhật |
+| Đếm submatrix có tổng = `k` | Prefix sum 1D + hash map trên `compressed[]` cho mỗi cặp biên | Prefix sum 2D + đếm brute force |
 
 ---
 

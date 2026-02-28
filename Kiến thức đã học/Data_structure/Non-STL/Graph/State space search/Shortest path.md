@@ -17,7 +17,14 @@
 	- directed : `dist(a, b) = min(dist(a, b), dist(a, u) + w' + dist(v, b))`
 - Truy vấn "tìm 1 đỉnh bất kì đi đến 1 đích `t`" thường xử lý nhanh bằng cách chạy từ `t` trên **reverse graph**.
 
-## Theo loại đồ thị / trọng số
+## Tính chất theo loại đồ thị
+- **Undirected**: nếu trọng số đối xứng, `dist(u, v) = dist(v, u)`.
+- **Directed**: khoảng cách có thể bất đối xứng, cần phân biệt rõ chiều cạnh.
+- **DAG**: cho phép cạnh âm nhưng vẫn giải tuyến tính bằng topo DP.
+- **Tree**: đường đi giữa 2 đỉnh là duy nhất, nên shortest path chính là đường đi duy nhất đó.
+- **Implicit graph** (trạng thái sinh online): không cần dựng đủ đồ thị, chỉ cần hàm sinh neighbor hợp lệ.
+
+## Thuật toán theo loại đồ thị / trọng số
 | Loại graph / cạnh | Thuật toán chuẩn | ĐK áp dụng | Độ phức tạp |
 |---|---|---|---|
 | Unweighted / cùng trọng số | BFS | Cạnh cùng cost | `O(n + m)` |
@@ -30,13 +37,6 @@
 | All-pairs, `n` vừa, graph dày | Floyd-Warshall | Có thể âm, không negative cycle | `O(n^3)` |
 | All-pairs graph thưa + có cạnh âm | Johnson + Dijkstra | Không negative cycle | `O(nm log n)` |
 | Tree | DFS/BFS cộng dồn cost | Không chu trình | `O(n)` từ 1 nguồn |
-
-## Tính chất theo loại đồ thị
-- **Undirected**: nếu trọng số đối xứng, `dist(u, v) = dist(v, u)`.
-- **Directed**: khoảng cách có thể bất đối xứng, cần phân biệt rõ chiều cạnh.
-- **DAG**: cho phép cạnh âm nhưng vẫn giải tuyến tính bằng topo DP.
-- **Tree**: đường đi giữa 2 đỉnh là duy nhất, nên shortest path chính là đường đi duy nhất đó.
-- **Implicit graph** (trạng thái sinh online): không cần dựng đủ đồ thị, chỉ cần hàm sinh neighbor hợp lệ.
 
 ## Các loại shortest path thường gặp
 - **Single-pair** `s -> t`: chạy từ `s`, có thể dừng sớm khi pop ra `t` (BFS/Dijkstra).

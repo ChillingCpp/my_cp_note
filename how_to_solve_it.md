@@ -2,13 +2,16 @@
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
 
-## 0) Mục tiêu
-- Ưu tiên sử dụng trực giác để tìm được lời giải nhanh cho bài toán hơn
-- Trường hợp sử dụng khung này :
-    - nếu như 1 lời giải bằng trực giác bị WA, error trong 30p thì sử dụng khung này
-    - trực giác không thể cho được lời giải tối ưu.
-- Đây là khung thực chiến: **ngắn, đủ ý quan trọng**, dùng để ép tư duy Polya vào competitive programming.
-
+## 0) Khung trực giác (30-60 giây)
+1. Bài thuộc loại gì?
+    - đếm / tối ưu / xây dựng / kiểm tra tồn tại
+2. Constraint chính là gì?
+    - `n <= 20` / `n <= 2000` / `n <= 2e5` / nhiều query/test
+3. Output là giá trị hay cấu hình?
+4. Khám phá nhanh cấu trúc của bài toán
+    - Khám phá rồi lựa chọn trong [[chọn_nhanh_thuật_toán]] 
+5. Rule:
+- Nếu sau 60 giây chưa định hình được nhóm thuật toán, chuyển sang khung chi tiết.
 ## I. Understand Problem (Hiểu đúng đề)
 1. Đề hỏi chính xác gì?
     - output là giá trị, cấu hình, hay chuỗi thao tác?
@@ -32,51 +35,53 @@ Rule:
     - thứ gì chỉ tăng/giảm?
     - có chặn trên/dưới rõ ràng không?
 
-## Lặp đi lặp lại các bước sau 
-### III. Dùng Assumption (Giả định có kiểm soát)
-10. Viết assumption ra rõ ràng:
-    - dạng `Giả sử ... thì ...`.
-    - ghi phạm vi áp dụng (mọi test, hay chỉ sau khi biến đổi bài toán).
-14. Ví dụ assumption thường dùng trong CP (tóm gọn):
-    - Các assumption quan trọng :
-        - `Fix để phá đối xứng (symmetry breaking)`: cố định một lựa chọn đại diện để loại các nghiệm tương đương.
-        - `Fix thứ tự xử lý` (sort/topo/trái -> phải): tạo đơn điệu để xử lý dần (sweep line, two pointers, DP theo thứ tự).
-        - `Fix một cấu hình chuẩn (canonical form)`: chuẩn hóa cách biểu diễn để so sánh/chứng minh dễ hơn.
-        - `Fix để giảm chiều trạng thái`: giữ một mốc cố định để rút gọn số biến trạng thái.
-        - `Giả sử chỉ cần trạng thái nén` (tập/đếm, không cần lịch sử chi tiết): mở ra DP/bitmask/frequency.
-        - `Giả sử có vị trí vi phạm đầu tiên`: suy ra ràng buộc cục bộ rồi nâng thành invariant toàn cục.
-        - `Giả sử tồn tại nghiệm tối ưu S`: dùng exchange argument để chuẩn hóa nghiệm (vd: interval scheduling chọn đoạn kết thúc sớm).
-        - `Giả sử cấu hình cực trị` (max/min): tìm cấu trúc tight hoặc điểm biên.
+## III. Tiến hành giải bài
+- Chu trình: `biến đổi sơ cấp -> viết assumption -> biến đổi sâu hơn`.
 
-### IV. Reformulate & Decompose (Biến đổi và phân rã)
-6. Biến đổi bài toán dựa trên assumption
-11. Kiểm chứng assumption:
-    - suy ra trực tiếp từ đề, hoặc chứng minh bằng invariant/exchange argument.
-    - thử phản ví dụ nhỏ: `n=1`, tất cả bằng nhau, đảo thứ tự, biên âm/0/cực đại.
-12. Loại bỏ assumption:
-    - Nếu có phản ví dụ, hoặc không chứng minh được.
-7. Đổi cách phát biểu:
-    - tối ưu -> kiểm tra tồn tại
-    - đếm trực tiếp -> đếm bù
-    - điều kiện khó -> điều kiện tương đương
-8. Xét bài toán con và biên:
-    - bỏ bớt điều kiện thì gì xảy ra?
-    - thêm điều kiện mạnh thì bài có trở nên tầm thường không?
-    - test nhỏ nhất/lớn nhất/trường hợp biên có hành vi khác thường không?
-9. Tách bài toán:
-    - theo đoạn, theo phần tử, theo bước, theo component.
-    - các phần độc lập hay phụ thuộc?
-10. Nếu không thể biến đổi:
-    - loại bỏ assumption, và bắt đầu lại
+### III-A. Biến đổi sơ cấp (Reformulate nhẹ)
+1. Chọn các tính chất đã tìm được ở phần II (invariant/monotonic/bound).
+2. Biến đổi bài toán dựa trên chính các tính chất đó:
+    - đổi cách phát biểu để bám vào tính chất mạnh nhất.
+    - tách bài toán theo cấu trúc đã lộ ra.
+3. Mục tiêu:
+    - đưa bài toán về dạng dễ xử lý hơn mà chưa cần giả định mới.
+4. Nếu chưa tạo được hướng tiến triển:
+    - giữ dạng biến đổi tốt nhất hiện có và chuyển sang viết assumption để tìm thêm tính chất.
+
+### III-B. Viết assumption (Giả định có kiểm soát)
+1. Viết assumption ra rõ ràng:
+    - dạng `Giả sử ... thì ...`.
+    - ghi phạm vi áp dụng (mọi test, hay chỉ sau biến đổi sơ cấp).
+2. Mục tiêu:
+    - dùng assumption để mở thêm tính chất mới cho bước biến đổi tiếp theo.
+3. Ví dụ assumption thường dùng trong CP (tóm gọn):
+    - `Fix để phá đối xứng (symmetry breaking)`: cố định một lựa chọn đại diện để loại các nghiệm tương đương.
+    - `Fix thứ tự xử lý` (sort/topo/trái -> phải): tạo đơn điệu để xử lý dần (sweep line, two pointers, DP theo thứ tự).
+    - `Fix một cấu hình chuẩn (canonical form)`: chuẩn hóa cách biểu diễn để so sánh/chứng minh dễ hơn.
+    - `Fix để giảm chiều trạng thái`: giữ một mốc cố định để rút gọn số biến trạng thái.
+    - `Giả sử chỉ cần trạng thái nén` (tập/đếm, không cần lịch sử chi tiết): mở ra DP/bitmask/frequency.
+    - `Giả sử có vị trí vi phạm đầu tiên`: suy ra ràng buộc cục bộ rồi nâng thành invariant toàn cục.
+    - `Giả sử tồn tại nghiệm tối ưu S`: dùng exchange argument để chuẩn hóa nghiệm (vd: interval scheduling chọn đoạn kết thúc sớm).
+    - `Giả sử cấu hình cực trị` (max/min): tìm cấu trúc tight hoặc điểm biên.
+
+### III-C. Biến đổi sâu hơn (Decompose sâu)
+1. Chứng minh assumption rồi biến đổi bài toán dựa trên assumption đó.
+2. Đẩy từ quan sát cục bộ thành invariant/quy tắc toàn cục mới.
+3. Nếu biến đổi fail thì coi như assumption fail:
+    - có phản ví dụ, hoặc không chứng minh được.
+    - hoặc không tạo được hướng tiến triển sau biến đổi.
+4. Khi assumption fail:
+    - loại assumption hiện tại và quay lại `III-B` để thử assumption khác.
+    - nếu cần, quay lại `III-A` để đổi dạng biến đổi sơ cấp trước khi giả định lại.
 
 
 ## V. Commit Solution (Chốt thuật toán)
-12. Chọn hướng giải theo cấu trúc đã tìm được: [[chọn_nhanh_thuật_toán]]
-13. Nêu lý do đúng:
+1. Chọn hướng giải theo cấu trúc đã tìm được: [[chọn_nhanh_thuật_toán]]
+2. Nêu lý do đúng:
     - dựa trên invariant, tính đơn điệu, cấu trúc dữ liệu, hoặc quy nạp.
-14. Kiểm tra độ phủ:
+3. Kiểm tra độ phủ:
     - case thường, case biên, case xấu nhất.
-15. Kiểm tra độ phức tạp:
+4. Kiểm tra độ phức tạp:
     - có qua giới hạn đề không?
 
 ## VI. Implement & Validate (Code và xác thực)
