@@ -14,7 +14,8 @@
     - Point update: `O(log n)`
 
 ## Khi nào chọn Segment Tree
-- Cần query đoạn với phép gộp kết hợp (`sum/min/max/gcd/xor/...`).
+- Cần query đoạn với phép tính gộp kết hợp (`sum/min/max/gcd/xor/...`).
+- Phép tính có thể không giao hoán
 - Có update online, không xử lý offline được như prefix sum.
 - Cần custom node phức tạp hơn Fenwick Tree (vd: max subarray, first position thỏa điều kiện).
 - Tối ưu các công thức/phép tính yêu cầu range query xuống o(log n)
@@ -24,8 +25,9 @@
     - Phần tử trung tính của node.
     - Điều kiện: `op(id(), x) = x`.
 - `Node op(Node a, Node b)`
-    - Gộp 2 node con thành node cha.
+    - Gộp node b vào node a
     - Cần tính kết hợp để query đúng.
+    - Nếu không giao hoán thì cần đảm báo merge đúng vị trí
 
 ## Các dạng bài trực diện
 ### 1) Range Query + Point Update (kinh điển)
