@@ -1,5 +1,8 @@
 # Bài toán bracket (ngắn gọn)
 
+## 0)
+- có thể không cần coi vì đây không phải 1 set thuật toán chuẩn, chỉ là cách giải 1 dạng pattern
+
 ## 1) Invariant bắt buộc
 - Với `()` quy ước `(` = `+1`, `)` = `-1`, gọi `balance` là prefix sum.
 - Chuỗi hợp lệ iff:
