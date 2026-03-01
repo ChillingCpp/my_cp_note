@@ -35,27 +35,31 @@
 - Update `a[pos] = val` hoặc `a[pos] += delta`.
 - Nhận diện: số query lớn, vừa hỏi đoạn vừa sửa từng phần tử.
 
-### 2) Tìm phần tử đầu tiên/thứ k thỏa điều kiện
-- First position có prefix sum `>= k`.
-- First position trong `[l, r]` có `a[i] > x`.
-- K-th one / k-th zero khi node lưu số lượng.
-- Nhận diện: đề yêu cầu "vị trí đầu tiên", "k-th", "leftmost/rightmost".
+### 2) Bài Node phức hợp, Node không giao hoán
+- Longest/Maximum subarray gì đó:
+    - Node lưu `cur, prefĩx, suffix, best`.
+- Node không giao hoán `merge(a, b) != merge(b, a)` :
+    - Phải sử dụng `merge(left, st[l++])`, `merge(st[--r], right)` và `ans = merge(left, right)`;
+- Nhận diện: thông tin đáp án không phải 1 số đơn giản, phải biết nhiều thông tin nữa.
 
-### 3) Bài Node phức hợp
-- Maximum subarray sum:
-    - Node lưu `sum, pref, suff, best`.
-- Longest đoạn liên tiếp thỏa điều kiện (0/1):
-    - Node lưu prefix/suffix length + best length.
-- Nhận diện: thông tin đáp án không phải 1 số đơn giản, phải gộp từ 2 nửa.
-
-### 4) Segment Tree đệ quy có prune (không cần lazy)
+### 3) Segment Tree đệ quy có prune (không cần lazy)
 - Range update nhưng mỗi phần tử chỉ thay đổi hữu hạn lần ($O(\sqrt{n})$, $O(log n)$, $O(1) hoặc O(C)$):
     - Ví dụ `a[i] = floor(sqrt(a[i]))`, `a[i] = popcount(a[i])`.
 - Dùng cờ dừng/giá trị max để bỏ qua node đã ổn định.
 - Nhận diện: update đoạn nhưng có tính "co dần", một phần tử đổi rất ít lần.
-### 5) Segment Tree tìm maximal subarray sum
-- Kadane nhưng có update
-- Lưu (seg, pref, suf, sum) : max segment sum; max prefix sum; max suffix sum; sum of the current segment
+
+### 4) Walk on Segment Tree (đi bộ trên cây)
+- Không query ra giá trị rồi mới binary search, mà đi trực tiếp từ root xuống lá.
+- Các bước thực hiện như sa:
+    - Nếu node con (trái/phải) thỏa predicate  thì đi vào node đó.
+    - Nếu không thỏa thì cập nhật trạng thái (trừ k, cộng dồn, đổi bound...) rồi đi node còn lại.
+    - Dạng bài `leftmost`, `rightmost` hoặc không cố định.
+- Dạng điển hình:
+    - Tìm vị trí đầu tiên/cuối cùng trong `[l, r]` thỏa `predicate`.
+    - Tìm k-th one/k-th zero.
+    - Chỉ cần tìm một phần tử bất kỳ thỏa `predicate` (không phải k-th), miễn là node lưu đủ thông tin để quyết định đi nhánh nào.
+    - Tìm phần tử đầu tiên từ phải qua trái hoặc trái qua phải theo ràng buộc.
+- Nhận diện: đề hỏi "tìm chỉ số nhỏ nhất/lớn nhất", "k-th", hoặc "tìm 1 vị trí thỏa `predicate`" trong online `O(log n)`; `predicate` không đơn điệu theo chỉ số nên binary search thường không làm trực tiếp được.
 
 ## Các dạng ẩn (đề không nói thẳng Segment Tree)
 ### 1) Dynamic multiset trên chỉ số
@@ -65,32 +69,19 @@
 - Biến đổi:
     - Nén tọa độ giá trị -> segment tree đếm tần suất.
 
-### 2) Quản lý chỗ trống/chỗ ngồi/phòng
-- Các thao tác allocate/deallocate trên đoạn.
-- Hỏi đoạn trống dài nhất hoặc vị trí đầu tiên đủ chỗ.
-- Node thường lưu:
-    - `prefEmpty, suffEmpty, bestEmpty, len`.
-
-### 3) Dãy nhị phân bật/tắt + query liên tiếp
-- Flip một vị trí hoặc một đoạn nhỏ, hỏi "chuỗi 1 dài nhất".
-- Không nói "segment tree", nhưng bản chất là merge prefix/suffix/best.
-
-### 4) Bài "online + nhiều truy vấn trộn"
-- Nếu xử lý offline/sắp xếp không giữ được thứ tự thời gian:
-    - thường cần cấu trúc online như segment tree.
-- Dấu hiệu: query phụ thuộc kết quả update trước đó.
-
-### 5) Binary search trên đáp án + segment tree check
+### 2) Binary search trên đáp án + segment tree check
 - BS giá trị `mid`, dùng segment tree kiểm tra điều kiện nhanh.
 - Ví dụ: kiểm tra tồn tại đoạn thỏa ràng buộc sau khi biến đổi theo `mid`.
 
-### 6) Sweep line + segment tree (hình học / intervals)
+### 3) Sweep line + segment tree (hình học / intervals)
 - Quét theo trục `x`, segment tree trên trục `y`:
     - union area, max overlap, covered length.
 - Dạng này ẩn vì nhìn như hình học hơn là mảng.
-### 7) cần biết giá trị trong đoạn [l, r] nhanh
+
+### 4) cần biết giá trị trong đoạn [l, r] nhanh
 - tối ưu greedy/dp/graph
-### 8) Các bài toán đếm
+
+### 5) Các bài toán đếm
 - Các bài toán đếm có rằng buộc <, >, <=, => về chỉ số, giá trị,...
 - Quy về segment tree sum
 
