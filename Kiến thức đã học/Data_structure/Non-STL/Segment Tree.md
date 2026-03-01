@@ -53,6 +53,9 @@
     - Ví dụ `a[i] = floor(sqrt(a[i]))`, `a[i] = popcount(a[i])`.
 - Dùng cờ dừng/giá trị max để bỏ qua node đã ổn định.
 - Nhận diện: update đoạn nhưng có tính "co dần", một phần tử đổi rất ít lần.
+### 5) Segment Tree tìm maximal subarray sum
+- Kadane nhưng có update
+- Lưu (seg, pref, suf, sum) : max segment sum; max prefix sum; max suffix sum; sum of the current segment
 
 ## Các dạng ẩn (đề không nói thẳng Segment Tree)
 ### 1) Dynamic multiset trên chỉ số
