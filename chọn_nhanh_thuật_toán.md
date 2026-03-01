@@ -12,7 +12,7 @@
 2. Xác định lớp bài: `number` hoặc `linear` hoặc `graph/tree/state`.
 3. Xác định kiểu thao tác: `single` / `many queries` / `dynamic updates`.
 4. Xác định kiểu mục tiêu: `optimize` / `count` / `exist` / `k-th`.
-5. Gắn keyword cứng: `subarray`, `submatrix`, `nearest`, `component`, `dependency`, `cycle`, `palindrome`, `check(x)`, `first/last`, `first true/last true`, `tight-started-state`, `F(R)-F(L-1)`, `divisor/multiple`, `one-shot`, `non-tree edge`, `second-best MST`, `critical edge/node`, `BET/BCT`, `cactus`, `multisource`, `construct path`, `linearizing 2D -> 1D`, `fixed top/bottom`, `fixed left/right`, `compressed[]`, `Kadane 2D`, `submatrix sum = k`, `O(K^2 * F(L))`.
+5. Gắn keyword cứng: `subarray`, `submatrix`, `nearest`, `component`, `dependency`, `cycle`, `palindrome`, `check(x)`, `first/last`, `first true/last true`, `leftmost/rightmost`, `k-th`, `find any`, `range query/update`, `point update`, `range update`, `walk on segment tree`, `non-commutative merge`, `tight-started-state`, `F(R)-F(L-1)`, `divisor/multiple`, `one-shot`, `non-tree edge`, `second-best MST`, `critical edge/node`, `BET/BCT`, `cactus`, `multisource`, `construct path`, `linearizing 2D -> 1D`, `fixed top/bottom`, `fixed left/right`, `compressed[]`, `Kadane 2D`, `submatrix sum = k`, `O(K^2 * F(L))`.
 6. Chạy hard filter.
 7. Chấm điểm tiềm năng (0-10): `fit cấu trúc` + `fit thao tác` + `fit complexity` + `fit tính chất đặc biệt`.
 8. Xếp hạng:
@@ -83,7 +83,7 @@ Nếu vi phạm điều kiện cứng thì thuật toán đó bị **loại kh�
 |---|---|---|
 | Prefix sum / Prefix min-max | Dữ liệu tĩnh hoặc truy vấn không update phá prefix | Loại khỏi shortlist |
 | Difference Array | Nhiều range update + tổng hợp cuối/offline | Loại khỏi shortlist |
-| Segment Tree | Phép gộp có tính kết hợp, cần query/update online | Loại khỏi shortlist |
+| Segment Tree | Phép gộp có tính kết hợp (có thể không giao hoán), cần query/update online | Loại khỏi shortlist |
 | Lazy Segment Tree | Range update tổng quát, không prune one-shot | Loại khỏi shortlist |
 | Mo | Offline query + add/remove cục bộ hiệu quả | Loại khỏi shortlist |
 | Binary Search on Answer | Có `check(x)` đơn điệu | Loại khỏi shortlist |
@@ -177,10 +177,11 @@ Keyword mạnh:
 | Tính chất | High | Medium |
 |---|---|---|
 | Static query nhiều lần | Prefix/suffix, sparse table | Sqrt decomposition |
-| Point update + range query online | Segment tree, Fenwick | Set/map tùy bài |
+| Point update + range query online (`sum/min/max/gcd/xor`) | Segment tree, Fenwick | Set/map tùy bài |
+| Node custom / merge không giao hoán (vd `sum/pref/suff/best`) | Segment tree | Chia bài theo block hoặc custom DS khác |
 | Range update tổng quát + range query | Lazy segment tree | Sqrt lazy |
 | Range update one-shot/co dần | Segment tree không lazy + prune | Difference array (offline) |
-| Tìm vị trí đầu/cuối thỏa điều kiện trên đoạn (`first true/last true`, `leftmost/rightmost`, `k-th`) | Segment tree (descent theo node) | Fenwick + binary lifting/lower_bound (khi điều kiện phù hợp) |
+| Tìm vị trí đầu/cuối hoặc 1 vị trí bất kỳ thỏa điều kiện trên đoạn (`first true/last true`, `leftmost/rightmost`, `k-th`, `find any`) | Segment tree (descent/walk theo node) | Fenwick + binary lifting/lower_bound (khi điều kiện phù hợp) |
 | Offline query theo ngưỡng (`<= x`, `> x`) | Sort query + Fenwick offline | Parallel Binary Search |
 | K-th/order statistics trên đoạn (nhiều query) | Persistent segment tree, wavelet tree | Merge-sort tree + BS |
 
@@ -198,6 +199,7 @@ Keyword mạnh:
 | Tính chất | High | Medium |
 |---|---|---|
 | Offline queries độc lập, add/remove O(1) | Mo / Hilbert order | Prefix offline trick, sqrt decomposition |
+| Dynamic multiset (add/remove + count range + `k-th`) | Fenwick/Segment tree + nén tọa độ | Balanced BST / ordered set |
 | Distinct in range (static) | Offline BIT theo last occurrence | Mo |
 | Query theo thời gian mốc đầu tiên thỏa | Parallel Binary Search + DS check | Binary search từng query |
 | K-th trong subarray (static nhiều query) | Persistent segment tree / wavelet tree | Mo + heuristic |
@@ -217,7 +219,7 @@ Keyword mạnh:
 
 | Tính chất | High | Medium |
 |---|---|---|
-| Event theo trục thời gian/toạ độ | Sweep line + set/heap/segment tree | Sorting + prefix |
+| Event theo trục thời gian/toạ độ | Sweep line + set/heap/segment tree (covered length/union area/max overlap) | Sorting + prefix |
 | Chia bài thành 2 nửa độc lập | Divide and conquer / Meet-in-the-middle | Backtracking có pruning |
 | Truy vết chu trình hàm lặp | Floyd cycle finding | Hash visited |
 | Truy vấn median/percentile chạy động | Two-heaps + lazy delete | Multiset đôi |
@@ -360,7 +362,7 @@ Quy tắc đọc nhanh:
 
 1. Sau biến đổi, bài toán là `number`, `linear`, hay `graph/state`?
 2. Truy vấn là `single`, `many queries`, hay `dynamic updates`?
-3. Có từ khóa cứng: `subarray/path/component/ordering/palindrome/k-th/check(x)`?
+3. Có từ khóa cứng: `range query/update`, `leftmost/rightmost`, `k-th/find any`, `check(x)`, `subarray/path/component/ordering/palindrome`?
 4. Có điều kiện đơn điệu, kết hợp, one-shot, hoặc offline độc lập không?
 5. Theo `n, m, q`, complexity mục tiêu là gì và shortlist nào còn sống?
 6. Với ràng buộc hiện tại, thuật toán nào đạt `High` theo điểm 10?
