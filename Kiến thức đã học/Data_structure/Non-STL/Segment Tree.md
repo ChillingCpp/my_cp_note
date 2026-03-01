@@ -87,6 +87,9 @@
 - Dạng này ẩn vì nhìn như hình học hơn là mảng.
 ### 7) cần biết giá trị trong đoạn [l, r] nhanh
 - tối ưu greedy/dp/graph
+### 8) Các bài toán đếm
+- Các bài toán đếm có rằng buộc <, >, <=, => về chỉ số, giá trị,...
+- Quy về segment tree sum
 
 ## Gợi ý chọn cấu trúc khác
 - Chỉ query tĩnh, không update: Prefix Sum / Sparse Table.
