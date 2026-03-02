@@ -118,6 +118,37 @@ Chấm mỗi thuật toán theo 4 tiêu chí:
 
 ---
 
+## III. Nhánh quyết định: `exist` -> thử `count` trước
+
+Khi đề bài hỏi **có tồn tại không** (`exist`), đừng mặc định phải dựng cấu hình ngay.
+Nhiều bài giải nhanh hơn nếu đổi sang:
+- Đếm số cấu hình hợp lệ `cnt`.
+- Kết luận `exist` khi `cnt > 0`.
+
+### 1) Khi nào nên nâng nhánh đếm lên `High`
+- Không gian cấu hình có thể chuẩn hóa rõ ràng (theo block, tần suất, residue class, state DP).
+- Có đối xứng/cấu trúc tổ hợp rõ (permutation, partition, matching, placement).
+- Điều kiện hợp lệ mang tính ràng buộc toàn cục, khó check trực tiếp nhưng dễ gom trong công thức/DP.
+- Có thể dùng invariant để lọc mạnh không gian trước khi đếm.
+
+### 2) Pipeline chuẩn `exist -> count`
+1. Chuẩn hóa tập ứng viên `Omega` (mỗi cấu hình có biểu diễn chuẩn, tránh đếm trùng).
+2. Cắt `Omega` bằng invariant/ràng buộc cứng -> `Omega'`.
+3. Chọn kỹ thuật đếm:
+4. Đọc kết luận:
+   - `cnt = 0` -> không tồn tại.
+   - `cnt > 0` -> tồn tại ít nhất một cấu hình logic.
+5. Nếu đề có thao tác biến đổi:
+   - Kiểm tra thêm `reachable by operations`, không chỉ “logic feasible”.
+
+### 3) Hard filter cho hướng đếm (sai là loại)
+- Đếm trùng do đối xứng/đổi nhãn mà chưa canonicalize.
+- Chỉ có `cnt mod p` rồi kết luận `cnt > 0` khi chưa có chặn phù hợp.
+- Đếm trên tập “hợp lệ tĩnh” nhưng bỏ qua điều kiện reachability theo phép biến đổi.
+- Complexity của bước đếm vượt constraint dù ý tưởng đúng.
+
+---
+
 ## IV. Hệ từ khóa cấp 0 (phân loại gốc)
 
 ### 1) Number / Value / Single answer

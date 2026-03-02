@@ -142,3 +142,9 @@ Do `M >= 0`, quá trình hữu hạn và dừng tại `M = 0`.
 - Invariant thiên về hình học của không gian trạng thái.
 - Monovariant thiên về động lực của tiến trình.
 - Bài mạnh thường kết hợp cả hai.
+
+### 10. Checklist nhanh khi dùng hướng đếm
+1. Có thể mô tả cấu hình bằng tham số rời rạc rõ ràng không.
+2. Invariant có cắt được nhiều trạng thái vô nghĩa không.
+3. Công thức/DP đếm có tránh overcount không.
+4. `cnt > 0` có thực sự tương đương với “reachable” theo thao tác đề bài không.
