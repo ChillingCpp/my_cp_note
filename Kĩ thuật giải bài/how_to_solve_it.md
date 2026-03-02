@@ -13,6 +13,7 @@
     - liệt kê nhanh chóng các tính chất
     - tìm keyword và phân loại
     - từ keyword chọn thuật toán [[chọn_nhanh_thuật_toán]] 
+    - precompute nếu cần
 5. Rule:
 - Nếu sau 60 giây chưa định hình được nhóm thuật toán, chuyển sang khung chi tiết.
 
