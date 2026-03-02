@@ -12,7 +12,7 @@
     - biến đổi nhanh cấu trúc bài toán từ đề bài
     - liệt kê nhanh chóng các tính chất
     - tìm keyword và phân loại
-    - từ keyword chọn thuật toán [[chọn_nhanh_thuật_toán]] 
+    - từ keyword chọn thuật toán [chọn_nhanh_thuật_toán](https://github.com/ChillingCpp/my_cp_note/blob/main/K%C4%A9%20thu%E1%BA%ADt%20gi%E1%BA%A3i%20b%C3%A0i/ch%E1%BB%8Dn_nhanh_thu%E1%BA%ADt_to%C3%A1n.md)
     - precompute nếu cần
 5. Rule:
 - Nếu sau 60 giây chưa định hình được nhóm thuật toán, chuyển sang khung chi tiết.
