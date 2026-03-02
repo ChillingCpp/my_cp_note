@@ -9,6 +9,8 @@
     - `n <= 20` / `n <= 2000` / `n <= 2e5` / nhiều query/test
 3. Output là giá trị hay cấu hình?
 4. Khám phá nhanh cấu trúc của bài toán
+    - biến đổi nhanh cấu trúc bài toán từ đề bài
+    - liệt kê nhanh chóng các tính chất
     - tìm keyword và phân loại
     - từ keyword chọn thuật toán [[chọn_nhanh_thuật_toán]] 
 5. Rule:
