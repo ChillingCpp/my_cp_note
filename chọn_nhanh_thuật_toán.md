@@ -12,7 +12,8 @@
 2. Xác định lớp bài: `number` hoặc `linear` hoặc `graph/tree/state`.
 3. Xác định kiểu thao tác: `single` / `many queries` / `dynamic updates`.
 4. Xác định kiểu mục tiêu: `optimize` / `count` / `exist` / `k-th`.
-5. Gắn keyword cứng: `subarray`, `submatrix`, `nearest`, `component`, `dependency`, `cycle`, `palindrome`, `check(x)`, `first/last`, `first true/last true`, `leftmost/rightmost`, `k-th`, `find any`, `range query/update`, `point update`, `range update`, `walk on segment tree`, `non-commutative merge`, `tight-started-state`, `F(R)-F(L-1)`, `divisor/multiple`, `one-shot`, `non-tree edge`, `second-best MST`, `critical edge/node`, `BET/BCT`, `cactus`, `multisource`, `construct path`, `linearizing 2D -> 1D`, `fixed top/bottom`, `fixed left/right`, `compressed[]`, `Kadane 2D`, `submatrix sum = k`, `O(K^2 * F(L))`.
+    - nếu như dạng bài có `exist` có thể xét thêm dạng mục tiêu`count`
+5. Gắn keyword cứng: `subarray`, `submatrix`, `nearest`, `component`, `dependency`, `cycle`, `palindrome`, `check(x)`, `first/last`, `first true/last true`, `leftmost/rightmost`, `k-th`, `find any`, `range query/update`, `point update`, `range update`, `walk on segment tree`, `non-commutative merge`, `tight-started-state`, `F(R)-F(L-1)`, `divisor/multiple`, `one-shot`, `non-tree edge`, `second-best MST`, `critical edge/node`, `BET/BCT`, `cactus`, `multisource`, `construct path`, `linearizing 2D -> 1D`, `fixed top/bottom`, `fixed left/right`, `compressed[]`, `Kadane 2D`, `submatrix sum = k`, `O(K^2 * F(L))`, `contribution/đóng góp`, `bit độc lập`, `sum xor/and/or mọi cặp`, `mọi cặp đỉnh trên cây`, `path max/min all pairs`, `sort edge + DSU sizeA*sizeB`, `sum(max)-sum(min)`.
 6. Chạy hard filter.
 7. Chấm điểm tiềm năng (0-10): `fit cấu trúc` + `fit thao tác` + `fit complexity` + `fit tính chất đặc biệt`.
 8. Xếp hạng:
@@ -21,18 +22,6 @@
    - `< 5`: loại khỏi shortlist (không xếp hạng)
 9. Chốt thứ tự thử: `High dễ code trước`, rồi `High còn lại`, rồi `Medium`.
 10. Kiểm tra trước khi code: phản ví dụ nhỏ + complexity check.
-
-### Mẫu điền nhanh (copy/paste)
-
-- `Object`:
-- `Ops`:
-- `Goal`:
-- `Constraints`:
-- `Keywords`:
-- `Hard filters pass/fail`:
-- `High`:
-- `Medium`:
-- `Rejected (nếu có)`:
 
 ### Mục tiêu: **không đoán thuật toán trực tiếp từ đề**, mà **biến đổi bài toán -> trích xuất từ khóa -> xếp hạng tiềm năng thuật toán (High/Medium)**.
 ### Đầu ra cuối cùng phải là **một shortlist có thứ tự ưu tiên**, không phải một thuật toán duy nhất.
@@ -95,10 +84,6 @@ Nếu vi phạm điều kiện cứng thì thuật toán đó bị **loại kh�
 | DSU theo component | Quan hệ nối-vô-hướng hoặc connectivity offline phù hợp | Loại khỏi shortlist cho reachability đồ thị có hướng |
 | Bridge / Articulation (Tarjan low-link cơ bản) | Đồ thị vô hướng | Loại khỏi shortlist cho đồ thị có hướng |
 
-- Ghi chú quan trọng:
-    - Ví dụ không phù hợp: dùng DSU để xử lý phụ thuộc reachability trong đồ thị có hướng.
-    - Ví dụ không phù hợp: tìm cầu/khớp chuẩn vô hướng cho đồ thị có hướng.
-
 ### 2) Điểm tiềm năng mềm
 
 Chấm mỗi thuật toán theo 4 tiêu chí:
@@ -116,39 +101,6 @@ Chấm mỗi thuật toán theo 4 tiêu chí:
 
 ### Quy tắc thực chiến: thuật toán có keyword khớp mạnh nhưng sai độ phức tạp vẫn phải hạ xuống `Medium` hoặc loại khỏi shortlist.
 
----
-
-## III. Nhánh quyết định: `exist` -> thử `count` trước
-
-Khi đề bài hỏi **có tồn tại không** (`exist`), đừng mặc định phải dựng cấu hình ngay.
-Nhiều bài giải nhanh hơn nếu đổi sang:
-- Đếm số cấu hình hợp lệ `cnt`.
-- Kết luận `exist` khi `cnt > 0`.
-
-### 1) Khi nào nên nâng nhánh đếm lên `High`
-- Không gian cấu hình có thể chuẩn hóa rõ ràng (theo block, tần suất, residue class, state DP).
-- Có đối xứng/cấu trúc tổ hợp rõ (permutation, partition, matching, placement).
-- Điều kiện hợp lệ mang tính ràng buộc toàn cục, khó check trực tiếp nhưng dễ gom trong công thức/DP.
-- Có thể dùng invariant để lọc mạnh không gian trước khi đếm.
-
-### 2) Pipeline chuẩn `exist -> count`
-1. Chuẩn hóa tập ứng viên `Omega` (mỗi cấu hình có biểu diễn chuẩn, tránh đếm trùng).
-2. Cắt `Omega` bằng invariant/ràng buộc cứng -> `Omega'`.
-3. Chọn kỹ thuật đếm:
-4. Đọc kết luận:
-   - `cnt = 0` -> không tồn tại.
-   - `cnt > 0` -> tồn tại ít nhất một cấu hình logic.
-5. Nếu đề có thao tác biến đổi:
-   - Kiểm tra thêm `reachable by operations`, không chỉ “logic feasible”.
-
-### 3) Hard filter cho hướng đếm (sai là loại)
-- Đếm trùng do đối xứng/đổi nhãn mà chưa canonicalize.
-- Chỉ có `cnt mod p` rồi kết luận `cnt > 0` khi chưa có chặn phù hợp.
-- Đếm trên tập “hợp lệ tĩnh” nhưng bỏ qua điều kiện reachability theo phép biến đổi.
-- Complexity của bước đếm vượt constraint dù ý tưởng đúng.
-
----
-
 ## IV. Hệ từ khóa cấp 0 (phân loại gốc)
 
 ### 1) Number / Value / Single answer
@@ -162,6 +114,7 @@ Nhiều bài giải nhanh hơn nếu đổi sang:
 | Truy hồi tuyến tính dài, bước rất lớn (`k-th step`, `linear recurrence`, `transition matrix`) | Matrix exponentiation | DP thường |
 | Đếm/tổng trên đoạn số `[L, R]` với ràng buộc chữ số (`tight`, `started`, `state`) | Digit DP (`F(R)-F(L-1)`, `DP(pos, tight, started, state)`) | Binary Search + Digit DP (`k-th` theo prefix count) |
 | Dạng divisor/multiple (`for (j=i; j<=n; j+=i)`), chuyển `i -> k*i` hoặc `i -> i/d` | Harmonic-number thinking + number theory/sieve | Brute force theo ước/bội (n nhỏ) |
+| Dạng `xor/and/or` cần tổng trên mọi cặp/mọi đoạn, mỗi bit độc lập | Bit contribution (đếm `cnt1/cnt0` theo bit rồi nhân `2^b`) | Brute force cặp/đoạn (n nhỏ) |
 | Đếm cấu hình có tách block độc lập | Combinatorics + multinomial + DP count | Backtracking (n nhỏ) |
 | Tối đa số ước trong miền `<= N` (siêu hợp số / highly composite) | Backtracking đệ quy theo prime + số mũ không tăng, prune theo `N` | Sinh ứng viên bằng DFS + log bound |
 
@@ -313,6 +266,7 @@ Keyword mạnh:
 |---|---|---|
 | subtree query/update | Euler flatten + BIT/Segment tree | DSU on tree (nếu có) |
 | path query/update online | HLD + segment tree, LCA | Euler + segment trick |
+| Tính tổng theo mọi cặp đỉnh trên đường đi (`distance`, `max/min edge`, `sum(max-min)`) | Value contribution trên cây (`sz*(n-sz)` hoặc sort cạnh + DSU `sizeA*sizeB`) | DFS/DP `O(n^2)` (n nhỏ) |
 | đường kính cây (unweighted) | 2 BFS (hoặc 2 DFS) | Tree DP O(`n^2`) khi n nhỏ |
 | answer cho mọi root | DP rerooting | 2 DFS custom |
 | ancestor/k-th ancestor/query nhị phân | Binary lifting | Euler tour + RMQ LCA |
@@ -399,7 +353,7 @@ Quy tắc đọc nhanh:
 
 1. Sau biến đổi, bài toán là `number`, `linear`, hay `graph/state`?
 2. Truy vấn là `single`, `many queries`, hay `dynamic updates`?
-3. Có từ khóa cứng: `range query/update`, `leftmost/rightmost`, `k-th/find any`, `check(x)`, `subarray/path/component/ordering/palindrome`?
+3. Có từ khóa cứng: `range query/update`, `leftmost/rightmost`, `k-th/find any`, `check(x)`, `subarray/path/component/ordering/palindrome`, `contribution`, `mọi cặp`, `bit độc lập`, `path max/min all pairs`?
 4. Có điều kiện đơn điệu, kết hợp, one-shot, hoặc offline độc lập không?
 5. Theo `n, m, q`, complexity mục tiêu là gì và shortlist nào còn sống?
 6. Với ràng buộc hiện tại, thuật toán nào đạt `High` theo điểm 10?
@@ -411,7 +365,7 @@ Nếu không trả lời được >= 4 câu thì quay lại bước biến đổ
 ## XII. Liên kết trực tiếp theo nhóm note (đồng bộ full từ `Kiến thức đã học`)
 
 - Algorithm core:
-    [Backtracking](<Kiến thức đã học/Algorithm/Backtracking.md>), [Bit manipulation and bitmask](<Kiến thức đã học/Algorithm/Bit manipulation and bitmask.md>), [Divide and Conquer](<Kiến thức đã học/Algorithm/Divide and Conquer.md>), [Sweep line](<Kiến thức đã học/Algorithm/Sweep line.md>), [Two Pointers](<Kiến thức đã học/Algorithm/Two Pointers.md>), [String Processing](<Kiến thức đã học/Algorithm/String Processing.md>), [Kĩ thuật traceback](<Kiến thức đã học/Kĩ thuật traceback.md>)
+    [Backtracking](<Kiến thức đã học/Algorithm/Backtracking.md>), [Bit manipulation and bitmask](<Kiến thức đã học/Algorithm/Bit manipulation and bitmask.md>), [bit contribution](<Kiến thức đã học/Algorithm/bit_contribution.md>), [Divide and Conquer](<Kiến thức đã học/Algorithm/Divide and Conquer.md>), [Sweep line](<Kiến thức đã học/Algorithm/Sweep line.md>), [Two Pointers](<Kiến thức đã học/Algorithm/Two Pointers.md>), [String Processing](<Kiến thức đã học/Algorithm/String Processing.md>), [Kĩ thuật contribution](<Kiến thức đã học/Kĩ thuật contribution.md>), [Kĩ thuật traceback](<Kiến thức đã học/Kĩ thuật traceback.md>)
 - Searching:
     [Binary search](<Kiến thức đã học/Algorithm/Searching/Binary search.md>), [Binary search on answer](<Kiến thức đã học/Algorithm/Searching/Binary_search/Binary search on answer.md>), [Binary search on array or set](<Kiến thức đã học/Algorithm/Searching/Binary_search/Binary search on array or set.md>), [Parallel Binary Search](<Kiến thức đã học/Algorithm/Searching/Binary_search/Parallel Binary Search.md>), [Ternary search](<Kiến thức đã học/Algorithm/Searching/Ternary search.md>), [Ternary search on answer](<Kiến thức đã học/Algorithm/Searching/Ternary search/Ternary search on answer.md>)
 - String processing:
@@ -423,7 +377,7 @@ Nếu không trả lời được >= 4 câu thì quay lại bước biến đổ
 - Range / query DS:
     [Segment Tree](<Kiến thức đã học/Data_structure/Non-STL/Segment Tree.md>), [Lazy Segment Tree](<Kiến thức đã học/Data_structure/Non-STL/Lazy Segment Tree.md>), [Query Problem - Relative topics](<Kiến thức đã học/Query Problem/Relative topics.md>), [Mo](<Kiến thức đã học/Sqrt Decomposition/Mo.md>), [Range Query Sqrt decomposition](<Kiến thức đã học/Sqrt Decomposition/Range Query Sqrt decomposition.md>), [Sqrt chung](<Kiến thức đã học/Sqrt Decomposition/Sqrt chung.md>), [Sqrt chia case](<Kiến thức đã học/Sqrt Decomposition/Sqrt chia case.md>)
 - DSU và ứng dụng:
-    [DSU lý thuyết](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU lý thuyết.md>), [Giá trị đại diện cho tập hợp](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Giá trị đại diện cho tập hợp.md>), [DSU jump pointer](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU jump pointer.md>), [DSU bipartite](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU bipartite.md>), [Dynamic Connectivity](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Dynamic Connectivity.md>), [Connected Component Graph](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Connected Component Graph.md>), [MST Kruskal](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/MST Kruskal.md>)
+    [DSU lý thuyết](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU lý thuyết.md>), [Giá trị đại diện cho tập hợp](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Giá trị đại diện cho tập hợp.md>), [Value contribution trên cây](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Value contribution trên cây.md>), [DSU jump pointer](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU jump pointer.md>), [DSU bipartite](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU bipartite.md>), [Dynamic Connectivity](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Dynamic Connectivity.md>), [Connected Component Graph](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Connected Component Graph.md>), [MST Kruskal](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/MST Kruskal.md>)
 - Graph:
     [Mô hình hóa bài toán thành các dạng graph](<Kiến thức đã học/Data_structure/Non-STL/Graph/Mô hình hóa bài toán thành các dạng graph.md>), [BFS](<Kiến thức đã học/Data_structure/Non-STL/Graph/BFS.md>), [Topological sort](<Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md>), [bridge and ap](<Kiến thức đã học/Data_structure/Non-STL/Graph/bridge and ap.md>), [basic_spanning_tree_forest](<Kiến thức đã học/Data_structure/Non-STL/Graph/basic_spanning_tree_forest.md>), [Positive or Negative cycle](<Kiến thức đã học/Data_structure/Non-STL/Graph/Positive or Negative cycle.md>)
 - Graph decomposition:
