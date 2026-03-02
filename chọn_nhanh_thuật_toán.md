@@ -245,6 +245,7 @@ Keyword mạnh:
 | bridge / articulation | Tarjan low-link | BET/BCT (nhiều query path) |
 | Nhiều query path về cạnh/đỉnh critical (`critical edge/node`) | Bridge-Edge Tree / Block-Cut Tree + LCA/HLD | Bridge/AP + xử lý từng query |
 | bipartite / odd cycle | BFS/DFS coloring, DSU bipartite | BFS theo lớp + parity state |
+| chu trình ngắn nhất (unweighted) | BFS từ từng đỉnh (có prune theo `dist`) | DFS/back-edge heuristic (n nhỏ) |
 | Ràng buộc quan hệ tương đối (`same/different`, parity, xor-distance), cần detect contradiction | DSU parity / weighted DSU | State graph + BFS/DFS theo parity |
 | MST | Kruskal + DSU, Prim | Boruvka (nếu có) |
 | Có nhiều `non-tree edge`, cần kiểm tra thay cạnh trên path (`max edge`, `second-best MST`) | Spanning tree + Binary lifting/Sparse DP trên path | Recompute cục bộ (n nhỏ) |
@@ -266,6 +267,10 @@ Keyword mạnh:
 | Tính chất | High | Medium |
 |---|---|---|
 | Unweighted shortest path | BFS, multisource BFS, flood fill | Bidirectional BFS |
+| Đồ thị ẩn, hỏi \"ít phép biến đổi/ít thao tác nhất\" | BFS trên implicit graph (sinh hàng xóm theo phép biến đổi) | Bidirectional BFS (khi source-target rõ) |
+| Lan truyền theo lớp thời gian (`t = 0,1,2,...`) | Level BFS, multisource BFS | DFS + mô phỏng (n nhỏ) |
+| Gần nhất tới tập đỉnh đặc biệt | Multisource BFS (đưa toàn bộ special vào queue từ đầu) | BFS lặp từ từng nguồn (n nhỏ) |
+| Ràng buộc phụ theo ngữ cảnh (`chẵn/lẻ`, `mod`, `key/door`) | BFS trạng thái `(u, state)` | Dijkstra trạng thái (khi có trọng số) |
 | Trọng số chỉ 0/1 | 0-1 BFS | Dijkstra |
 | Non-negative weighted | Dijkstra | Dial (trọng số nhỏ), A* (heuristic tốt) |
 | Có cạnh âm (không âm chu trình) | Bellman-Ford, Johnson (all-pairs) | SPFA (chỉ khi dữ liệu phù hợp) |
@@ -277,6 +282,7 @@ Keyword mạnh:
 |---|---|---|
 | subtree query/update | Euler flatten + BIT/Segment tree | DSU on tree (nếu có) |
 | path query/update online | HLD + segment tree, LCA | Euler + segment trick |
+| đường kính cây (unweighted) | 2 BFS (hoặc 2 DFS) | Tree DP O(`n^2`) khi n nhỏ |
 | answer cho mọi root | DP rerooting | 2 DFS custom |
 | ancestor/k-th ancestor/query nhị phân | Binary lifting | Euler tour + RMQ LCA |
 
@@ -388,7 +394,7 @@ Nếu không trả lời được >= 4 câu thì quay lại bước biến đổ
 - DSU và ứng dụng:
     [DSU lý thuyết](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU lý thuyết.md>), [Giá trị đại diện cho tập hợp](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Giá trị đại diện cho tập hợp.md>), [DSU jump pointer](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU jump pointer.md>), [DSU bipartite](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/DSU bipartite.md>), [Dynamic Connectivity](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Dynamic Connectivity.md>), [Connected Component Graph](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/Connected Component Graph.md>), [MST Kruskal](<Kiến thức đã học/Data_structure/Non-STL/DSU và các ứng dụng/MST Kruskal.md>)
 - Graph:
-    [Mô hình hóa bài toán thành các dạng graph](<Kiến thức đã học/Data_structure/Non-STL/Graph/Mô hình hóa bài toán thành các dạng graph.md>), [Topological sort](<Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md>), [bridge and ap](<Kiến thức đã học/Data_structure/Non-STL/Graph/bridge and ap.md>), [basic_spanning_tree_forest](<Kiến thức đã học/Data_structure/Non-STL/Graph/basic_spanning_tree_forest.md>), [Positive or Negative cycle](<Kiến thức đã học/Data_structure/Non-STL/Graph/Positive or Negative cycle.md>)
+    [Mô hình hóa bài toán thành các dạng graph](<Kiến thức đã học/Data_structure/Non-STL/Graph/Mô hình hóa bài toán thành các dạng graph.md>), [BFS](<Kiến thức đã học/Data_structure/Non-STL/Graph/BFS.md>), [Topological sort](<Kiến thức đã học/Data_structure/Non-STL/Graph/Topological sort.md>), [bridge and ap](<Kiến thức đã học/Data_structure/Non-STL/Graph/bridge and ap.md>), [basic_spanning_tree_forest](<Kiến thức đã học/Data_structure/Non-STL/Graph/basic_spanning_tree_forest.md>), [Positive or Negative cycle](<Kiến thức đã học/Data_structure/Non-STL/Graph/Positive or Negative cycle.md>)
 - Graph decomposition:
     [condensation graph](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/condensation graph.md>), [bet_bct](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/bet_bct.md>), [advance_span_tree_forest](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/advance_span_tree_forest.md>), [dfs_cactus](<Kiến thức đã học/Data_structure/Non-STL/Graph/Graph decomposition/dfs_cactus.md>)
 - Graph state-space / DP on graph:
