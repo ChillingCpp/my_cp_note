@@ -37,6 +37,7 @@ Rule:
     - thứ gì không đổi?
     - thứ gì chỉ tăng/giảm?
     - có chặn trên/dưới rõ ràng không?
+    - Phương pháp tìm : [Invariants và Monovariants](<Invariants và Monovariants.md>)
 
 ### III. Tiến hành giải bài
 - Chu trình: `biến đổi sơ cấp -> viết assumption -> biến đổi sâu hơn`.
@@ -58,7 +59,7 @@ Rule:
 2. Mục tiêu:
     - dùng assumption để mở thêm tính chất mới cho bước biến đổi tiếp theo.
 3. Ví dụ assumption thường dùng trong CP (tóm gọn):
-    - `Fix để phá đối xứng (symmetry breaking)`: cố định một lựa chọn đại diện để loại các nghiệm tương đương.
+    - `Fix để phá đối xứng (symmetry breaking)`: cố định một lựa chọn đại diện để loại các nghiệm tương đương, loại bỏ đếm trùng.
     - `Fix thứ tự xử lý` (sort/topo/trái -> phải): tạo đơn điệu để xử lý dần (sweep line, two pointers, DP theo thứ tự).
     - `Fix một cấu hình chuẩn (canonical form)`: chuẩn hóa cách biểu diễn để so sánh/chứng minh dễ hơn.
     - `Fix để giảm chiều trạng thái`: giữ một mốc cố định để rút gọn số biến trạng thái.
@@ -79,7 +80,7 @@ Rule:
 
 
 ### V. Commit Solution (Chốt thuật toán)
-1. Chọn hướng giải theo cấu trúc đã tìm được: [[chọn_nhanh_thuật_toán]]
+1. Chọn hướng giải theo cấu trúc đã tìm được: [chọn_nhanh_thuật_toán](chọn_nhanh_thuật_toán.md)
 2. Nêu lý do đúng:
     - dựa trên invariant, tính đơn điệu, cấu trúc dữ liệu, hoặc quy nạp.
 3. Kiểm tra độ phủ:
