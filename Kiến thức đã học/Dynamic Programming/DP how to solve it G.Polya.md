@@ -21,6 +21,8 @@ Checklist:
 
 ## 2) Devise A Plan
 ### Phân rã thành bài toán con
+- Sử dụng pattern có sẵn : [DP_pattern](DP_pattern.md)
+- Dựa vào pattern tiến hành biến đổi và chứng minh
 - Biến đổi bài toán thành dạng subproblem
     - Thử các test nhỏ
     - Cố gắng tìm ra substructure

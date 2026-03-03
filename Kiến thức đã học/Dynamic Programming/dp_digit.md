@@ -1,114 +1,47 @@
-﻿# DP Digit
+# DP Digit
 
 ## Đường dẫn
 [Các dạng DP chính](<Các dạng DP chính.md>)
 
-## Mục tiêu
-- Giải các bài toán trên đoạn số nguyên `[L, R]` với ràng buộc theo chữ số.
-- Chuẩn hóa về hàm tiền tố:
-    - `Ans([L, R]) = F(R) - F(L - 1)`
-    - `F(X)`: kết quả trên đoạn `[0, X]`.
+## Mục tiêu cốt lõi
+Digit DP trong CP thường chỉ cần 2 truy vấn:
+1. `count(L, R)`: đếm số thỏa điều kiện trong đoạn.
+2. `kth(K)`: tìm số nhỏ nhất `X` sao cho có ít nhất `K` số thỏa trong `[0, X]`.
 
-## Mô hình trạng thái tổng quát
-Với `X >= 0`, tách `X` thành mảng chữ số `dig[0..n-1]` từ trái sang phải.
+Chuẩn hóa:
+- `count(L, R) = F(R) - F(L - 1)`
+- `F(X)`: số lượng số thỏa trong `[0, X]`.
 
-Định nghĩa:
-`DP(pos, tight, started, state) -> T`
+## Khung trạng thái tối thiểu
+Với `X >= 0`, tách `X` thành mảng chữ số `dig` từ trái sang phải.
 
-Trong đó:
-- `pos`: đang xét đến vị trí thứ `pos` (`0..n`).
-- `tight` (`0/1`): tiền tố đã chọn có còn đúng bằng tiền tố của `X` hay không.
-- `started` (`0/1`): đã đặt chữ số khác `0` hay chưa (xử lý leading zero).
-- `state`: trạng thái phụ mô tả ràng buộc (mod, tổng chữ số, automaton, ...).
-- `T`: kiểu giá trị trả về (đếm, min/max, tổng, vector thống kê, ...).
+`dfs(pos, tight, started, state)`:
+- `pos`: vị trí đang xét.
+- `tight`: tiền tố hiện tại còn bám sát `X` hay không.
+- `started`: đã đặt chữ số khác `0` chưa (xử lý leading zero).
+- `state`: thông tin đủ để kiểm tra điều kiện (vd: `sum`, `mod`, `prev`, ...).
 
-## Công thức chuyển trạng thái
-Giới hạn chữ số ở vị trí `pos`:
-`lim = (tight ? dig[pos] : 9)`
+Base case:
+- `pos == n`: trả `1` nếu trạng thái hợp lệ, ngược lại `0`.
 
-Với mỗi chữ số `d` trong `[0, lim]`:
-- `nstarted = started || (d != 0)`
-- `ntight = tight && (d == dig[pos])`
-- `nstate = Transition(state, d, nstarted)`
+Chuyển trạng thái:
+- `lim = tight ? digit[pos] : 9`
+- duyệt `d` từ `0..lim`, cập nhật `(ntight, nstarted, nstate)`, cộng kết quả con.
 
-Chỉ xét nhánh hợp lệ theo ràng buộc tiền tố, khi đó:
+## Dạng 1: Count
+1. Viết `F(X)` bằng Digit DP.
+2. Trả lời đoạn bằng `F(R) - F(L - 1)`.
+3. Nếu `X < 0` thì `F(X) = 0`.
 
-$DP(pos, tight, started, state) = ⨁_{d=0..lim} Lift( DP(pos+1, ntight, nstarted, nstate), d, pos )$
+## Dạng 2: K-th
+Muốn tìm số thứ `K` theo thứ tự tăng dần:
+1. Cần hàm đếm tiền tố `F(X)` (đơn điệu không giảm).
+2. Tìm kiếm nhị phân `X` nhỏ nhất sao cho `F(X) >= K`.
+3. Kết quả là `X` đó (nếu tồn tại).
 
-Trong đó:
-- `⨁`: phép gộp kết quả (thường là cộng, min, max, hoặc gộp struct).
-- `Lift`: cách cộng thêm đóng góp của chữ số hiện tại vào kết quả con.
-
-Điều kiện dừng:
-- Nếu `pos == n`: trả `Base(started, state)`.
-
-## Khung đại số để tái sử dụng
-Xem `T` như một monoid:
-- `identity()`: phần tử trung hòa.
-- `combine(a, b)`: phép gộp (`⨁`).
-- `base(...)`: giá trị ở lá.
-- `lift(...)`: nhúng đóng góp của cạnh hiện tại.
-
-Nhờ vậy cùng một bộ khung có thể dùng cho:
-- Đếm số lượng.
-- Tính tổng chữ số / tổng giá trị số.
-- Tối ưu min/max có ràng buộc.
-
-## Công thức cho các kiểu truy vấn phổ biến
-### 1) Đếm số lượng
-- `T = long long`
-- `combine = +`
-- `lift(child, ...) = child`
-- `base = 1 nếu state hợp lệ, ngược lại 0`
-
-### 2) Tính tổng giá trị các số thỏa (không chỉ đếm)
-Đặt `T = (cnt, sum)`:
-- `cnt`: số lượng cách từ suffix.
-- `sum`: tổng giá trị các số suffix tạo ra.
-
-Nếu còn `k = n - pos - 1` vị trí phía sau, thì:
-- `new_cnt += child.cnt`
-- `new_sum += child.sum + child.cnt * d * 10^k`
-
-## Thiết kế `state` phụ (mẫu tổng quát)
-- Chia hết cho `m`:
-    - `state = rem`
-    - `Transition: rem' = (rem * 10 + d) mod m`
-- Tổng chữ số:
-    - `state = s`
-    - `Transition: s' = s + d`
-- Ràng buộc giữa các chữ số kề nhau:
-    - `state = (prev_digit, flag, ...)`
-- Chứa/tránh một pattern:
-    - `state = node` của automaton (KMP/Aho).
-
-Nguyên tắc: `state` phải "đủ và tối thiểu" để quyết định tương lai, không giữ thông tin dư.
-
-## Chiến lược giải chuẩn
-1. Viết lại bài toán thành `F(X)` trên đoạn `[0, X]`.
-2. Xác định rõ `state`, `Transition`, `Base`.
-3. Chọn kiểu `T` và `combine/lift` đúng mục tiêu.
-4. Viết DFS + memo với trạng thái `(pos, tight, started, state)`.
-5. Tính đáp án cuối bằng `F(R) - F(L - 1)`.
-6. Brute force trên range nhỏ để kiểm chứng.
-
-## Binary Search + Digit DP
-- hàm `dfs(...)` thường là hàm monotone
-- Khi truy vấn là dạng:
-    - "tìm `X` nhỏ nhất sao cho `F(X) >= K`"
-    - hoặc predicate `P(X)` monotone, ví dụ `P(X): F(X) >= K`
-    thì dùng binary search trên `X`.
-
-Điều kiện áp dụng:
-- `F(X)` phải đơn điệu không giảm theo `X` (đúng với đa số bài toán đếm/tích lũy).
-- Biên tìm kiếm `[lo, hi]` xác định được (thường theo đề hoặc `0..10^18`).
-
-
-## Checklist tránh lỗi
-- `X < 0` thì `F(X) = 0`.
-- Quy ước số `0` có được tính hay không phải thể hiện rõ trong `Base`.
+## Checklist ngắn
+- Quy ước số `0` có tính hay không phải thống nhất ở base case.
 - Leading zero có cập nhật `state` hay không phải nhất quán.
-- Reset memo đúng cách giữa các lần gọi `F(X)` khi cần.
-- Cẩn thận overflow (`int64`, mod, hoặc big integer).
-- Cận là inclusive: `[L, R]`.
-- Khi binary search, kiểm tra trước `solve(hi) >= K`; nếu không thì "không tồn tại đáp án".
+- Memo thường cache khi `tight = 0`.
+- Reset memo đúng cách giữa các lần gọi `F(X)` (nếu cần).
+- Dùng `int64` cho số lượng cách đếm.

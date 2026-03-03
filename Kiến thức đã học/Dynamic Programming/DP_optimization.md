@@ -51,9 +51,8 @@
 #### a) Deque (monotonic queue)
 - Dạng:
     - `dp[i] = a[i] + min/max(dp[j])`, `j` trong cửa sổ `[i-k, i-1]`.
-- Độ phức tạp:
-    - `O(n*k)` -> `O(n)`.
 - Lưu ý:
+    - front là best element tính tới hiện tại
     - pop front khi out-of-window, pop back theo điều kiện đơn điệu chuẩn.
 
 #### b) Stack (monotonic stack)
@@ -64,8 +63,6 @@
     - đoạn/vị trí gần nhất thỏa điều kiện để chuyển trạng thái.
 - Mẫu tư duy:
     - nếu transition cần "điểm gần nhất bên trái/phải" thỏa một quan hệ đơn điệu, stack thường giảm vòng lặp lồng nhau.
-- Độ phức tạp thường gặp:
-    - từ `O(n^2)` xuống `O(n)` hoặc `O(n log n)` tùy công thức.
 - Ví dụ nhóm bài:
     - DP trên histogram/rectangle
     - DP partition với ràng buộc min/max đoạn
@@ -74,8 +71,6 @@
 #### c) Segment Tree
 - Dạng:
     - cần query `min/max/sum,...` trên đoạn của các giá trị `dp` đã biết.
-- Độ phức tạp:
-    - thường `O(n^2)` -> `O(n log n)`.
 
 #### d) Matrix Multiplication (Matrix Exponentiation)
 [Matrix multiplication](<../Math/Matrix multiplication.md>)
@@ -85,20 +80,16 @@
     - luôn lấy ứng viên tốt nhất trong tập động theo thời gian/cửa sổ.
 - Kỹ thuật:
     - lazy deletion cho phần tử hết hạn.
-- Độ phức tạp:
-    - `O(log n)` mỗi thao tác.
 
 #### f) Multiset / Ordered Set
 - Dạng:
     - thêm/xóa trạng thái động và cần lấy min/max tức thời.
-- Độ phức tạp:
-    - thường `O(n log k)` cho bài cửa sổ dài `k`.
 
 #### g) Hash map (sparse DP)
 - Dạng:
     - state thưa, không phù hợp mảng lớn.
 - Ý tưởng:
-    - chỉ lưu state xuất hiện (`unordered_map`/`map`).
+    - chỉ lưu state xuất hiện (`map`).
 - Lợi ích:
     - giảm bộ nhớ và tránh duyệt state rỗng.
 
@@ -120,16 +111,12 @@
 - Ví dụ mẫu:
     - `dp[i] = best(dp[j])` với `pref[j] >= X` hoặc `a[j] <= a[i] - K`.
     - chọn `j` gần nhất bên trái/phải thỏa ràng buộc theo giá trị đã sắp xếp.
-- Độ phức tạp:
-    - thường từ `O(n^2)` xuống `O(n log n)` hoặc `O(n log^2 n)` tùy phần update/query còn lại.
 
 ### 4) Binary Search + DP Check
 - Dạng:
     - tối ưu đáp án toàn cục nhưng có hàm check đơn điệu.
 - Ý tưởng:
     - nhị phân đáp án, mỗi lần check bằng DP.
-- Độ phức tạp:
-    - `O(log Ans * f(n))`.
 
 ## Nhóm nâng cao (chưa cần học đến)
 

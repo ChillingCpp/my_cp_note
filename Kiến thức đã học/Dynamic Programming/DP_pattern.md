@@ -10,17 +10,6 @@ Phân loại theo đồ thị chuyển trạng thái:
 - `DP có lựa chọn`: tồn tại state có nhiều nhánh hợp lệ, tức `|Next(state)| > 1`.
 - `DP không lựa chọn`: mọi state có nhiều nhất 1 nhánh hợp lệ, tức `|Next(state)| <= 1`.
 
-Lưu ý quan trọng:
-
-- Bài toán đếm vẫn là `DP có lựa chọn` nếu state phân nhánh ra nhiều khả năng.
-- Khác nhau nằm ở phép gộp:
-  - Tối ưu: `min/max`.
-  - Đếm: `sum`.
-  - Tồn tại: `or/and`.
-- Việc loại state ngoài biên (out of bound) chỉ là loại nhánh không hợp lệ, không làm đổi bản chất phân loại.
-
----
-
 ## I. DP CÓ LỰA CHỌN
 
 ### 1. Mẫu công thức
@@ -47,17 +36,17 @@ for (state in order) {
 ### 3. Nhóm bài điển hình
 
 - Pick/Skip DP: Knapsack, House Robber.
-  - Ghi chú: mỗi bước có nhiều phương án (lấy/bỏ), rồi gộp kết quả theo mục tiêu của bài.
+  - mỗi bước có nhiều phương án (lấy/bỏ), rồi gộp kết quả theo mục tiêu của bài.
 - Chọn điểm tách: Interval DP, Matrix Chain Multiplication.
-  - Ghi chú: state là đoạn `dp[l][r]`, thử nhiều điểm chia `k` để lấy kết quả tốt nhất.
+  - state là đoạn `dp[l][r]`, thử nhiều điểm chia `k` để lấy kết quả tốt nhất.
 - Chọn trạng thái/cấu hình: Bitmask DP, TSP, Assignment DP, Digit DP, Tree DP.
-  - Ghi chú: từ mỗi cấu hình hiện tại có nhiều cách đi tiếp hợp lệ, nên phải duyệt nhánh và gộp.
+  - từ mỗi cấu hình hiện tại có nhiều cách đi tiếp hợp lệ, nên phải duyệt nhánh và gộp.
 - Chọn hành động theo lượt: Game DP, Minimax.
-  - Ghi chú: mỗi lượt có nhiều nước đi; state gộp theo luật đối kháng (`max/min` theo người chơi).
+  - mỗi lượt có nhiều nước đi; state gộp theo luật đối kháng (`max/min` theo người chơi).
 - Chọn thao tác chuyển đổi: Edit Distance, String transform DP.
-  - Ghi chú: mỗi state có nhiều thao tác chuyển tiếp (chèn/xóa/sửa/giữ), rồi lấy chi phí tốt nhất.
+  - mỗi state có nhiều thao tác chuyển tiếp (chèn/xóa/sửa/giữ), rồi lấy chi phí tốt nhất.
 - DP đếm có phân nhánh: đếm đường đi, đếm số cách tạo cấu hình.
-  - Ghi chú: không chọn một nhánh tốt nhất mà cộng toàn bộ nhánh hợp lệ, nhưng bản chất vẫn là nhiều lựa chọn.
+  - không chọn một nhánh tốt nhất mà cộng toàn bộ nhánh hợp lệ, nhưng bản chất vẫn là nhiều lựa chọn.
 
 ### 4. Lưu ý
 
@@ -93,13 +82,13 @@ for (state in order) {
 ### 3. Nhóm bài điển hình
 
 - Prefix/Suffix recurrence, Fibonacci chuẩn.
-  - Ghi chú: công thức cập nhật là cố định theo chỉ số, không phát sinh nhánh quyết định tại mỗi state.
+  - công thức cập nhật là cố định theo chỉ số, không phát sinh nhánh quyết định tại mỗi state.
 - DP mô phỏng hệ deterministic.
-  - Ghi chú: từ state hiện tại và input tương ứng, state kế tiếp được xác định duy nhất.
+  - từ state hiện tại và input tương ứng, state kế tiếp được xác định duy nhất.
 - DP theo thời gian với luật cập nhật cố định.
-  - Ghi chú: trạng thái ở thời điểm `t+1` suy ra trực tiếp từ `t`, không có hành động để lựa chọn.
+  - trạng thái ở thời điểm `t+1` suy ra trực tiếp từ `t`, không có hành động để lựa chọn.
 - DP cập nhật tuần tự 1 hướng.
-  - Ghi chú: mỗi bước chỉ truyền sang một state kế tiếp theo quy tắc, nếu ra ngoài biên thì bỏ.
+  - mỗi bước chỉ truyền sang một state kế tiếp theo quy tắc, nếu ra ngoài biên thì bỏ.
 
 ---
 
@@ -117,12 +106,6 @@ for (state in order) {
 | TSP bitmask | Có lựa chọn | Chọn đỉnh đi tiếp |
 | Game DP | Có lựa chọn | Nhiều nước đi ở mỗi lượt |
 
-Ghi chú:
-
-- `sum` qua nhiều nhánh vẫn là `DP có lựa chọn`.
-- Nếu chỉ có một nhánh cố định (có thể bị loại vì out of bound), đó là `DP không lựa chọn`.
-
----
 
 ## IV. Checklist phân loại nhanh (30 giây)
 
