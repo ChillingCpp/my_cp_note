@@ -5,9 +5,13 @@
 
 ## 1) Câu hỏi mở đầu trước khi model
 - Node là gì: đối tượng hay trạng thái?
+    - Cách xác định: lấy "đơn vị thay đổi độc lập" nhỏ nhất, bị phép toán của đề bài tác động; nếu kết quả phụ thuộc thêm lịch sử/tài nguyên thì node phải là `(vị trí, trạng thái phụ)`.
 - Cạnh nghĩa là gì: liên thông, phụ thuộc, hay chuyển trạng thái?
+    - Cách xác định: mỗi thao tác hợp lệ hoặc quan hệ trực tiếp tạo đúng 1 cạnh, chiều cạnh bám theo thứ tự tác động.
 - Trọng số nằm ở đâu: trên cạnh hay trên node?
+    - Cách xác định: chi phí phát sinh khi di chuyển thì đặt trên cạnh; chi phí phát sinh khi đi vào/chọn node thì đặt trên node (hoặc đổi tương đương sang cạnh).
 - Mục tiêu: tìm đường đi, đếm cách, kiểm tra tồn tại, hay tách thành phần?
+    - Cách xác định: đọc output cần tối ưu hay chỉ cần đúng/sai, rồi map về dạng chuẩn tương ứng (shortest path, counting, reachability, connectivity/components).
 
 ## 2) Chọn loại đồ thị
 
