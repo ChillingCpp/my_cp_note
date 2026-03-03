@@ -4,7 +4,10 @@
 
 ## 1) Bản chất
 - Dùng 2 con trỏ để duy trì một trạng thái hợp lệ và cập nhật đáp án theo thời gian tuyến tính hoặc gần tuyến tính.
+- Dùng cho bài toán có tính chất monotone
 - Ý tưởng chung: mỗi con trỏ chỉ đi tiến (hoặc đi theo quy tắc rất hạn chế), tránh duyệt `O(n^2)`.
+    - Yêu cầu sử dụng : Khi tịnh tiến không làm mất solution
+    - Thuộc dạng bài Greedy Dominance choice
 
 ## 2) Dạng 1: Cửa sổ trượt trên một mảng (quan trọng nhất)
 - Điều kiện thường gặp:

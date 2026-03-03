@@ -70,6 +70,7 @@ Rule:
     - `Giả sử có vị trí vi phạm đầu tiên`: suy ra ràng buộc cục bộ rồi nâng thành invariant toàn cục.
     - `Giả sử tồn tại nghiệm tối ưu S`: dùng exchange argument để chuẩn hóa nghiệm (vd: interval scheduling chọn đoạn kết thúc sớm).
     - `Giả sử cấu hình cực trị` (max/min): tìm cấu trúc tight hoặc điểm biên.
+    - `Giả sử bài toán có thể giải bằng thuật toán/cấu trúc dữ liệu ...` : xét đến khả năng của 1 số thuật toán nếu keyword cho các thuật toán không tốt.
 
 #### III-C. Biến đổi sâu hơn (Decompose sâu)
 1. Chứng minh assumption rồi biến đổi bài toán dựa trên assumption đó.

@@ -167,8 +167,19 @@ $$
     - Dùng bù: $1-P(\text{không có biến cố nào})$.
 - "Đúng $k$ lần thành công trong $n$ lần thử độc lập":
     - Binomial.
+## 12) Số Catalan và ứng dụng
 
-## 12) Ghi chú triển khai modulo (CP)
+- Công thức:
+    - $Cat_n=\dfrac{1}{n+1}\binom{2n}{n}=\binom{2n}{n}-\binom{2n}{n-1}$.
+- Ứng dụng:
+    - Đếm số dãy ngoặc đúng độ dài $2n$.
+    - Đếm số cây nhị phân đầy đủ (full binary tree) với $n$ nút trong.
+    - Đếm số cách chia tam giác một đa giác lồi $(n+2)$ đỉnh.
+    - Đếm số đường đi lưới từ $(0,0)$ đến $(n,n)$ không đi lên trên đường chéo chính.
+    - Đếm số cách ghép cặp không cắt nhau trên $2n$ điểm trên một vòng tròn.
+    - Đếm số hoán vị stack-sortable độ dài $n$.
+
+## 13) Ghi chú triển khai modulo (CP)
 
 - Thường dùng $mod=10^9+7$ hoặc $998244353$.
 - Tiền xử lý:
@@ -179,3 +190,5 @@ $$
     - $\binom{n}{k}\bmod mod=fac[n]\cdot invfac[k]\cdot invfac[n-k]\bmod mod$.
 - $n$ rất lớn, $mod$ nhỏ nguyên tố:
     - Cân nhắc Lucas theorem.
+
+

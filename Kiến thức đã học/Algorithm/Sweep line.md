@@ -18,6 +18,9 @@
     - multiset / priority_queue
     - Segment Tree (khi cần range query/update)
 4. Ở mỗi event: add/remove/query theo bất biến bài toán.
+    - nếu event bắt đầu thì add
+    - nếu event kết thúc thì remove
+    - sau khi add/remove thì query tính toán
 
 ## 4) Ví dụ event chuẩn
 - Interval overlap:

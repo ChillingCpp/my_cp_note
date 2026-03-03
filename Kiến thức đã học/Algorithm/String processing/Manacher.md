@@ -1,4 +1,4 @@
-﻿# Manacher (mẫu `manacherv2`)
+﻿# Manacher
 
 ## 1) Mục tiêu
 - Tính bán kính palindrome tại mọi tâm trong `O(n)`.
@@ -11,8 +11,8 @@
 - `z = 0`: palindrome chẵn.
 - `z = 1`: palindrome lẻ.
 - `p[z][i]`: bán kính theo định nghĩa của từng loại tâm.
-    - lẻ : bắt đầu từ $[i+1...i + p[1][i]]$ : không bao gồm tâm i
-    - chẵn : bắt đầu từ $[i...i + p[0][i] - 1]$ : bao gồm tâm i
+    - lẻ : độ dài của $[i+1...i + p[1][i]]$ : không bao gồm tâm i
+    - chẵn : độ dài của $[i...i + p[0][i] - 1]$ : bao gồm tâm i
 - `[l, r]`: đoạn palindrome xa nhất bên phải đã biết cho loại `z`.
 - `L, R`: biến tạm để mở rộng palindrome tại tâm `i`.
 

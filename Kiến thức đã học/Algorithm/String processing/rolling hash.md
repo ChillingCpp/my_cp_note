@@ -11,6 +11,9 @@
 
 ## 3) Mẫu cài đặt 2 mod
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/String/rolling_hash.cpp)
+- lưu base1 = 737, base2 = 1009
+- hash1 = 1e9+7
+- hash2 = 2e64 nhưng không cần lưu giá trị do cơ chế tự làm tròn của unsigned long long
 
 ## 4) Collision
 - Hash có xác suất trùng giả.

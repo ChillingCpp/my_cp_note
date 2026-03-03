@@ -1,21 +1,23 @@
-﻿# DP Pattern theo 2 nhóm: Có lựa chọn vs Không lựa chọn
+# DP Pattern theo cấu trúc chuyển state
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/dp)
 
 ## 0. Tiêu chí phân loại gốc
 
-Bạn đang dùng đúng hướng: chia DP thành 2 loại lớn.
+Phân loại theo đồ thị chuyển trạng thái:
 
-- `DP có lựa chọn`:
-    - Tại một state có nhiều phương án hợp lệ.
-    - Ta phải ra quyết định (chọn tốt nhất, hoặc xét nhánh theo quyết định).
-- `DP không lựa chọn` (hoặc chỉ có `1 lựa chọn` để tạo state):
-    - Công thức cập nhật đã cố định.
-    - Không có bước "quyết định phương án nào tốt hơn".
+- Gọi `Next(state)` là tập state có thể chuyển tới từ `state`.
+- `DP có lựa chọn`: tồn tại state có nhiều nhánh hợp lệ, tức `|Next(state)| > 1`.
+- `DP không lựa chọn`: mọi state có nhiều nhất 1 nhánh hợp lệ, tức `|Next(state)| <= 1`.
 
-Quy tắc 1 câu để phân loại:
-- Nếu có thể bỏ một nhánh vì "kém hơn" -> `có lựa chọn`.
-- Nếu mọi thành phần đều phải lấy theo công thức cố định -> `không lựa chọn`.
+Lưu ý quan trọng:
+
+- Bài toán đếm vẫn là `DP có lựa chọn` nếu state phân nhánh ra nhiều khả năng.
+- Khác nhau nằm ở phép gộp:
+  - Tối ưu: `min/max`.
+  - Đếm: `sum`.
+  - Tồn tại: `or/and`.
+- Việc loại state ngoài biên (out of bound) chỉ là loại nhánh không hợp lệ, không làm đổi bản chất phân loại.
 
 ---
 
@@ -23,115 +25,109 @@ Quy tắc 1 câu để phân loại:
 
 ### 1. Mẫu công thức
 
-- `dp[state] = best over choices( cost(choice) + dp[next_state] )`
-- Toán tử thường gặp: `min`, `max`, đôi khi `or/and` cho bài tồn tại.
+- Dạng tổng quát:
+  - `dp[state] = combine_{nxt in Next(state)}( transition_cost_or_count + dp[nxt] )`
+  - `combine` có thể là `min/max/sum/or...`.
 
 ```cpp
 for (state in order) {
-    dp[state] = INF; // hoac -INF tuy bai
-    for (choice in choices(state)) {
-        dp[state] = min(dp[state], cost(state, choice) + dp[next(state, choice)]);
+    init(dp[state]); // INF, -INF, 0, false... tuy AGG
+    for (nxt in Next(state)) {
+        dp[state] = combine(dp[state], value(state, nxt) + dp[nxt]);
     }
 }
 ```
+
 ### 2. Dấu hiệu nhận diện
 
-- Đề bài có "chọn hoặc không chọn", "chọn 1 trong k", "chọn điểm tách".
-- Có cụm "tối ưu", "ít nhất", "lớn nhất".
-- Câu hỏi cốt lõi: "Ở state này nên đi hướng nào?".
+- Từ một state có nhiều nhánh chuyển tiếp.
+- Có vòng lặp duyệt danh sách nhánh `choice/next`.
+- Có bước gộp kết quả từ nhiều nhánh (kể cả cộng tất cả để đếm).
 
 ### 3. Nhóm bài điển hình
 
 - Pick/Skip DP: Knapsack, House Robber.
-    - mỗi bước có ít nhất 2 phương án (lấy hoặc bỏ), rồi chọn phương án cho kết quả tối ưu toàn cục.
+  - Ghi chú: mỗi bước có nhiều phương án (lấy/bỏ), rồi gộp kết quả theo mục tiêu của bài.
 - Chọn điểm tách: Interval DP, Matrix Chain Multiplication.
-    - state thường là đoạn `dp[l][r]`, thử mọi điểm chia `k` và lấy cách tách tốt nhất.
+  - Ghi chú: state là đoạn `dp[l][r]`, thử nhiều điểm chia `k` để lấy kết quả tốt nhất.
 - Chọn trạng thái/cấu hình: Bitmask DP, TSP, Assignment DP, Digit DP, Tree DP.
-    - đáp án phụ thuộc cấu hình hiện tại (tập đã chọn, vị trí, ràng buộc), nên phải chọn chuyển tiếp hợp lệ tốt nhất từ cấu hình đó.
+  - Ghi chú: từ mỗi cấu hình hiện tại có nhiều cách đi tiếp hợp lệ, nên phải duyệt nhánh và gộp.
 - Chọn hành động theo lượt: Game DP, Minimax.
-    - quyết định ở state phụ thuộc người chơi hiện tại, thường luân phiên giữa mục tiêu `max` và `min`.
+  - Ghi chú: mỗi lượt có nhiều nước đi; state gộp theo luật đối kháng (`max/min` theo người chơi).
 - Chọn thao tác chuyển đổi: Edit Distance, String transform DP.
-    - mỗi state biểu diễn mức khớp hiện tại giữa hai chuỗi, rồi chọn thao tác (chèn/xóa/sửa/giữ) có chi phí tối ưu.
+  - Ghi chú: mỗi state có nhiều thao tác chuyển tiếp (chèn/xóa/sửa/giữ), rồi lấy chi phí tốt nhất.
+- DP đếm có phân nhánh: đếm đường đi, đếm số cách tạo cấu hình.
+  - Ghi chú: không chọn một nhánh tốt nhất mà cộng toàn bộ nhánh hợp lệ, nhưng bản chất vẫn là nhiều lựa chọn.
 
 ### 4. Lưu ý
 
-- "Lựa chọn" có thể ẩn trong state (mask, last, color), không nhất thiết viết từ "chọn" trong đề.
-- Nếu có nhiều nhánh cạnh tranh và phải lấy `best`, đây gần như chắc chắn là DP có lựa chọn.
+- "Lựa chọn" có thể ẩn trong state, không nhất thiết xuất hiện chữ "chọn" trong đề.
+- Nếu `|Next(state)| > 1` thì mặc định nên xem là nhánh lựa chọn, kể cả bài đếm.
+
+---
 
 ## II. DP KHÔNG LỰA CHỌN (HOẶC CHỈ 1 LỰA CHỌN)
 
 ### 1. Mẫu công thức
 
-#### a) 1 chuyển tiếp duy nhất
-
-- `dp[next] = f(dp[cur], data)`
+- Dạng chuyển tiếp duy nhất:
+  - `dp[next(state)] = f(dp[state], data)` nếu `next(state)` hợp lệ.
+- Dạng truy hồi chỉ số cố định:
+  - `dp[i] = g(dp[i-1], dp[i-2], ...)` với các chỉ số phụ thuộc đã cố định bởi công thức.
 
 ```cpp
 for (state in order) {
-    dp[next(state)] = f(dp[state], data[state]);
-}
-```
-
-#### b) Tổng hợp bắt buộc từ tập cố định
-
-- `dp[i] = fixed_aggregate( contributions bắt buộc )`
-- Có thể vẫn có vòng lặp, nhưng không phải "chọn nhánh tốt nhất".
-
-```cpp
-for (int i = 1; i <= n; ++i) {
-    dp[i] = 0;
-    for (int j : fixed_set(i)) {
-        dp[i] += contrib(j, i); // cong bat buoc, khong min/max
+    nxt = next(state); // duy nhat theo quy tac
+    if (valid(nxt)) {
+        dp[nxt] = f(dp[state], data[state]);
     }
 }
 ```
 
 ### 2. Dấu hiệu nhận diện
 
-- Không có `best among choices`.
-- State kế tiếp được quyết định bởi quy tắc cố định.
-- Mục tiêu là "tính tiếp" hoặc "cộng dồn theo luật", không phải quyết định hành động tối ưu.
+- Mỗi state chỉ có 0 hoặc 1 nhánh hợp lệ.
+- Không có vòng lặp duyệt danh sách phương án tại một state.
+- Chuyển tiếp được xác định sẵn bởi quy tắc; chỉ có thể bị chặn bởi điều kiện biên.
 
 ### 3. Nhóm bài điển hình
 
 - Prefix/Suffix recurrence, Fibonacci chuẩn.
-    - Ghi chú: mỗi state được tính từ một tập trạng thái trước đã cố định, không có bước so sánh để chọn phương án tốt hơn.
+  - Ghi chú: công thức cập nhật là cố định theo chỉ số, không phát sinh nhánh quyết định tại mỗi state.
 - DP mô phỏng hệ deterministic.
-    - Ghi chú: từ state hiện tại và input tương ứng, state kế tiếp được xác định duy nhất theo luật chuyển cố định.
+  - Ghi chú: từ state hiện tại và input tương ứng, state kế tiếp được xác định duy nhất.
 - DP theo thời gian với luật cập nhật cố định.
-    - Ghi chú: trạng thái ở thời điểm `t+1` được suy ra trực tiếp từ thời điểm `t` theo quy tắc đã cho, không có hành động để lựa chọn.
-- Đếm theo công thức cố định (không chọn nhánh tối ưu).
-    - Ghi chú: mục tiêu là cộng/tổng hợp đầy đủ các đóng góp theo định nghĩa truy hồi, không loại bỏ nhánh nào vì "kém".
-- Đếm đường đi DAG khi mỗi state cộng từ tập predecessor cố định.
-    - Ghi chú: `dp[v]` là tổng từ toàn bộ predecessor hợp lệ trong DAG theo thứ tự topo, không cần quyết định predecessor tốt nhất.
+  - Ghi chú: trạng thái ở thời điểm `t+1` suy ra trực tiếp từ `t`, không có hành động để lựa chọn.
+- DP cập nhật tuần tự 1 hướng.
+  - Ghi chú: mỗi bước chỉ truyền sang một state kế tiếp theo quy tắc, nếu ra ngoài biên thì bỏ.
+
+---
 
 ## III. Ranh giới dễ nhầm
 
 | Bài toán | Nhóm | Lý do |
 |---|---|---|
-| Fibonacci | Không lựa chọn | Truy hồi cố định |
-| Prefix sum | Không lựa chọn | Mỗi bước chỉ 1 cập nhật |
-| Đếm đường đi DAG | Không lựa chọn | Cộng toàn bộ predecessor cố định |
+| Fibonacci | Không lựa chọn | Quy tắc truy hồi cố định, không duyệt nhánh chọn |
+| Prefix sum | Không lựa chọn | Mỗi bước cập nhật theo công thức duy nhất |
+| Automaton deterministic | Không lựa chọn | Mỗi cặp (state, input) có đúng 1 state kế |
+| Đếm đường đi DAG | Có lựa chọn | Từ state có thể đi nhiều cạnh, đếm bằng tổng qua nhánh |
+| Coin Change (đếm số cách) | Có lựa chọn | Mỗi trạng thái có nhiều cách chọn đồng hợp lệ |
 | Knapsack 0/1 (max value) | Có lựa chọn | Pick/skip tại mỗi phần tử |
-| Interval DP (min cost) | Có lựa chọn | Chọn điểm chia `k` tốt nhất |
+| Interval DP (min cost) | Có lựa chọn | Chọn điểm chia `k` |
 | TSP bitmask | Có lựa chọn | Chọn đỉnh đi tiếp |
-| Game DP | Có lựa chọn | Quyết định đối kháng |
+| Game DP | Có lựa chọn | Nhiều nước đi ở mỗi lượt |
 
-Ghi chú quan trọng:
-- "Có vòng lặp qua nhiều `j`" chưa chắc là có lựa chọn.
-- Điểm khác biệt nằm ở bản chất:
-    - `min/max` giữa phương án cạnh tranh -> có lựa chọn.
-    - `sum/merge` bắt buộc theo tập cố định -> không lựa chọn.
+Ghi chú:
+
+- `sum` qua nhiều nhánh vẫn là `DP có lựa chọn`.
+- Nếu chỉ có một nhánh cố định (có thể bị loại vì out of bound), đó là `DP không lựa chọn`.
 
 ---
 
 ## IV. Checklist phân loại nhanh (30 giây)
 
-1. Viết nháp công thức chuyển state.
-2. Tại state, có cần chọn phương án tốt nhất không?
-3. Có thể bỏ một nhánh vì "kém hơn" không?
-4. Hay phải lấy đầy đủ mọi đóng góp theo quy tắc cố định?
-
-Kết luận:
-- Có bước quyết định -> `DP có lựa chọn`.
-- Không có bước quyết định (hoặc chỉ 1 cách tạo state) -> `DP không lựa chọn`.
+1. Viết `Next(state)` cho bài toán.
+2. Có state nào mà `|Next(state)| > 1` không?
+3. Nếu có: đây là `DP có lựa chọn` (dù bạn gộp bằng `min/max/sum/or`).
+4. Nếu mọi state đều có `|Next(state)| <= 1`: đây là `DP không lựa chọn`.
+5. Kiểm tra thêm: nhánh bị loại do điều kiện biên chỉ là nhánh không hợp lệ, không tạo loại mới.

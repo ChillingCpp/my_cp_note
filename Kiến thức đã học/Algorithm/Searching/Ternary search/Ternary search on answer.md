@@ -24,9 +24,3 @@
 - Mỗi vòng gọi `f` 2 lần.
 - Số vòng là `O(log(R-L))`.
 - Tổng: `O(cost(f) * log(R-L))`.
-
-## 7) Lỗi hay gặp
-- Dùng ternary cho hàm không unimodal.
-- Quên đảo điều kiện khi tìm min thay vì max.
-- Trên miền nguyên không duyệt nốt đoạn cuối.
-- So sánh số thực thiếu sai số (`eps`) khi bài nhạy chính xác.

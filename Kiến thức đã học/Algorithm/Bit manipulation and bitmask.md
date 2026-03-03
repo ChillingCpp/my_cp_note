@@ -45,3 +45,4 @@ for (int b = mask; b; b &= (b - 1)) {
 - `ctz(x)`: vị trí bit 1 thấp nhất.
 - `mask ^ (1 << i)`: toggle phần tử `i`.
 
+

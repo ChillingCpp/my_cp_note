@@ -18,6 +18,7 @@
 - $\sum_{i=1}^{n} i^3 = \left(\dfrac{n(n+1)}{2}\right)^2$.
 - Cấp số cộng:
     - $a_n = a_1 + (n-1)d$.
+    - $a_n = \dfrac{a_{n+1}+a_{n-1}}{2}$.
     - $S_n = \dfrac{n(a_1+a_n)}{2} = \dfrac{n(2a_1+(n-1)d)}{2}$.
 - Cấp số nhân:
     - $a_n = a_1r^{n-1}$.
