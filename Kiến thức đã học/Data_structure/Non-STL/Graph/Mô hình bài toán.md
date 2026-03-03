@@ -39,6 +39,29 @@
 - Cạnh: một phép chuyển hợp lệ giữa 2 trạng thái.
 - Dùng khi có ràng buộc như số lần dùng phép, parity, mask, số bước còn lại...
 
+## 4) Chọn thuật toán dựa trên mô hình
+
+### 4.1 Object graph
+- Cần đường đi ngắn nhất theo số cạnh (không trọng số / đồng trọng số): [BFS](BFS.md).
+- Cần shortest path với trọng số không âm: Dijkstra (xem [Shortest path](<State space search/Shortest path.md>)).
+- Có cạnh âm: Bellman-Ford/SPFA; nếu cần phát hiện chu trình âm: [Positive or Negative cycle](<Positive or Negative cycle.md>).
+- Cần kiểm tra liên thông / đếm thành phần: DFS/BFS.
+- Cần tìm cầu / khớp: [bridge and ap](<bridge and ap.md>).
+- Cần truy vấn tìm cầu khớp nhanh : [BCT/BET](<Graph decomposition/bet_bct.md>)
+- Cần chọn cạnh để nối toàn bộ đỉnh với tổng trọng số tối ưu: [MST](basic_spanning_tree_forest.md).
+
+### 4.2 Dependency graph
+- Cần kiểm tra có thứ tự hợp lệ hay không: [Topological sort](<Topological sort.md>).
+- Là DAG và cần tối ưu/đếm trên thứ tự phụ thuộc: [Topo + DP](<DP Graph/Topo + DP.md>).
+- Có chu trình: tách SCC rồi co về DAG: [condensation graph](<Graph decomposition/condensation graph.md>), sau đó topo/DP trên DAG co rút.
+
+### 4.3 State-space graph
+- Mỗi bước có cùng cost: BFS trạng thái.
+- Cost cạnh chỉ thuộc `{0,1}`: 0-1 BFS.
+- Cost cạnh không âm tổng quát: Dijkstra.
+- Có cạnh âm: Bellman-Ford/SPFA và kiểm tra negative cycle khi cần.
+- Nhiều nguồn: multi-source (hoặc thêm super source trọng số 0).
+
 ## 6) Liên kết note liên quan
 - [Topological sort](<Topological sort.md>)
 - [Topo + DP](<DP Graph/Topo + DP.md>)
