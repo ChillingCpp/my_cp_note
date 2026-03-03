@@ -1,12 +1,12 @@
-# Euler Tour + Flatten Tree
+﻿# Euler Tour + Flatten Tree
 
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/GraphTree/3typesEulerTour.cpp)
 
 ## Mảng thường dùng
 - `in[u]`: thời điểm vào node `u`.
 - $out[u]$ : 
-	- Euler tour loại 1 và 2 : thời điểm cuối cùng mà node u được process
-	- Euler tour loại 3 : thời điểm mà node cuối cùng của cây con gốc u 
+    - Euler tour loại 1 và 2 : thời điểm cuối cùng mà node u được process
+    - Euler tour loại 3 : thời điểm mà node cuối cùng của cây con gốc u 
 - `depth[u]`: độ sâu.
 - `flat[t]`: node/giá trị tại thời điểm `t`.
 
@@ -18,8 +18,8 @@
 - [Mo](<../../../Sqrt Decomposition/Mo.md>)`
 - Query path `u-v` được đổi về đoạn trên mảng Euler + xử lý riêng LCA.
 - cách xử lí truy vấn : 
-	- gặp lần 1 : on
-	- gặp lần 2 : off
+    - gặp lần 1 : on
+    - gặp lần 2 : off
 
 ### 3. Euler `n` (mỗi node 1 lần)
 - Subtree `u` thành đoạn liên tiếp `[in[u], out[u]]`.

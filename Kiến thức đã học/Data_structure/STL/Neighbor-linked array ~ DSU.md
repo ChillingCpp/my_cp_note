@@ -1,4 +1,4 @@
-[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Dsu/Dsu.cpp)
+﻿[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Dsu/Dsu.cpp)
 
 # Neighbor-linked array (tư duy gần DSU)
 
@@ -8,13 +8,13 @@
 - Phù hợp cho truy vấn động kiểu "xóa/chèn/trái/phải" trên dãy.
 
 ## Hỗ trợ
- - Thêm / xóa phần tử
- - Đổi / hoán đổi vị trí
- - Truy vấn phần tử trái / phải
- - Bỏ qua phần tử đã xóa
- - Mảng thường / mảng tròn
- - Duy trì nhiều dãy độc lập
- - Cắt – nối đoạn (segment cut & splice)
+    - Thêm / xóa phần tử
+    - Đổi / hoán đổi vị trí
+    - Truy vấn phần tử trái / phải
+    - Bỏ qua phần tử đã xóa
+    - Mảng thường / mảng tròn
+    - Duy trì nhiều dãy độc lập
+    - Cắt – nối đoạn (segment cut & splice)
 ## Khi nào dùng
 - Thêm/xóa phần tử theo vị trí tham chiếu đã biết.
 - Truy vấn phần tử kề trái/phải của một node.

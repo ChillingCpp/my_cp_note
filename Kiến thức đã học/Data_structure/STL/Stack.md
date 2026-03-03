@@ -1,4 +1,4 @@
-[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/monotonic_stack.cpp)
+﻿[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/monotonic_stack.cpp)
 
 # Stack (LIFO)
 
@@ -15,14 +15,14 @@
 
 ## Value contribution với monotonic stack
 - Gọi `L` là vị trí gần nhất bên trái còn hợp lệ, `R` là vị trí gần nhất bên phải còn hợp lệ.
-	- Luôn chọn một bên strict, một bên non-strict.
-		- ví dụ :  `L` : previous `> hoặc <`,  `R` : next `>= hoặc <=`
-	- Mốc biên thường dùng khi không tồn tại: `L = -1`, `R = n`.
-	- Số subarray mà `a[i]` đại diện: `count(i) = (i - L) * (R - i)`.
-	- Đóng góp của `a[i]`: `contrib(i) = a[i] * (i - L) * (R - i)`.
-	- Tổng max: `sumMax = Σ a[i] * (i - Lmax) * (Rmax - i)`.
-	- Tổng min: `sumMin = Σ a[i] * (i - Lmin) * (Rmin - i)`.
-	- Bài tổng `(max - min)` mọi subarray: `answer = sumMax - sumMin`.
+    - Luôn chọn một bên strict, một bên non-strict.
+        - ví dụ :  `L` : previous `> hoặc <`,  `R` : next `>= hoặc <=`
+    - Mốc biên thường dùng khi không tồn tại: `L = -1`, `R = n`.
+    - Số subarray mà `a[i]` đại diện: `count(i) = (i - L) * (R - i)`.
+    - Đóng góp của `a[i]`: `contrib(i) = a[i] * (i - L) * (R - i)`.
+    - Tổng max: `sumMax = Σ a[i] * (i - Lmax) * (Rmax - i)`.
+    - Tổng min: `sumMin = Σ a[i] * (i - Lmin) * (Rmin - i)`.
+    - Bài tổng `(max - min)` mọi subarray: `answer = sumMax - sumMin`.
 
 ## Range query với monotonic stack
 - Gọi `L` là vị trí gần nhất bên trái còn hợp lệ, `R` là vị trí gần nhất bên phải còn hợp lệ.

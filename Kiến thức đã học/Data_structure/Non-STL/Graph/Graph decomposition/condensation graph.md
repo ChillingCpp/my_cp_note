@@ -1,4 +1,4 @@
-# Condensation Graph (SCC DAG)
+﻿# Condensation Graph (SCC DAG)
 
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph_decompose/Condensation_graph.cpp)
 
@@ -30,9 +30,9 @@
 
 ## 7) Ghi chú cài đặt
 - Mảng thường dùng:
-  - `comp[n+1]`
-  - `vector<vector<int>> dag(scc_cnt)`
-  - `indeg[scc_cnt]`, `outdeg[scc_cnt]`
+    - `comp[n+1]`
+    - `vector<vector<int>> dag(scc_cnt)`
+    - `indeg[scc_cnt]`, `outdeg[scc_cnt]`
 - Sau khi nén xong, các thuật toán DAG chuẩn chạy trực tiếp.
 
 ## Đường dẫn

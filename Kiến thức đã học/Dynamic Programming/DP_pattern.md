@@ -1,4 +1,4 @@
-# DP Pattern theo 2 nhóm: Có lựa chọn vs Không lựa chọn
+﻿# DP Pattern theo 2 nhóm: Có lựa chọn vs Không lựa chọn
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/dp)
 
@@ -7,11 +7,11 @@
 Bạn đang dùng đúng hướng: chia DP thành 2 loại lớn.
 
 - `DP có lựa chọn`:
-  - Tại một state có nhiều phương án hợp lệ.
-  - Ta phải ra quyết định (chọn tốt nhất, hoặc xét nhánh theo quyết định).
+    - Tại một state có nhiều phương án hợp lệ.
+    - Ta phải ra quyết định (chọn tốt nhất, hoặc xét nhánh theo quyết định).
 - `DP không lựa chọn` (hoặc chỉ có `1 lựa chọn` để tạo state):
-  - Công thức cập nhật đã cố định.
-  - Không có bước "quyết định phương án nào tốt hơn".
+    - Công thức cập nhật đã cố định.
+    - Không có bước "quyết định phương án nào tốt hơn".
 
 Quy tắc 1 câu để phân loại:
 - Nếu có thể bỏ một nhánh vì "kém hơn" -> `có lựa chọn`.
@@ -43,15 +43,15 @@ for (state in order) {
 ### 3. Nhóm bài điển hình
 
 - Pick/Skip DP: Knapsack, House Robber.
-  - mỗi bước có ít nhất 2 phương án (lấy hoặc bỏ), rồi chọn phương án cho kết quả tối ưu toàn cục.
+    - mỗi bước có ít nhất 2 phương án (lấy hoặc bỏ), rồi chọn phương án cho kết quả tối ưu toàn cục.
 - Chọn điểm tách: Interval DP, Matrix Chain Multiplication.
-  - state thường là đoạn `dp[l][r]`, thử mọi điểm chia `k` và lấy cách tách tốt nhất.
+    - state thường là đoạn `dp[l][r]`, thử mọi điểm chia `k` và lấy cách tách tốt nhất.
 - Chọn trạng thái/cấu hình: Bitmask DP, TSP, Assignment DP, Digit DP, Tree DP.
-  - đáp án phụ thuộc cấu hình hiện tại (tập đã chọn, vị trí, ràng buộc), nên phải chọn chuyển tiếp hợp lệ tốt nhất từ cấu hình đó.
+    - đáp án phụ thuộc cấu hình hiện tại (tập đã chọn, vị trí, ràng buộc), nên phải chọn chuyển tiếp hợp lệ tốt nhất từ cấu hình đó.
 - Chọn hành động theo lượt: Game DP, Minimax.
-  - quyết định ở state phụ thuộc người chơi hiện tại, thường luân phiên giữa mục tiêu `max` và `min`.
+    - quyết định ở state phụ thuộc người chơi hiện tại, thường luân phiên giữa mục tiêu `max` và `min`.
 - Chọn thao tác chuyển đổi: Edit Distance, String transform DP.
-  - mỗi state biểu diễn mức khớp hiện tại giữa hai chuỗi, rồi chọn thao tác (chèn/xóa/sửa/giữ) có chi phí tối ưu.
+    - mỗi state biểu diễn mức khớp hiện tại giữa hai chuỗi, rồi chọn thao tác (chèn/xóa/sửa/giữ) có chi phí tối ưu.
 
 ### 4. Lưu ý
 
@@ -95,15 +95,15 @@ for (int i = 1; i <= n; ++i) {
 ### 3. Nhóm bài điển hình
 
 - Prefix/Suffix recurrence, Fibonacci chuẩn.
-  - Ghi chú: mỗi state được tính từ một tập trạng thái trước đã cố định, không có bước so sánh để chọn phương án tốt hơn.
+    - Ghi chú: mỗi state được tính từ một tập trạng thái trước đã cố định, không có bước so sánh để chọn phương án tốt hơn.
 - DP mô phỏng hệ deterministic.
-  - Ghi chú: từ state hiện tại và input tương ứng, state kế tiếp được xác định duy nhất theo luật chuyển cố định.
+    - Ghi chú: từ state hiện tại và input tương ứng, state kế tiếp được xác định duy nhất theo luật chuyển cố định.
 - DP theo thời gian với luật cập nhật cố định.
-  - Ghi chú: trạng thái ở thời điểm `t+1` được suy ra trực tiếp từ thời điểm `t` theo quy tắc đã cho, không có hành động để lựa chọn.
+    - Ghi chú: trạng thái ở thời điểm `t+1` được suy ra trực tiếp từ thời điểm `t` theo quy tắc đã cho, không có hành động để lựa chọn.
 - Đếm theo công thức cố định (không chọn nhánh tối ưu).
-  - Ghi chú: mục tiêu là cộng/tổng hợp đầy đủ các đóng góp theo định nghĩa truy hồi, không loại bỏ nhánh nào vì "kém".
+    - Ghi chú: mục tiêu là cộng/tổng hợp đầy đủ các đóng góp theo định nghĩa truy hồi, không loại bỏ nhánh nào vì "kém".
 - Đếm đường đi DAG khi mỗi state cộng từ tập predecessor cố định.
-  - Ghi chú: `dp[v]` là tổng từ toàn bộ predecessor hợp lệ trong DAG theo thứ tự topo, không cần quyết định predecessor tốt nhất.
+    - Ghi chú: `dp[v]` là tổng từ toàn bộ predecessor hợp lệ trong DAG theo thứ tự topo, không cần quyết định predecessor tốt nhất.
 
 ## III. Ranh giới dễ nhầm
 
@@ -120,8 +120,8 @@ for (int i = 1; i <= n; ++i) {
 Ghi chú quan trọng:
 - "Có vòng lặp qua nhiều `j`" chưa chắc là có lựa chọn.
 - Điểm khác biệt nằm ở bản chất:
-  - `min/max` giữa phương án cạnh tranh -> có lựa chọn.
-  - `sum/merge` bắt buộc theo tập cố định -> không lựa chọn.
+    - `min/max` giữa phương án cạnh tranh -> có lựa chọn.
+    - `sum/merge` bắt buộc theo tập cố định -> không lựa chọn.
 
 ---
 

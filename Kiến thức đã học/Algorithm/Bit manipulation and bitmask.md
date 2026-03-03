@@ -1,15 +1,15 @@
-# Bit Manipulation and Bitmask
+﻿# Bit Manipulation and Bitmask
 
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Algorithms/bitmask.cpp)
 
 ## 1) Bit manipulation cơ bản
 - Toán tử chính: `&`, `|`, `^`, `~`, `<<`, `>>`.
 - Kỹ thuật thường dùng:
-  - check bit `k`: `(x >> k) & 1`
-  - bật bit `k`: `x |= (1 << k)`
-  - tắt bit `k`: `x &= ~(1 << k)`
-  - đảo bit `k`: `x ^= (1 << k)`
-  - lấy bit thấp nhất đang bật: `x & -x`
+    - check bit `k`: `(x >> k) & 1`
+    - bật bit `k`: `x |= (1 << k)`
+    - tắt bit `k`: `x &= ~(1 << k)`
+    - đảo bit `k`: `x ^= (1 << k)`
+    - lấy bit thấp nhất đang bật: `x & -x`
 
 ## 2) Bitmask là gì
 - Bitmask biểu diễn một tập con: bit `i = 1` nghĩa là phần tử `i` đang được chọn.

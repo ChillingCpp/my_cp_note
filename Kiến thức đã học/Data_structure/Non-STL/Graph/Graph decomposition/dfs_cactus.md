@@ -1,4 +1,4 @@
-[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph_decompose/bridge_edge_tree.cpp)
+﻿[source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph_decompose/bridge_edge_tree.cpp)
 
 ( tạm thời chưa cần học )
 # DFS Cactus Decomposition
@@ -9,8 +9,8 @@
 
 ## 2) Mục tiêu decomposition
 - Dùng DFS để:
-  - kiểm tra đồ thị có phải cactus không
-  - tách đồ thị thành các `block`:
+    - kiểm tra đồ thị có phải cactus không
+    - tách đồ thị thành các `block`:
     - block cạnh thường
     - block chu trình
 - Từ đó có thể build cactus-tree/cactus-block graph để query.
@@ -19,19 +19,19 @@
 1. DFS với `tin[u]`, `low[u]`, parent edge.
 2. Dùng stack cạnh để gom block khi phát hiện một chu trình/BCC.
 3. Mỗi lần kết thúc block:
-   - nếu block có số cạnh = số đỉnh: block là 1 chu trình
-   - nếu block có 1 cạnh: block cạnh thường
+    - nếu block có số cạnh = số đỉnh: block là 1 chu trình
+    - nếu block có 1 cạnh: block cạnh thường
 4. Nếu một cạnh bị gom vào hơn 1 chu trình -> không phải cactus.
 
 Độ phức tạp: `O(n + m)`.
 
 ## 4) Tính chất quan trọng
 - Trong cactus chuẩn:
-  - Mỗi edge nằm trong tối đa 1 cycle.
-  - Cấu trúc block-level là tree (hoặc forest nếu input không liên thông).
+    - Mỗi edge nằm trong tối đa 1 cycle.
+    - Cấu trúc block-level là tree (hoặc forest nếu input không liên thông).
 - Nhiều bài tối ưu đường đi có thể tách thành:
-  - xử lý trên tree block
-  - cộng thêm xử lý riêng cho từng cycle block
+    - xử lý trên tree block
+    - cộng thêm xử lý riêng cho từng cycle block
 
 ## 5) Ứng dụng điển hình
 - Tính số đường đi/chi phí trên cactus.
@@ -47,8 +47,8 @@
 ## 7) Note cài đặt
 - Nên lưu `edge_id` để tránh nhầm cạnh ngược của cùng một cạnh vô hướng.
 - Với weighted cactus:
-  - lưu prefix sum theo thứ tự đỉnh trên mỗi cycle
-  - query trên cycle dùng `min(clockwise, counter_clockwise)`
+    - lưu prefix sum theo thứ tự đỉnh trên mỗi cycle
+    - query trên cycle dùng `min(clockwise, counter_clockwise)`
 
 ## Đường dẫn
 - [Bridge_edge_tree](Bridge_edge_tree.md)

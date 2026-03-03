@@ -1,4 +1,4 @@
-# Basic Math
+﻿# Basic Math
 
 ## 0) Hằng đẳng thức cơ bản
 
@@ -17,12 +17,12 @@
 - $\sum_{i=1}^{n} i^2 = \dfrac{n(n+1)(2n+1)}{6}$.
 - $\sum_{i=1}^{n} i^3 = \left(\dfrac{n(n+1)}{2}\right)^2$.
 - Cấp số cộng:
-  - $a_n = a_1 + (n-1)d$.
-  - $S_n = \dfrac{n(a_1+a_n)}{2} = \dfrac{n(2a_1+(n-1)d)}{2}$.
+    - $a_n = a_1 + (n-1)d$.
+    - $S_n = \dfrac{n(a_1+a_n)}{2} = \dfrac{n(2a_1+(n-1)d)}{2}$.
 - Cấp số nhân:
-  - $a_n = a_1r^{n-1}$.
-  - $S_n = a_1\dfrac{r^n-1}{r-1}$ với $r\neq 1$.
-  - $S_\infty = \dfrac{a_1}{1-r}$ khi $|r|<1$.
+    - $a_n = a_1r^{n-1}$.
+    - $S_n = a_1\dfrac{r^n-1}{r-1}$ với $r\neq 1$.
+    - $S_\infty = \dfrac{a_1}{1-r}$ khi $|r|<1$.
 
 ## 2) Nhị thức Newton
 
@@ -45,8 +45,8 @@ Với $ax^2+bx+c=0$, $a\neq 0$:
 - $\Delta = b^2-4ac$.
 - $x_{1,2}=\dfrac{-b\pm\sqrt{\Delta}}{2a}$.
 - Nếu nghiệm là $x_1,x_2$ thì:
-  - $x_1+x_2=-\dfrac{b}{a}$.
-  - $x_1x_2=\dfrac{c}{a}$.
+    - $x_1+x_2=-\dfrac{b}{a}$.
+    - $x_1x_2=\dfrac{c}{a}$.
 
 ## 5) Giá trị tuyệt đối và bất đẳng thức tam giác
 

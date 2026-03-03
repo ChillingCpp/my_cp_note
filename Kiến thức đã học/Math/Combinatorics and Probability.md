@@ -1,4 +1,4 @@
-# Combinatorics and Probability
+﻿# Combinatorics and Probability
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/math)
 
@@ -21,45 +21,45 @@
 
 - Hoán vị $n$ phần tử phân biệt: $n!$.
 - Hoán vị có lặp, với tần suất $a_1,a_2,\ldots,a_m$ và $n=\sum_{i=1}^m a_i$:
-  - Số cách: $\dfrac{n!}{a_1!a_2!\cdots a_m!}$.
+    - Số cách: $\dfrac{n!}{a_1!a_2!\cdots a_m!}$.
 - Hoán vị vòng tròn $n$ phần tử phân biệt:
-  - $(n-1)!$.
+    - $(n-1)!$.
 
 ### 2.2. Chỉnh hợp
 
 - Chọn có thứ tự $k$ phần tử từ $n$ phần tử:
-  - $P(n,k)=\dfrac{n!}{(n-k)!}$.
+    - $P(n,k)=\dfrac{n!}{(n-k)!}$.
 
 ### 2.3. Tổ hợp
 
 - Chọn không thứ tự $k$ phần tử từ $n$ phần tử:
-  - $\binom{n}{k}$.
+    - $\binom{n}{k}$.
 - Chọn lặp $k$ phần tử từ $n$ loại:
-  - $\binom{n+k-1}{k}$.
+    - $\binom{n+k-1}{k}$.
 
 ## 3) Đồng nhất thức tổ hợp quan trọng
 
 - Pascal:
-  - $\binom{n}{k}=\binom{n-1}{k}+\binom{n-1}{k-1}$.
+    - $\binom{n}{k}=\binom{n-1}{k}+\binom{n-1}{k-1}$.
 - Tổng hàng:
-  - $\sum_{k=0}^{n}\binom{n}{k}=2^n$.
+    - $\sum_{k=0}^{n}\binom{n}{k}=2^n$.
 - Tổng có trọng số:
-  - $\sum_{k=0}^{n}k\binom{n}{k}=n2^{n-1}$.
+    - $\sum_{k=0}^{n}k\binom{n}{k}=n2^{n-1}$.
 - Hockey-stick:
-  - $\sum_{i=r}^{n}\binom{i}{r}=\binom{n+1}{r+1}$.
+    - $\sum_{i=r}^{n}\binom{i}{r}=\binom{n+1}{r+1}$.
 - Vandermonde:
-  - $\sum_{k}\binom{a}{k}\binom{b}{m-k}=\binom{a+b}{m}$.
+    - $\sum_{k}\binom{a}{k}\binom{b}{m-k}=\binom{a+b}{m}$.
 - Multinomial:
-  - $\binom{n}{a_1,a_2,\ldots,a_m}=\dfrac{n!}{a_1!a_2!\cdots a_m!}$, với $\sum_{i=1}^{m}a_i=n$.
+    - $\binom{n}{a_1,a_2,\ldots,a_m}=\dfrac{n!}{a_1!a_2!\cdots a_m!}$, với $\sum_{i=1}^{m}a_i=n$.
 
 ## 4) Stars and Bars (chia bi vào hộp)
 
 - Nghiệm nguyên không âm của $x_1+\cdots+x_k=n$:
-  - $\binom{n+k-1}{k-1}$.
+    - $\binom{n+k-1}{k-1}$.
 - Nghiệm nguyên dương của $x_1+\cdots+x_k=n$:
-  - $\binom{n-1}{k-1}$.
+    - $\binom{n-1}{k-1}$.
 - Có chặn trên $x_i\le u_i$:
-  - Dùng Inclusion-Exclusion.
+    - Dùng Inclusion-Exclusion.
 
 ## 5) Inclusion-Exclusion (PIE)
 
@@ -87,7 +87,7 @@ $$
 ## 6) Khai triển nhị thức và hệ số
 
 - Binomial theorem:
-  - $(x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^k$.
+    - $(x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^k$.
 - Hệ số của $x^k$ trong $(1+x)^n$ là $\binom{n}{k}$.
 - Hệ số của $x^m$ trong tích đa thức là tổng chập (convolution) bậc $m$.
 
@@ -95,35 +95,35 @@ $$
 
 - Không gian mẫu $\Omega$, biến cố $A$.
 - Nếu đồng khả năng:
-  - $P(A)=\dfrac{|A|}{|\Omega|}$.
+    - $P(A)=\dfrac{|A|}{|\Omega|}$.
 - Quy tắc cộng:
-  - $P(A\cup B)=P(A)+P(B)-P(A\cap B)$.
+    - $P(A\cup B)=P(A)+P(B)-P(A\cap B)$.
 - Xác suất có điều kiện:
-  - $P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}$, với $P(B)>0$.
+    - $P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}$, với $P(B)>0$.
 - Quy tắc nhân:
-  - $P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)$.
+    - $P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)$.
 - Độc lập:
-  - $A,B$ độc lập khi $P(A\cap B)=P(A)P(B)$.
+    - $A,B$ độc lập khi $P(A\cap B)=P(A)P(B)$.
 
 ## 8) Total Probability và Bayes
 
 - Công thức xác suất toàn phần (với phân hoạch $B_1,\ldots,B_m$):
-  - $P(A)=\sum_i P(A\mid B_i)P(B_i)$.
+    - $P(A)=\sum_i P(A\mid B_i)P(B_i)$.
 - Bayes:
-  - $P(B_j\mid A)=\dfrac{P(A\mid B_j)P(B_j)}{\sum_i P(A\mid B_i)P(B_i)}$.
+    - $P(B_j\mid A)=\dfrac{P(A\mid B_j)P(B_j)}{\sum_i P(A\mid B_i)P(B_i)}$.
 
 ## 9) Kỳ vọng - phương sai
 
 - $E[X]=\sum_x x\,P(X=x)$ (rời rạc).
 - Tuyến tính kỳ vọng:
-  - $E[X+Y]=E[X]+E[Y]$ (không cần độc lập).
+    - $E[X+Y]=E[X]+E[Y]$ (không cần độc lập).
 - Indicator trick:
-  - $\mathbf{1}_A\in\{0,1\}$, $E[\mathbf{1}_A]=P(A)$.
-  - Hay dùng để đếm số đối tượng thỏa điều kiện.
+    - $\mathbf{1}_A\in\{0,1\}$, $E[\mathbf{1}_A]=P(A)$.
+    - Hay dùng để đếm số đối tượng thỏa điều kiện.
 - $\mathrm{Var}(X)=E[X^2]-E[X]^2$.
 - $\mathrm{Var}(aX+b)=a^2\mathrm{Var}(X)$.
 - Nếu độc lập:
-  - $\mathrm{Var}(X+Y)=\mathrm{Var}(X)+\mathrm{Var}(Y)$.
+    - $\mathrm{Var}(X+Y)=\mathrm{Var}(X)+\mathrm{Var}(Y)$.
 
 ## 10) Công thức gộp block trong DP đếm cấu hình
 
@@ -160,22 +160,22 @@ $$
 ## 11) Một số mẫu dùng nhanh trong CP
 
 - Số cách chèn chuỗi $a$ vào dãy $S$:
-  - $\binom{|S|+|a|}{|a|}$.
+    - $\binom{|S|+|a|}{|a|}$.
 - Chọn ngẫu nhiên 2 phần tử khác nhau từ $n$ phần tử:
-  - Tổng số cặp $\binom{n}{2}$.
+    - Tổng số cặp $\binom{n}{2}$.
 - "Ít nhất một" biến cố:
-  - Dùng bù: $1-P(\text{không có biến cố nào})$.
+    - Dùng bù: $1-P(\text{không có biến cố nào})$.
 - "Đúng $k$ lần thành công trong $n$ lần thử độc lập":
-  - Binomial.
+    - Binomial.
 
 ## 12) Ghi chú triển khai modulo (CP)
 
 - Thường dùng $mod=10^9+7$ hoặc $998244353$.
 - Tiền xử lý:
-  - $fac[i]=i!\bmod mod$.
-  - $invfac[i]=(i!)^{-1}\bmod mod$.
+    - $fac[i]=i!\bmod mod$.
+    - $invfac[i]=(i!)^{-1}\bmod mod$.
 - Khi $mod$ là số nguyên tố:
-  - $inv(x)=x^{mod-2}\bmod mod$ (Fermat).
-  - $\binom{n}{k}\bmod mod=fac[n]\cdot invfac[k]\cdot invfac[n-k]\bmod mod$.
+    - $inv(x)=x^{mod-2}\bmod mod$ (Fermat).
+    - $\binom{n}{k}\bmod mod=fac[n]\cdot invfac[k]\cdot invfac[n-k]\bmod mod$.
 - $n$ rất lớn, $mod$ nhỏ nguyên tố:
-  - Cân nhắc Lucas theorem.
+    - Cân nhắc Lucas theorem.

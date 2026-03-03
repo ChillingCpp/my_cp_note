@@ -1,4 +1,4 @@
-# Bridge và Articulation Point (Cut Vertex)
+﻿# Bridge và Articulation Point (Cut Vertex)
 
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Graph/Connectivity/ap_bridges.cpp)
 
@@ -11,15 +11,15 @@
 - `tin[u]` = `disc[u]`: thời điểm DFS thăm `u`.
 - `low[u]`: thời điểm nhỏ nhất có thể quay về từ `u` (đi xuống cây DFS rồi dùng tối đa 1 back-edge).
 - Công thức cập nhật:
-  - Nếu `v` chưa thăm: DFS `v`, rồi `low[u] = min(low[u], low[v])`
-  - Nếu `v` đã thăm và `v != parent`: `low[u] = min(low[u], tin[v])`
+    - Nếu `v` chưa thăm: DFS `v`, rồi `low[u] = min(low[u], low[v])`
+    - Nếu `v` đã thăm và `v != parent`: `low[u] = min(low[u], tin[v])`
 
 ## 3) Điều kiện nhận diện
 - Bridge `(u, v)` với `u` là cha của `v` trong DFS:
-  - `low[v] > tin[u]`
+    - `low[v] > tin[u]`
 - AP:
-  - Nếu `u` không phải root DFS : `p != -1`: tồn tại con `v` sao cho `low[v] >= tin[u]`
-  - Nếu `u` là root DFS : `p == -1` : có từ 2 con DFS trở lên
+    - Nếu `u` không phải root DFS : `p != -1`: tồn tại con `v` sao cho `low[v] >= tin[u]`
+    - Nếu `u` là root DFS : `p == -1` : có từ 2 con DFS trở lên
 
 ## 4) Độ phức tạp
 - `O(n + m)` cho một lần DFS toàn đồ thị.

@@ -1,4 +1,4 @@
-# Advanced Spanning Tree / Forest
+﻿# Advanced Spanning Tree / Forest
 
 [source code](https://github.com/ChillingCpp/DSA_CP/blob/main/Data_Structures/Spanning_Tree/second_mst.cpp)
 
@@ -11,15 +11,15 @@
 - Có rất nhiều truy vấn trên cạnh không thuộc cây (`non-tree edge`).
 - Cần kiểm tra điều kiện thay cạnh vào cây (`exchange argument`).
 - Cần bài toán kiểu:
-  - `second-best MST`
-  - cạnh có thể nằm trong *một MST nào đó*
-  - tối ưu chu trình sinh từ `non-tree edge + path(u, v)` trong cây
+    - `second-best MST`
+    - cạnh có thể nằm trong *một MST nào đó*
+    - tối ưu chu trình sinh từ `non-tree edge + path(u, v)` trong cây
 
 ## 3) Khung build chung
 1. Chạy Kruskal/Prim để lấy cây (hoặc forest nếu đồ thị không liên thông).
 2. Root từng cây, tiền xử lý:
-   - `up[k][u]`: tổ tiên `2^k`
-   - `mx[k][u]` hoặc `mn[k][u]`: max/min cạnh trên đoạn đi lên `2^k`
+    - `up[k][u]`: tổ tiên `2^k`
+    - `mx[k][u]` hoặc `mn[k][u]`: max/min cạnh trên đoạn đi lên `2^k`
 3. Viết `query(u, v)` trả về giá trị trên path.
 
 Độ phức tạp thường dùng:
@@ -29,14 +29,14 @@
 
 ## 4) Tính chất quan trọng
 - Với cạnh ngoài cây `e = (u, v, w)`:
-  - Khi thêm `e` vào cây sẽ tạo đúng 1 chu trình.
-  - Muốn vẫn là cây, phải bỏ 1 cạnh trên `path(u, v)`.
+    - Khi thêm `e` vào cây sẽ tạo đúng 1 chu trình.
+    - Muốn vẫn là cây, phải bỏ 1 cạnh trên `path(u, v)`.
 - Cho MST:
-  - `maxEdge(path(u, v)) <= w` là điều kiện cần để thay cạnh không làm giảm tính tối ưu.
-  - Ứng viên `second-best`:
+    - `maxEdge(path(u, v)) <= w` là điều kiện cần để thay cạnh không làm giảm tính tối ưu.
+    - Ứng viên `second-best`:
     - `W2 = min(Wmst + w - maxEdge(path(u, v)))` với mọi cạnh ngoài cây có `w > maxEdge(...)`.
 - Cạnh `(u, v, w)` có thể thuộc ít nhất một MST nếu:
-  - `w == maxEdge(path(u, v))` trong một MST đang xét.
+    - `w == maxEdge(path(u, v))` trong một MST đang xét.
 
 - Nếu đồ thị không liên thông, ta có `spanning forest`.
 - Lưu mỗi component 1 span tree trong đó
@@ -51,9 +51,9 @@
 
 ## 7) Note triển khai nhanh
 - Nên tách:
-  - DSU cho Kruskal
-  - Cây adjacency cho MST/forest
-  - Module LCA + path aggregate
+    - DSU cho Kruskal
+    - Cây adjacency cho MST/forest
+    - Module LCA + path aggregate
 - Nếu cần cả `max` và `second max` trên path (để xử lý cạnh bằng nhau), lưu thêm 2 giá trị tốt nhất trong DP.
 
 ## Đường dẫn

@@ -1,4 +1,4 @@
-# Bài toán bracket (ngắn gọn)
+﻿# Bài toán bracket (ngắn gọn)
 
 ## 0)
 - có thể không cần coi vì đây không phải 1 set thuật toán chuẩn, chỉ là cách giải 1 dạng pattern
@@ -6,11 +6,11 @@
 ## 1) Invariant bắt buộc
 - Với `()` quy ước `(` = `+1`, `)` = `-1`, gọi `balance` là prefix sum.
 - Chuỗi hợp lệ iff:
-  - mọi prefix có `balance >= 0`;
-  - `balance` cuối cùng bằng `0`.
+    - mọi prefix có `balance >= 0`;
+    - `balance` cuối cùng bằng `0`.
 - Đoạn `[l..r]` hợp lệ iff:
-  - `balance[r] - balance[l-1] = 0`;
-  - `min(balance[l..r]) - balance[l-1] >= 0`.
+    - `balance[r] - balance[l-1] = 0`;
+    - `min(balance[l..r]) - balance[l-1] >= 0`.
 
 ## 2) Các dạng chính và cách xử lý
 | Dạng | Kỹ thuật chuẩn | Ghi chú |
@@ -24,10 +24,10 @@
 
 ## 3) Công thức Segment Tree bracket
 - Merge `L`, `R`:
-  - `t = min(L.open, R.close)`
-  - `matched = L.matched + R.matched + t`
-  - `open = L.open + R.open - t`
-  - `close = L.close + R.close - t`
+    - `t = min(L.open, R.close)`
+    - `matched = L.matched + R.matched + t`
+    - `open = L.open + R.open - t`
+    - `close = L.close + R.close - t`
 - Đoạn hợp lệ hoàn toàn khi `open = 0` và `close = 0`.
 
 ## 6) Link liên quan

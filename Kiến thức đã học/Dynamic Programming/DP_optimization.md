@@ -1,4 +1,4 @@
-# DP Optimization
+﻿# DP Optimization
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/dp)
 
@@ -8,23 +8,23 @@
 ## Tư tưởng cốt lõi
 - Chỉ tối ưu sau khi công thức DP gốc đã đúng.
 - Luôn ước lượng:
-  - số state
-  - số transition mỗi state
-  - tổng complexity = `(#state) * (transition/state)`.
+    - số state
+    - số transition mỗi state
+    - tổng complexity = `(#state) * (transition/state)`.
 - Mục tiêu:
-  - giảm chiều state
-  - giảm số transition
-  - giảm hằng số bằng cấu trúc dữ liệu phù hợp.
+    - giảm chiều state
+    - giảm số transition
+    - giảm hằng số bằng cấu trúc dữ liệu phù hợp.
 
 ## Quy trình chuẩn
 1. Viết công thức chưa tối ưu.
     1.5. đọc output và cách phụ thuộc
 2. Tách phần phụ thuộc `i` và phần phụ thuộc `j`.
 3. Nhìn dạng truy vấn:
-   - min/max trên đoạn
-   - min/max trên cửa sổ
-   - prefix/suffix
-   - ứng viên động thêm/xóa
+    - min/max trên đoạn
+    - min/max trên cửa sổ
+    - prefix/suffix
+    - ứng viên động thêm/xóa
 4. Chọn cấu trúc dữ liệu/thuật toán tối ưu tương ứng.
 5. Test brute force với `n` nhỏ.
 
@@ -33,132 +33,132 @@
 ### 1) Giảm chiều state
 - Khi `dp[i][*]` chỉ phụ thuộc một vài lớp trước.
 - Kỹ thuật:
-  - rolling array
-  - bỏ chiều bằng invariant/prefix/suffix.
+    - rolling array
+    - bỏ chiều bằng invariant/prefix/suffix.
 - Lợi ích:
-  - giảm bộ nhớ `O(n*m)` -> `O(m)`.
+    - giảm bộ nhớ `O(n*m)` -> `O(m)`.
 
 ### 2) Prefix/Suffix Min-Max
 - Dạng:
-  - `dp[i] = min_{j < i}(f(j) + g(i))`
+    - `dp[i] = min_{j < i}(f(j) + g(i))`
 - Ý tưởng:
-  - giữ `best so far` khi quét.
+    - giữ `best so far` khi quét.
 - Lợi ích:
-  - thường `O(n^2)` -> `O(n)`.
+    - thường `O(n^2)` -> `O(n)`.
 
 ### 3) DP tối ưu hóa bằng các cấu trúc dữ liệu
 
 #### a) Deque (monotonic queue)
 - Dạng:
-  - `dp[i] = a[i] + min/max(dp[j])`, `j` trong cửa sổ `[i-k, i-1]`.
+    - `dp[i] = a[i] + min/max(dp[j])`, `j` trong cửa sổ `[i-k, i-1]`.
 - Độ phức tạp:
-  - `O(n*k)` -> `O(n)`.
+    - `O(n*k)` -> `O(n)`.
 - Lưu ý:
-  - pop front khi out-of-window, pop back theo điều kiện đơn điệu chuẩn.
+    - pop front khi out-of-window, pop back theo điều kiện đơn điệu chuẩn.
 
 #### b) Stack (monotonic stack)
 - Có bài DP dùng stack để tìm nhanh:
-  - previous/next smaller element
-  - previous/next greater element
-  - kết hợp Segment tree để truy vấn đoạn [i, nxt[i]], [prev[i], i],....
-  - đoạn/vị trí gần nhất thỏa điều kiện để chuyển trạng thái.
+    - previous/next smaller element
+    - previous/next greater element
+    - kết hợp Segment tree để truy vấn đoạn [i, nxt[i]], [prev[i], i],....
+    - đoạn/vị trí gần nhất thỏa điều kiện để chuyển trạng thái.
 - Mẫu tư duy:
-  - nếu transition cần "điểm gần nhất bên trái/phải" thỏa một quan hệ đơn điệu, stack thường giảm vòng lặp lồng nhau.
+    - nếu transition cần "điểm gần nhất bên trái/phải" thỏa một quan hệ đơn điệu, stack thường giảm vòng lặp lồng nhau.
 - Độ phức tạp thường gặp:
-  - từ `O(n^2)` xuống `O(n)` hoặc `O(n log n)` tùy công thức.
+    - từ `O(n^2)` xuống `O(n)` hoặc `O(n log n)` tùy công thức.
 - Ví dụ nhóm bài:
-  - DP trên histogram/rectangle
-  - DP partition với ràng buộc min/max đoạn
-  - DP có bước nhảy tới phần tử trước gần nhất thỏa điều kiện.
+    - DP trên histogram/rectangle
+    - DP partition với ràng buộc min/max đoạn
+    - DP có bước nhảy tới phần tử trước gần nhất thỏa điều kiện.
 
 #### c) Segment Tree
 - Dạng:
-  - cần query `min/max/sum,...` trên đoạn của các giá trị `dp` đã biết.
+    - cần query `min/max/sum,...` trên đoạn của các giá trị `dp` đã biết.
 - Độ phức tạp:
-  - thường `O(n^2)` -> `O(n log n)`.
+    - thường `O(n^2)` -> `O(n log n)`.
 
 #### d) Matrix Multiplication (Matrix Exponentiation)
 [Matrix multiplication](<../Math/Matrix multiplication.md>)
 
 #### e) Priority Queue (heap)
 - Dạng:
-  - luôn lấy ứng viên tốt nhất trong tập động theo thời gian/cửa sổ.
+    - luôn lấy ứng viên tốt nhất trong tập động theo thời gian/cửa sổ.
 - Kỹ thuật:
-  - lazy deletion cho phần tử hết hạn.
+    - lazy deletion cho phần tử hết hạn.
 - Độ phức tạp:
-  - `O(log n)` mỗi thao tác.
+    - `O(log n)` mỗi thao tác.
 
 #### f) Multiset / Ordered Set
 - Dạng:
-  - thêm/xóa trạng thái động và cần lấy min/max tức thời.
+    - thêm/xóa trạng thái động và cần lấy min/max tức thời.
 - Độ phức tạp:
-  - thường `O(n log k)` cho bài cửa sổ dài `k`.
+    - thường `O(n log k)` cho bài cửa sổ dài `k`.
 
 #### g) Hash map (sparse DP)
 - Dạng:
-  - state thưa, không phù hợp mảng lớn.
+    - state thưa, không phù hợp mảng lớn.
 - Ý tưởng:
-  - chỉ lưu state xuất hiện (`unordered_map`/`map`).
+    - chỉ lưu state xuất hiện (`unordered_map`/`map`).
 - Lợi ích:
-  - giảm bộ nhớ và tránh duyệt state rỗng.
+    - giảm bộ nhớ và tránh duyệt state rỗng.
 
 #### h) Bitset
 - Dạng:
-  - knapsack boolean/subset sum.
+    - knapsack boolean/subset sum.
 - Ý tưởng:
-  - dịch bit hàng loạt thay cho loop thủ công.
+    - dịch bit hàng loạt thay cho loop thủ công.
 - Lợi ích:
-  - cải thiện đáng kể hằng số thời gian.
+    - cải thiện đáng kể hằng số thời gian.
 
 #### i) Binary Search (lower_bound / upper_bound)
 - Dạng:
-  - cần tìm trạng thái trước đó đầu tiên/cuối cùng thỏa điều kiện.
-  - transition phụ thuộc vào một ngưỡng đơn điệu theo chỉ số hoặc giá trị.
+    - cần tìm trạng thái trước đó đầu tiên/cuối cùng thỏa điều kiện.
+    - transition phụ thuộc vào một ngưỡng đơn điệu theo chỉ số hoặc giá trị.
 - Ý tưởng:
-  - tiền xử lý danh sách/tập giá trị theo thứ tự, rồi dùng `lower_bound`/`upper_bound` để nhảy thẳng tới `j` phù hợp thay vì quét tuyến tính.
-  - khi predicate đơn điệu theo `j`, có thể nhị phân trực tiếp trên miền chỉ số để tìm điểm tách transition.
+    - tiền xử lý danh sách/tập giá trị theo thứ tự, rồi dùng `lower_bound`/`upper_bound` để nhảy thẳng tới `j` phù hợp thay vì quét tuyến tính.
+    - khi predicate đơn điệu theo `j`, có thể nhị phân trực tiếp trên miền chỉ số để tìm điểm tách transition.
 - Ví dụ mẫu:
-  - `dp[i] = best(dp[j])` với `pref[j] >= X` hoặc `a[j] <= a[i] - K`.
-  - chọn `j` gần nhất bên trái/phải thỏa ràng buộc theo giá trị đã sắp xếp.
+    - `dp[i] = best(dp[j])` với `pref[j] >= X` hoặc `a[j] <= a[i] - K`.
+    - chọn `j` gần nhất bên trái/phải thỏa ràng buộc theo giá trị đã sắp xếp.
 - Độ phức tạp:
-  - thường từ `O(n^2)` xuống `O(n log n)` hoặc `O(n log^2 n)` tùy phần update/query còn lại.
+    - thường từ `O(n^2)` xuống `O(n log n)` hoặc `O(n log^2 n)` tùy phần update/query còn lại.
 
 ### 4) Binary Search + DP Check
 - Dạng:
-  - tối ưu đáp án toàn cục nhưng có hàm check đơn điệu.
+    - tối ưu đáp án toàn cục nhưng có hàm check đơn điệu.
 - Ý tưởng:
-  - nhị phân đáp án, mỗi lần check bằng DP.
+    - nhị phân đáp án, mỗi lần check bằng DP.
 - Độ phức tạp:
-  - `O(log Ans * f(n))`.
+    - `O(log Ans * f(n))`.
 
 ## Nhóm nâng cao (chưa cần học đến)
 
 ### 1) Divide and Conquer Optimization (chưa cần học đến)
 - Dạng:
-  - `dp[t][i] = min_{j < i}(dp[t-1][j] + C(j,i))`
+    - `dp[t][i] = min_{j < i}(dp[t-1][j] + C(j,i))`
 - Điều kiện:
-  - `opt[t][i] <= opt[t][i+1]` (argmin đơn điệu).
+    - `opt[t][i] <= opt[t][i+1]` (argmin đơn điệu).
 - Thường:
-  - `O(k*n^2)` -> `O(k*n log n)`.
+    - `O(k*n^2)` -> `O(k*n log n)`.
 
 ### 2) Knuth Optimization (chưa cần học đến)
 - Dạng:
-  - `dp[l][r] = w(l,r) + min_{k in [l, r-1]}(dp[l][k] + dp[k+1][r])`
+    - `dp[l][r] = w(l,r) + min_{k in [l, r-1]}(dp[l][k] + dp[k+1][r])`
 - Điều kiện:
-  - `opt[l][r-1] <= opt[l][r] <= opt[l+1][r]`.
+    - `opt[l][r-1] <= opt[l][r] <= opt[l+1][r]`.
 - Thường:
-  - `O(n^3)` -> `O(n^2)`.
+    - `O(n^3)` -> `O(n^2)`.
 
 ### 3) Convex Hull Trick / Li Chao Tree (chưa cần học đến)
 - Dạng:
-  - `dp[i] = min/max_j (m_j * x_i + b_j) + extra(i)`.
+    - `dp[i] = min/max_j (m_j * x_i + b_j) + extra(i)`.
 - Thường:
-  - `O(n^2)` -> `O(n log n)` hoặc `O(n)` khi đơn điệu tốt.
+    - `O(n^2)` -> `O(n log n)` hoặc `O(n)` khi đơn điệu tốt.
 
 ### 4) Slope Trick (chưa cần học đến)
 - Dùng cho hàm mục tiêu convex piecewise-linear.
 - Tư duy:
-  - duy trì trực tiếp hình dạng hàm chi phí thay vì full DP table.
+    - duy trì trực tiếp hình dạng hàm chi phí thay vì full DP table.
 
 ## Bảng nhận diện nhanh
 
@@ -194,6 +194,6 @@
 ## Kết luận
 - DP optimization = mô hình đúng nhưng chậm -> mô hình đúng và đủ nhanh.
 - Thứ tự an toàn:
-  1. đúng công thức
-  2. chọn đúng cấu trúc dữ liệu
-  3. mới tối ưu nâng cao.
+    1. đúng công thức
+    2. chọn đúng cấu trúc dữ liệu
+    3. mới tối ưu nâng cao.

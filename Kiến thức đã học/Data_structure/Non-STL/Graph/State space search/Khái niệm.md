@@ -1,4 +1,4 @@
-# State Space Search - Khái niệm
+﻿# State Space Search - Khái niệm
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Data_Structures/Graph/Shortest_paths)
 
@@ -14,7 +14,7 @@
 ## Khung cập nhật
 - Gọi `best[s]` là giá trị tốt nhất tại state `s`.
 - Với chuyển `s -> t` có cost `w`:
-  - nếu `best[t]` tốt hơn khi đi qua `s` thì cập nhật và push lại.
+    - nếu `best[t]` tốt hơn khi đi qua `s` thì cập nhật và push lại.
 
 ## Khi dùng
 - Bài có đường đi tối ưu kèm ràng buộc (số bước, số lần dùng phép, mask, parity...).

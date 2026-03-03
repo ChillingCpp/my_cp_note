@@ -1,4 +1,4 @@
-# DP Digit
+﻿# DP Digit
 
 ## Đường dẫn
 [Các dạng DP chính](<Các dạng DP chính.md>)
@@ -6,8 +6,8 @@
 ## Mục tiêu
 - Giải các bài toán trên đoạn số nguyên `[L, R]` với ràng buộc theo chữ số.
 - Chuẩn hóa về hàm tiền tố:
-  - `Ans([L, R]) = F(R) - F(L - 1)`
-  - `F(X)`: kết quả trên đoạn `[0, X]`.
+    - `Ans([L, R]) = F(R) - F(L - 1)`
+    - `F(X)`: kết quả trên đoạn `[0, X]`.
 
 ## Mô hình trạng thái tổng quát
 Với `X >= 0`, tách `X` thành mảng chữ số `dig[0..n-1]` từ trái sang phải.
@@ -72,15 +72,15 @@ Nếu còn `k = n - pos - 1` vị trí phía sau, thì:
 
 ## Thiết kế `state` phụ (mẫu tổng quát)
 - Chia hết cho `m`:
-  - `state = rem`
-  - `Transition: rem' = (rem * 10 + d) mod m`
+    - `state = rem`
+    - `Transition: rem' = (rem * 10 + d) mod m`
 - Tổng chữ số:
-  - `state = s`
-  - `Transition: s' = s + d`
+    - `state = s`
+    - `Transition: s' = s + d`
 - Ràng buộc giữa các chữ số kề nhau:
-  - `state = (prev_digit, flag, ...)`
+    - `state = (prev_digit, flag, ...)`
 - Chứa/tránh một pattern:
-  - `state = node` của automaton (KMP/Aho).
+    - `state = node` của automaton (KMP/Aho).
 
 Nguyên tắc: `state` phải "đủ và tối thiểu" để quyết định tương lai, không giữ thông tin dư.
 
@@ -95,9 +95,9 @@ Nguyên tắc: `state` phải "đủ và tối thiểu" để quyết định t�
 ## Binary Search + Digit DP
 - hàm `dfs(...)` thường là hàm monotone
 - Khi truy vấn là dạng:
-  - "tìm `X` nhỏ nhất sao cho `F(X) >= K`"
-  - hoặc predicate `P(X)` monotone, ví dụ `P(X): F(X) >= K`
-  thì dùng binary search trên `X`.
+    - "tìm `X` nhỏ nhất sao cho `F(X) >= K`"
+    - hoặc predicate `P(X)` monotone, ví dụ `P(X): F(X) >= K`
+    thì dùng binary search trên `X`.
 
 Điều kiện áp dụng:
 - `F(X)` phải đơn điệu không giảm theo `X` (đúng với đa số bài toán đếm/tích lũy).

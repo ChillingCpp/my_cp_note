@@ -1,4 +1,4 @@
-# Kĩ thuật Traceback
+﻿# Kĩ thuật Traceback
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms)
 
@@ -8,16 +8,16 @@
 
 ## 2) Ý tưởng cốt lõi
 - Khi cập nhật một trạng thái `v` từ trạng thái `u`, lưu lại:
-  - `parent[v] = u` (đến từ đâu)
-  - hoặc `choice[v]` (đã chọn hành động nào)
+    - `parent[v] = u` (đến từ đâu)
+    - hoặc `choice[v]` (đã chọn hành động nào)
 - Sau khi tìm được trạng thái đích/tối ưu, đi ngược qua `parent` để dựng nghiệm.
 
 ## 3) Quy tắc cập nhật parent
 - Chỉ cập nhật `parent[v] = u` khi chuyển `u -> v` **tốt hơn** kết quả hiện tại của `v`.
 - Nếu bằng nhau (`tie`), cần chốt quy tắc:
-  - giữ parent cũ, hoặc
-  - ưu tiên chỉ số nhỏ hơn, hoặc
-  - ưu tiên đường đi từ điển nhỏ hơn.
+    - giữ parent cũ, hoặc
+    - ưu tiên chỉ số nhỏ hơn, hoặc
+    - ưu tiên đường đi từ điển nhỏ hơn.
 
 ## 4) Mẫu cho shortest path (BFS/Dijkstra/Bellman-Ford)
 ```cpp
@@ -37,8 +37,8 @@ reverse(path.begin(), path.end());
 
 ## 5) Mẫu cho DP
 - Ngoài `dp[state]`, lưu thêm:
-  - `pre[state]`: state trước đó
-  - `take[state]`: quyết định chọn gì để đi tới state này
+    - `pre[state]`: state trước đó
+    - `take[state]`: quyết định chọn gì để đi tới state này
 
 ```cpp
 if (cand > dp[nxt]) {

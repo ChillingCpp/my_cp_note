@@ -1,28 +1,28 @@
-[source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
+﻿[source code](https://github.com/ChillingCpp/DSA_CP/tree/main)
 
 
 
 - Các chủ đề cần luyện tập là :
-	- Tree
-	- DSU
-		- Range query : Fenwick/Segment tree ( fenwick là 1 topic nhưng giải được bằng segment tree), Mo, sqrt
-	- String processing
-	- greedy
-	- Graph
-		- Topo
-		-  SCC
-		- Bridge, articulation point
-		- condensation graph, block cut tree, bridge edge tree
-		- MST kruskal : tương tự tree
-		- Dijkstra/BFS
-		- SPFA/ floyd
-	- Dp
-		- digit dp
-		- bitmask dp
-		- dp on tree
-		- .....
-	- Math, random
+    - Tree
+    - DSU
+        - Range query : Fenwick/Segment tree ( fenwick là 1 topic nhưng giải được bằng segment tree), Mo, sqrt
+    - String processing
+    - greedy
+    - Graph
+        - Topo
+        -  SCC
+        - Bridge, articulation point
+        - condensation graph, block cut tree, bridge edge tree
+        - MST kruskal : tương tự tree
+        - Dijkstra/BFS
+        - SPFA/ floyd
+    - Dp
+        - digit dp
+        - bitmask dp
+        - dp on tree
+        - .....
+    - Math, random
 - Nguồn:
-	-  https://codeforces.com/blog/entry/55274
-	- https://youkn0wwho.academy/topic-list
-		- 
+    -  https://codeforces.com/blog/entry/55274
+    - https://youkn0wwho.academy/topic-list
+        - 

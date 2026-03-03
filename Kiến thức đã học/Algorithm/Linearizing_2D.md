@@ -1,11 +1,11 @@
-# Linearizing 2D matrix -> 1D
+﻿# Linearizing 2D matrix -> 1D
 
 ## 1) Ý tưởng tổng quát
 - Đây là kỹ thuật **linearizing matrix**: nén một lát cắt 2D thành mảng 1D để dùng thuật toán 1D.
 - Chọn một chiều để cố định 2 biên (ví dụ `top/bottom` theo hàng).
 - Duy trì mảng nén `compressed[]` trên chiều còn lại:
-  - `compressed[c] = g(a[top..bottom][c])`
-  - `g` thường là phép cộng, nhưng có thể là phép gộp khác tùy bài.
+    - `compressed[c] = g(a[top..bottom][c])`
+    - `g` thường là phép cộng, nhưng có thể là phép gộp khác tùy bài.
 - Sau khi nén, bài toán còn lại là một bài 1D trên `compressed[]`.
 - Lặp mọi cặp biên và lấy kết quả tốt nhất toàn cục.
 
@@ -14,25 +14,25 @@
 2. Duyệt biên 1 (`L1`).
 3. Reset `compressed[]`.
 4. Duyệt biên 2 (`L2 >= L1`):
-   - Cập nhật `compressed[]` bằng cách "thêm" lớp mới vào lát cắt.
-   - Chạy thuật toán 1D phù hợp trên `compressed[]`.
-   - Cập nhật đáp án.
+    - Cập nhật `compressed[]` bằng cách "thêm" lớp mới vào lát cắt.
+    - Chạy thuật toán 1D phù hợp trên `compressed[]`.
+    - Cập nhật đáp án.
 
 ## 3) Độ phức tạp tổng quát
 - Gọi `K = min(n, m)`, `L = max(n, m)`.
 - Nếu thuật toán 1D trên mảng dài `L` có độ phức tạp `F(L)`, thì:
-  - Tổng: `O(K^2 * F(L))`
-  - Bộ nhớ phụ: `O(L)`
+    - Tổng: `O(K^2 * F(L))`
+    - Bộ nhớ phụ: `O(L)`
 
 ## 4) Ví dụ điển hình
 - **Maximum Sum Submatrix**:
-  - `g = sum`
-  - Thuật toán 1D: Kadane
-  - Độ phức tạp: `O(K^2 * L)`
+    - `g = sum`
+    - Thuật toán 1D: Kadane
+    - Độ phức tạp: `O(K^2 * L)`
 - **Đếm số submatrix có tổng = k**:
-  - `g = sum`
-  - Thuật toán 1D: đếm subarray sum = `k` bằng prefix sum + hash map
-  - Độ phức tạp: `O(K^2 * L)`
+    - `g = sum`
+    - Thuật toán 1D: đếm subarray sum = `k` bằng prefix sum + hash map
+    - Độ phức tạp: `O(K^2 * L)`
 
 ## 5) Case cụ thể: Kadane 2D (fixed top-bottom)
 - Cố định `top/bottom`, nén từng cột thành `colSum[]`.

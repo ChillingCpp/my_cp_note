@@ -1,17 +1,17 @@
-# Shortest-path Subgraph (Tight-edge Graph)
+﻿# Shortest-path Subgraph (Tight-edge Graph)
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Data_Structures/Graph/Shortest_paths)
 
 ## Định nghĩa
 - Cho nguồn `s`, sau khi có `dist[]` (khoảng cách ngắn nhất từ `s`), cạnh `u -> v` trọng số `w` được gọi là `tight` nếu:
-  - `dist[u] + w = dist[v]`
+    - `dist[u] + w = dist[v]`
 - `Shortest-path subgraph` là đồ thị con giữ lại tất cả đỉnh reachable (`dist < INF`) và tất cả cạnh `tight`.
 
 ## Ý nghĩa
 - Đồ thị con này chứa **mọi** đường đi ngắn nhất từ `s` đến các đỉnh reachable.
 - Khác với `shortest-path tree`:
-  - Tree chỉ giữ 1 parent cho mỗi đỉnh.
-  - Subgraph giữ toàn bộ cạnh có thể nằm trên shortest path.
+    - Tree chỉ giữ 1 parent cho mỗi đỉnh.
+    - Subgraph giữ toàn bộ cạnh có thể nằm trên shortest path.
 
 ## Cách làm chuẩn
 1. Chạy thuật toán shortest path phù hợp để lấy `dist[]`.
@@ -32,7 +32,7 @@
 - Nếu mọi cạnh `tight` làm khoảng cách tăng chặt (`dist[u] < dist[v]`), thì là DAG.
 - Nếu có cạnh trọng số `0`, có thể có chu trình giữa các đỉnh cùng `dist`, nên không còn DAG thuần.
 - Khi cần DAG để DP/topo:
-  - Nén SCC của subgraph để được condensation DAG.
+    - Nén SCC của subgraph để được condensation DAG.
 
 ## Ứng dụng
 - Đếm số shortest path (khi cấu trúc sau xử lý là DAG).
@@ -49,8 +49,8 @@
 ## Độ phức tạp
 - Build subgraph: `O(m)`.
 - Tổng: `O(chi_phi_SSSP + m)`.
-  - Dijkstra: `O((n + m) log n)`.
-  - 0-1 BFS: `O(n + m)`.
+    - Dijkstra: `O((n + m) log n)`.
+    - 0-1 BFS: `O(n + m)`.
 
 ## Đường dẫn
 - [Single source one best state](<../State space search/Single source one best state.md>)

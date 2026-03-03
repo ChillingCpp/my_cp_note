@@ -1,18 +1,18 @@
-# DP How To Solve It (G. Polya cho Dynamic Programming)
+﻿# DP How To Solve It (G. Polya cho Dynamic Programming)
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/dp)
 
 ## 1) Understand The Problem
 ### What is unknown? What are data? What are conditions?
 - `Unknown`: cần tính gì?
-  - min / max / count / exist / số cách / giá trị tốt nhất
+    - min / max / count / exist / số cách / giá trị tốt nhất
 - `Data`: input + constraints
-  - `n`, `m`, giá trị phần tử, giới hạn bộ nhớ/thời gian
-  - đoán sớm mức độ phức tạp chấp nhận được
+    - `n`, `m`, giá trị phần tử, giới hạn bộ nhớ/thời gian
+    - đoán sớm mức độ phức tạp chấp nhận được
 - `Conditions`: ràng buộc tác động đến quyết định
-  - ràng buộc local hay global
-  - có thứ tự thời gian/index không
-  - có điều kiện “không được chọn kề nhau”, “đúng k phần tử”, “chẵn/lẻ”, “mask” không
+    - ràng buộc local hay global
+    - có thứ tự thời gian/index không
+    - có điều kiện “không được chọn kề nhau”, “đúng k phần tử”, “chẵn/lẻ”, “mask” không
 
 Checklist:
 1. Viết lại đề bằng 2-3 dòng ngôn ngữ của mình.
@@ -22,9 +22,9 @@ Checklist:
 ## 2) Devise A Plan
 ### Phân rã thành bài toán con
 - Biến đổi bài toán thành dạng subproblem
-  - Thử các test nhỏ
-  - Cố gắng tìm ra substructure
-  - Dựa theo các dạng DP đã từng học
+    - Thử các test nhỏ
+    - Cố gắng tìm ra substructure
+    - Dựa theo các dạng DP đã từng học
 - Hỏi: “Nếu cố định một phần quyết định thì phần còn lại là gì?”
 - Hỏi: “Để quyết định bước tiếp theo, cần nhớ tối thiểu thông tin nào?”
 
@@ -52,17 +52,17 @@ Nếu bí:
 
 Template tự kiểm:
 - State:
-  - `dp[ ... ]` biểu diễn gì (một câu duy nhất, không mơ hồ)
+    - `dp[ ... ]` biểu diễn gì (một câu duy nhất, không mơ hồ)
 - Base:
-  - giá trị khởi tạo cho trạng thái rỗng/đầu tiên
+    - giá trị khởi tạo cho trạng thái rỗng/đầu tiên
 - Transition:
-  - mỗi quyết định hợp lệ cập nhật ra sao
+    - mỗi quyết định hợp lệ cập nhật ra sao
 - Correctness:
-  - không thiếu trường hợp
-  - không đếm trùng
-  - không bị cycle dependency
+    - không thiếu trường hợp
+    - không đếm trùng
+    - không bị cycle dependency
 - Complexity:
-  - số state * số chuyển mỗi state
+    - số state * số chuyển mỗi state
 
 Ghi chú:
 - Có thể làm top-down (memo) hoặc bottom-up.
@@ -72,10 +72,10 @@ Ghi chú:
 - State có dư chiều không?
 - Có thể bỏ chiều bằng invariant hoặc prefix/suffix không?
 - Có thể tối ưu transition không?
-  - prefix minima/maxima
-  - monotonic queue
-  - divide and conquer optimization
-  - convex hull trick / slope trick
+    - prefix minima/maxima
+    - monotonic queue
+    - divide and conquer optimization
+    - convex hull trick / slope trick
 - Có thể đổi mô hình sang graph shortest path / DAG DP / bitset không?
 
 Mục tiêu sau cùng:

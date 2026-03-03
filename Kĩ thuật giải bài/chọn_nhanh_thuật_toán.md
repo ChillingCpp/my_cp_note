@@ -1,4 +1,4 @@
-# Pattern Recognize + Potential Ranking
+﻿# Pattern Recognize + Potential Ranking
 
 ## Yêu cầu về file chọn thuật toán tối nhanh
 - Cách giải 1 bài toán dựa vào [how_to_solve_it](how_to_solve_it.md)
@@ -17,9 +17,9 @@
 6. Chạy hard filter.
 7. Chấm điểm tiềm năng (0-10): `fit cấu trúc` + `fit thao tác` + `fit complexity` + `fit tính chất đặc biệt`.
 8. Xếp hạng:
-   - `High`: 8-10
-   - `Medium`: 5-7
-   - `< 5`: loại khỏi shortlist (không xếp hạng)
+    - `High`: 8-10
+    - `Medium`: 5-7
+    - `< 5`: loại khỏi shortlist (không xếp hạng)
 9. Chốt thứ tự thử: `High dễ code trước`, rồi `High còn lại`, rồi `Medium`.
 10. Kiểm tra trước khi code: phản ví dụ nhỏ + complexity check.
 

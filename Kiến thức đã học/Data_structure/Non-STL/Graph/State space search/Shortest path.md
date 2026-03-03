@@ -1,4 +1,4 @@
-# Shortest Path - Tổng quan và tính chất
+﻿# Shortest Path - Tổng quan và tính chất
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Data_Structures/Graph/Shortest_paths)
 
@@ -13,8 +13,8 @@
 - Tập cạnh cha từ 1 nguồn tạo thành **Shortest Path Tree (SPT)** (có thể không duy nhất nếu có nhiều đường đi bằng nhau).
 - Multi-source tương đương thêm super source `S` nối cạnh trọng số `0` tới tập nguồn `S'`
 - Nếu có reweight cạnh (u, v, w) thành (u, v, w') thì xét các trường hợp :
-	- undirected : `dist(a, b) = min(dist(a, b), dist(a, u) + w' + dist(v, b), dist(a, v) + w' + dist(u, b))`
-	- directed : `dist(a, b) = min(dist(a, b), dist(a, u) + w' + dist(v, b))`
+    - undirected : `dist(a, b) = min(dist(a, b), dist(a, u) + w' + dist(v, b), dist(a, v) + w' + dist(u, b))`
+    - directed : `dist(a, b) = min(dist(a, b), dist(a, u) + w' + dist(v, b))`
 - Truy vấn "tìm 1 đỉnh bất kì đi đến 1 đích `t`" thường xử lý nhanh bằng cách chạy từ `t` trên **reverse graph**.
 
 ## Tính chất theo loại đồ thị
@@ -47,19 +47,19 @@
 - **K shortest distances per node**: giữ tối đa `k` dist tốt nhất mỗi node + heap toàn cục.
 - **Second shortest path**: lưu `best1`, `best2` cho mỗi đỉnh.
 - **Shortest path có ràng buộc** (state space search):
-  	- đúng `k` cạnh / không quá `k` cạnh
-  	- chẵn/lẻ số cạnh (parity)
-  	- đi qua tập đỉnh bắt buộc
-  	- có budget tài nguyên (fuel, số lần phép, coupon...)
+        - đúng `k` cạnh / không quá `k` cạnh
+        - chẵn/lẻ số cạnh (parity)
+        - đi qua tập đỉnh bắt buộc
+        - có budget tài nguyên (fuel, số lần phép, coupon...)
 - **Minimax path** (minimize max edge) và **widest path** (maximize min edge) là họ "path optimization" gần shortest path, thường giải bằng biến thể Dijkstra
 
 ## Biến thể nâng cao thường gặp trong contest
 - **Bidirectional BFS / Dijkstra**: chạy từ cả `s` và `t` để giảm không gian tìm kiếm.
 - **K shortest paths (toàn bộ path)**:
-  - Cho phép lặp đỉnh/cạnh (walk): thường dùng PQ + dist mở rộng.
+    - Cho phép lặp đỉnh/cạnh (walk): thường dùng PQ + dist mở rộng.
 - **Nhiều truy vấn trên tree**:
-  - Trọng số không đổi: preprocess LCA + dist gốc.
-  - Có update/query phức tạp: HLD + segment tree/Fenwick.
+    - Trọng số không đổi: preprocess LCA + dist gốc.
+    - Có update/query phức tạp: HLD + segment tree/Fenwick.
 
 ## Tính đúng của thuật toán (ý chính)
 - BFS đúng vì mở rộng theo lớp số cạnh tăng dần.
