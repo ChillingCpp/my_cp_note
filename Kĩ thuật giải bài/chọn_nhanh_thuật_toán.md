@@ -41,7 +41,7 @@
 
 - Tối ưu -> `min/max` hoặc chuyển sang feasibility.
 - Đếm -> frequency/prefix/combinatorics/DP count.
-- Tồn tại -> boolean check.
+- Tồn tại -> boolean check hoặc count > 0.
 - `k-th` -> order statistic hoặc binary search on answer + counting.
 - Nếu đề yêu cầu **in nghiệm cụ thể**: thêm trục `traceback` (`parent/pre/take/choice`), không chỉ tối ưu giá trị.
 
