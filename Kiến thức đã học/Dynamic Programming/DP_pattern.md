@@ -38,7 +38,7 @@ for (state in order) {
 - Pick/Skip DP: Knapsack, House Robber.
   - mỗi bước có nhiều phương án (lấy/bỏ), rồi gộp kết quả theo mục tiêu của bài.
 - Chọn điểm tách: Interval DP, Matrix Chain Multiplication.
-  - state là đoạn `dp[l][r]`, thử nhiều điểm chia `k` để lấy kết quả tốt nhất.
+  - state là đoạn `dp[l][r]` hoặc prefix `dp[i]`, thử nhiều điểm chia `k` để lấy kết quả tốt nhất.
 - Chọn trạng thái/cấu hình: Bitmask DP, TSP, Assignment DP, Digit DP, Tree DP.
   - từ mỗi cấu hình hiện tại có nhiều cách đi tiếp hợp lệ, nên phải duyệt nhánh và gộp.
 - Chọn hành động theo lượt: Game DP, Minimax.
@@ -46,7 +46,7 @@ for (state in order) {
 - Chọn thao tác chuyển đổi: Edit Distance, String transform DP.
   - mỗi state có nhiều thao tác chuyển tiếp (chèn/xóa/sửa/giữ), rồi lấy chi phí tốt nhất.
 - DP đếm có phân nhánh: đếm đường đi, đếm số cách tạo cấu hình.
-  - không chọn một nhánh tốt nhất mà cộng toàn bộ nhánh hợp lệ, nhưng bản chất vẫn là nhiều lựa chọn.
+  - không chọn một nhánh tốt nhất mà xét toàn bộ nhánh hợp lệ.
 
 ### 4. Lưu ý
 
