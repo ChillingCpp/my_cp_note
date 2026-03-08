@@ -44,8 +44,6 @@
   - Ứng dụng: đếm cặp `(i, j)` sao cho `ai*aj` là chính phương bằng cách group theo `sqf(ai)`.
 - Sieve Eratosthenes
 
-
-
 ### 3.2. Euler Phi `phi(n)`
 - Định nghĩa: số lượng `1 <= x <= n` sao cho `gcd(x, n) = 1`.
 - Công thức:
