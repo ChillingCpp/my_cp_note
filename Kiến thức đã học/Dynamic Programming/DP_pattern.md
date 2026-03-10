@@ -18,15 +18,6 @@ Phân loại theo đồ thị chuyển trạng thái:
   - `dp[state] = combine_{nxt in Next(state)}( transition_cost_or_count + dp[nxt] )`
   - `combine` có thể là `min/max/sum/or...`.
 
-```cpp
-for (state in order) {
-    init(dp[state]); // INF, -INF, 0, false... tuy AGG
-    for (nxt in Next(state)) {
-        dp[state] = combine(dp[state], value(state, nxt) + dp[nxt]);
-    }
-}
-```
-
 ### 2. Dấu hiệu nhận diện
 
 - Từ một state có nhiều nhánh chuyển tiếp.
@@ -37,16 +28,31 @@ for (state in order) {
 
 - Pick/Skip DP: Knapsack, House Robber.
   - mỗi bước có nhiều phương án (lấy/bỏ), rồi gộp kết quả theo mục tiêu của bài.
-- Chọn điểm tách: Interval DP, Matrix Chain Multiplication.
-  - state là đoạn `dp[l][r]` hoặc prefix `dp[i]`, thử nhiều điểm chia `k` để lấy kết quả tốt nhất.
+  - Công thức mẫu: `dp[i] = combine( dp[i-1], gain(i) + dp[prev(i)] )`, với `combine` là `max/min/sum`.
+- Chọn số lượng/phân phối tài nguyên: Unbounded/Bounded Knapsack, chia tài nguyên cho nhóm.
+  - nhiều cách chọn số lượng `k` cho mỗi món/nhóm để tối ưu.
+  - Công thức mẫu: `dp[i][w] = combine_{k in feasible}( dp[i-1][w - k*cost(i)] + value(i,k) )`.
+- Chọn điểm tách:  Interval DP
+  - state là đoạn `dp[l][r]`  thử nhiều điểm chia `k` có thể để lấy kết quả tốt nhất.
+  - Công thức mẫu: `dp[l][r] = combine_{k in [l,r)}( dp[l][k] + dp[k+1][r] + cost(l,r) )`.
+- Chọn số nhóm/đoạn: Partition DP theo số nhóm `k`.
+  - chọn điểm chia có ràng buộc số đoạn/nhóm.
+  - Công thức mẫu: `dp[i][g] = combine_{j<i}( dp[j][g-1] + cost(j+1,i) )`.
 - Chọn trạng thái/cấu hình: Bitmask DP, TSP, Assignment DP, Digit DP, Tree DP.
   - từ mỗi cấu hình hiện tại có nhiều cách đi tiếp hợp lệ, nên phải duyệt nhánh và gộp.
+  - Công thức mẫu: `dp[mask][i] = combine_{j in (mask \ {i})}( dp[mask^(1<<i)][j] + trans(j,i) )`.
 - Chọn hành động theo lượt: Game DP, Minimax.
   - mỗi lượt có nhiều nước đi; state gộp theo luật đối kháng (`max/min` theo người chơi).
+  - Công thức mẫu: `dp[state] = combine_{move in moves(state)}( gain(move) - dp[next(state,move)] )`.
 - Chọn thao tác chuyển đổi: Edit Distance, String transform DP.
   - mỗi state có nhiều thao tác chuyển tiếp (chèn/xóa/sửa/giữ), rồi lấy chi phí tốt nhất.
+  - Công thức mẫu: `dp[i][j] = combine( dp[i-1][j] + cost_del, dp[i][j-1] + cost_ins, dp[i-1][j-1] + cost_sub(i,j) )`.
+- Di chuyển trên lưới/đồ thị có nhiều bước hợp lệ: Grid DP, đường đi trên DAG.
+  - mỗi ô/đỉnh có nhiều hướng đi hợp lệ.
+  - Công thức mẫu: `dp[v] = combine_{u in pred(v)}( dp[u] + cost(u,v) )`.
 - DP đếm có phân nhánh: đếm đường đi, đếm số cách tạo cấu hình.
   - không chọn một nhánh tốt nhất mà xét toàn bộ nhánh hợp lệ.
+  - Công thức mẫu: `dp[state] = sum_{nxt in Next(state)} ways(state,nxt) * dp[nxt]`.
 
 ### 4. Lưu ý
 
@@ -83,12 +89,22 @@ for (state in order) {
 
 - Prefix/Suffix recurrence, Fibonacci chuẩn.
   - công thức cập nhật là cố định theo chỉ số, không phát sinh nhánh quyết định tại mỗi state.
+  - Công thức mẫu: `dp[i] = f(dp[i-1], a[i])` hoặc `dp[i] = g(dp[i-1], dp[i-2])`.
+- Recurrence tuyến tính bậc `k` cố định.
+  - số lượng chỉ số phụ thuộc là hằng số, không có nhánh lựa chọn.
+  - Công thức mẫu: `dp[i] = combine_linear( dp[i-1..i-k], coeffs )`.
 - DP mô phỏng hệ deterministic.
   - từ state hiện tại và input tương ứng, state kế tiếp được xác định duy nhất.
+  - Công thức mẫu: `state_{t+1} = next(state_t, input_t)` hoặc `dp[t+1][next(s,input_t)] = trans(dp[t][s], input_t)`.
 - DP theo thời gian với luật cập nhật cố định.
   - trạng thái ở thời điểm `t+1` suy ra trực tiếp từ `t`, không có hành động để lựa chọn.
+  - Công thức mẫu: `dp[t+1] = F(dp[t], input_t)`.
 - DP cập nhật tuần tự 1 hướng.
   - mỗi bước chỉ truyền sang một state kế tiếp theo quy tắc, nếu ra ngoài biên thì bỏ.
+  - Công thức mẫu: `dp[i+1] = g(dp[i], a[i+1])`.
+- DP tích lũy min/max cố định.
+  - chỉ lấy min/max trên chuỗi theo quy tắc cố định, không có nhánh.
+  - Công thức mẫu: `best[i] = combine(best[i-1], val[i])` với `combine` là `min/max`.
 
 ---
 
