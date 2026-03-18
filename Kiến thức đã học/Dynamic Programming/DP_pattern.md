@@ -4,18 +4,26 @@
 
 ## 0. Tiêu chí phân loại gốc
 
-Phân loại theo đồ thị chuyển trạng thái:
+### 0. Mô hình hóa
+- Xem DP như một đồ thị chuyển trạng thái có hướng:
+	- Mỗi state là một đỉnh u
+	- Mỗi transition hợp lệ là một cạnh có hướng u → v
+	- Gọi Next(u) là tập các cạnh chuyển hợp lệ đi ra từ u tới 1 hoặc nhiều đỉnh khác nhau
+	- DP luôn có 1 fixed set edges cố định, nhưng chỉ những edges hợp lệ mới được tính toán
+
+### 1. Phân loại theo đồ thị chuyển trạng thái:
 
 - Gọi `Next(state)` là tập state có thể chuyển tới từ `state`.
-- `DP có lựa chọn`: tồn tại state có nhiều nhánh hợp lệ, tức `|Next(state)| > 1`.
-- `DP không lựa chọn`: mọi state có nhiều nhất 1 nhánh hợp lệ, tức `|Next(state)| <= 1`.
+- `DP có lựa chọn`: tồn tại state có nhiều cạnh hợp lệ, tức `|Next(state)| > 1`.
+- `DP không lựa chọn`: mọi state có nhiều nhất 1 cạnh hợp lệ, tức `|Next(state)| <= 1`.
 
 ## I. DP CÓ LỰA CHỌN
 
 ### 1. Mẫu công thức
 
 - Dạng tổng quát:
-  - `dp[state] = combine_{nxt in Next(state)}( transition_cost_or_count + dp[nxt] )`
+  - `dp[u] = combine_{e ∈ Trans(u)} ( cost(e) ⊕ dp[to(e)] )
+`
   - `combine` có thể là `min/max/sum/or...`.
 
 ### 2. Dấu hiệu nhận diện
@@ -108,7 +116,56 @@ for (state in order) {
 
 ---
 
-## III. Ranh giới dễ nhầm
+## III. DP TRẠNG THÁI HỮU HẠN (FINITE-STATE DP)
+
+### 1. Ý tưởng cốt lõi
+
+- Mỗi phần tử chỉ có `k` trạng thái hữu hạn (thường k nhỏ).
+- Mỗi state mô tả cấu hình cục bộ của phần tử: màu, bật/tắt, kiểu đặt, trạng thái automaton, ...
+- DP lưu kết quả cho từng state của phần tử hiện tại: `dp[states][k]`.
+- DP này vừa có thể là không có lựa chọn, vừa có thể là có lựa chọn.
+
+### 2. Mô hình tổng quát
+
+- 1 chiều (mảng/chuỗi):
+  - `dp[i][s]` = giá trị tốt nhất / số cách khi xử lý đến phần tử `i` và phần tử `i` ở trạng thái `s`.
+  - Chuyển tiếp:
+    - `dp[i][s] = combine_{p ∈ Prev(s)}( dp[i-1][p] ⊕ cost(i,s,p) )`
+  - `Prev(s)` là tập state trước đó có thể chuyển sang `s`.
+- 2 chiều (lưới):
+  - Nếu phụ thuộc cục bộ (trên, trái): `dp[i][j][s]` với chuyển tiếp từ `dp[i-1][j][*]`, `dp[i][j-1][*]`.
+  - Nếu phụ thuộc cả hàng/cột: dùng state theo hàng/bitmask: `dp[row][mask]`.
+- Đồ thị / cây:
+  - Cây: `dp[u][s]` = gộp từ các con `v` qua các state tương thích.
+  - Đồ thị có chu trình: cần thứ tự topo (DAG) hoặc thêm trục thời gian/bước đi để tránh vòng lặp.
+
+### 3. Nhận diện nhanh
+
+- Mỗi vị trí/đỉnh có số trạng thái nhỏ và cố định.
+- Ràng buộc chủ yếu là giữa các phần tử kề nhau (adjacent) hoặc theo cạnh.
+- Công thức có vòng lặp qua state trước/sau, thường là `O(k^2)` mỗi phần tử.
+	- Partition DP
+
+### 4. Ví dụ điển hình
+
+- Tô màu dãy/đồ thị với `k` màu và ràng buộc kề nhau.
+  - `dp[i][s] = min_{p != s}( dp[i-1][p] ) + cost(i,s)`
+- Đếm số chuỗi độ dài `n` tránh một mẫu cấm bằng automaton (DFA).
+  - `dp[i+1][next(s,c)] += dp[i][s]`
+- Bài đặt trạng thái nhỏ theo ô lưới (đặt gạch, chọn hướng, ...).
+- Tree DP với `k` trạng thái mỗi đỉnh (chọn/không chọn, màu, trạng thái bảo vệ, ...).
+
+
+### 5. Lưu ý tối ưu
+
+- Độ phức tạp thường là `O(f(x))`
+- Nếu `Prev[s]` nhỏ hằng số → `O(f(x)*k)`.
+- Nếu dùng `min/max` trên tất cả state trước đó, có thể dùng prefix/suffix best để tối ưu.
+- Với đếm số cách, chú ý modulo.
+
+---
+
+## IV. Ranh giới dễ nhầm
 
 | Bài toán | Nhóm | Lý do |
 |---|---|---|
@@ -123,7 +180,7 @@ for (state in order) {
 | Game DP | Có lựa chọn | Nhiều nước đi ở mỗi lượt |
 
 
-## IV. Checklist phân loại nhanh (30 giây)
+## V. Checklist phân loại nhanh (30 giây)
 
 1. Viết `Next(state)` cho bài toán.
 2. Có state nào mà `|Next(state)| > 1` không?

@@ -31,34 +31,16 @@
 - **22h30 – 23h00**: Pattern / ghi nhớ / hệ thống
 - **23h00 – 23h30**: Thả não – ngủ
 
----
-
-# PHẦN A – GIAI ĐOẠN HỌC CP CỐT LÕI (27/1 → 22/2)
-
-> **Thứ tự CP được cố định lại đúng như bạn yêu cầu:**  
-> **Greedy → Tree → Graph → Segtree/PBS → DP**  
-> (hoàn toàn tôn trọng logic học của bạn)
-
----
-
-## CỤM 5 – Tập trung chủ đề (23/2 → 4/3)
-
-- **23/2**: Digit DP
-- **24/2**: bitmask dp
-- **25/2**: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó 
-- **26/2**: học thuộc lòng [[how_to_solve_it]] và những đường dẫn trong đó
-- **27/2**: DFS/BFS từ cơ bản đến nâng cao
-- **28/2**: Dijkstra state space search
-- **29/2**: Đọc lại toàn bộ thuật toán
-- **1/3**:  Đọc lại toàn bộ thuật toán
-- **2/3**: Luyện đề dạng thu thập chủ đề
-- **3/3**: Luyện đề dạng thu thập chủ đề
-
----
 
 # PHẦN B – DUY TRÌ CP + TĂNG V-ACT (5/3 → 5/4)
 
 > Không học topic CP mới. Chỉ củng cố + pattern.
+- học topic :
+- HLD
+- 2D segment tree compress
+- ODT
+- DP + DP optimization
+- Graph : solve problem 
 
 ## Mỗi tuần:
 

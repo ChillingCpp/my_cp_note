@@ -38,7 +38,22 @@
 - Lợi ích:
     - giảm bộ nhớ `O(n*m)` -> `O(m)`.
 
-### 2) Prefix/Suffix Min-Max
+### 2) Swap Label (đổi nhãn state / đổi chiều)
+- Dạng:
+    - công thức có nhiều biến trạng thái, có thể đổi vai trò cho nhau.
+    - một biến có miền rất lớn, biến còn lại nhỏ hơn.
+- Ý tưởng:
+    - chọn biến có miền nhỏ hơn làm chỉ số DP.
+    - đổi cách nhìn: tối ưu theo "số coin" thay vì "weight", hoặc theo "value" thay vì "weight".
+- Ví dụ mẫu:
+    - Knapsack: nếu `W` rất lớn nhưng số coin dùng được nhỏ, đặt `dp[k] = min weight đạt được bằng k coin`, rồi tìm `k` nhỏ nhất với `dp[k] >= W` (hoặc `== W`).
+    - knapsack: nếu `W` lớn nhưng tổng `Value` nhỏ, dùng `dp[val] = min weight` thay cho `dp[weight] = max value`.
+- Lợi ích:
+    - giảm số state, tránh chạy theo chiều quá lớn.
+- Lưu ý:
+    - cần chuyển lại kết quả đúng mục tiêu (min coin, max value, v.v.).
+
+### 3) Prefix/Suffix Min-Max
 - Dạng:
     - `dp[i] = min_{j < i}(f(j) + g(i))`
 - Ý tưởng:
@@ -46,7 +61,7 @@
 - Lợi ích:
     - thường `O(n^2)` -> `O(n)`.
 
-### 3) DP tối ưu hóa bằng các cấu trúc dữ liệu
+### 4) DP tối ưu hóa bằng các cấu trúc dữ liệu
 
 #### a) Deque (monotonic queue)
 - Dạng:
@@ -112,7 +127,7 @@
     - `dp[i] = best(dp[j])` với `pref[j] >= X` hoặc `a[j] <= a[i] - K`.
     - chọn `j` gần nhất bên trái/phải thỏa ràng buộc theo giá trị đã sắp xếp.
 
-### 4) Binary Search + DP Check
+### 5) Binary Search + DP Check
 - Dạng:
     - tối ưu đáp án toàn cục nhưng có hàm check đơn điệu.
 - Ý tưởng:
@@ -157,6 +172,7 @@
 | Transition tuyến tính theo nhiều bước lớn (`n`, `k-th step`) | Matrix Multiplication (Matrix Exponentiation) |
 | Ứng viên động, cần top nhanh | Priority Queue / Multiset |
 | State thưa | Hash map |
+| Đổi nhãn state/đổi chiều (miền lớn -> miền nhỏ) | Swap Label |
 | Boolean knapsack/subset | Bitset |
 | Tìm `j` trước đó hoặc điểm tách transition theo điều kiện đơn điệu | Binary Search (`lower_bound` / `upper_bound`) |
 | Feasibility đơn điệu theo đáp án | Binary Search + DP |

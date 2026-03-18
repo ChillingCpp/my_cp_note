@@ -10,6 +10,12 @@
 - Mọi bài toán đều quy về 5 hàm đại số: `idn`, `idl`, `op`, `tf`, `opl`.
 - Khi đổi bài, gần như chỉ sửa `Node/Lazy` và 5 hàm trên. Khung `lazyseg` giữ nguyên.
 
+## Điều kiện để lazy segment tree áp dụng được
+- `tf(node, lazy)` phải tính được chỉ từ aggregate của `node`, không cần biết phân bố giá trị bên trong đoạn.
+- Lazy tag phải có phép compose đóng: `opl` phải tồn tại sao cho `tf(tf(x, a), b) = tf(x, opl(a, b))`.
+- Update không nên phụ thuộc vào giá trị cụ thể từng phần tử, phân nhánh theo value, tần suất value, hay lịch sử số lần update.
+- Nếu vi phạm các điều kiện trên, thường phải lưu histogram rất nặng, hoặc chuyển hướng sang ODT / cấu trúc khác.
+
 ## ý nghĩa của từng hàm lõi
 - `Node idn()`
     - Trả phần tử trung tính của `Node`.
