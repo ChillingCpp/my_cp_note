@@ -1,6 +1,6 @@
 # Prefix Sum 2D
 
-[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms)
+[source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Data_Structures/DiamondSum.cpp)
 
 ## Mục tiêu
 - Tính nhanh tổng trên hình chữ nhật con của ma trận tĩnh.
@@ -19,6 +19,16 @@ long long query(int x1, int y1, int x2, int y2) {
     return pref[x2][y2] - pref[x1 - 1][y2] - pref[x2][y1 - 1] + pref[x1 - 1][y1 - 1];
 }
 ```
+
+## Hình thoi Manhattan (|x-x0| + |y-y0| <= k) : hiếm có
+Ý tưởng: xoay 45 độ bằng biến đổi `u = x + y`, `v = x - y + m + 1` để hình thoi thành hình chữ nhật trong không gian `(u, v)`.
+
+### Build trên lưới (u, v)
+Giả sử `x in [1..n]`, `y in [1..m]`. Khi đó:
+- `u` nằm trong `[2 .. n + m]`
+- `v` nằm trong `[2 .. n + m]`
+
+
 
 ## Điều kiện triển khai
 - Dùng mảng `1-based` hoặc thêm hàng/cột `0` bằng `0` để tránh if biên.
