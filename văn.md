@@ -26,8 +26,10 @@ Nội dung thơ Bác Hồ : Yêu + tâm hồn
 - Tâm hồn thanh thản, ung dung của người chiến sĩ. Tâm hồn nghệ sĩ tinh tế, biết rung động sâu sắc trước vẻ đẹp bình dị của thiên nhiên
 
 Đoạn văn 200 chữ về thơ
+
 MĐ:
 - Hồ Chí Minh (1890 – 1969) là nhà văn hóa lớn, nhà tư tưởng kiệt xuất của dân tộc với nhiều tác phẩm viết về đất nước, con người. Đoạn thơ … được sáng tác lúc … và là một trong những đoạn thơ giàu cảm xúc về Bác.
+
 TĐ
 - Thông tin văn bản : ( ghi ngắn gọn, không cần đầy đủ )
 - Đoạn thơ trên Ca ngợi …. Khắc họa vẻ đẹp giản dị, cao đẹp…...tấm lòng…. Tình yêu thương dành cho con người, thể hiện tâm hồn thanh cao, luôn hướng về cái đẹp.
@@ -39,5 +41,6 @@ TĐ
 
 Nghệ thuật :
 Bài thơ ngắn gọn, cô đọng, hàm súc, gieo vần (chân, lưng ). Biện pháp tu từ so sánh, ẩn dụ…. ngôn từ giản dị, kết hợp hài hòa phong cách cổ điển và hiện đại, giàu sức gợi, tạo sức hấp dẫn cho bài thơ ( đoạn thơ ). 
+
 KĐ:
 Hồ Chí Minh có lối hành văn súc tích, giản dị mà sâu sắc. Những tác phẩm của người luôn mang đến một cái nhìn thấm thía về con người và tổ Quốc. Đọc ( tác phẩm ) khiến ta thêm trân trọng giá trị tư tưởng, nghệ thuật và nhân cách lớn của Người.
