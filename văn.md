@@ -12,14 +12,15 @@
  
 - Dấu hiệu nhận biết thể thơ 
     - thất ngôn bát cú :
-        + có 8 câu, mỗi câu 7 chữ
+        + cấu trúc có 8 câu, mỗi câu 7 chữ, bố cục có 4 phần ( Đề - thực - luận - kết )
+        + có cặp câu đối : câu 3 - 4 và câu 5 - 6 đối với nhau.
         + gieo vần bằng ở câu 1,2,4,6,8 ( ghi cả các chữ có vần ra )
     - thất ngôn tứ tuyệt:
         + có 4 câu, mỗi câu 7 chữ
         + gieo vần bằng ở câu 1,2,4 ( ghi cả các chữ có vần ra )
     - Thơ tự do
         + số chữ trên mỗi dòng thơ không bằng nhau
-        + không tuân theo quy tắc vần điệu, niêm luật chặt chẽ.
+        + không bắt buộc gieo vần, có thể có hoặc không gieo vần, nhịp điệu tự nhiên
 
 - Nội dung thơ Bác Hồ : Yêu + tâm hồn
     - Tình yêu thiên nhiên, yêu nước, yêu con người sâu sắc
