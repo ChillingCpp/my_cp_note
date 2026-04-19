@@ -1,1 +1,63 @@
+- Quan điểm người viết :
+    - Trình bày thông tin về đối tượng một cách khách quan
+    - Thể hiện thái độ đối với đối tượng được đề cập
+- nội dung chi tiết ~ thông tin chính
+    - các thông tin chi tiết bổ sung cho nhau, cùng làm rõ thông tin chính
+    - triển khai các khía cạnh/phương diện khác nhau của thông tin chính dể làm nổi bật thông tin chính, giúp người đọc có cái nhìn đầy đủ hơn về thông tin chính
+- Phương thức biểu đạt :
+    - Thuyết minh + .... ( tự sự, miêu tả, biểu cảm, nghị luận )
+    - mục đích : Để truyền tải thông tin thêm sinh động hiệu quả.
+- Nhan đề : khái quát thông tin chính của văn bản.
+- Sa pô :
+    - Giới thiệu khái quát nội dung của văn bản
+    - tạo sự chú ý
+    - giúp người đọc định hướng nhận biết nội dung văn bản
+- Đề mục :
+    - cung cấp thông tin chính của từng phần trong văn bản
+    - tạo bố cục mạch lạc cho văn bản
+    - giúp người đọc dễ tiếp nhận văn bản.
+- Phương tiện biểu đạt thông tin :
+    - Phương tiện ngôn ngữ + phi ngôn ngữ ( hình ảnh, số liệu, biểu đồ, sơ đồ...)-
+    - tác dụng : biểu đạt nội dung thêm sinh động, hiệu quả.
+- bố cục văn bản thông tin :
+    1. Trật tự không gian
+    2. Trật tự thòi gian
+    3. Mức độ quan trọng của thông tin
+    4. Trật tự logic : so sánh và đối chiếu, phân loại đối tượng, liệt kê, quan hệ nhân - quả, vấn đề và cách giải quyết
+- Mạch lạc của vbtt :
+    - Các phần, đoạn, câu trong văn bản đều cùng bàn về một chủ đề
+    - Các phần, đoạn, câu trong văn bản được sắp xếp theo trình tự, bố cục hợp lí
+- Cách trình bày dữ liệu, thông tin văn bản
+    - Ý chính và nội dung chi tiết
+    - trật tự thời gian
+    - cấu trúc nguyên nhân - kết quả
+    - cáu trúc so sánh - dối chiếu
+    - cấu trúc vấn đề - cách giải quyết
+- Các yếu tố hình thức :
+    - nhan đề;
+    - kí hiệu đánh dấu các phần
+    - chú thích hình ảnh
+    - bảng số liệu
+    - biểu đồ, sơ đồ, lược đồ
+    - mô hình, bản đồ...
 
+- Công thức cho việc giải thích, phân tích tác dụng... :
+    - gọi tên ....
+    - nêu tác dụng
+
+- Tác dụng biện pháp tu từ :
+    - Nội dung : nhấn mạnh + góp phần thể hiện thái độ/ tình cảm....
+    - Nghệ thuật : tăng tính sinh động, cụ thể, gợi hình gợi cảm
+- Phân tích Tác dụng phương tiện phi ngôn ngữ, nhan đề :
+    - Nội dung : giúp người dễ hiểu, dễ hình dung, tạo ấn tượng ...
+    - Nghệ thuật : Giúp cho các ý tưởng và thông tin trở nên sinh động, hấp dẫn hơn.
+- Giải thích tác dụng bố cục, các yếu tố hình thức, cách sử dụng và trình bày dữ liệu :
+    - Nội dung : giúp người đọc hình dung rõ nét hơn về ....
+    - Nghệ thuật : tăng tính trực quan, sinh động, hỗ trợ làm rõ thêm cho nội dung thông tin được trình bày trong văn bản
+- Đánh giá hiệu quả việc sử dụng các yếu tố hình thức :
+    - Nhan đề, đề mục :
+        - làm rõ bố cục văn bản
+        - góp phần tóm tắt và làm nổi bật nội dung chính
+        - giúp người đọc có cơ sở định hướng tiếp nhận nội dung của văn bản
+    -  hình ảnh
+        - minh họa trực quan cho thông tin, làm cho thông tin của văn bản trở nên cụ thể, sinh động 
