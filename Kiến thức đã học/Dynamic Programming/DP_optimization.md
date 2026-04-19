@@ -1,4 +1,4 @@
-﻿# DP Optimization
+# DP Optimization
 
 [source code](https://github.com/ChillingCpp/DSA_CP/tree/main/Algorithms/dp)
 
