@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lịch học DGNL.md",
+                "file": "Welcome.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lịch học DGNL"
+              "title": "Welcome"
             }
           }
         ]
@@ -172,10 +172,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "76ac6b1ea3dbd05c",
+  "active": "a8ae18245552864b",
   "lastOpenFiles": [
-    "Lịch học cho contest sắp tới.md",
     "Lịch học DGNL.md",
+    "Lịch học cho contest sắp tới.md",
     "Kiến thức đã học/Dynamic Programming/DP_optimization.md",
     "chọn_nhanh_thuật_toán.md",
     "how_to_solve_it.md",
