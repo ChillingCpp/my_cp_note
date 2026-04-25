@@ -3,14 +3,14 @@
 
 ## **T2 – T6 (tối)**
 
-| Thời gian   | Thứ 2        | Thứ 3              | Thứ 4                            | Thứ 5     | Thứ 6                  |
-| ----------- | ------------ | ------------------ | -------------------------------- | --------- | ---------------------- |
-| 18h30–19h45 | Toán DGNL    | Toán DGNL          | Toán DGNL                        | Toán DGNL | Toán DGNL              |
-| 19h45–20h00 | nghỉ         | nghỉ               | nghỉ                             | nghỉ      | nghỉ                   |
-| 20h00–21h15 | Logic        | Tiếng Việt         | Logic                            | Tiếng Anh | Logic                  |
-| 21h15–21h30 | nghỉ         | nghỉ               | nghỉ                             | nghỉ      | nghỉ                   |
-| 21h30–22h30 | Toán thực tế | Logic              | Toán thực tế                     | Logic     | Toán thực tế           |
-| 22h30–23h30 | Tin học      | Vật lí (lý thuyết) | **PTSL + SLKH (luyện đề nhanh)** | Vật lí    | **Anh + Việt (mixed)** |
+| Thời gian   | Thứ 2        | Thứ 3              | Thứ 4                            | Thứ 5     | Thứ 6                          |
+| ----------- | ------------ | ------------------ | -------------------------------- | --------- | ------------------------------ |
+| 18h30–19h45 | Toán DGNL    | Toán DGNL          | Toán DGNL                        | Toán DGNL | Toán DGNL                      |
+| 19h45–20h00 | nghỉ         | nghỉ               | nghỉ                             | nghỉ      | nghỉ                           |
+| 20h00–21h15 | Logic        | Tiếng Việt         | Logic                            | Tiếng Anh | Logic                          |
+| 21h15–21h30 | nghỉ         | nghỉ               | nghỉ                             | nghỉ      | nghỉ                           |
+| 21h30–22h30 | Toán thực tế | Logic              | Toán thực tế                     | Logic     | Toán thực tế                   |
+| 22h30–23h30 | Tin học      | Vật lí (lý thuyết) | **PTSL + SLKH (luyện đề nhanh)** | Vật lí    | **Anh ( 30p ) + Việt ( 30p )** |
 
 ## **T7**
 
