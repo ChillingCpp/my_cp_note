@@ -3,13 +3,13 @@
 # **PHASE 2 (21/04 → 10/05)**
 
 ## **T2 – T6**
-
-|Thời gian|Thứ 2|Thứ 3|Thứ 4|Thứ 5|Thứ 6|
-|---|---|---|---|---|---|
-|18h30–20h30|Toán DGNL|Logic|Toán thực tế|Toán DGNL|Logic|
-|20h30–21h00|Nghỉ|Nghỉ|Nghỉ|Nghỉ|Nghỉ|
-|21h00–22h30|Tin học|Tiếng Việt|Vật lí|Tiếng Anh|Vật lí / Việt
-
+| Thời gian   | Thứ 2     | Thứ 3      | Thứ 4        | Thứ 5      | Thứ 6     |
+| ----------- | --------- | ---------- | ------------ | ---------- | --------- |
+| 18h30–20h30 | Toán DGNL | Logic      | Toán thực tế | Toán DGNL  | Logic     |
+| 20h30–20h45 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
+| 20h45–22h15 | Tin học   | Vật lí     | Tin học      | Vật lí     | Tin học   |
+| 22h15–22h30 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
+| 22h30–23h30 | Tiếng Anh | Tiếng Việt | Tiếng Anh    | Tiếng Việt | Tiếng Anh |
 
 ## **T7 – LỊCH CHI TIẾT**
 
