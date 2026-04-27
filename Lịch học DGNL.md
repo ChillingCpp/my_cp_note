@@ -1,52 +1,14 @@
 
-# **PHASE 1 (05/04 → 20/04) – LỊCH TỐI ƯU CUỐI CÙNG**
-
-## **T2 – T6 (tối)**
-
-| Thời gian   | Thứ 2        | Thứ 3              | Thứ 4                            | Thứ 5     | Thứ 6                          |
-| ----------- | ------------ | ------------------ | -------------------------------- | --------- | ------------------------------ |
-| 18h30–19h45 | Toán DGNL    | Toán DGNL          | Toán DGNL                        | Toán DGNL | Toán DGNL                      |
-| 19h45–20h00 | nghỉ         | nghỉ               | nghỉ                             | nghỉ      | nghỉ                           |
-| 20h00–21h15 | Logic        | Tiếng Việt         | Logic                            | Tiếng Anh | Logic                          |
-| 21h15–21h30 | nghỉ         | nghỉ               | nghỉ                             | nghỉ      | nghỉ                           |
-| 21h30–22h30 | Toán thực tế | Logic              | Toán thực tế                     | Logic     | Toán thực tế                   |
-| 22h30–23h30 | Tin học      | Vật lí (lý thuyết) | **PTSL + SLKH (luyện đề nhanh)** | Vật lí    | **Anh ( 30p ) + Việt ( 30p )** |
-
-## **T7**
-
-
-| Thời gian | Nội dung                    | Thời gian   | Nội dung            |
-| --------- | --------------------------- | ----------- | ------------------- |
-| 8h30–10h  | Full đề DGNL                | 18h30–19h45 | Toán DGNL (bài khó) |
-| 10h–10h15 | nghỉ                        | 20h00–21h15 | Logic               |
-| 10h15–12h | Chữa (ưu tiên Toán + Logic) | 21h30–22h30 | Toán thực tế        |
-| 12h–13h   | Ghi lỗi + pattern           | 22h30–23h30 | Fix lỗi tuần        |
-
-## **CN**
-
-
-| Thời gian | Nội dung                    | Thời gian   | Nội dung                  |
-| --------- | --------------------------- | ----------- | ------------------------- |
-| 8h30–10h  | Full đề DGNL                | 18h30–19h45 | Toán thực tế              |
-| 10h–10h15 | nghỉ                        | 20h00–21h15 | Logic                     |
-| 10h15–12h | Chữa (ưu tiên Toán + Logic) | 21h30–22h30 | **Anh + Việt (luyện đề)** |
-| 12h–13h   | Ghi lỗi + pattern           | 22h30–23h30 | Tin học / nhẹ             |
-
----
 
 # **PHASE 2 (21/04 → 10/05)**
 
 ## **T2 – T6**
 
-|Thời gian|Nội dung|
-|---|---|
-|18h30–19h45|Mini test Toán|
-|19h45–20h00|nghỉ|
-|20h00–21h15|Logic|
-|21h15–21h30|nghỉ|
-|21h30–22h30|Toán thực tế|
-|22h30–23h30|**Luân phiên: Anh – Việt – PTSL/SLKH – Tin – Lý**|
-
+|Thời gian|Thứ 2|Thứ 3|Thứ 4|Thứ 5|Thứ 6|
+|---|---|---|---|---|---|
+|18h30–20h30|Toán DGNL|Logic|Toán thực tế|Toán DGNL|Logic|
+|20h30–21h00|Nghỉ|Nghỉ|Nghỉ|Nghỉ|Nghỉ|
+|21h00–22h30|Tin học|Tiếng Việt|Vật lí|Tiếng Anh|Vật lí / Việt
 
 
 ## **T7 – LỊCH CHI TIẾT**
