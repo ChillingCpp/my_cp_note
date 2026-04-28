@@ -5,11 +5,12 @@
 ## **T2 – T6**
 | Thời gian   | Thứ 2     | Thứ 3      | Thứ 4        | Thứ 5      | Thứ 6     |
 | ----------- | --------- | ---------- | ------------ | ---------- | --------- |
-| 18h30–20h30 | Toán DGNL | Logic      | Toán thực tế | Toán DGNL  | Logic     |
-| 20h30–20h45 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
-| 20h45–22h15 | Tin học   | Vật lí     | Tin học      | Vật lí     | Tin học   |
-| 22h15–22h30 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
-| 22h30–23h30 | Tiếng Anh | Tiếng Việt | Tiếng Anh    | Tiếng Việt | Tiếng Anh |
+| 18h30–19h30 | Tiếng Anh | Tiếng Việt | Tiếng Anh    | Tiếng Việt | Tiếng Anh |
+| 19h30–19h45 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
+| 19h45–21h45 | Toán DGNL | Logic      | Toán thực tế | Toán DGNL  | Logic     |
+| 21h45–22h00 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
+| 22h00–23h30 | Tin học   | Vật lí     | Tin học      | Vật lí     | Tin học   |
+
 
 ## **T7, CN– LỊCH CHI TIẾT**
 | Thời gian   | Nội dung T7    | Nội dung CN    |
