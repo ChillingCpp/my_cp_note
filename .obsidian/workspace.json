@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lịch học DGNL.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lịch học DGNL"
+              "title": "Untitled"
             }
           }
         ]
@@ -174,8 +174,10 @@
   },
   "active": "76ac6b1ea3dbd05c",
   "lastOpenFiles": [
-    "Welcome.md",
+    "math.md",
     "Lịch học DGNL.md",
+    "Untitled.md",
+    "Welcome.md",
     "Lịch học cho contest sắp tới.md",
     "Kiến thức đã học/Dynamic Programming/DP_optimization.md",
     "chọn_nhanh_thuật_toán.md",
@@ -200,8 +202,6 @@
     "Kiến thức đã học/Sqrt Decomposition/Tư tưởng.md",
     "Kiến thức đã học/Math/Basic Number Theory.md",
     "Kiến thức đã học/Query, Range Query",
-    "Kiến thức đã học/Greedy Technique/Relative Topics.md",
-    "Kiến thức đã học/Math/Harmonic Number.md",
     "Competitive programming roadmap.pdf",
     "Bìa",
     "Bài tập",
