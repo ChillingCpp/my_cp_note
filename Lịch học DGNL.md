@@ -3,41 +3,42 @@
 # **PHASE 2 (21/04 → 10/05)**
 
 ## **T2 – T6**
-| Thời gian   | Thứ 2     | Thứ 3      | Thứ 4        | Thứ 5      | Thứ 6     |
-| ----------- | --------- | ---------- | ------------ | ---------- | --------- |
-| 18h30–19h30 | Tiếng Anh | Tiếng Việt | Tiếng Anh    | Tiếng Việt | Tiếng Anh |
-| 19h30–19h45 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
-| 19h45–21h45 | Toán DGNL | Logic      | Toán thực tế | Toán DGNL  | Logic     |
-| 21h45–22h00 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
-| 22h00–23h30 | Tin học   | Vật lí     | Vật lí       | Vật lí     | Tin học   |
+| Thời gian   | Thứ 2     | Thứ 3      | Thứ 4     | Thứ 5      | Thứ 6     |
+| ----------- | --------- | ---------- | --------- | ---------- | --------- |
+| 17h30–18h30 | Tiếng Anh | Tiếng Việt | Tiếng Anh | Tiếng Việt | Tiếng Anh |
+| 18h30–18h45 | Nghỉ      | Nghỉ       | Nghỉ      | Nghỉ       | Nghỉ      |
+| 18h45–20h45 | SLKH      | Logic      | SLKH      | Logic      | SLKH      |
+| 20h45–21h00 | Nghỉ      | Nghỉ       | Nghỉ      | Nghỉ       | Nghỉ      |
+| 21h00–22h30 | Tin học   | Vật lí     | Vật lí    | Vật lí     | Tin học   |
 
 
 ## **T7, CN– LỊCH CHI TIẾT**
 | Thời gian   | Nội dung T7    | Nội dung CN    |
 | ----------- | -------------- | -------------- |
-| 08h30–10h30 | Toán DGNL      | Toán thực tế   |
+| 08h30–10h30 | Logic          | SLKH           |
 | 10h30–10h45 | Nghỉ           | Nghỉ           |
 | 10h45–12h15 | Vật lí         | Tin học        |
-| 12h15–13h00 | Tiếng Anh      | Tiếng Việt     |
+| 12h15–13h00 | Tiếng Việt     | Tiếng Anh      |
 | 13h00–18h30 | Nghỉ hoàn toàn | Nghỉ hoàn toàn |
-| 18h30–20h30 | Logic          | Toán DGNL      |
-| 20h30–20h45 | Nghỉ           | Nghỉ           |
-| 20h45–22h15 | Tin học        | Vật lí         |
-| 22h15–22h30 | Nghỉ           | Nghỉ           |
-| 22h30–23h30 | Tiếng Việt     | Tiếng Anh      |
+| 17h30–18h30 | Tiếng Việt     | Tiếng Anh      |
+| 18h30–18h45 | Nghỉ           | Nghỉ           |
+| 18h45–20h45 | Logic          | SLKH           |
+| 20h45–21h00 | Nghỉ           | Nghỉ           |
+| 21h00–22h30 | Vật lí         | Tin học        |
+
 
 # **PHASE 3 (11/05 → 24/05)**
 
 ## **T2 – T6**
 
-|Thời gian|Nội dung|
-|---|---|
-|18h30–20h00|Section Toán / Anh-Việt|
-|20h00–20h15|nghỉ|
-|20h15–21h30|Section Logic + PTSL|
-|21h30–21h45|nghỉ|
-|21h45–22h45|Chữa lỗi|
-|22h45–23h30|Ôn lỗi|
+| Thời gian   | Nội dung                |
+| ----------- | ----------------------- |
+| 18h30–20h00 | Section Toán / Anh-Việt |
+| 20h00–20h15 | nghỉ                    |
+| 20h15–21h30 | Section Logic + PTSL    |
+| 21h30–21h45 | nghỉ                    |
+| 21h45–22h45 | Chữa lỗi                |
+| 22h45–23h30 | Ôn lỗi                  |
 
 ## **T7**
 
