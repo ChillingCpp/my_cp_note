@@ -9,7 +9,7 @@
 | 19h30–19h45 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
 | 19h45–21h45 | Toán DGNL | Logic      | Toán thực tế | Toán DGNL  | Logic     |
 | 21h45–22h00 | Nghỉ      | Nghỉ       | Nghỉ         | Nghỉ       | Nghỉ      |
-| 22h00–23h30 | Tin học   | Vật lí     | Tin học      | Vật lí     | Tin học   |
+| 22h00–23h30 | Tin học   | Vật lí     | Vật lí       | Vật lí     | Tin học   |
 
 
 ## **T7, CN– LỊCH CHI TIẾT**
