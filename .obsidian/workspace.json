@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kiến thức đã học/Data_structure/Non-STL/Tree/Binary lifting LCA and jump.md",
+                "file": "Lịch học DGNL.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Binary lifting LCA and jump"
+              "title": "Outline of Lịch học DGNL"
             }
           }
         ],
@@ -156,8 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
