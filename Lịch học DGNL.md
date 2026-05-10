@@ -13,18 +13,18 @@
 
 
 ## **T7, CN– LỊCH CHI TIẾT**
-| Thời gian   | Nội dung T7    | Nội dung CN                    |
-| ----------- | -------------- | ------------------------------ |
-| 08h30–10h30 | Logic          | Tiếng Anh + Tiếng Việt (1 - 1) |
-| 10h30–10h45 | Nghỉ           | Nghỉ                           |
-| 10h45–12h15 | Vật lí         | Tin học                        |
-| 12h15–13h00 | Tiếng Việt     | Tiếng Anh                      |
-| 13h00–18h30 | Nghỉ hoàn toàn | Nghỉ hoàn toàn                 |
-| 17h30–18h30 | Tiếng Việt     | Tiếng Anh + Tiếng Việt (1 - 1) |
-| 18h30–18h45 | Nghỉ           | Nghỉ                           |
-| 18h45–20h45 | Logic          | Vật lí                         |
-| 20h45–21h00 | Nghỉ           | Nghỉ                           |
-| 21h00–22h30 | Vật lí         | Tin học                        |
+| Thời gian   | Nội dung T7    | Nội dung CN    |
+| ----------- | -------------- | -------------- |
+| 08h30–10h30 | Logic          | Tiếng Anh      |
+| 10h30–10h45 | Nghỉ           | Nghỉ           |
+| 10h45–12h15 | Vật lí         | Tin học        |
+| 12h15–13h00 | Tiếng Việt     | Tiếng Anh      |
+| 13h00–18h30 | Nghỉ hoàn toàn | Nghỉ hoàn toàn |
+| 17h30–18h30 | Tiếng Việt     | Tiếng Anh      |
+| 18h30–18h45 | Nghỉ           | Nghỉ           |
+| 18h45–20h45 | Logic          | Vật lí         |
+| 20h45–21h00 | Nghỉ           | Nghỉ           |
+| 21h00–22h30 | Vật lí         | Tin học        |
 
 
 # **PHASE 3 (11/05 → 24/05)**
