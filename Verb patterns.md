@@ -47,13 +47,13 @@
 
 ## 1. Mang ý:
 
-- trải nghiệm
+- trải nghiệm / tưởng tượng
 - hoạt động
 - cảm xúc
 - duy trì
 - tránh né
 - hoàn thành
-- đánh giá
+- đánh giá/ cân nhắc/ xem xét
 
 → thường dùng **V-ing**
 
