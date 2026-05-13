@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lịch học DGNL.md",
+                "file": "Verb patterns.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lịch học DGNL"
+              "title": "Verb patterns"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lịch học DGNL.md",
+                "file": "Verb patterns.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Lịch học DGNL"
+              "title": "Outline of Verb patterns"
             }
           }
         ],
@@ -173,9 +173,9 @@
   },
   "active": "76ac6b1ea3dbd05c",
   "lastOpenFiles": [
-    "math.md",
-    "Lịch học DGNL.md",
     "Pattern recognize.png",
+    "Lịch học DGNL.md",
+    "math.md",
     "Verb patterns.md",
     "vbtt.md",
     "vbnl.md",
