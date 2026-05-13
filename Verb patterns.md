@@ -53,7 +53,7 @@
 - duy trì
 - tránh né
 - hoàn thành
-- đánh giá/ cân nhắc/ xem xét
+- cân nhắc/ xem xét / dánh giá
 
 → thường dùng **V-ing**
 
@@ -112,6 +112,7 @@ Ví dụ dạng:
 - see him run
 
 ---
+# Adjective + to V : mục đích, đánh giá, kết luận, nhận xét
 
 # Quy tắc cực quan trọng
 
