@@ -9,6 +9,8 @@
 - kế hoạch
 - quyết định
 - nỗ lực
+- đặc điểm
+- thành tựu
 
 → thường dùng **to V**
 
