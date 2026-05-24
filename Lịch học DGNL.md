@@ -13,20 +13,29 @@
 
 
 ## **T7, CN– LỊCH CHI TIẾT**
-| Thời gian   | Nội dung T7    | Nội dung CN    |
-| ----------- | -------------- | -------------- |
-| 08h30–10h30 | Logic          | Tiếng Anh      |
-| 10h30–10h45 | Nghỉ           | Nghỉ           |
-| 10h45–12h15 | Vật lí         | Tin học        |
-| 12h15–13h00 | Tiếng Việt     | Tiếng Anh      |
-| 13h00–18h30 | Nghỉ hoàn toàn | Nghỉ hoàn toàn |
-| 17h30–18h30 | Tiếng Việt     | Tiếng Anh      |
-| 18h30–18h45 | Nghỉ           | Nghỉ           |
-| 18h45–20h45 | Logic          | Vật lí         |
-| 20h45–21h00 | Nghỉ           | Nghỉ           |
-| 21h00–22h30 | Vật lí         | Tin học        |
 
+| Thời gian   |     | Nội dung CN        |
+| ----------- | --- | ------------------ |
+| 08h30–10h30 |     | Vật lí             |
+| 10h30–10h45 |     | Nghỉ               |
+| 10h45–12h45 |     | Tin học            |
+| 12h45–13h15 |     | Toán nhẹ / chữa đề |
+| 13h15–18h30 |     | Nghỉ hoàn toàn     |
+| 17h30–19h30 |     | Vật lí             |
+| 19h30–19h45 |     | Nghỉ               |
+| 19h45–21h15 |     | Toán luyện đề      |
+| 21h15–22h45 |     | Tin học            |
 
+| Thời gian   | Nội dung             |
+| ----------- | -------------------- |
+| 08h30–11h00 | Vật lí               |
+| 11h00–11h15 | Nghỉ                 |
+| 11h15–13h15 | Tin học              |
+| 13h15–18h30 | Nghỉ hoàn toàn       |
+| 17h30–19h30 | Vật lí               |
+| 19h30–19h45 | Nghỉ                 |
+| 19h45–21h15 | Toán luyện đề        |
+| 21h15–23h00 | Tin học nhẹ / review |
 # **PHASE 3 (11/05 → 24/05)**
 
 ## **T2 – T6**
