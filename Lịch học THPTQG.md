@@ -45,15 +45,15 @@
 
 # Thứ 5 — Tin học + tổng hợp
 
-|Thời gian|Nội dung|
-|---|---|
-|08h30–10h45|Tin học hệ thống hóa|
-|10h45–11h00|Nghỉ|
-|11h00–13h15|Tin học trắc nghiệm|
-|17h30–19h45|Vật lí|
-|19h45–20h00|Nghỉ|
-|20h00–21h30|Toán luyện đề|
-|21h30–23h00|Vật lí nhẹ|
+| Thời gian   | Nội dung             |     |
+| ----------- | -------------------- | --- |
+| 08h30–10h45 | Tin học hệ thống hóa |     |
+| 10h45–11h00 | Nghỉ                 |     |
+| 11h00–13h15 | Tin học trắc nghiệm  |     |
+| 17h30–19h45 | Vật lí               |     |
+| 19h45–20h00 | Nghỉ                 |     |
+| 20h00–21h30 | Toán luyện đề        |     |
+| 21h30–23h00 | Vật lí nhẹ           |     |
 
 ---
 
