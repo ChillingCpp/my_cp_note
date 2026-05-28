@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lịch học DGNL.md",
+                "file": "Lịch học THPTQG.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lịch học DGNL"
+              "title": "Lịch học THPTQG"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lịch học DGNL.md",
+                "file": "Lịch học THPTQG.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Lịch học DGNL"
+              "title": "Outline of Lịch học THPTQG"
             }
           }
         ],
@@ -175,7 +175,7 @@
   "lastOpenFiles": [
     "Verb patterns.md",
     "Pattern recognize.png",
-    "Lịch học DGNL.md",
+    "Lịch học THPTQG.md",
     "math.md",
     "vbtt.md",
     "vbnl.md",
