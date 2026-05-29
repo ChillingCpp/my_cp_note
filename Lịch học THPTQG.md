@@ -59,15 +59,15 @@
 
 # Thứ 6 — Vật lí hiện đại
 
-|Thời gian|Nội dung|
-|---|---|
-|08h30–10h45|Lí thuyết Vật lí|
-|10h45–11h00|Nghỉ|
-|11h00–13h15|Đề Vật lí|
-|17h30–19h45|Chữa sâu Vật lí|
-|19h45–20h00|Nghỉ|
-|20h00–21h30|Toán luyện đề|
-|21h30–23h00|Tin học|
+| Thời gian   | Nội dung         |
+| ----------- | ---------------- |
+| 08h30–10h45 | Lí thuyết Vật lí |
+| 10h45–11h00 | Nghỉ             |
+| 11h00–13h15 | Đề Vật lí        |
+| 17h30–19h45 | Chữa sâu Vật lí  |
+| 19h45–20h00 | Nghỉ             |
+| 20h00–21h30 | Toán luyện đề    |
+| 21h30–23h00 | Tin học          |
 
 ---
 
