@@ -4,6 +4,8 @@
 	- DP bitmask
 	- DP DAG ( ?? )
 	- DP tree
-		- Heavy light decomposition + DP tree optimization
+		- Heavy light decomposition + DP tree optimization, cache locality...
 	- DP knapsack
 	- DP lexicographically
+- Nhân ma trận
+- Tổ hợp xác suất, giá trị trung bình, bao hàm ngoại trừ
