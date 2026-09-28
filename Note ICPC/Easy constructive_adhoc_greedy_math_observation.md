@@ -1,5 +1,13 @@
 - **1370A — Maximum GCD** — 800
-- **1375C — Element Extermination** — 900
+	- Đáp án :
+		- gcd(a, b) max với $1 <= a < b <= n$ là $\lfloor ( n / 2 ) \rfloor$
+	-  Lí do : 
+		- là khi cho 1 số k bất kì, tìm các ước số của k và sắp xếp tăng dần thì sẽ có dạng ... k / a, k / 1.  rõ ràng thì a = 2 sẽ là số nhỏ nhất. Và b có thể = n nên sẽ tìm số chẵn lớn nhất <= n sau đó chia 2 thì sẽ được gcd(a, b) 
+- **1375C — Element Extermination** — 1400
+	- Đáp án:
+		- Yes khi $a_{1} < a_{n}$
+	- Lí do : 
+		- 
 - **1638A — Reverse** — 900
 - **1660C — Get an Even String** — 1000
 - **1475A — Odd Divisor** — 1000
