@@ -9,8 +9,8 @@
 	- Lí do : 
 		-  khi $a_{1} < a_{n}$ ta có thuật toán sau :
 			- tìm r nhỏ nhất sao cho $a_{1} < a_{r}$
-			- lấy các giá trị kế bên$a_{1}$  cho đến khi $a_{1}$ kế bên $a_{r}$ , lúc này $r = 2$
-			- 
+			- lấy các giá trị kế bên $a_{1}$ và xóa giá trị kế bên đó cho đến khi $a_{1}$ kế bên $a_{r}$ , lúc này $r = 2$
+			- chuyển sang $a_{2}$ và lặp lại bước 1. cho đến khi gặp $a_{n}$ thì lúc này có $a_{n}$ là max của toàn dãy, ta có thể xóa hết các giá trị trước $a_{n}$ và chỉ còn mỗi $a_{n}$ , thỏa mãn bài toán
 - **1638A — Reverse** — 900
 - **1660C — Get an Even String** — 1000
 - **1475A — Odd Divisor** — 1000
