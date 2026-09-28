@@ -18,23 +18,20 @@
 - **1638A — Reverse** — 900
 	- kết luận :
 		-  giá trị $a_{i}$ là giá trị nhỏ nhất có thể của mảng mà nằm sai vị trí, khi mà reverse lại về vị trí i thì mảng sẽ có dạng : 1,2, $a_{i}$ ( ví dụ này thì $a_{i}$ = 3 ) ,..... rõ ràng thì $a_{i}$ sẽ là bé nhất
-	- thuật toán :
-		- tìm vị trí i đầu tiên mà i != $a_{i}$
-		- tìm vị trí j nằm bên phải i mà j = $a_{i}$
-		- reverse mảng con từ $a_{i}...a_{j}$
-		-
 - **1660C — Get an Even String** — 1000
 	- kết luận : 
 		- thuật toán tham lam chỉ cần tìm được 1 cặp (i, j) mà $s_{i} = s_{j}$ là và xóa toàn bộ các kí tự khác không phải $s_{i}$ là được, sau đó lại lặp lại chu trình kiểm tra
-	- thuật toán : 
-		- khởi tạo mảng tần số f size 26 chỉ tần số các kí tự, dùng để đếm số kí tự cần xóa
-		- duyệt vòng lặp từ 1 -> n :
-			- $f(s_{i}) += 1$
-			- nếu như $f(s_{i}) = 2$ thì duyệt hết mảng f, cộng hết các tần số của các kí tự khác vào, không cộng tần số $s_{i}$. 
-			- reset mảng f lại về ban đầu
+
 - **1475A — Odd Divisor** — 1000
-	- 
+	- kết luận :
+		- theo yêu cầu của đề thì cho phép x = n, do đó nếu n lẻ thì mặc nhiên sẽ là yes
+		- nếu n chẵn : 
+			- Khi ta phân tích n thành thừa số nguyên tố, ta để ý số 2 là số nguyên tố chẵn duy nhất, yếu tố làm cho n chẵn là $2^{k}$,
+			- Do đó nếu như n = $2^{k}$ thì n sẽ chỉ có những ước số chẵn, và đáp án là no
 - **1617B — GCD Problem** — 1000
+	- kết luận : 
+		- ta sẽ chọn c trước vì nó dễ, ở đây c = 2
+		- như vậy thì a + b = n - 2
 - **1690D — Black and White Stripe** — 1100
 - **1691C — Sum of Substrings** — 1200
 - **1520E — Arranging The Sheep** — 1300
