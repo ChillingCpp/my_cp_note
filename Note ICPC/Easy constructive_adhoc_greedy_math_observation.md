@@ -20,7 +20,8 @@
 	- thuật toán :
 		- tìm vị trí i đầu tiên mà i != $a_{i}$
 		- tìm vị trí j nằm bên phải i mà j = $a_{i}$
-		- 
+		- reverse mảng con từ $a_{i}...a_{j}$
+		- lí do cho thuật toán : giá trị $a_{i}$ là giá trị nhỏ nhất có thể của mảng mà nằm sai vị trí, khi mà reverse lại về vị trí i thì lexicographically smallest order sẽ có dạng : 1,2 ,$a_{i}$ ,....
 - **1660C — Get an Even String** — 1000
 - **1475A — Odd Divisor** — 1000
 - **1617B — GCD Problem** — 1000
