@@ -9,7 +9,8 @@
 	- Lí do : 
 		-  khi $a_{1} < a_{n}$ ta có thuật toán sau :
 			- tìm r nhỏ nhất sao cho $a_{1} < a_{r}$
-			- lấy $a_{1} < a_{n}$
+			- lấy các giá trị kế bên$a_{1}$  cho đến khi $a_{1}$ kế bên $a_{r}$ , lúc này $r = 2$
+			- 
 - **1638A — Reverse** — 900
 - **1660C — Get an Even String** — 1000
 - **1475A — Odd Divisor** — 1000
