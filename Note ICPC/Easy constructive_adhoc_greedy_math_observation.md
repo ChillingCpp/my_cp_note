@@ -50,7 +50,11 @@
 		- số 1 nằm ở cuối mảng chỉ đóng góp 01
 		- Do đó cần di chuyển 2 số 1 khác biệt về 2 biên của mảng
 		- Trường hợp chỉ có 1 con số 1 thì phải di chuyển về cuối mảng
-- **1520E — Arranging The Sheep** — 1300
+- **1520E — Arranging The Sheep** — 1400
+	- kết luận : 
+		- trong n vị trí của con cừu thì có vị trí của 1 con cừu là tối ưu nhất
+		- Do là nếu chọn 1 vị trí trống thì n con cừu phải di chuyển, trong khi nếu chọn vị trí của 1 con cừu thì chỉ có n - 1 con di chuyển
+		- Đối với dạng bài này thì con cừu ở vị trí thứ n / 2 - 1, n / 2 nếu n chẵn, và (n - 1) / 2 nếu n lẻ sẽ là con cừu có vị trí đặt làm mốc di chuyển tối ưu nhất
 - **1409D — Decrease the Sum of Digits** — 1300
 - **1372C — Omkar and Baseball** — 1500
 - **1542B — Plus and Multiply** — 1500
