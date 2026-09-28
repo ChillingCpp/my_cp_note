@@ -21,8 +21,9 @@
 		- tìm vị trí i đầu tiên mà i != $a_{i}$
 		- tìm vị trí j nằm bên phải i mà j = $a_{i}$
 		- reverse mảng con từ $a_{i}...a_{j}$
-		- lí do cho thuật toán : giá trị $a_{i}$ là giá trị nhỏ nhất có thể của mảng mà nằm sai vị trí, khi mà reverse lại về vị trí i thì lexicographically smallest order sẽ có dạng : 1,2 ,$a_{i}$ ,....
+		- lí do cho thuật toán : giá trị $a_{i}$ là giá trị nhỏ nhất có thể của mảng mà nằm sai vị trí, khi mà reverse lại về vị trí i thì mảng sẽ có dạng : 1,2, $a_{i}$ ( ví dụ này thì $a_{i}$ = 3 ) ,..... rõ ràng thì $a_{i}$ sẽ là bé nhất
 - **1660C — Get an Even String** — 1000
+	- 
 - **1475A — Odd Divisor** — 1000
 - **1617B — GCD Problem** — 1000
 - **1690D — Black and White Stripe** — 1100
