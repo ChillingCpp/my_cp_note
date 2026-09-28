@@ -17,6 +17,10 @@
 				- => leftmost đạt cực tiểu tại $a_{1}$ và rightmost đạt cực đại tại $a_{n}$
 			- Và để xóa được giá trị khi còn đúng 2 phần tử thì leftmost < rightmost, tức là $a_{1} < a_{n}$ 
 - **1638A — Reverse** — 900
+	- thuật toán :
+		- tìm vị trí i đầu tiên mà i != $a_{i}$
+		- tìm vị trí j nằm bên phải i mà j = $a_{i}$
+		- 
 - **1660C — Get an Even String** — 1000
 - **1475A — Odd Divisor** — 1000
 - **1617B — GCD Problem** — 1000
