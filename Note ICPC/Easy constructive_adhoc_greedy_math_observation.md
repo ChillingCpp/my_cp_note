@@ -11,7 +11,10 @@
 			- tìm r nhỏ nhất sao cho $a_{1} < a_{r}$
 			- lấy các giá trị kế bên $a_{1}$ và xóa giá trị kế bên đó cho đến khi $a_{1}$ kế bên $a_{r}$ , lúc này $r = 2$
 			- chuyển sang $a_{2}$ và lặp lại bước 1. cho đến khi gặp $a_{n}$ thì lúc này có $a_{n}$ là max của toàn dãy, ta có thể xóa hết các giá trị trước $a_{n}$ và chỉ còn mỗi $a_{n}$ , thỏa mãn bài toán
-		- observation nữa : operation chỉ cho xóa 1 trong 2 khi $a_{i} < a_{i+1}$, gọi leftmost là phần tử nằm ở biên trái của mảng, với điều kiện của operation n leftmost >= $a_{1}$
+		- observation :
+			- operation chỉ cho xóa 1 trong 2 khi $a_{i} < a_{i+1}$
+			- gọi leftmost/rightmost là phần tử nằm ở biên trái/biên phải của mảng, với điều kiện của operation như thế thì leftmost >= $a_{1}$ và rightmost <= $a_{n}$ . 
+			- Và để xóa được giá trị khi còn đúng 2 phần tử thì leftmost <= rightmost, leftmost đạt cực tiểu tại $a_{1}$ và rightmost đạt cực tiểu tại $a_{n}$
 - **1638A — Reverse** — 900
 - **1660C — Get an Even String** — 1000
 - **1475A — Odd Divisor** — 1000
