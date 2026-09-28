@@ -15,25 +15,41 @@
 		- tìm r nhỏ nhất sao cho $a_{1} < a_{r}$
 		- lấy các giá trị kế bên $a_{1}$ và xóa giá trị kế bên đó cho đến khi $a_{1}$ kế bên $a_{r}$ , lúc này $r = 2$
 		- chuyển sang $a_{2}$ và lặp lại bước 1. cho đến khi gặp $a_{n}$ thì lúc này có $a_{n}$ là max của toàn dãy, ta có thể xóa hết các giá trị trước $a_{n}$ và chỉ còn mỗi $a_{n}$ , thỏa mãn bài toán	
-- **1638A — Reverse** — 900
+- **1638A — Reverse** — 800
 	- kết luận :
 		-  giá trị $a_{i}$ là giá trị nhỏ nhất có thể của mảng mà nằm sai vị trí, khi mà reverse lại về vị trí i thì mảng sẽ có dạng : 1,2, $a_{i}$ ( ví dụ này thì $a_{i}$ = 3 ) ,..... rõ ràng thì $a_{i}$ sẽ là bé nhất
-- **1660C — Get an Even String** — 1000
+- **1660C — Get an Even String** — 1300
 	- kết luận : 
 		- thuật toán tham lam chỉ cần tìm được 1 cặp (i, j) mà $s_{i} = s_{j}$ là và xóa toàn bộ các kí tự khác không phải $s_{i}$ là được, sau đó lại lặp lại chu trình kiểm tra
 
-- **1475A — Odd Divisor** — 1000
+- **1475A — Odd Divisor** — 900
 	- kết luận :
 		- theo yêu cầu của đề thì cho phép x = n, do đó nếu n lẻ thì mặc nhiên sẽ là yes
 		- nếu n chẵn : 
 			- Khi ta phân tích n thành thừa số nguyên tố, ta để ý số 2 là số nguyên tố chẵn duy nhất, yếu tố làm cho n chẵn là $2^{k}$,
 			- Do đó nếu như n = $2^{k}$ thì n sẽ chỉ có những ước số chẵn, và đáp án là no
-- **1617B — GCD Problem** — 1000
+- **1617B — GCD Problem** — 900
 	- kết luận : 
-		- ta sẽ chọn c trước vì nó dễ, ở đây c = 2
-		- như vậy thì a + b = n - 2
-- **1690D — Black and White Stripe** — 1100
-- **1691C — Sum of Substrings** — 1200
+		- ta sẽ chọn c trước vì nó dễ, ở đây c = 1
+		- như vậy thì a + b = n - 1
+		- thuật toán check
+			- 1. if ((x - 1) % 2 == 0)
+				- a = (x - 1) / 2 - 1, b = (x - 1) / 2 + 1;
+			- else
+				- a = (x - 1) / 2, b = (x - 1) - a;
+			- if (gcd(a, b) != 1)
+				- a--, b++;
+- **1690D — Black and White Stripe** — 1000
+	- kết luận :
+		- thuật toán sliding window thông thường, dùng 2 con trỏ để tìm ra 1 window có nhiều black cells nhất.
+- **1691C — Sum of Substrings** — 1400
+	- Observation : 
+		- số 1 khi nằm ở vị trí giữa mảng luôn đóng góp 10 và 01, tổng là 11, dù di chuyển ở đâu khi ở giữa mảng
+		- lí do là vì giả sử $s_{i-1}s_{i}s_{i+1}$ = 010 thì $s_{i-1}s_{i}$ = 01 và $s_{i}s_{i+1}$ = 10, tổng = 11
+		- số 1 nằm ở đầu mảng chỉ đóng góp 10
+		- số 1 nằm ở cuối mảng chỉ đóng góp 01
+		- Do đó cần di chuyển 2 số 1 khác biệt về 2 biên của mảng
+		- Trường hợp chỉ có 1 con số 1 thì phải di chuyển về cuối mảng
 - **1520E — Arranging The Sheep** — 1300
 - **1409D — Decrease the Sum of Digits** — 1300
 - **1372C — Omkar and Baseball** — 1500
