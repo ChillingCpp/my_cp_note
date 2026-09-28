@@ -1,0 +1,15 @@
+- **1370A — Maximum GCD** — 800
+- **1375C — Element Extermination** — 900
+- **1638A — Reverse** — 900
+- **1660C — Get an Even String** — 1000
+- **1475A — Odd Divisor** — 1000
+- **1617B — GCD Problem** — 1000
+- **1690D — Black and White Stripe** — 1100
+- **1691C — Sum of Substrings** — 1200
+- **1520E — Arranging The Sheep** — 1300
+- **1409D — Decrease the Sum of Digits** — 1300
+- **1372C — Omkar and Baseball** — 1500
+- **1542B — Plus and Multiply** — 1500
+- **1338A — Powered Addition** — 1500
+- **1772D — Absolute Sorting** — 1400
+- **1714E — Add Modulo 10** — 1400
