@@ -1,4 +1,4 @@
-﻿# Pattern Recognize + Potential Ranking
+# Pattern Recognize + Potential Ranking
 
 ## Yêu cầu về file chọn thuật toán tối nhanh
 - Cách giải 1 bài toán dựa vào [how_to_solve_it](how_to_solve_it.md)
