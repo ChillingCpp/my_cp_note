@@ -56,7 +56,12 @@
 		- Do là nếu chọn 1 vị trí trống thì n con cừu phải di chuyển, trong khi nếu chọn vị trí của 1 con cừu thì chỉ có n - 1 con di chuyển
 		- Đối với dạng bài này thì con cừu ở vị trí thứ n / 2 - 1, n / 2 nếu n chẵn, và (n - 1) / 2 nếu n lẻ sẽ là con cừu có vị trí đặt làm mốc di chuyển tối ưu nhất
 - **1409D — Decrease the Sum of Digits** — 1300
+	- kết luận :
+		- để giảm tống các chữ số khi tăng số n thì chỉ có 1 cách là biến đuôi của số đó về dạng ...0000 
+		- Lí do là vì nếu như đuôi của 1 số n đang là ...abcd với d != 9 thì khi cộng thêm 1 đơn vị thì a + b + c + d < a + b + c + d + 1
+		- cách để biến biến 1 số n có đuôi là ...0000 thì có phép toán   n + ( base - n % base ), với base = $10^{k}$ với k là số lượng chữ số 0 ở đuôi muốn có 
 - **1372C — Omkar and Baseball** — 1500
+	- 
 - **1542B — Plus and Multiply** — 1500
 - **1338A — Powered Addition** — 1500
 - **1772D — Absolute Sorting** — 1400
